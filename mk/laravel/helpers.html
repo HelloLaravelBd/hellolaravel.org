@@ -1,0 +1,1976 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>helpers — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="helpers — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="helpers — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-91320539-2', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="https://itnishi.com" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="/support-vuejs">
+            Touch Our Service
+        </a>
+        <h2>
+            Laravel 5.4
+            
+                <!--<select class="version-select">
+                    <option value="SELF" selected>2.0</option>
+                    <option value="v1">1.0</option>
+                    <option value="012">0.12</option>
+                    <option value="011">0.11</option>
+            </select>-->
+            
+        </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/helpers.html" class="sidebar-link current">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>helpers</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Laravel includes a variety of global “helper” PHP functions. Many of these functions are used by the framework itself; however, you are free to use them in your own applications if you find them convenient.</p>
+<p><a name="available-methods"></a></p>
+<h2 id="Available-Methods"><a href="#Available-Methods" class="headerlink" title="Available Methods"></a>Available Methods</h2><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .collection-method-<span class="keyword">list</span> &gt; p &#123;</div><div class="line">        column-count: <span class="number">3</span>; -moz-column-count: <span class="number">3</span>; -webkit-column-count: <span class="number">3</span>;</div><div class="line">        column-gap: <span class="number">2</span>em; -moz-column-gap: <span class="number">2</span>em; -webkit-column-gap: <span class="number">2</span>em;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    .collection-method-<span class="keyword">list</span> a &#123;</div><div class="line">        display: block;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><div class="collection-method-list" markdown="1"><br><br><a href="#method-array-add">array_add</a><br><a href="#method-array-collapse">array_collapse</a><br><a href="#method-array-divide">array_divide</a><br><a href="#method-array-dot">array_dot</a><br><a href="#method-array-except">array_except</a><br><a href="#method-array-first">array_first</a><br><a href="#method-array-flatten">array_flatten</a><br><a href="#method-array-forget">array_forget</a><br><a href="#method-array-get">array_get</a><br><a href="#method-array-has">array_has</a><br><a href="#method-array-last">array_last</a><br><a href="#method-array-only">array_only</a><br><a href="#method-array-pluck">array_pluck</a><br><a href="#method-array-prepend">array_prepend</a><br><a href="#method-array-pull">array_pull</a><br><a href="#method-array-set">array_set</a><br><a href="#method-array-sort">array_sort</a><br><a href="#method-array-sort-recursive">array_sort_recursive</a><br><a href="#method-array-where">array_where</a><br><a href="#method-array-wrap">array_wrap</a><br><a href="#method-head">head</a><br><a href="#method-last">last</a><br></div>
+
+<h3 id="Paths"><a href="#Paths" class="headerlink" title="Paths"></a>Paths</h3><div class="collection-method-list" markdown="1"><br><br><a href="#method-app-path">app_path</a><br><a href="#method-base-path">base_path</a><br><a href="#method-config-path">config_path</a><br><a href="#method-database-path">database_path</a><br><a href="#method-mix">mix</a><br><a href="#method-public-path">public_path</a><br><a href="#method-resource-path">resource_path</a><br><a href="#method-storage-path">storage_path</a><br><br></div>
+
+<h3 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h3><div class="collection-method-list" markdown="1"><br><br><a href="#method-camel-case">camel_case</a><br><a href="#method-class-basename">class_basename</a><br><a href="#method-e">e</a><br><a href="#method-ends-with">ends_with</a><br><a href="#method-kebab-case">kebab_case</a><br><a href="#method-snake-case">snake_case</a><br><a href="#method-str-limit">str_limit</a><br><a href="#method-starts-with">starts_with</a><br><a href="#method-str-contains">str_contains</a><br><a href="#method-str-finish">str_finish</a><br><a href="#method-str-is">str_is</a><br><a href="#method-str-plural">str_plural</a><br><a href="#method-str-random">str_random</a><br><a href="#method-str-singular">str_singular</a><br><a href="#method-str-slug">str_slug</a><br><a href="#method-studly-case">studly_case</a><br><a href="#method-title-case">title_case</a><br><a href="#method-trans">trans</a><br><a href="#method-trans-choice">trans_choice</a><br><br></div>
+
+<h3 id="URLs"><a href="#URLs" class="headerlink" title="URLs"></a>URLs</h3><div class="collection-method-list" markdown="1"><br><br><a href="#method-action">action</a><br><a href="#method-asset">asset</a><br><a href="#method-secure-asset">secure_asset</a><br><a href="#method-route">route</a><br><a href="#method-secure-url">secure_url</a><br><a href="#method-url">url</a><br><br></div>
+
+<h3 id="Miscellaneous"><a href="#Miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h3><p><a name="method-listing"></a></p>
+<h2 id="Method-Listing"><a href="#Method-Listing" class="headerlink" title="Method Listing"></a>Method Listing</h2><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    <span class="comment">#collection-method code &#123;</span></div><div class="line">        font-size: <span class="number">14</span>px;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">#collection-method:not(.first-collection-method) &#123;</span></div><div class="line">        margin-top: <span class="number">50</span>px;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p><a name="arrays"></a></p>
+<h2 id="Arrays-1"><a href="#Arrays-1" class="headerlink" title="Arrays"></a>Arrays</h2><p><a name="method-array-add"></a></p>
+<h4 id="array-add"><a href="#array-add" class="headerlink" title="array_add()"></a><code>array_add()</code></h4><p>The <code>array_add</code> function adds a given key / value pair to the array if the given key doesn’t already exist in the array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = array_add([<span class="string">'name'</span> =&gt; <span class="string">'Desk'</span>], <span class="string">'price'</span>, <span class="number">100</span>);</div><div class="line"></div><div class="line"><span class="comment">// ['name' =&gt; 'Desk', 'price' =&gt; 100]</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-collapse"></a></p>
+<h4 id="array-collapse"><a href="#array-collapse" class="headerlink" title="array_collapse()"></a><code>array_collapse()</code></h4><p>The <code>array_collapse</code> function collapses an array of arrays into a single array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = array_collapse([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]);</div><div class="line"></div><div class="line"><span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-divide"></a></p>
+<h4 id="array-divide"><a href="#array-divide" class="headerlink" title="array_divide()"></a><code>array_divide()</code></h4><p>The <code>array_divide</code> function returns two arrays, one containing the keys, and the other containing the values of the original array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">list</span>($keys, $values) = array_divide([<span class="string">'name'</span> =&gt; <span class="string">'Desk'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// $keys: ['name']</span></div><div class="line"></div><div class="line"><span class="comment">// $values: ['Desk']</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-dot"></a></p>
+<h4 id="array-dot"><a href="#array-dot" class="headerlink" title="array_dot()"></a><code>array_dot()</code></h4><p>The <code>array_dot</code> function flattens a multi-dimensional array into a single level array that uses “dot” notation to indicate depth:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = array_dot([<span class="string">'foo'</span> =&gt; [<span class="string">'bar'</span> =&gt; <span class="string">'baz'</span>]]);</div><div class="line"></div><div class="line"><span class="comment">// ['foo.bar' =&gt; 'baz'];</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-except"></a></p>
+<p>The <code>array_except</code> function removes the given key / value pairs from the array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'name'</span> =&gt; <span class="string">'Desk'</span>, <span class="string">'price'</span> =&gt; <span class="number">100</span>];</div><div class="line"></div><div class="line">$array = array_except($array, [<span class="string">'price'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// ['name' =&gt; 'Desk']</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-first"></a></p>
+<h4 id="array-first"><a href="#array-first" class="headerlink" title="array_first()"></a><code>array_first()</code></h4><p>The <code>array_first</code> function returns the first element of an array passing a given truth test:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>];</div><div class="line"></div><div class="line">$value = array_first($array, <span class="function"><span class="keyword">function</span> <span class="params">($value, $key)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> $value &gt;= <span class="number">150</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 200</span></div></pre></td></tr></table></figure></p>
+<p>A default value may also be passed as the third parameter to the method. This value will be returned if no value passes the truth test:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = array_first($array, $callback, $default);</div></pre></td></tr></table></figure></p>
+<p><a name="method-array-flatten"></a></p>
+<h4 id="array-flatten"><a href="#array-flatten" class="headerlink" title="array_flatten()"></a><code>array_flatten()</code></h4><p>The <code>array_flatten</code> function will flatten a multi-dimensional array into a single level.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'name'</span> =&gt; <span class="string">'Joe'</span>, <span class="string">'languages'</span> =&gt; [<span class="string">'PHP'</span>, <span class="string">'Ruby'</span>]];</div><div class="line"></div><div class="line">$array = array_flatten($array);</div><div class="line"></div><div class="line"><span class="comment">// ['Joe', 'PHP', 'Ruby'];</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-forget"></a></p>
+<h4 id="array-forget"><a href="#array-forget" class="headerlink" title="array_forget()"></a><code>array_forget()</code></h4><p>The <code>array_forget</code> function removes a given key / value pair from a deeply nested array using “dot” notation:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'products'</span> =&gt; [<span class="string">'desk'</span> =&gt; [<span class="string">'price'</span> =&gt; <span class="number">100</span>]]];</div><div class="line"></div><div class="line">array_forget($array, <span class="string">'products.desk'</span>);</div><div class="line"></div><div class="line"><span class="comment">// ['products' =&gt; []]</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-get"></a></p>
+<h4 id="array-get"><a href="#array-get" class="headerlink" title="array_get()"></a><code>array_get()</code></h4><p>The <code>array_get</code> function retrieves a value from a deeply nested array using “dot” notation:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'products'</span> =&gt; [<span class="string">'desk'</span> =&gt; [<span class="string">'price'</span> =&gt; <span class="number">100</span>]]];</div><div class="line"></div><div class="line">$value = array_get($array, <span class="string">'products.desk'</span>);</div><div class="line"></div><div class="line"><span class="comment">// ['price' =&gt; 100]</span></div></pre></td></tr></table></figure></p>
+<p>The <code>array_get</code> function also accepts a default value, which will be returned if the specific key is not found:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = array_get($array, <span class="string">'names.john'</span>, <span class="string">'default'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-array-has"></a></p>
+<h4 id="array-has"><a href="#array-has" class="headerlink" title="array_has()"></a><code>array_has()</code></h4><p>The <code>array_has</code> function checks that a given item or items exists in an array using “dot” notation:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'product'</span> =&gt; [<span class="string">'name'</span> =&gt; <span class="string">'desk'</span>, <span class="string">'price'</span> =&gt; <span class="number">100</span>]];</div><div class="line"></div><div class="line">$hasItem = array_has($array, <span class="string">'product.name'</span>);</div><div class="line"></div><div class="line"><span class="comment">// true</span></div><div class="line"></div><div class="line">$hasItems = array_has($array, [<span class="string">'product.price'</span>, <span class="string">'product.discount'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-last"></a></p>
+<h4 id="array-last"><a href="#array-last" class="headerlink" title="array_last()"></a><code>array_last()</code></h4><p>The <code>array_last</code> function returns the last element of an array passing a given truth test:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>, <span class="number">110</span>];</div><div class="line"></div><div class="line">$value = array_last($array, <span class="function"><span class="keyword">function</span> <span class="params">($value, $key)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> $value &gt;= <span class="number">150</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 300</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-only"></a></p>
+<h4 id="array-only"><a href="#array-only" class="headerlink" title="array_only()"></a><code>array_only()</code></h4><p>The <code>array_only</code> function will return only the specified key / value pairs from the given array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'name'</span> =&gt; <span class="string">'Desk'</span>, <span class="string">'price'</span> =&gt; <span class="number">100</span>, <span class="string">'orders'</span> =&gt; <span class="number">10</span>];</div><div class="line"></div><div class="line">$array = array_only($array, [<span class="string">'name'</span>, <span class="string">'price'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// ['name' =&gt; 'Desk', 'price' =&gt; 100]</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-pluck"></a></p>
+<h4 id="array-pluck"><a href="#array-pluck" class="headerlink" title="array_pluck()"></a><code>array_pluck()</code></h4><p>The <code>array_pluck</code> function will pluck a list of the given key / value pairs from the array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [</div><div class="line">    [<span class="string">'developer'</span> =&gt; [<span class="string">'id'</span> =&gt; <span class="number">1</span>, <span class="string">'name'</span> =&gt; <span class="string">'Taylor'</span>]],</div><div class="line">    [<span class="string">'developer'</span> =&gt; [<span class="string">'id'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'Abigail'</span>]],</div><div class="line">];</div><div class="line"></div><div class="line">$array = array_pluck($array, <span class="string">'developer.name'</span>);</div><div class="line"></div><div class="line"><span class="comment">// ['Taylor', 'Abigail'];</span></div></pre></td></tr></table></figure></p>
+<p>You may also specify how you wish the resulting list to be keyed:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = array_pluck($array, <span class="string">'developer.name'</span>, <span class="string">'developer.id'</span>);</div><div class="line"></div><div class="line"><span class="comment">// [1 =&gt; 'Taylor', 2 =&gt; 'Abigail'];</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-prepend"></a></p>
+<h4 id="array-prepend"><a href="#array-prepend" class="headerlink" title="array_prepend()"></a><code>array_prepend()</code></h4><p>The <code>array_prepend</code> function will push an item onto the beginning of an array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line"></div><div class="line">$array = array_prepend($array, <span class="string">'zero'</span>);</div><div class="line"></div><div class="line"><span class="comment">// $array: ['zero', 'one', 'two', 'three', 'four']</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-pull"></a></p>
+<h4 id="array-pull"><a href="#array-pull" class="headerlink" title="array_pull()"></a><code>array_pull()</code></h4><p>The <code>array_pull</code> function returns and removes a key / value pair from the array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'name'</span> =&gt; <span class="string">'Desk'</span>, <span class="string">'price'</span> =&gt; <span class="number">100</span>];</div><div class="line"></div><div class="line">$name = array_pull($array, <span class="string">'name'</span>);</div><div class="line"></div><div class="line"><span class="comment">// $name: Desk</span></div><div class="line"></div><div class="line"><span class="comment">// $array: ['price' =&gt; 100]</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-set"></a></p>
+<h4 id="array-set"><a href="#array-set" class="headerlink" title="array_set()"></a><code>array_set()</code></h4><p>The <code>array_set</code> function sets a value within a deeply nested array using “dot” notation:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="string">'products'</span> =&gt; [<span class="string">'desk'</span> =&gt; [<span class="string">'price'</span> =&gt; <span class="number">100</span>]]];</div><div class="line"></div><div class="line">array_set($array, <span class="string">'products.desk.price'</span>, <span class="number">200</span>);</div><div class="line"></div><div class="line"><span class="comment">// ['products' =&gt; ['desk' =&gt; ['price' =&gt; 200]]]</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-array-sort"></a></p>
+<h4 id="array-sort"><a href="#array-sort" class="headerlink" title="array_sort()"></a><code>array_sort()</code></h4><p>The <code>array_sort</code> function sorts the array by the results of the given Closure:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [</div><div class="line">    [<span class="string">'name'</span> =&gt; <span class="string">'Desk'</span>],</div><div class="line">    [<span class="string">'name'</span> =&gt; <span class="string">'Chair'</span>],</div><div class="line">];</div><div class="line"></div><div class="line">$array = array_values(array_sort($array, <span class="function"><span class="keyword">function</span> <span class="params">($value)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> $value[<span class="string">'name'</span>];</div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">    [</div><div class="line">        ['name' =&gt; 'Chair'],</div><div class="line">        ['name' =&gt; 'Desk'],</div><div class="line">    ]</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p><a name="method-array-sort-recursive"></a></p>
+<h4 id="array-sort-recursive"><a href="#array-sort-recursive" class="headerlink" title="array_sort_recursive()"></a><code>array_sort_recursive()</code></h4><p>The <code>array_sort_recursive</code> function recursively sorts the array using the <code>sort</code> function:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [</div><div class="line">    [</div><div class="line">        <span class="string">'Roman'</span>,</div><div class="line">        <span class="string">'Taylor'</span>,</div><div class="line">        <span class="string">'Li'</span>,</div><div class="line">    ],</div><div class="line">    [</div><div class="line">        <span class="string">'PHP'</span>,</div><div class="line">        <span class="string">'Ruby'</span>,</div><div class="line">        <span class="string">'JavaScript'</span>,</div><div class="line">    ],</div><div class="line">];</div><div class="line"></div><div class="line">$array = array_sort_recursive($array);</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">    [</div><div class="line">        [</div><div class="line">            'Li',</div><div class="line">            'Roman',</div><div class="line">            'Taylor',</div><div class="line">        ],</div><div class="line">        [</div><div class="line">            'JavaScript',</div><div class="line">            'PHP',</div><div class="line">            'Ruby',</div><div class="line">        ]</div><div class="line">    ];</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p><a name="method-array-where"></a></p>
+<h4 id="array-where"><a href="#array-where" class="headerlink" title="array_where()"></a><code>array_where()</code></h4><p>The <code>array_where</code> function filters the array using the given Closure:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="number">100</span>, <span class="string">'200'</span>, <span class="number">300</span>, <span class="string">'400'</span>, <span class="number">500</span>];</div><div class="line"></div><div class="line">$array = array_where($array, <span class="function"><span class="keyword">function</span> <span class="params">($value, $key)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> is_string($value);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// [1 =&gt; 200, 3 =&gt; 400]</span></div></pre></td></tr></table></figure>
+<p><a name="method-array-wrap"></a></p>
+<h4 id="array-wrap"><a href="#array-wrap" class="headerlink" title="array_wrap()"></a><code>array_wrap()</code></h4><p>The <code>array_wrap</code> function will wrap the given value in an array. If the given value is already an array it will not be changed:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$string = <span class="string">'Laravel'</span>;</div><div class="line"></div><div class="line">$array = array_wrap($string);</div><div class="line"></div><div class="line"><span class="comment">// [0 =&gt; 'Laravel']</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-head"></a></p>
+<h4 id="head"><a href="#head" class="headerlink" title="head()"></a><code>head()</code></h4><p>The <code>head</code> function returns the first element in the given array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>];</div><div class="line"></div><div class="line">$first = head($array);</div><div class="line"></div><div class="line"><span class="comment">// 100</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-last"></a></p>
+<h4 id="last"><a href="#last" class="headerlink" title="last()"></a><code>last()</code></h4><p>The <code>last</code> function returns the last element in the given array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$array = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>];</div><div class="line"></div><div class="line">$last = last($array);</div><div class="line"></div><div class="line"><span class="comment">// 300</span></div></pre></td></tr></table></figure></p>
+<p><a name="paths"></a></p>
+<h2 id="Paths-1"><a href="#Paths-1" class="headerlink" title="Paths"></a>Paths</h2><p><a name="method-app-path"></a></p>
+<h4 id="app-path"><a href="#app-path" class="headerlink" title="app_path()"></a><code>app_path()</code></h4><p>The <code>app_path</code> function returns the fully qualified path to the <code>app</code> directory. You may also use the <code>app_path</code> function to generate a fully qualified path to a file relative to the application directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = app_path();</div><div class="line"></div><div class="line">$path = app_path(<span class="string">'Http/Controllers/Controller.php'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-base-path"></a></p>
+<h4 id="base-path"><a href="#base-path" class="headerlink" title="base_path()"></a><code>base_path()</code></h4><p>The <code>base_path</code> function returns the fully qualified path to the project root. You may also use the <code>base_path</code> function to generate a fully qualified path to a given file relative to the project root directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = base_path();</div><div class="line"></div><div class="line">$path = base_path(<span class="string">'vendor/bin'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-config-path"></a></p>
+<h4 id="config-path"><a href="#config-path" class="headerlink" title="config_path()"></a><code>config_path()</code></h4><p>The <code>config_path</code> function returns the fully qualified path to the application configuration directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = config_path();</div></pre></td></tr></table></figure></p>
+<p><a name="method-database-path"></a></p>
+<h4 id="database-path"><a href="#database-path" class="headerlink" title="database_path()"></a><code>database_path()</code></h4><p>The <code>database_path</code> function returns the fully qualified path to the application’s database directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = database_path();</div></pre></td></tr></table></figure></p>
+<p><a name="method-mix"></a></p>
+<h4 id="mix"><a href="#mix" class="headerlink" title="mix()"></a><code>mix()</code></h4><p>The <code>mix</code> function gets the path to a <a href="/mk/laravel/mix.html">versioned Mix file</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">mix($file);</div></pre></td></tr></table></figure></p>
+<p><a name="method-public-path"></a></p>
+<h4 id="public-path"><a href="#public-path" class="headerlink" title="public_path()"></a><code>public_path()</code></h4><p>The <code>public_path</code> function returns the fully qualified path to the <code>public</code> directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = public_path();</div></pre></td></tr></table></figure></p>
+<p><a name="method-resource-path"></a></p>
+<h4 id="resource-path"><a href="#resource-path" class="headerlink" title="resource_path()"></a><code>resource_path()</code></h4><p>The <code>resource_path</code> function returns the fully qualified path to the <code>resources</code> directory. You may also use the <code>resource_path</code> function to generate a fully qualified path to a given file relative to the resources directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = resource_path();</div><div class="line"></div><div class="line">$path = resource_path(<span class="string">'assets/sass/app.scss'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-storage-path"></a></p>
+<h4 id="storage-path"><a href="#storage-path" class="headerlink" title="storage_path()"></a><code>storage_path()</code></h4><p>The <code>storage_path</code> function returns the fully qualified path to the <code>storage</code> directory. You may also use the <code>storage_path</code> function to generate a fully qualified path to a given file relative to the storage directory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = storage_path();</div><div class="line"></div><div class="line">$path = storage_path(<span class="string">'app/file.txt'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="strings"></a></p>
+<h2 id="Strings-1"><a href="#Strings-1" class="headerlink" title="Strings"></a>Strings</h2><p><a name="method-camel-case"></a></p>
+<h4 id="camel-case"><a href="#camel-case" class="headerlink" title="camel_case()"></a><code>camel_case()</code></h4><p>The <code>camel_case</code> function converts the given string to <code>camelCase</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$camel = camel_case(<span class="string">'foo_bar'</span>);</div><div class="line"></div><div class="line"><span class="comment">// fooBar</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-class-basename"></a></p>
+<h4 id="class-basename"><a href="#class-basename" class="headerlink" title="class_basename()"></a><code>class_basename()</code></h4><p>The <code>class_basename</code> returns the class name of the given class with the class’ namespace removed:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$class = class_basename(<span class="string">'Foo\Bar\Baz'</span>);</div><div class="line"></div><div class="line"><span class="comment">// Baz</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-e"></a></p>
+<h4 id="e"><a href="#e" class="headerlink" title="e()"></a><code>e()</code></h4><p>The <code>e</code> function runs PHP’s <code>htmlspecialchars</code> function with the <code>double_encode</code> option set to <code>false</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> e(<span class="string">'&lt;html&gt;foo&lt;/html&gt;'</span>);</div><div class="line"></div><div class="line"><span class="comment">// &amp;lt;html&amp;gt;foo&amp;lt;/html&amp;gt;</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-ends-with"></a></p>
+<h4 id="ends-with"><a href="#ends-with" class="headerlink" title="ends_with()"></a><code>ends_with()</code></h4><p>The <code>ends_with</code> function determines if the given string ends with the given value:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = ends_with(<span class="string">'This is my name'</span>, <span class="string">'name'</span>);</div><div class="line"></div><div class="line"><span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-kebab-case"></a></p>
+<h4 id="kebab-case"><a href="#kebab-case" class="headerlink" title="kebab_case()"></a><code>kebab_case()</code></h4><p>The <code>kebab_case</code> function converts the given string to <code>kebab-case</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = kebab_case(<span class="string">'fooBar'</span>);</div><div class="line"></div><div class="line"><span class="comment">// foo-bar</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-snake-case"></a></p>
+<h4 id="snake-case"><a href="#snake-case" class="headerlink" title="snake_case()"></a><code>snake_case()</code></h4><p>The <code>snake_case</code> function converts the given string to <code>snake_case</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$snake = snake_case(<span class="string">'fooBar'</span>);</div><div class="line"></div><div class="line"><span class="comment">// foo_bar</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-str-limit"></a></p>
+<h4 id="str-limit"><a href="#str-limit" class="headerlink" title="str_limit()"></a><code>str_limit()</code></h4><p>The <code>str_limit</code> function limits the number of characters in a string. The function accepts a string as its first argument and the maximum number of resulting characters as its second argument:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = str_limit(<span class="string">'The PHP framework for web artisans.'</span>, <span class="number">7</span>);</div><div class="line"></div><div class="line"><span class="comment">// The PHP...</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-starts-with"></a></p>
+<h4 id="starts-with"><a href="#starts-with" class="headerlink" title="starts_with()"></a><code>starts_with()</code></h4><p>The <code>starts_with</code> function determines if the given string begins with the given value:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = starts_with(<span class="string">'This is my name'</span>, <span class="string">'This'</span>);</div><div class="line"></div><div class="line"><span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-str-contains"></a></p>
+<h4 id="str-contains"><a href="#str-contains" class="headerlink" title="str_contains()"></a><code>str_contains()</code></h4><p>The <code>str_contains</code> function determines if the given string contains the given value:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = str_contains(<span class="string">'This is my name'</span>, <span class="string">'my'</span>);</div><div class="line"></div><div class="line"><span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>You may also pass an array of values to determine if the given string contains any of the values:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = str_contains(<span class="string">'This is my name'</span>, [<span class="string">'my'</span>, <span class="string">'foo'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-str-finish"></a></p>
+<h4 id="str-finish"><a href="#str-finish" class="headerlink" title="str_finish()"></a><code>str_finish()</code></h4><p>The <code>str_finish</code> function adds a single instance of the given value to a string:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$string = str_finish(<span class="string">'this/string'</span>, <span class="string">'/'</span>);</div><div class="line"></div><div class="line"><span class="comment">// this/string/</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-str-is"></a></p>
+<h4 id="str-is"><a href="#str-is" class="headerlink" title="str_is()"></a><code>str_is()</code></h4><p>The <code>str_is</code> function determines if a given string matches a given pattern. Asterisks may be used to indicate wildcards:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = str_is(<span class="string">'foo*'</span>, <span class="string">'foobar'</span>);</div><div class="line"></div><div class="line"><span class="comment">// true</span></div><div class="line"></div><div class="line">$value = str_is(<span class="string">'baz*'</span>, <span class="string">'foobar'</span>);</div><div class="line"></div><div class="line"><span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-str-plural"></a></p>
+<h4 id="str-plural"><a href="#str-plural" class="headerlink" title="str_plural()"></a><code>str_plural()</code></h4><p>The <code>str_plural</code> function converts a string to its plural form. This function currently only supports the English language:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">    $plural = str_plural('car');</div><div class="line"></div><div class="line">    // cars</div><div class="line"></div><div class="line">    $plural = str_plural('child');</div><div class="line"></div><div class="line">    // children</div><div class="line"></div><div class="line">You may provide an integer as a second argument to the function to retrieve the singular or plural form of the string:</div><div class="line"></div><div class="line">    $plural = str_plural('child', 2);</div><div class="line"></div><div class="line">    // children</div><div class="line"></div><div class="line">    $plural = str_plural('child', 1);</div><div class="line"></div><div class="line">    // child</div></pre></td></tr></table></figure></p>
+<p><a name="method-str-random"></a></p>
+<h4 id="str-random"><a href="#str-random" class="headerlink" title="str_random()"></a><code>str_random()</code></h4><p>The <code>str_random</code> function generates a random string of the specified length. This function uses PHP’s <code>random_bytes</code> function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$string = str_random(<span class="number">40</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-str-singular"></a></p>
+<h4 id="str-singular"><a href="#str-singular" class="headerlink" title="str_singular()"></a><code>str_singular()</code></h4><p>The <code>str_singular</code> function converts a string to its singular form. This function currently only supports the English language:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$singular = str_singular(<span class="string">'cars'</span>);</div><div class="line"></div><div class="line"><span class="comment">// car</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-str-slug"></a></p>
+<h4 id="str-slug"><a href="#str-slug" class="headerlink" title="str_slug()"></a><code>str_slug()</code></h4><p>The <code>str_slug</code> function generates a URL friendly “slug” from the given string:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$title = str_slug(<span class="string">'Laravel 5 Framework'</span>, <span class="string">'-'</span>);</div><div class="line"></div><div class="line"><span class="comment">// laravel-5-framework</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-studly-case"></a></p>
+<h4 id="studly-case"><a href="#studly-case" class="headerlink" title="studly_case()"></a><code>studly_case()</code></h4><p>The <code>studly_case</code> function converts the given string to <code>StudlyCase</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = studly_case(<span class="string">'foo_bar'</span>);</div><div class="line"></div><div class="line"><span class="comment">// FooBar</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-title-case"></a></p>
+<h4 id="title-case"><a href="#title-case" class="headerlink" title="title_case()"></a><code>title_case()</code></h4><p>The <code>title_case</code> function converts the given string to <code>Title Case</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$title = title_case(<span class="string">'a nice title uses the correct case'</span>);</div><div class="line"></div><div class="line"><span class="comment">// A Nice Title Uses The Correct Case</span></div></pre></td></tr></table></figure></p>
+<p><a name="method-trans"></a></p>
+<h4 id="trans"><a href="#trans" class="headerlink" title="trans()"></a><code>trans()</code></h4><p>The <code>trans</code> function translates the given language line using your <a href="/mk/laravel/localization.html">localization files</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> trans(<span class="string">'validation.required'</span>):</div></pre></td></tr></table></figure></p>
+<p><a name="method-trans-choice"></a></p>
+<h4 id="trans-choice"><a href="#trans-choice" class="headerlink" title="trans_choice()"></a><code>trans_choice()</code></h4><p>The <code>trans_choice</code> function translates the given language line with inflection:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = trans_choice(<span class="string">'foo.bar'</span>, $count);</div></pre></td></tr></table></figure></p>
+<p><a name="urls"></a></p>
+<h2 id="URLs-1"><a href="#URLs-1" class="headerlink" title="URLs"></a>URLs</h2><p><a name="method-action"></a></p>
+<h4 id="action"><a href="#action" class="headerlink" title="action()"></a><code>action()</code></h4><p>The <code>action</code> function generates a URL for the given controller action. You do not need to pass the full namespace to the controller. Instead, pass the controller class name relative to the <code>App\Http\Controllers</code> namespace:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$url = action(<span class="string">'HomeController@getIndex'</span>);</div></pre></td></tr></table></figure></p>
+<p>If the method accepts route parameters, you may pass them as the second argument to the method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$url = action(<span class="string">'UserController@profile'</span>, [<span class="string">'id'</span> =&gt; <span class="number">1</span>]);</div></pre></td></tr></table></figure></p>
+<p><a name="method-asset"></a></p>
+<h4 id="asset"><a href="#asset" class="headerlink" title="asset()"></a><code>asset()</code></h4><p>Generate a URL for an asset using the current scheme of the request (HTTP or HTTPS):<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$url = asset(<span class="string">'img/photo.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-secure-asset"></a></p>
+<h4 id="secure-asset"><a href="#secure-asset" class="headerlink" title="secure_asset()"></a><code>secure_asset()</code></h4><p>Generate a URL for an asset using HTTPS:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> secure_asset(<span class="string">'foo/bar.zip'</span>, $title, $attributes = []);</div></pre></td></tr></table></figure></p>
+<p><a name="method-route"></a></p>
+<h4 id="route"><a href="#route" class="headerlink" title="route()"></a><code>route()</code></h4><p>The <code>route</code> function generates a URL for the given named route:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$url = route(<span class="string">'routeName'</span>);</div></pre></td></tr></table></figure></p>
+<p>If the route accepts parameters, you may pass them as the second argument to the method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$url = route(<span class="string">'routeName'</span>, [<span class="string">'id'</span> =&gt; <span class="number">1</span>]);</div></pre></td></tr></table></figure></p>
+<p><a name="method-secure-url"></a></p>
+<h4 id="secure-url"><a href="#secure-url" class="headerlink" title="secure_url()"></a><code>secure_url()</code></h4><p>The <code>secure_url</code> function generates a fully qualified HTTPS URL to the given path:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> secure_url(<span class="string">'user/profile'</span>);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> secure_url(<span class="string">'user/profile'</span>, [<span class="number">1</span>]);</div></pre></td></tr></table></figure></p>
+<p><a name="method-url"></a></p>
+<h4 id="url"><a href="#url" class="headerlink" title="url()"></a><code>url()</code></h4><p>The <code>url</code> function generates a fully qualified URL to the given path:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> url(<span class="string">'user/profile'</span>);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> url(<span class="string">'user/profile'</span>, [<span class="number">1</span>]);</div></pre></td></tr></table></figure></p>
+<p>If no path is provided, a <code>Illuminate\Routing\UrlGenerator</code> instance is returned:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> url()-&gt;current();</div><div class="line"><span class="keyword">echo</span> url()-&gt;full();</div><div class="line"><span class="keyword">echo</span> url()-&gt;previous();</div></pre></td></tr></table></figure></p>
+<p><a name="miscellaneous"></a></p>
+<h2 id="Miscellaneous-1"><a href="#Miscellaneous-1" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><p><a name="method-abort"></a></p>
+<h4 id="abort"><a href="#abort" class="headerlink" title="abort()"></a><code>abort()</code></h4><p>The <code>abort</code> function throws a HTTP exception which will be rendered by the exception handler:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">abort(<span class="number">401</span>);</div></pre></td></tr></table></figure></p>
+<p>You may also provide the exception’s response text:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">abort(<span class="number">401</span>, <span class="string">'Unauthorized.'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-abort-if"></a></p>
+<h4 id="abort-if"><a href="#abort-if" class="headerlink" title="abort_if()"></a><code>abort_if()</code></h4><p>The <code>abort_if</code> function throws an HTTP exception if a given boolean expression evaluates to <code>true</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">abort_if(! Auth::user()-&gt;isAdmin(), <span class="number">403</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-abort-unless"></a></p>
+<h4 id="abort-unless"><a href="#abort-unless" class="headerlink" title="abort_unless()"></a><code>abort_unless()</code></h4><p>The <code>abort_unless</code> function throws an HTTP exception if a given boolean expression evaluates to <code>false</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">abort_unless(Auth::user()-&gt;isAdmin(), <span class="number">403</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-auth"></a></p>
+<h4 id="auth"><a href="#auth" class="headerlink" title="auth()"></a><code>auth()</code></h4><p>The <code>auth</code> function returns an authenticator instance. You may use it instead of the <code>Auth</code> facade for convenience:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = auth()-&gt;user();</div></pre></td></tr></table></figure></p>
+<p><a name="method-back"></a></p>
+<h4 id="back"><a href="#back" class="headerlink" title="back()"></a><code>back()</code></h4><p>The <code>back()</code> function generates a redirect response to the user’s previous location:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> back();</div></pre></td></tr></table></figure></p>
+<p><a name="method-bcrypt"></a></p>
+<h4 id="bcrypt"><a href="#bcrypt" class="headerlink" title="bcrypt()"></a><code>bcrypt()</code></h4><p>The <code>bcrypt</code> function hashes the given value using Bcrypt. You may use it as an alternative to the <code>Hash</code> facade:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$password = bcrypt(<span class="string">'my-secret-password'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-cache"></a></p>
+<h4 id="cache"><a href="#cache" class="headerlink" title="cache()"></a><code>cache()</code></h4><p>The <code>cache</code> function may be used to get values from the cache. If the given key does not exist in the cache, an optional default value will be returned:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = cache(<span class="string">'key'</span>);</div><div class="line"></div><div class="line">$value = cache(<span class="string">'key'</span>, <span class="string">'default'</span>);</div></pre></td></tr></table></figure></p>
+<p>You may add items to the cache by passing an array of key / value pairs to the function. You should also pass the number of minutes or duration the cached value should be considered valid:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">cache([<span class="string">'key'</span> =&gt; <span class="string">'value'</span>], <span class="number">5</span>);</div><div class="line"></div><div class="line">cache([<span class="string">'key'</span> =&gt; <span class="string">'value'</span>], Carbon::now()-&gt;addSeconds(<span class="number">10</span>));</div></pre></td></tr></table></figure></p>
+<p><a name="method-collect"></a></p>
+<h4 id="collect"><a href="#collect" class="headerlink" title="collect()"></a><code>collect()</code></h4><p>The <code>collect</code> function creates a <a href="/mk/laravel/collections.html">collection</a> instance from the given array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$collection = collect([<span class="string">'taylor'</span>, <span class="string">'abigail'</span>]);</div></pre></td></tr></table></figure></p>
+<p><a name="method-config"></a></p>
+<h4 id="config"><a href="#config" class="headerlink" title="config()"></a><code>config()</code></h4><p>The <code>config</code> function gets the value of a configuration variable. The configuration values may be accessed using “dot” syntax, which includes the name of the file and the option you wish to access. A default value may be specified and is returned if the configuration option does not exist:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = config(<span class="string">'app.timezone'</span>);</div><div class="line"></div><div class="line">$value = config(<span class="string">'app.timezone'</span>, $default);</div></pre></td></tr></table></figure></p>
+<p>The <code>config</code> helper may also be used to set configuration variables at runtime by passing an array of key / value pairs:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">config([<span class="string">'app.debug'</span> =&gt; <span class="keyword">true</span>]);</div></pre></td></tr></table></figure></p>
+<p><a name="method-csrf-field"></a></p>
+<h4 id="csrf-field"><a href="#csrf-field" class="headerlink" title="csrf_field()"></a><code>csrf_field()</code></h4><p>The <code>csrf_field</code> function generates an HTML <code>hidden</code> input field containing the value of the CSRF token. For example, using <a href="/mk/laravel/blade.html">Blade syntax</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&#123;&#123; csrf_field() &#125;&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="method-csrf-token"></a></p>
+<h4 id="csrf-token"><a href="#csrf-token" class="headerlink" title="csrf_token()"></a><code>csrf_token()</code></h4><p>The <code>csrf_token</code> function retrieves the value of the current CSRF token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$token = csrf_token();</div></pre></td></tr></table></figure></p>
+<p><a name="method-dd"></a></p>
+<h4 id="dd"><a href="#dd" class="headerlink" title="dd()"></a><code>dd()</code></h4><p>The <code>dd</code> function dumps the given variables and ends execution of the script:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">dd($value);</div><div class="line"></div><div class="line">dd($value1, $value2, $value3, ...);</div></pre></td></tr></table></figure></p>
+<p>If you do not want to halt the execution of your script, use the <code>dump</code> function instead:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">dump($value);</div></pre></td></tr></table></figure></p>
+<p><a name="method-dispatch"></a></p>
+<h4 id="dispatch"><a href="#dispatch" class="headerlink" title="dispatch()"></a><code>dispatch()</code></h4><p>The <code>dispatch</code> function pushes a new job onto the Laravel <a href="/mk/laravel/queues.html">job queue</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">dispatch(<span class="keyword">new</span> App\Jobs\SendEmails);</div></pre></td></tr></table></figure></p>
+<p><a name="method-env"></a></p>
+<h4 id="env"><a href="#env" class="headerlink" title="env()"></a><code>env()</code></h4><p>The <code>env</code> function gets the value of an environment variable or returns a default value:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$env = env(<span class="string">'APP_ENV'</span>);</div><div class="line"></div><div class="line"><span class="comment">// Return a default value if the variable doesn't exist...</span></div><div class="line">$env = env(<span class="string">'APP_ENV'</span>, <span class="string">'production'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-event"></a></p>
+<h4 id="event"><a href="#event" class="headerlink" title="event()"></a><code>event()</code></h4><p>The <code>event</code> function dispatches the given <a href="/mk/laravel/events.html">event</a> to its listeners:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">event(<span class="keyword">new</span> UserRegistered($user));</div></pre></td></tr></table></figure></p>
+<p><a name="method-factory"></a></p>
+<h4 id="factory"><a href="#factory" class="headerlink" title="factory()"></a><code>factory()</code></h4><p>The <code>factory</code> function creates a model factory builder for a given class, name, and amount. It can be used while <a href="/mk/laravel/database-testing.html#writing-factories">testing</a> or <a href="/mk/laravel/seeding.html#using-model-factories">seeding</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = factory(App\User::class)-&gt;make();</div></pre></td></tr></table></figure></p>
+<p><a name="method-info"></a></p>
+<h4 id="info"><a href="#info" class="headerlink" title="info()"></a><code>info()</code></h4><p>The <code>info</code> function will write information to the log:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">info(<span class="string">'Some helpful information!'</span>);</div></pre></td></tr></table></figure></p>
+<p>An array of contextual data may also be passed to the function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">info(<span class="string">'User login attempt failed.'</span>, [<span class="string">'id'</span> =&gt; $user-&gt;id]);</div></pre></td></tr></table></figure></p>
+<p><a name="method-logger"></a></p>
+<h4 id="logger"><a href="#logger" class="headerlink" title="logger()"></a><code>logger()</code></h4><p>The <code>logger</code> function can be used to write a <code>debug</code> level message to the log:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">logger(<span class="string">'Debug message'</span>);</div></pre></td></tr></table></figure></p>
+<p>An array of contextual data may also be passed to the function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">logger(<span class="string">'User has logged in.'</span>, [<span class="string">'id'</span> =&gt; $user-&gt;id]);</div></pre></td></tr></table></figure></p>
+<p>A <a href="/mk/laravel/errors.html#logging">logger</a> instance will be returned if no value is passed to the function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">logger()-&gt;error(<span class="string">'You are not allowed here.'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-method-field"></a></p>
+<h4 id="method-field"><a href="#method-field" class="headerlink" title="method_field()"></a><code>method_field()</code></h4><p>The <code>method_field</code> function generates an HTML <code>hidden</code> input field containing the spoofed value of the form’s HTTP verb. For example, using <a href="/mk/laravel/blade.html">Blade syntax</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;form method=<span class="string">"POST"</span>&gt;</div><div class="line">    &#123;&#123; method_field(<span class="string">'DELETE'</span>) &#125;&#125;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p><a name="method-old"></a></p>
+<h4 id="old"><a href="#old" class="headerlink" title="old()"></a><code>old()</code></h4><p>The <code>old</code> function <a href="/mk/laravel/requests.html#retrieving-input">retrieves</a> an old input value flashed into the session:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = old(<span class="string">'value'</span>);</div><div class="line"></div><div class="line">$value = old(<span class="string">'value'</span>, <span class="string">'default'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-redirect"></a></p>
+<h4 id="redirect"><a href="#redirect" class="headerlink" title="redirect()"></a><code>redirect()</code></h4><p>The <code>redirect</code> function returns a redirect HTTP response, or returns the redirector instance if called with no arguments:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> redirect(<span class="string">'/home'</span>);</div><div class="line"></div><div class="line"><span class="keyword">return</span> redirect()-&gt;route(<span class="string">'route.name'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-request"></a></p>
+<h4 id="request"><a href="#request" class="headerlink" title="request()"></a><code>request()</code></h4><p>The <code>request</code> function returns the current <a href="/mk/laravel/requests.html">request</a> instance or obtains an input item:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$request = request();</div><div class="line"></div><div class="line">$value = request(<span class="string">'key'</span>, $default = <span class="keyword">null</span>)</div></pre></td></tr></table></figure></p>
+<p><a name="method-response"></a></p>
+<h4 id="response"><a href="#response" class="headerlink" title="response()"></a><code>response()</code></h4><p>The <code>response</code> function creates a <a href="/mk/laravel/responses.html">response</a> instance or obtains an instance of the response factory:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> response(<span class="string">'Hello World'</span>, <span class="number">200</span>, $headers);</div><div class="line"></div><div class="line"><span class="keyword">return</span> response()-&gt;json([<span class="string">'foo'</span> =&gt; <span class="string">'bar'</span>], <span class="number">200</span>, $headers);</div></pre></td></tr></table></figure></p>
+<p><a name="method-retry"></a></p>
+<h4 id="retry"><a href="#retry" class="headerlink" title="retry()"></a><code>retry()</code></h4><p>The <code>retry</code> function attempts to execute the given callback until the given maximum attempt threshold is met. If the callback does not throw an exception, it’s return value will be returned. If the callback throws an exception, it will automatically be retried. If the maximum attempt count is exceeded, the exception will be thrown:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> retry(<span class="number">5</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Attempt 5 times while resting 100ms in between attempts...</span></div><div class="line">&#125;, <span class="number">100</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="method-session"></a></p>
+<h4 id="session"><a href="#session" class="headerlink" title="session()"></a><code>session()</code></h4><p>The <code>session</code> function may be used to get or set session values:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = session(<span class="string">'key'</span>);</div></pre></td></tr></table></figure></p>
+<p>You may set values by passing an array of key / value pairs to the function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">session([<span class="string">'chairs'</span> =&gt; <span class="number">7</span>, <span class="string">'instruments'</span> =&gt; <span class="number">3</span>]);</div></pre></td></tr></table></figure></p>
+<p>The session store will be returned if no value is passed to the function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = session()-&gt;get(<span class="string">'key'</span>);</div><div class="line"></div><div class="line">session()-&gt;put(<span class="string">'key'</span>, $value);</div></pre></td></tr></table></figure></p>
+<p><a name="method-value"></a></p>
+<h4 id="value"><a href="#value" class="headerlink" title="value()"></a><code>value()</code></h4><p>The <code>value</code> function’s behavior will simply return the value it is given. However, if you pass a <code>Closure</code> to the function, the <code>Closure</code> will be executed then its result will be returned:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$value = value(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'bar'</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a name="method-view"></a></p>
+<h4 id="view"><a href="#view" class="headerlink" title="view()"></a><code>view()</code></h4><p>The <code>view</code> function retrieves a <a href="/mk/laravel/views.html">view</a> instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> view(<span class="string">'auth.login'</span>);</div></pre></td></tr></table></figure></p>
+
+    
+
+    
+
+    <div class="footer">
+
+   <a href="https://github.com/hellolaravel/hellolaravel.org/blob/master/src/mk/laravel/helpers.md" target="_blank">
+        Edit this page on Github!
+</a>This site is maintained by:
+<a href="http://itnishi.com">Nishi IT Ltd.</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+        <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'v2'
+          docsearch({
+            appId: 'BH4D9OD16A',
+            apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+            indexName: 'vuejs',
+            inputSelector: selector,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+
+
+
+          }
+          })
+        })
+        </script>
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+    </body>
+</html>

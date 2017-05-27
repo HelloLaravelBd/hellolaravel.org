@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>hellolaravel</title>
+  <subtitle>hello laravel is maintained by Nishi IT Ltd.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://hellolaravel.org/"/>
+  <updated>2017-04-23T13:37:28.426Z</updated>
+  <id>https://hellolaravel.org/</id>
+  
+  <author>
+    <name>Hello Laravel</name>
+    <email>hellolaravel@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kamal</title>
+    <link href="https://hellolaravel.org/2017/04/24/kamal/"/>
+    <id>https://hellolaravel.org/2017/04/24/kamal/</id>
+    <published>2017-04-24T01:37:28.000Z</published>
+    <updated>2017-04-23T13:37:28.426Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

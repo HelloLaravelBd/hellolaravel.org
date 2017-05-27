@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Hello Laravel</title>
+        <title>kamal — Hello Laravel</title>
         <meta charset="utf-8">
         <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <meta property="og:type" content="article">
-        <meta property="og:title" content="hello-laravel">
+        <meta property="og:title" content="kamal — hello-laravel">
         <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
         <meta property="og:image" content="https://hellolaravel.org//images/title.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="hello-laravel">
+        <meta name="twitter:title" content="kamal — hello-laravel">
         <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
         <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
 
@@ -23,7 +23,7 @@
         <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <!-- main page styles -->
-        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/page.css">
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
@@ -40,7 +40,7 @@
           ga('send', 'pageview');
         </script>
     </head>
-    <body class="">        <div id="mobile-bar" class="top">
+    <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
             <a class="logo" href="/"></a>
         </div>
@@ -112,11 +112,13 @@
 </div>
 
         
-            <div class="sidebar">
-  <ul class="main-menu">
-    <li>
+            <div id="main" class="fix-sidebar">
+                
+                    <div class="sidebar blog">
+    <ul class="main-menu">
+        <li>
  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 
 </li>
@@ -172,147 +174,53 @@
   <span class="new-label">NEW!</span>
 </li>
 
-  </ul>
+</ul>
+    <div class="list">
+        <h2>
+            Recent Posts..
+
+        </h2>
+        <ul style="padding:0">
+        
+            <li>
+                <a href="/2017/04/24/kamal/" class="sidebar-link current">kamal</a>
+            </li>
+        
+        </ul>
 </div>
-
-<div id="hero">
-  <div class="inner">
-    <div class="left">
-
-      <img src="/images/logog.gif"  class="hero-logo  animated  bounce" style="visibility: visible; animation-delay: 0.4s; animation-name: rollIn;">
-    </div><div class="right">
-
-      <h1>
-        Now Time For Laravel
-      </h1>
-      <h2>With<span> Hello Laravel </span>.....</h2>
-      <p>
-
-        <a class="button " href="/mk/laravel/installation.html">Let's Start</a>
-        <a class="button white " href="https://github.com/hellolaravelbd" target="_blank">GITHUB</a>
-
-      </p>
-    </div>
-  </div>
 </div>
+<div class="content with-sidebar blog post">
+    
 
-<div id="highlights">
-
-<div class="inner">
-    <div class="point">
-      <h2>Bangla Documentation</h2>
-      <p> বাংলাদেশ</p>
-        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/Bangladesh.png" alt="">
-    </div>
-
-    <div class="point">
-      <h2>Tutorials</h2>
-      <p><img src="https://cdn4.iconfinder.com/data/icons/sales-reports/512/pie_chart_presentation-512.png" width="120" alt=""></p>
-
-    </div>
-
-    <div class="point">
-   <h2>Packages/Projects</h2>
-      <p>
-        <a href="https://www.github.com/laravel24"><img  src="https://cdn4.iconfinder.com/data/icons/box-and-crates-icons/100/16-512.png" width="120" alt=""></a>
-</p>
-
-
-
-    </div>
-
-  </div>
-  </div>
-
-
-<div id="sponsors">
-  <div class="inner">
-    <h1>High Thinking With Love</h1>
-    <a href="https://itnishi.com/" target="_blank" style="width: 250px">
-  <img style="width: 250px" src="/images/nishi_it.png">
-</a>
-<a href="https://themeour.com/" target="_blank" style="width: 180px">
-  <img style="width: 180px" src="/images/stdlib.png">
-</a>
-
-<br>
-<h2>Awesome Code with @code4mk</h2>
-
-
-<a href="https://laravel.com/" target="_blank">
-  <img src="/images/laravel.png">
-</a>
-<a href="https://laravelcollective.com/" target="_blank" style="width:120px;top:-2px">
-  <img src="/images/lara-collective.png" style="width:120px">
-</a>
-<a href="https://vue.org" target="_blank" style="top:-1px">
-  <img src="/images/vue-logo2.png">
-</a>
-<a href="https://angular.io/" target="_blank">
-  <img src="/images/angular.png">
-</a>
-<a href="https://atom.io" target="_blank">
-  <img src="/images/atom.png">
-</a>
-<a href="https://github.com/" target="_blank" style="top:-2px">
-  <img src="/images/github-logo.png">
-</a>
-<a href="http://algolia.com/" target="_blank">
-  <img src="/images/algolia-logo.png">
-</a>
-<a href="https://disqus.com/" target="_blank" style="width:80px;top:-2px">
-  <img src="/images/disqus.png" style="width:80px">
-</a>
-
-<a href="http://htmlreference.io/" target="_blank" style="width:140px">
-  <img src="/images/html-reference.png" style="width:140px">
-</a>
-<a href="http://cssreference.io/" target="_blank" style="width:140px;top:4px">
-  <img src="/images/css-reference-logo.png" style="width:140px">
-</a>
-
-<a href="http://bulma.io/" target="_blank" style="width:115px">
-  <img src="/images/bulma-logo.png" style="width:115px">
-</a>
-
-<a href="https://www.youtube.com/channel/UCYTlP2ny7GFTlo-SU7iHXdA" target="_blank" style="width:120px;top:1px">
-  <img src="/images/nishi-institute.png" style="width:120px">
-</a>
-
-    <br>
-
-    <br>
-    <a class="become-sponsor button white" href="/house/">House</a>
-  </div>
+    <h1>kamal</h1>
+    <h4>Apr 24, 2017</h4>
+    
+    <div id="disqus_thread"></div>
 </div>
-
-
-<div id="footer">
-
-    Copyright &copy; 2016-2017 <a href="https://twitter.com/nishidotcom" target="_blank">Nishi IT Ltd. </a>
-
-  <div class="my-social">
-    <ul>
-      <li><a href="https://facebook.com/hellolaravel"><img src="images/fb.svg" alt=""></a></li>
-
-    </ul>
-  </div>
-</div>
-
 
 <script>
-var topScrolled = false
-window.addEventListener('scroll', function () {
-  if (window.pageYOffset > 165 && !topScrolled) {
-    topScrolled = true
-    document.getElementById('mobile-bar').classList.remove('top')
-  } else if (window.pageYOffset <= 165 && topScrolled) {
-    topScrolled = false
-    document.getElementById('mobile-bar').classList.add('top')
-  }
-})
-</script>
 
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hellolaravel.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
         
 
         <!-- main custom script for sidebars, version selects etc. -->

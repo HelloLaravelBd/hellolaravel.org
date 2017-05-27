@@ -1,0 +1,1840 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>File Storage — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="File Storage — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="File Storage — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-91320539-2', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="https://itnishi.com" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="/support-vuejs">
+            Touch Our Service
+        </a>
+        <h2>
+            Laravel 5.4
+            
+                <!--<select class="version-select">
+                    <option value="SELF" selected>2.0</option>
+                    <option value="v1">1.0</option>
+                    <option value="012">0.12</option>
+                    <option value="011">0.11</option>
+            </select>-->
+            
+        </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/filesystem.html" class="sidebar-link current">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>File Storage</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Laravel provides a powerful filesystem abstraction thanks to the wonderful <a href="https://github.com/thephpleague/flysystem" target="_blank" rel="external">Flysystem</a> PHP package by Frank de Jonge. The Laravel Flysystem integration provides simple to use drivers for working with local filesystems, Amazon S3, and Rackspace Cloud Storage. Even better, it’s amazingly simple to switch between these storage options as the API remains the same for each system.</p>
+<p><a name="configuration"></a></p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>The filesystem configuration file is located at <code>config/filesystems.php</code>. Within this file you may configure all of your “disks”. Each disk represents a particular storage driver and storage location. Example configurations for each supported driver are included in the configuration file. So, simply modify the configuration to reflect your storage preferences and credentials.</p>
+<p>Of course, you may configure as many disks as you like, and may even have multiple disks that use the same driver.</p>
+<p><a name="the-public-disk"></a></p>
+<h3 id="The-Public-Disk"><a href="#The-Public-Disk" class="headerlink" title="The Public Disk"></a>The Public Disk</h3><p>The <code>public</code> disk is intended for files that are going to be publicly accessible. By default, the <code>public</code> disk uses the <code>local</code> driver and stores these files in <code>storage/app/public</code>. To make them accessible from the web, you should create a symbolic link from <code>public/storage</code> to <code>storage/app/public</code>. This convention will keep your publicly accessible files in one directory that can be easily shared across deployments when using zero down-time deployment systems like <a href="https://envoyer.io" target="_blank" rel="external">Envoyer</a>.</p>
+<p>To create the symbolic link, you may use the <code>storage:link</code> Artisan command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan storage:link</div></pre></td></tr></table></figure></p>
+<p>Of course, once a file has been stored and the symbolic link has been created, you can create a URL to the files using the <code>asset</code> helper:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">echo</span> asset(<span class="string">'storage/file.txt'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="the-local-driver"></a></p>
+<h3 id="The-Local-Driver"><a href="#The-Local-Driver" class="headerlink" title="The Local Driver"></a>The Local Driver</h3><p>When using the <code>local</code> driver, all file operations are relative to the <code>root</code> directory defined in your configuration file. By default, this value is set to the <code>storage/app</code> directory. Therefore, the following method would store a file in <code>storage/app/file.txt</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::disk(<span class="string">'local'</span>)-&gt;put(<span class="string">'file.txt'</span>, <span class="string">'Contents'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="driver-prerequisites"></a></p>
+<h3 id="Driver-Prerequisites"><a href="#Driver-Prerequisites" class="headerlink" title="Driver Prerequisites"></a>Driver Prerequisites</h3><h4 id="Composer-Packages"><a href="#Composer-Packages" class="headerlink" title="Composer Packages"></a>Composer Packages</h4><p>Before using the S3 or Rackspace drivers, you will need to install the appropriate package via Composer:</p>
+<ul>
+<li>Amazon S3: <code>league/flysystem-aws-s3-v3 ~1.0</code></li>
+<li>Rackspace: <code>league/flysystem-rackspace ~1.0</code></li>
+</ul>
+<h4 id="S3-Driver-Configuration"><a href="#S3-Driver-Configuration" class="headerlink" title="S3 Driver Configuration"></a>S3 Driver Configuration</h4><p>The S3 driver configuration information is located in your <code>config/filesystems.php</code> configuration file. This file contains an example configuration array for an S3 driver. You are free to modify this array with your own S3 configuration and credentials.</p>
+<h4 id="FTP-Driver-Configuration"><a href="#FTP-Driver-Configuration" class="headerlink" title="FTP Driver Configuration"></a>FTP Driver Configuration</h4><p>Laravel’s Flysystem integrations works great with FTP; however, a sample configuration is not included with the framework’s default <code>filesystems.php</code> configuration file. If you need to configure a FTP filesystem, you may use the example configuration below:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'ftp'</span> =&gt; [</div><div class="line">    <span class="string">'driver'</span>   =&gt; <span class="string">'ftp'</span>,</div><div class="line">    <span class="string">'host'</span>     =&gt; <span class="string">'ftp.example.com'</span>,</div><div class="line">    <span class="string">'username'</span> =&gt; <span class="string">'your-username'</span>,</div><div class="line">    <span class="string">'password'</span> =&gt; <span class="string">'your-password'</span>,</div><div class="line"></div><div class="line">    <span class="comment">// Optional FTP Settings...</span></div><div class="line">    <span class="comment">// 'port'     =&gt; 21,</span></div><div class="line">    <span class="comment">// 'root'     =&gt; '',</span></div><div class="line">    <span class="comment">// 'passive'  =&gt; true,</span></div><div class="line">    <span class="comment">// 'ssl'      =&gt; true,</span></div><div class="line">    <span class="comment">// 'timeout'  =&gt; 30,</span></div><div class="line">],</div></pre></td></tr></table></figure></p>
+<h4 id="Rackspace-Driver-Configuration"><a href="#Rackspace-Driver-Configuration" class="headerlink" title="Rackspace Driver Configuration"></a>Rackspace Driver Configuration</h4><p>Laravel’s Flysystem integrations works great with Rackspace; however, a sample configuration is not included with the framework’s default <code>filesystems.php</code> configuration file. If you need to configure a Rackspace filesystem, you may use the example configuration below:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'rackspace'</span> =&gt; [</div><div class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'rackspace'</span>,</div><div class="line">    <span class="string">'username'</span>  =&gt; <span class="string">'your-username'</span>,</div><div class="line">    <span class="string">'key'</span>       =&gt; <span class="string">'your-key'</span>,</div><div class="line">    <span class="string">'container'</span> =&gt; <span class="string">'your-container'</span>,</div><div class="line">    <span class="string">'endpoint'</span>  =&gt; <span class="string">'https://identity.api.rackspacecloud.com/v2.0/'</span>,</div><div class="line">    <span class="string">'region'</span>    =&gt; <span class="string">'IAD'</span>,</div><div class="line">    <span class="string">'url_type'</span>  =&gt; <span class="string">'publicURL'</span>,</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<p><a name="obtaining-disk-instances"></a></p>
+<h2 id="Obtaining-Disk-Instances"><a href="#Obtaining-Disk-Instances" class="headerlink" title="Obtaining Disk Instances"></a>Obtaining Disk Instances</h2><p>The <code>Storage</code> facade may be used to interact with any of your configured disks. For example, you may use the <code>put</code> method on the facade to store an avatar on the default disk. If you call methods on the <code>Storage</code> facade without first calling the <code>disk</code> method, the method call will automatically be passed to the default disk:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">Storage::put(<span class="string">'avatars/1'</span>, $fileContents);</div></pre></td></tr></table></figure></p>
+<p>If your applications interacts with multiple disks, you may use the <code>disk</code> method on the <code>Storage</code> facade to work with files on a particular disk:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::disk(<span class="string">'s3'</span>)-&gt;put(<span class="string">'avatars/1'</span>, $fileContents);</div></pre></td></tr></table></figure></p>
+<p><a name="retrieving-files"></a></p>
+<h2 id="Retrieving-Files"><a href="#Retrieving-Files" class="headerlink" title="Retrieving Files"></a>Retrieving Files</h2><p>The <code>get</code> method may be used to retrieve the contents of a file. The raw string contents of the file will be returned by the method. Remember, all file paths should be specified relative to the “root” location configured for the disk:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$contents = Storage::get(<span class="string">'file.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p>The <code>exists</code> method may be used to determine if a file exists on the disk:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$exists = Storage::disk(<span class="string">'s3'</span>)-&gt;exists(<span class="string">'file.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="file-urls"></a></p>
+<h3 id="File-URLs"><a href="#File-URLs" class="headerlink" title="File URLs"></a>File URLs</h3><p>When using the <code>local</code> or <code>s3</code> drivers, you may use the <code>url</code> method to get the URL for the given file. If you are using the <code>local</code> driver, this will typically just prepend <code>/storage</code> to the given path and return a relative URL to the file. If you are using the <code>s3</code> driver, the fully qualified remote URL will be returned:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">$url = Storage::url(<span class="string">'file1.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} Remember, if you are using the <code>local</code> driver, all files that should be publicly accessible should be placed in the <code>storage/app/public</code> directory. Furthermore, you should <a href="#the-public-disk">create a symbolic link</a> at <code>public/storage</code> which points to the <code>storage/app/public</code> directory.</p>
+</blockquote>
+<h4 id="Local-URL-Host-Customization"><a href="#Local-URL-Host-Customization" class="headerlink" title="Local URL Host Customization"></a>Local URL Host Customization</h4><p>If you would like to pre-define the host for files stored on a disk using the <code>local</code> driver, you may add a <code>url</code> option to the disk’s configuration array:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'public'</span> =&gt; [</div><div class="line">    <span class="string">'driver'</span> =&gt; <span class="string">'local'</span>,</div><div class="line">    <span class="string">'root'</span> =&gt; storage_path(<span class="string">'app/public'</span>),</div><div class="line">    <span class="string">'url'</span> =&gt; env(<span class="string">'APP_URL'</span>).<span class="string">'/storage'</span>,</div><div class="line">    <span class="string">'visibility'</span> =&gt; <span class="string">'public'</span>,</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<p><a name="file-metadata"></a></p>
+<h3 id="File-Metadata"><a href="#File-Metadata" class="headerlink" title="File Metadata"></a>File Metadata</h3><p>In addition to reading and writing files, Laravel can also provide information about the files themselves. For example, the <code>size</code> method may be used to get the size of the file in bytes:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">$size = Storage::size(<span class="string">'file1.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p>The <code>lastModified</code> method returns the UNIX timestamp of the last time the file was modified:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$time = Storage::lastModified(<span class="string">'file1.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="storing-files"></a></p>
+<h2 id="Storing-Files"><a href="#Storing-Files" class="headerlink" title="Storing Files"></a>Storing Files</h2><p>The <code>put</code> method may be used to store raw file contents on a disk. You may also pass a PHP <code>resource</code> to the <code>put</code> method, which will use Flysystem’s underlying stream support. Using streams is greatly recommended when dealing with large files:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">Storage::put(<span class="string">'file.jpg'</span>, $contents);</div><div class="line"></div><div class="line">Storage::put(<span class="string">'file.jpg'</span>, $resource);</div></pre></td></tr></table></figure></p>
+<h4 id="Automatic-Streaming"><a href="#Automatic-Streaming" class="headerlink" title="Automatic Streaming"></a>Automatic Streaming</h4><p>If you would like Laravel to automatically manage streaming a given file to your storage location, you may use the <code>putFile</code> or <code>putFileAs</code> method. This method accepts either a <code>Illuminate\Http\File</code> or <code>Illuminate\Http\UploadedFile</code> instance and will automatically stream the file to your desired location:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">File</span>;</div><div class="line"></div><div class="line"><span class="comment">// Automatically generate a unique ID for file name...</span></div><div class="line">Storage::putFile(<span class="string">'photos'</span>, <span class="keyword">new</span> File(<span class="string">'/path/to/photo'</span>));</div><div class="line"></div><div class="line"><span class="comment">// Manually specify a file name...</span></div><div class="line">Storage::putFileAs(<span class="string">'photos'</span>, <span class="keyword">new</span> File(<span class="string">'/path/to/photo'</span>), <span class="string">'photo.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p>There are a few important things to note about the <code>putFile</code> method. Note that we only specified a directory name, not a file name. By default, the <code>putFile</code> method will generate a unique ID to serve as the file name. The path to the file will be returned by the <code>putFile</code> method so you can store the path, including the generated file name, in your database.</p>
+<p>The <code>putFile</code> and <code>putFileAs</code> methods also accept an argument to specify the “visibility” of the stored file. This is particularly useful if you are storing the file on a cloud disk such as S3 and would like the file to be publicly accessible:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::putFile(<span class="string">'photos'</span>, <span class="keyword">new</span> File(<span class="string">'/path/to/photo'</span>), <span class="string">'public'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Prepending-amp-Appending-To-Files"><a href="#Prepending-amp-Appending-To-Files" class="headerlink" title="Prepending &amp; Appending To Files"></a>Prepending &amp; Appending To Files</h4><p>The <code>prepend</code> and <code>append</code> methods allow you to write to the beginning or end of a file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::prepend(<span class="string">'file.log'</span>, <span class="string">'Prepended Text'</span>);</div><div class="line"></div><div class="line">Storage::append(<span class="string">'file.log'</span>, <span class="string">'Appended Text'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Copying-amp-Moving-Files"><a href="#Copying-amp-Moving-Files" class="headerlink" title="Copying &amp; Moving Files"></a>Copying &amp; Moving Files</h4><p>The <code>copy</code> method may be used to copy an existing file to a new location on the disk, while the <code>move</code> method may be used to rename or move an existing file to a new location:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::copy(<span class="string">'old/file1.jpg'</span>, <span class="string">'new/file1.jpg'</span>);</div><div class="line"></div><div class="line">Storage::move(<span class="string">'old/file1.jpg'</span>, <span class="string">'new/file1.jpg'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="file-uploads"></a></p>
+<h3 id="File-Uploads"><a href="#File-Uploads" class="headerlink" title="File Uploads"></a>File Uploads</h3><p>In web applications, one of the most common use-cases for storing files is storing user uploaded files such as profile pictures, photos, and documents. Laravel makes it very easy to store uploaded files using the <code>store</code> method on an uploaded file instance. Simply call the <code>store</code> method with the path at which you wish to store the uploaded file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAvatarController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Update the avatar for the user.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        $path = $request-&gt;file(<span class="string">'avatar'</span>)-&gt;store(<span class="string">'avatars'</span>);</div><div class="line"></div><div class="line">        <span class="keyword">return</span> $path;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>There are a few important things to note about this example. Note that we only specified a directory name, not a file name. By default, the <code>store</code> method will generate a unique ID to serve as the file name. The path to the file will be returned by the <code>store</code> method so you can store the path, including the generated file name, in your database.</p>
+<p>You may also call the <code>putFile</code> method on the <code>Storage</code> facade to perform the same file manipulation as the example above:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = Storage::putFile(<span class="string">'avatars'</span>, $request-&gt;file(<span class="string">'avatar'</span>));</div></pre></td></tr></table></figure></p>
+<h4 id="Specifying-A-File-Name"><a href="#Specifying-A-File-Name" class="headerlink" title="Specifying A File Name"></a>Specifying A File Name</h4><p>If you would not like a file name to be automatically assigned to your stored file, you may use the <code>storeAs</code> method, which receives the path, the file name, and the (optional) disk as its arguments:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = $request-&gt;file(<span class="string">'avatar'</span>)-&gt;storeAs(</div><div class="line">    <span class="string">'avatars'</span>, $request-&gt;user()-&gt;id</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>Of course, you may also use the <code>putFileAs</code> method on the <code>Storage</code> facade, which will perform the same file manipulation as the example above:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = Storage::putFileAs(</div><div class="line">    <span class="string">'avatars'</span>, $request-&gt;file(<span class="string">'avatar'</span>), $request-&gt;user()-&gt;id</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h4 id="Specifying-A-Disk"><a href="#Specifying-A-Disk" class="headerlink" title="Specifying A Disk"></a>Specifying A Disk</h4><p>By default, this method will use your default disk. If you would like to specify another disk, pass the disk name as the second argument to the <code>store</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$path = $request-&gt;file(<span class="string">'avatar'</span>)-&gt;store(</div><div class="line">    <span class="string">'avatars/'</span>.$request-&gt;user()-&gt;id, <span class="string">'s3'</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p><a name="file-visibility"></a></p>
+<h3 id="File-Visibility"><a href="#File-Visibility" class="headerlink" title="File Visibility"></a>File Visibility</h3><p>In Laravel’s Flysystem integration, “visibility” is an abstraction of file permissions across multiple platforms. Files may either be declared <code>public</code> or <code>private</code>. When a file is declared <code>public</code>, you are indicating that the file should generally be accessible to others. For example, when using the S3 driver, you may retrieve URLs for <code>public</code> files.</p>
+<p>You can set the visibility when setting the file via the <code>put</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">Storage::put(<span class="string">'file.jpg'</span>, $contents, <span class="string">'public'</span>);</div></pre></td></tr></table></figure></p>
+<p>If the file has already been stored, its visibility can be retrieved and set via the <code>getVisibility</code> and <code>setVisibility</code> methods:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$visibility = Storage::getVisibility(<span class="string">'file.jpg'</span>);</div><div class="line"></div><div class="line">Storage::setVisibility(<span class="string">'file.jpg'</span>, <span class="string">'public'</span>)</div></pre></td></tr></table></figure></p>
+<p><a name="deleting-files"></a></p>
+<h2 id="Deleting-Files"><a href="#Deleting-Files" class="headerlink" title="Deleting Files"></a>Deleting Files</h2><p>The <code>delete</code> method accepts a single filename or an array of files to remove from the disk:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">Storage::delete(<span class="string">'file.jpg'</span>);</div><div class="line"></div><div class="line">Storage::delete([<span class="string">'file1.jpg'</span>, <span class="string">'file2.jpg'</span>]);</div></pre></td></tr></table></figure></p>
+<p><a name="directories"></a></p>
+<h2 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h2><h4 id="Get-All-Files-Within-A-Directory"><a href="#Get-All-Files-Within-A-Directory" class="headerlink" title="Get All Files Within A Directory"></a>Get All Files Within A Directory</h4><p>The <code>files</code> method returns an array of all of the files in a given directory. If you would like to retrieve a list of all files within a given directory including all sub-directories, you may use the <code>allFiles</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"></div><div class="line">$files = Storage::files($directory);</div><div class="line"></div><div class="line">$files = Storage::allFiles($directory);</div></pre></td></tr></table></figure></p>
+<h4 id="Get-All-Directories-Within-A-Directory"><a href="#Get-All-Directories-Within-A-Directory" class="headerlink" title="Get All Directories Within A Directory"></a>Get All Directories Within A Directory</h4><p>The <code>directories</code> method returns an array of all the directories within a given directory. Additionally, you may use the <code>allDirectories</code> method to get a list of all directories within a given directory and all of its sub-directories:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$directories = Storage::directories($directory);</div><div class="line"></div><div class="line"><span class="comment">// Recursive...</span></div><div class="line">$directories = Storage::allDirectories($directory);</div></pre></td></tr></table></figure></p>
+<h4 id="Create-A-Directory"><a href="#Create-A-Directory" class="headerlink" title="Create A Directory"></a>Create A Directory</h4><p>The <code>makeDirectory</code> method will create the given directory, including any needed sub-directories:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::makeDirectory($directory);</div></pre></td></tr></table></figure></p>
+<h4 id="Delete-A-Directory"><a href="#Delete-A-Directory" class="headerlink" title="Delete A Directory"></a>Delete A Directory</h4><p>Finally, the <code>deleteDirectory</code> may be used to remove a directory and all of its files:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Storage::deleteDirectory($directory);</div></pre></td></tr></table></figure></p>
+<p><a name="custom-filesystems"></a></p>
+<h2 id="Custom-Filesystems"><a href="#Custom-Filesystems" class="headerlink" title="Custom Filesystems"></a>Custom Filesystems</h2><p>Laravel’s Flysystem integration provides drivers for several “drivers” out of the box; however, Flysystem is not limited to these and has adapters for many other storage systems. You can create a custom driver if you want to use one of these additional adapters in your Laravel application.</p>
+<p>In order to set up the custom filesystem you will need a Flysystem adapter. Let’s add a community maintained Dropbox adapter to our project:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">composer <span class="keyword">require</span> spatie/flysystem-dropbox</div></pre></td></tr></table></figure></p>
+<p>Next, you should create a <a href="/mk/laravel/providers.html">service provider</a> such as <code>DropboxServiceProvider</code>. In the provider’s <code>boot</code> method, you may use the <code>Storage</code> facade’s <code>extend</code> method to define the custom driver:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Storage</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Filesystem</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Spatie</span>\<span class="title">Dropbox</span>\<span class="title">Client</span> <span class="title">as</span> <span class="title">DropboxClient</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Spatie</span>\<span class="title">FlysystemDropbox</span>\<span class="title">DropboxAdapter</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DropboxServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Perform post-registration booting of services.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Storage::extend(<span class="string">'dropbox'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($app, $config)</span> </span>&#123;</div><div class="line">            $client = <span class="keyword">new</span> DropboxClient(</div><div class="line">                $config[<span class="string">'authorizationToken'</span>]</div><div class="line">            );</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Filesystem(<span class="keyword">new</span> DropboxAdapter($client));</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Register bindings in the container.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The first argument of the <code>extend</code> method is the name of the driver and the second is a Closure that receives the <code>$app</code> and <code>$config</code> variables. The resolver Closure must return an instance of <code>League\Flysystem\Filesystem</code>. The <code>$config</code> variable contains the values defined in <code>config/filesystems.php</code> for the specified disk.</p>
+<p>Once you have created the service provider to register the extension, you may use the <code>dropbox</code> driver in your <code>config/filesystems.php</code> configuration file.</p>
+
+    
+
+    
+
+    <div class="footer">
+
+   <a href="https://github.com/hellolaravel/hellolaravel.org/blob/master/src/mk/laravel/filesystem.md" target="_blank">
+        Edit this page on Github!
+</a>This site is maintained by:
+<a href="http://itnishi.com">Nishi IT Ltd.</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+        <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'v2'
+          docsearch({
+            appId: 'BH4D9OD16A',
+            apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+            indexName: 'vuejs',
+            inputSelector: selector,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+
+
+
+          }
+          })
+        })
+        </script>
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+    </body>
+</html>

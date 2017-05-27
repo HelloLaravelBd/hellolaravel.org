@@ -1,0 +1,1860 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTTP Tests — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="HTTP Tests — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="HTTP Tests — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-91320539-2', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="https://itnishi.com" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="/support-vuejs">
+            Touch Our Service
+        </a>
+        <h2>
+            Laravel 5.4
+            
+                <!--<select class="version-select">
+                    <option value="SELF" selected>2.0</option>
+                    <option value="v1">1.0</option>
+                    <option value="012">0.12</option>
+                    <option value="011">0.11</option>
+            </select>-->
+            
+        </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/http-tests.html" class="sidebar-link current">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/mk/laravel/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>HTTP Tests</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Laravel provides a very fluent API for making HTTP requests to your application and examining the output. For example, take a look at the test defined below:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">Tests</span>\<span class="title">Feature</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Tests</span>\<span class="title">TestCase</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">WithoutMiddleware</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">DatabaseMigrations</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">DatabaseTransactions</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * A basic test example.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testBasicTest</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $response = <span class="keyword">$this</span>-&gt;get(<span class="string">'/'</span>);</div><div class="line"></div><div class="line">        $response-&gt;assertStatus(<span class="number">200</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The <code>get</code> method makes a <code>GET</code> request into the application, while the <code>assertStatus</code> method asserts that the returned response should have the given HTTP status code. In addition to this simple assertion, Laravel also contains a variety of assertions for inspecting the response headers, content, JSON structure, and more.</p>
+<p><a name="session-and-authentication"></a></p>
+<h2 id="Session-Authentication"><a href="#Session-Authentication" class="headerlink" title="Session / Authentication"></a>Session / Authentication</h2><p>Laravel provides several helpers for working with the session during HTTP testing. First, you may set the session data to a given array using the <code>withSession</code> method. This is useful for loading the session with data before issuing a request to your application:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testApplication</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $response = <span class="keyword">$this</span>-&gt;withSession([<span class="string">'foo'</span> =&gt; <span class="string">'bar'</span>])</div><div class="line">                         -&gt;get(<span class="string">'/'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Of course, one common use of the session is for maintaining state for the authenticated user. The <code>actingAs</code> helper method provides a simple way to authenticate a given user as the current user. For example, we may use a <a href="/mk/laravel/database-testing.html#writing-factories">model factory</a> to generate and authenticate a user:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">User</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testApplication</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $user = factory(User::class)-&gt;create();</div><div class="line"></div><div class="line">        $response = <span class="keyword">$this</span>-&gt;actingAs($user)</div><div class="line">                         -&gt;withSession([<span class="string">'foo'</span> =&gt; <span class="string">'bar'</span>])</div><div class="line">                         -&gt;get(<span class="string">'/'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>You may also specify which guard should be used to authenticate the given user by passing the guard name as the second argument to the <code>actingAs</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;actingAs($user, <span class="string">'api'</span>)</div></pre></td></tr></table></figure></p>
+<p><a name="testing-json-apis"></a></p>
+<h2 id="Testing-JSON-APIs"><a href="#Testing-JSON-APIs" class="headerlink" title="Testing JSON APIs"></a>Testing JSON APIs</h2><p>Laravel also provides several helpers for testing JSON APIs and their responses. For example, the <code>json</code>, <code>get</code>, <code>post</code>, <code>put</code>, <code>patch</code>, and <code>delete</code> methods may be used to issue requests with various HTTP verbs. You may also easily pass data and headers to these methods. To get started, let’s write a test to make a <code>POST</code> request to <code>/user</code> and assert that the expected data was returned:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * A basic functional test example.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testBasicExample</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $response = <span class="keyword">$this</span>-&gt;json(<span class="string">'POST'</span>, <span class="string">'/user'</span>, [<span class="string">'name'</span> =&gt; <span class="string">'Sally'</span>]);</div><div class="line"></div><div class="line">        $response</div><div class="line">            -&gt;assertStatus(<span class="number">200</span>)</div><div class="line">            -&gt;assertJson([</div><div class="line">                <span class="string">'created'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">            ]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} The <code>assertJson</code> method converts the response to an array and utilizes <code>PHPUnit::assertArraySubset</code> to verify that the given array exists within the JSON response returned by the application. So, if there are other properties in the JSON response, this test will still pass as long as the given fragment is present.</p>
+</blockquote>
+<p><a name="verifying-exact-match"></a></p>
+<h3 id="Verifying-Exact-Match"><a href="#Verifying-Exact-Match" class="headerlink" title="Verifying Exact Match"></a>Verifying Exact Match</h3><p>If you would like to verify that the given array is an <strong>exact</strong> match for the JSON returned by the application, you should use the <code>assertExactJson</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * A basic functional test example.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testBasicExample</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $response = <span class="keyword">$this</span>-&gt;json(<span class="string">'POST'</span>, <span class="string">'/user'</span>, [<span class="string">'name'</span> =&gt; <span class="string">'Sally'</span>]);</div><div class="line"></div><div class="line">        $response</div><div class="line">            -&gt;assertStatus(<span class="number">200</span>)</div><div class="line">            -&gt;assertExactJson([</div><div class="line">                <span class="string">'created'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">            ]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="testing-file-uploads"></a></p>
+<h2 id="Testing-File-Uploads"><a href="#Testing-File-Uploads" class="headerlink" title="Testing File Uploads"></a>Testing File Uploads</h2><p>The <code>Illuminate\Http\UploadedFile</code> class provides a <code>fake</code> method which may be used to generate dummy files or images for testing. This, combined with the <code>Storage</code> facade’s <code>fake</code> method greatly simplifies the testing of file uploads. For example, you may combine these two features to easily test an avatar upload form:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">Tests</span>\<span class="title">Feature</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Tests</span>\<span class="title">TestCase</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">UploadedFile</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Storage</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">WithoutMiddleware</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">DatabaseMigrations</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">DatabaseTransactions</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testAvatarUpload</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Storage::fake(<span class="string">'avatars'</span>);</div><div class="line"></div><div class="line">        $response = <span class="keyword">$this</span>-&gt;json(<span class="string">'POST'</span>, <span class="string">'/avatar'</span>, [</div><div class="line">            <span class="string">'avatar'</span> =&gt; UploadedFile::fake()-&gt;image(<span class="string">'avatar.jpg'</span>)</div><div class="line">        ]);</div><div class="line"></div><div class="line">        <span class="comment">// Assert the file was stored...</span></div><div class="line">        Storage::disk(<span class="string">'avatars'</span>)-&gt;assertExists(<span class="string">'avatar.jpg'</span>);</div><div class="line"></div><div class="line">        <span class="comment">// Assert a file does not exist...</span></div><div class="line">        Storage::disk(<span class="string">'avatars'</span>)-&gt;assertMissing(<span class="string">'missing.jpg'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Fake-File-Customization"><a href="#Fake-File-Customization" class="headerlink" title="Fake File Customization"></a>Fake File Customization</h4><p>When creating files using the <code>fake</code> method, you may specify the width, height, and size of the image in order to better test your validation rules:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">UploadedFile::fake()-&gt;image(<span class="string">'avatar.jpg'</span>, $width, $height)-&gt;size(<span class="number">100</span>);</div></pre></td></tr></table></figure></p>
+<p>In addition to creating images, you may create files of any other type using the <code>create</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">UploadedFile::fake()-&gt;create(<span class="string">'document.pdf'</span>, $sizeInKilobytes);</div></pre></td></tr></table></figure></p>
+<p><a name="available-assertions"></a></p>
+<h2 id="Available-Assertions"><a href="#Available-Assertions" class="headerlink" title="Available Assertions"></a>Available Assertions</h2><p>Laravel provides a variety of custom assertion methods for your <a href="https://phpunit.de/" target="_blank" rel="external">PHPUnit</a> tests. These assertions may be accessed on the response that is returned from the <code>json</code>, <code>get</code>, <code>post</code>, <code>put</code>, and <code>delete</code> test methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$response-&gt;assertStatus($code);</code></td>
+<td>Assert that the response has a given code.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertRedirect($uri);</code></td>
+<td>Assert that the response is a redirect to a given URI.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertHeader($headerName, $value = null);</code></td>
+<td>Assert that the given header is present on the response.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertCookie($cookieName, $value = null);</code></td>
+<td>Assert that the response contains the given cookie.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertPlainCookie($cookieName, $value = null);</code></td>
+<td>Assert that the response contains the given cookie (unencrypted).</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertSessionHas($key, $value = null);</code></td>
+<td>Assert that the session contains the given piece of data.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertSessionHasErrors(array $keys);</code></td>
+<td>Assert that the session contains an error for the given field.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertSessionMissing($key);</code></td>
+<td>Assert that the session does not contain the given key.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertJson(array $data);</code></td>
+<td>Assert that the response contains the given JSON data.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertJsonFragment(array $data);</code></td>
+<td>Assert that the response contains the given JSON fragment.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertJsonMissing(array $data);</code></td>
+<td>Assert that the response does not contain the given JSON fragment.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertExactJson(array $data);</code></td>
+<td>Assert that the response contains an exact match of the given JSON data.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertJsonStructure(array $structure);</code></td>
+<td>Assert that the response has a given JSON structure.</td>
+</tr>
+<tr>
+<td><code>$response-&gt;assertViewHas($key, $value = null);</code></td>
+<td>Assert that the response view was given a piece of data.</td>
+</tr>
+</tbody>
+</table>
+
+    
+
+    
+
+    <div class="footer">
+
+   <a href="https://github.com/hellolaravel/hellolaravel.org/blob/master/src/mk/laravel/http-tests.md" target="_blank">
+        Edit this page on Github!
+</a>This site is maintained by:
+<a href="http://itnishi.com">Nishi IT Ltd.</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+        <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'v2'
+          docsearch({
+            appId: 'BH4D9OD16A',
+            apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+            indexName: 'vuejs',
+            inputSelector: selector,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+
+
+
+          }
+          })
+        })
+        </script>
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+    </body>
+</html>

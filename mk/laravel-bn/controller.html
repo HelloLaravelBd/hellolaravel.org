@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>কন্ট্রোলার -  Controller — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="কন্ট্রোলার -  Controller — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="কন্ট্রোলার -  Controller — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+        <script>window.PAGE_TYPE = "হ্যালো লারাভেল ৫ । ৪"</script>
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-91320539-2', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link current">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link current">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link current">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/mk/laravel-bn/" class="nav-link current">laravel Bangla</a></li>
+
+<li><a href="/mk/tutorial/" class="nav-link current">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link current">Packges</a></li>
+
+
+<!--<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Packages</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">Templates</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Jobs</a></li>
+    </ul></li>
+    <li><h4>Core Plugins</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>Resource Lists</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Official Repos</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+-->
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li>
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="https://itnishi.com" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="/support-vuejs">
+            Touch Our Service
+        </a>
+        <h2>
+            হ্যালো লারাভেল ৫ । ৪
+            
+                <!--<select class="version-select">
+                    <option value="SELF" selected>2.0</option>
+                    <option value="v1">1.0</option>
+                    <option value="012">0.12</option>
+                    <option value="011">0.11</option>
+            </select>-->
+            
+        </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/index.html" class="sidebar-link">লারাভেল আড্ডা</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/structure.html" class="sidebar-link">প্রধান কাঠামো বিন্যাস</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/frontend .html" class="sidebar-link">থিম / ফ্রন্ট এণ্ড সেটআপ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/database.html" class="sidebar-link">ডাটাবেস আলাপ - (Database)</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/relationships.html" class="sidebar-link">রিলেশনশিপ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/controller.html" class="sidebar-link current">কন্ট্রোলার -  Controller</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/routing.html" class="sidebar-link">রাউটিং - Routing</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/collections.html" class="sidebar-link">কালেকশনস - Collections</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/eloquent.html" class="sidebar-link">ইলোকোয়েন্ট  ও আর এম  (Eloquent ORM)</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/models.html" class="sidebar-link">Eloquent Model</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/filesystem.html" class="sidebar-link">ফাইল সিস্টেম / স্টোরেজ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/testing.html" class="sidebar-link">লারাভেল ডাস্ক -   Laravel Dusk</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/validations.html" class="sidebar-link">ভ্যালিডেশনস (Validations)</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/namespace.html" class="sidebar-link">নেমস্পেস - Namespace</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/laravel-bn/mvc.html" class="sidebar-link">MVC</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content হ্যালো লারাভেল ৫ । ৪ with-sidebar ">
+    
+      
+
+    
+    
+      <h1>কন্ট্রোলার -  Controller</h1>
+    
+    <h2 id="কন্ট্রোলার-Controller"><a href="#কন্ট্রোলার-Controller" class="headerlink" title="কন্ট্রোলার -  Controller"></a>কন্ট্রোলার -  Controller</h2><p>কন্ট্রোলার -  Controller হচ্ছে <a href="">MVC</a> এর অংশ ।  এখানে Controller নিয়ে কিছু কথাবার্তা চলবে -<br>Controller খুজে পাবেন <code>app/Http/Controllers</code> ডিরেক্টরি তে ।</p>
+<p>Controller কথা যেখানে  <code>CRUD</code> সেখানে থাকে । <code>CRUD</code> স্টাইল <code>Controller</code> পারলেই আপণী যেকোনো Controller পারবেন ।</p>
+<p><code>php artisan make:controller PhotoController --resource</code></p>
+<p>একই সাথে <a href="">Model</a> বানাতে চাইলে …</p>
+<p><code>php artisan make:controller PhotoController --resource --model=Photo</code></p>
+<h3 id="CRUD-পরিবার"><a href="#CRUD-পরিবার" class="headerlink" title="CRUD পরিবার"></a>CRUD পরিবার</h3><table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>URI</th>
+<th>Action</th>
+<th>Route Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/photos</code></td>
+<td>index</td>
+<td>photos.index</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/create</code></td>
+<td>create</td>
+<td>photos.create</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/photos</code></td>
+<td>store</td>
+<td>photos.store</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/{photo}</code></td>
+<td>show</td>
+<td>photos.show</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/{photo}/edit</code></td>
+<td>edit</td>
+<td>photos.edit</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td><code>/photos/{photo}</code></td>
+<td>update</td>
+<td>photos.update</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/photos/{photo}</code></td>
+<td>destroy</td>
+<td>photos.destroy</td>
+</tr>
+</tbody>
+</table>
+<p>php artisan make:controller PhotoController –resource কমান্ড করলে public function index ,create, store , edit , update , destroy তৈরি হবে ।  প্রথম কাজ হচ্ছে create , এখানে  ফর্ম  বানাবেন । দ্বিতীয় ধাপ store , এখানে ডাটার কাজ করবেন । এখানে ৩ তা কাজ করতে হবে ডাটা ভ্যালিডেট , স্টোর ডাটাবেস তারপর রিডিরেক্ট ।</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Post</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line"><span class="comment">// All code here . </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  $posts = Post::orderBy(<span class="string">'id'</span>, <span class="string">'desc'</span>)-&gt;paginate(<span class="number">10</span>);</div><div class="line">  <span class="keyword">return</span> view(<span class="string">'posts.index'</span>)-&gt;withPosts($posts);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $post = Post::find($id);</div><div class="line">        <span class="keyword">return</span> view(<span class="string">'posts.edit'</span>)-&gt;withPost($post);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// Validate the data</span></div><div class="line"></div><div class="line">    <span class="keyword">$this</span>-&gt;validate($request, [</div><div class="line">                <span class="string">'title'</span>         =&gt; <span class="string">'required|max:255'</span>,</div><div class="line">                <span class="string">'slug'</span>          =&gt; <span class="string">'required|alpha_dash|min:5|max:255|unique:posts,slug'</span>,</div><div class="line">                <span class="string">'category_id'</span>   =&gt; <span class="string">'required|integer'</span>,</div><div class="line">                <span class="string">'body'</span>          =&gt; <span class="string">'required'</span></div><div class="line">            ]);</div><div class="line"></div><div class="line">    <span class="comment">//store in the Database</span></div><div class="line"></div><div class="line">    $post = <span class="keyword">new</span> Post;</div><div class="line">    $post-&gt;title = $request-&gt;title;</div><div class="line">    $post-&gt;slug = $request-&gt;slug;</div><div class="line">    $post-&gt;category_id = $request-&gt;category_id;</div><div class="line">    $post-&gt;body = $request-&gt;body;</div><div class="line">    $post-&gt;save();</div><div class="line"></div><div class="line">    <span class="comment">// Redirect  to another page</span></div><div class="line">    <span class="keyword">return</span> view(<span class="string">'posts.show'</span>)-&gt;withPost($post);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">edit</span><span class="params">($id)</span></span></div><div class="line">    &#123;</div><div class="line">        $post = Post::find($id);</div><div class="line">        <span class="keyword">return</span> view(<span class="string">'posts.edit'</span>)-&gt;withPost($post);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(Request $request, $id)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// Validate the data</span></div><div class="line"></div><div class="line">    <span class="keyword">$this</span>-&gt;validate($request, [</div><div class="line">                <span class="string">'title'</span>         =&gt; <span class="string">'required|max:255'</span>,</div><div class="line">                <span class="string">'slug'</span>          =&gt; <span class="string">'required|alpha_dash|min:5|max:255|unique:posts,slug'</span>,</div><div class="line">                <span class="string">'category_id'</span>   =&gt; <span class="string">'required|integer'</span>,</div><div class="line">                <span class="string">'body'</span>          =&gt; <span class="string">'required'</span></div><div class="line">            ]);</div><div class="line"></div><div class="line">    <span class="comment">//store in the Database</span></div><div class="line"></div><div class="line">    $post = Post::find($id)</div><div class="line">    $post-&gt;title = $request-&gt;title;</div><div class="line">    $post-&gt;slug = $request-&gt;slug;</div><div class="line">    $post-&gt;category_id = $request-&gt;category_id;</div><div class="line">    $post-&gt;body = $request-&gt;body;</div><div class="line">    $post-&gt;save();</div><div class="line"></div><div class="line">    <span class="comment">// Redirect  to another page</span></div><div class="line">    <span class="keyword">return</span> view(<span class="string">'posts.show'</span>)-&gt;withPost($post);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">($id)</span></span></div><div class="line">&#123;</div><div class="line">    $post = Post::find($id);</div><div class="line">    $post-&gt;delete();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>edit হচ্ছে create এর অনুরপ , update ও store এর অনুরুপ ।</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<p>CRUD</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">C ( create) = create / store</div><div class="line">R ( Read) = index</div><div class="line">U ( Update) = edit / update</div><div class="line">D (Delete/Destroy) = destroy</div></pre></td></tr></table></figure>
+<p><a href="">Route</a> এর বিস্তারিত একটা আংশ থাকবে । এখানে resource প্রসঙ্গে একটু তুলে দরা হল</p>
+<p><code>Route::resource(&#39;photos&#39;, &#39;PhotoController&#39;);</code></p>
+<p>এই একটা দিয়ে সব এক্সেস হবে ।   যদি <code>resource Controller</code> সহ  অন্য Controller থাকেে  তাহলে  <code>Route::resource(&#39;photos&#39;, &#39;PhotoController&#39;);</code> এর পরে <a href="">Route</a> মেনে কাজ করতে হবে ।</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'photos/popular'</span>, <span class="string">'PhotoController@method'</span>);</div><div class="line"></div><div class="line">Route::resource(<span class="string">'photos'</span>, <span class="string">'PhotoController'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>শুধুমাত্র <code>index</code> , <code>show</code> এক্সেস করতে চাইলে only</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::resource(<span class="string">'photo'</span>, <span class="string">'PhotoController'</span>, [<span class="string">'only'</span> =&gt; [</div><div class="line">    <span class="string">'index'</span>, <span class="string">'show'</span></div><div class="line">]]);</div></pre></td></tr></table></figure>
+<p>একই ফলাফল এখানে except দিয়ে</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::resource(<span class="string">'photo'</span>, <span class="string">'PhotoController'</span>, [<span class="string">'except'</span> =&gt; [</div><div class="line">    <span class="string">'create'</span>, <span class="string">'store'</span>, <span class="string">'update'</span>, <span class="string">'destroy'</span></div><div class="line">]]);</div></pre></td></tr></table></figure>
+
+    
+
+    
+
+    <div class="footer">
+
+   <a href="https://github.com/hellolaravel/hellolaravel.org/blob/master/src/mk/laravel-bn/controller.md" target="_blank">
+        Edit this page on Github!
+</a>This site is maintained by:
+<a href="http://itnishi.com">Nishi IT Ltd.</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+        <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'v2'
+          docsearch({
+            appId: 'BH4D9OD16A',
+            apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+            indexName: 'vuejs',
+            inputSelector: selector,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+
+
+
+          }
+          })
+        })
+        </script>
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+    </body>
+</html>

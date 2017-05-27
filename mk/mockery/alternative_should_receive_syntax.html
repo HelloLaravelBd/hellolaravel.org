@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Hello Laravel</title>
+        <title>Alternative shouldReceive Syntax — Hello Laravel</title>
         <meta charset="utf-8">
         <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <meta property="og:type" content="article">
-        <meta property="og:title" content="hello-laravel">
+        <meta property="og:title" content="Alternative shouldReceive Syntax — hello-laravel">
         <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
         <meta property="og:image" content="https://hellolaravel.org//images/title.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="hello-laravel">
+        <meta name="twitter:title" content="Alternative shouldReceive Syntax — hello-laravel">
         <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
         <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
 
@@ -23,11 +23,11 @@
         <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <!-- main page styles -->
-        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/page.css">
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
-        <script>window.PAGE_TYPE = ""</script>
+        <script>window.PAGE_TYPE = "Mockery/Mockery"</script>
 
         <!-- ga -->
         <script>
@@ -40,7 +40,7 @@
           ga('send', 'pageview');
         </script>
     </head>
-    <body class="">        <div id="mobile-bar" class="top">
+    <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
             <a class="logo" href="/"></a>
         </div>
@@ -112,9 +112,12 @@
 </div>
 
         
-            <div class="sidebar">
-  <ul class="main-menu">
-    <li>
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
  <form id="search-form">
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
@@ -172,147 +175,123 @@
   <span class="new-label">NEW!</span>
 </li>
 
-  </ul>
-</div>
-
-<div id="hero">
-  <div class="inner">
-    <div class="left">
-
-      <img src="/images/logog.gif"  class="hero-logo  animated  bounce" style="visibility: visible; animation-delay: 0.4s; animation-name: rollIn;">
-    </div><div class="right">
-
-      <h1>
-        Now Time For Laravel
-      </h1>
-      <h2>With<span> Hello Laravel </span>.....</h2>
-      <p>
-
-        <a class="button " href="/mk/laravel/installation.html">Let's Start</a>
-        <a class="button white " href="https://github.com/hellolaravelbd" target="_blank">GITHUB</a>
-
-      </p>
-    </div>
-  </div>
-</div>
-
-<div id="highlights">
-
-<div class="inner">
-    <div class="point">
-      <h2>Bangla Documentation</h2>
-      <p> বাংলাদেশ</p>
-        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/Bangladesh.png" alt="">
-    </div>
-
-    <div class="point">
-      <h2>Tutorials</h2>
-      <p><img src="https://cdn4.iconfinder.com/data/icons/sales-reports/512/pie_chart_presentation-512.png" width="120" alt=""></p>
-
-    </div>
-
-    <div class="point">
-   <h2>Packages/Projects</h2>
-      <p>
-        <a href="https://www.github.com/laravel24"><img  src="https://cdn4.iconfinder.com/data/icons/box-and-crates-icons/100/16-512.png" width="120" alt=""></a>
-</p>
-
-
-
-    </div>
-
-  </div>
-  </div>
-
-
-<div id="sponsors">
-  <div class="inner">
-    <h1>High Thinking With Love</h1>
-    <a href="https://itnishi.com/" target="_blank" style="width: 250px">
-  <img style="width: 250px" src="/images/nishi_it.png">
-</a>
-<a href="https://themeour.com/" target="_blank" style="width: 180px">
-  <img style="width: 180px" src="/images/stdlib.png">
-</a>
-
-<br>
-<h2>Awesome Code with @code4mk</h2>
-
-
-<a href="https://laravel.com/" target="_blank">
-  <img src="/images/laravel.png">
-</a>
-<a href="https://laravelcollective.com/" target="_blank" style="width:120px;top:-2px">
-  <img src="/images/lara-collective.png" style="width:120px">
-</a>
-<a href="https://vue.org" target="_blank" style="top:-1px">
-  <img src="/images/vue-logo2.png">
-</a>
-<a href="https://angular.io/" target="_blank">
-  <img src="/images/angular.png">
-</a>
-<a href="https://atom.io" target="_blank">
-  <img src="/images/atom.png">
-</a>
-<a href="https://github.com/" target="_blank" style="top:-2px">
-  <img src="/images/github-logo.png">
-</a>
-<a href="http://algolia.com/" target="_blank">
-  <img src="/images/algolia-logo.png">
-</a>
-<a href="https://disqus.com/" target="_blank" style="width:80px;top:-2px">
-  <img src="/images/disqus.png" style="width:80px">
-</a>
-
-<a href="http://htmlreference.io/" target="_blank" style="width:140px">
-  <img src="/images/html-reference.png" style="width:140px">
-</a>
-<a href="http://cssreference.io/" target="_blank" style="width:140px;top:4px">
-  <img src="/images/css-reference-logo.png" style="width:140px">
-</a>
-
-<a href="http://bulma.io/" target="_blank" style="width:115px">
-  <img src="/images/bulma-logo.png" style="width:115px">
-</a>
-
-<a href="https://www.youtube.com/channel/UCYTlP2ny7GFTlo-SU7iHXdA" target="_blank" style="width:120px;top:1px">
-  <img src="/images/nishi-institute.png" style="width:120px">
-</a>
-
-    <br>
-
-    <br>
-    <a class="become-sponsor button white" href="/house/">House</a>
-  </div>
-</div>
-
-
-<div id="footer">
-
-    Copyright &copy; 2016-2017 <a href="https://twitter.com/nishidotcom" target="_blank">Nishi IT Ltd. </a>
-
-  <div class="my-social">
-    <ul>
-      <li><a href="https://facebook.com/hellolaravel"><img src="images/fb.svg" alt=""></a></li>
-
     </ul>
-  </div>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="https://itnishi.com" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="/support-vuejs">
+            Touch Our Service
+        </a>
+        <h2>
+            Mockery/Mockery
+            
+                <!--<select class="version-select">
+                    <option value="SELF" selected>2.0</option>
+                    <option value="v1">1.0</option>
+                    <option value="012">0.12</option>
+                    <option value="011">0.11</option>
+            </select>-->
+            
+        </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/alternative_should_receive_syntax.html" class="sidebar-link current">Alternative shouldReceive Syntax</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/index.html" class="sidebar-link">Mockery</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/argument_validation.html" class="sidebar-link">Argument Validation</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/creating_test_doubles.html" class="sidebar-link">Creating Test Doubles</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/demeter_chains.html" class="sidebar-link">Mocking Demeter Chains And Fluent Interfaces</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/expectations.html" class="sidebar-link">Expectation Declarations</a>
+                </li>
+            
+            
+        </ul>
+    </div>
 </div>
 
 
-<script>
-var topScrolled = false
-window.addEventListener('scroll', function () {
-  if (window.pageYOffset > 165 && !topScrolled) {
-    topScrolled = true
-    document.getElementById('mobile-bar').classList.remove('top')
-  } else if (window.pageYOffset <= 165 && topScrolled) {
-    topScrolled = false
-    document.getElementById('mobile-bar').classList.add('top')
-  }
-})
-</script>
+<div class="content Mockery/Mockery with-sidebar ">
+    
+      
 
+    
+    
+      <h1>Alternative shouldReceive Syntax</h1>
+    
+    <hr>
+<p>As of Mockery 1.0.0, we support calling methods as we would call any PHP method,<br>and not as string arguments to Mockery <code>should*</code> methods.</p>
+<p>The two Mockery methods that enable this are <code>allows()</code> and <code>expects()</code>.</p>
+<h2 id="Allows"><a href="#Allows" class="headerlink" title="Allows"></a>Allows</h2><p>We use <code>allows()</code> when we create stubs for methods that return a predefined<br>return value, but for these method stubs we don’t care how many times, or if at<br>all, were they called.</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;allows([</div><div class="line">    <span class="string">'name_of_method_1'</span> =&gt; [<span class="string">'1st call return value'</span>, <span class="string">'2nd call return value'</span>],</div><div class="line">    <span class="string">'name_of_method_2'</span> =&gt; [<span class="string">'1st call return value'</span>, <span class="string">'2nd call return value'</span>],</div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>This is equivalent with the following <code>shouldReceive</code> syntax:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive([</div><div class="line">    <span class="string">'name_of_method_1'</span> =&gt; [<span class="string">'1st call return value'</span>, <span class="string">'2nd call return value'</span>],</div><div class="line">    <span class="string">'name_of_method_2'</span> =&gt; [<span class="string">'1st call return value'</span>, <span class="string">'2nd call return value'</span>],</div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>Note that with this format, we also tell Mockery that we don’t care about the<br>arguments to the stubbed methods.</p>
+<p>If we do care about the arguments, we would do it like so:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;allows()</div><div class="line">    -&gt;name_of_method_1($arg1)</div><div class="line">    -&gt;andReturn([<span class="string">'1st call return value'</span>, <span class="string">'2nd call return value'</span>]);</div></pre></td></tr></table></figure>
+<p>This is equivalent with the following <code>shouldReceive</code> syntax:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive(<span class="string">'name_of_method_1'</span>)</div><div class="line">    -&gt;with($arg1)</div><div class="line">    -&gt;andReturn([<span class="string">'1st call return value'</span>, <span class="string">'2nd call return value'</span>]);</div></pre></td></tr></table></figure>
+<h2 id="Expects"><a href="#Expects" class="headerlink" title="Expects"></a>Expects</h2><p>We use <code>expects()</code> when we want to verify that a particular method was called:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;expects()</div><div class="line">    -&gt;name_of_method_1($arg1)</div><div class="line">    -&gt;andReturn(<span class="string">'return value'</span>);</div></pre></td></tr></table></figure>
+<p>This is equivalent with the following <code>shouldReceive</code> syntax:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive(<span class="string">'name_of_method_1'</span>)</div><div class="line">    -&gt;once()</div><div class="line">    -&gt;with($arg1)</div><div class="line">    -&gt;andReturn(<span class="string">'return value'</span>);</div></pre></td></tr></table></figure>
+<p>By default <code>expects()</code> sets up an expectation that the method should be called<br>once and once only. If we expect more than one call to the method, we can change<br>that expectation:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;expects()</div><div class="line">    -&gt;name_of_method_1($arg1)</div><div class="line">    -&gt;twice()</div><div class="line">    -&gt;andReturn(<span class="string">'return value'</span>);</div></pre></td></tr></table></figure>
+
+    
+
+    
+
+    <div class="footer">
+
+   <a href="https://github.com/hellolaravel/hellolaravel.org/blob/master/src/mk/mockery/alternative_should_receive_syntax.md" target="_blank">
+        Edit this page on Github!
+</a>This site is maintained by:
+<a href="http://itnishi.com">Nishi IT Ltd.</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
         
 
         <!-- main custom script for sidebars, version selects etc. -->

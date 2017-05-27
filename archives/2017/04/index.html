@@ -23,7 +23,7 @@
         <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <!-- main page styles -->
-        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/page.css">
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
@@ -40,7 +40,7 @@
           ga('send', 'pageview');
         </script>
     </head>
-    <body class="">        <div id="mobile-bar" class="top">
+    <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
             <a class="logo" href="/"></a>
         </div>
@@ -112,7 +112,9 @@
 </div>
 
         
-            <div class="sidebar">
+            <div id="main" class="fix-sidebar">
+                
+                    <div class="sidebar">
   <ul class="main-menu">
     <li>
  <form id="search-form">
@@ -313,6 +315,9 @@ window.addEventListener('scroll', function () {
 })
 </script>
 
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
         
 
         <!-- main custom script for sidebars, version selects etc. -->
