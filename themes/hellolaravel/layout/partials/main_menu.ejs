@@ -1,0 +1,20 @@
+<li>
+ <form id="search-form">
+    <input type="text" id="search-query-<%- context %>" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="<%- url_for("/mk/laravel-bn/") %>" class="nav-link<%- page.path.match(/laravel-bn/) ? ' current' : '' %>">laravel Bangla</a></li>
+
+<li><a href="<%- url_for("/mk/tutorial/") %>" class="nav-link<%- page.path.match(/laravel-bn/) ? ' current' : '' %>">Tutorials</a></li>
+<li><a href="https://github.com/laravel24" class="nav-link<%- page.path.match(/laravel-bn/) ? ' current' : '' %>">Packges</a></li>
+
+
+<!--<%- partial('partials/ecosystem_dropdown') %>-->
+<%- partial('partials/official_site') %>
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>

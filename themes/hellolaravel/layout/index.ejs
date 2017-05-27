@@ -1,0 +1,93 @@
+<div class="sidebar">
+  <ul class="main-menu">
+    <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+  </ul>
+</div>
+
+<div id="hero">
+  <div class="inner">
+    <div class="left">
+
+      <img src="<%- url_for("/images/logog.gif") %>"  class="hero-logo  animated  bounce" style="visibility: visible; animation-delay: 0.4s; animation-name: rollIn;">
+    </div><div class="right">
+
+      <h1>
+        Now Time For Laravel
+      </h1>
+      <h2>With<span> Hello Laravel </span>.....</h2>
+      <p>
+
+        <a class="button " href="<%- url_for("mk/laravel/installation.html") %>">Let's Start</a>
+        <a class="button white " href="https://github.com/hellolaravelbd" target="_blank">GITHUB</a>
+
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="highlights">
+
+<div class="inner">
+    <div class="point">
+      <h2>Bangla Documentation</h2>
+      <p> বাংলাদেশ</p>
+        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/Bangladesh.png" alt="">
+    </div>
+
+    <div class="point">
+      <h2>Tutorials</h2>
+      <p><img src="https://cdn4.iconfinder.com/data/icons/sales-reports/512/pie_chart_presentation-512.png" width="120" alt=""></p>
+
+    </div>
+
+    <div class="point">
+   <h2>Packages/Projects</h2>
+      <p>
+        <a href="https://www.github.com/laravel24"><img  src="https://cdn4.iconfinder.com/data/icons/box-and-crates-icons/100/16-512.png" width="120" alt=""></a>
+</p>
+
+
+
+    </div>
+
+  </div>
+  </div>
+
+
+<div id="sponsors">
+  <div class="inner">
+    <h1>High Thinking With Love</h1>
+    <%- partial('partials/sponsors') %>
+    <br>
+
+    <br>
+    <a class="become-sponsor button white" href="<%- url_for("/house/") %>">House</a>
+  </div>
+</div>
+
+
+<div id="footer">
+
+    Copyright &copy; 2016-<%- new Date().getFullYear() %> <a href="https://twitter.com/nishidotcom" target="_blank">Nishi IT Ltd. </a>
+
+  <div class="my-social">
+    <ul>
+      <li><a href="https://facebook.com/hellolaravel"><img src="images/fb.svg" alt=""></a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+<script>
+var topScrolled = false
+window.addEventListener('scroll', function () {
+  if (window.pageYOffset > 165 && !topScrolled) {
+    topScrolled = true
+    document.getElementById('mobile-bar').classList.remove('top')
+  } else if (window.pageYOffset <= 165 && topScrolled) {
+    topScrolled = false
+    document.getElementById('mobile-bar').classList.add('top')
+  }
+})
+</script>
