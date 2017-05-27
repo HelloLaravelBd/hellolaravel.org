@@ -59,8 +59,7 @@
 <li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
 
 <li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
-<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
-
+<li><a href="https://github.com/laravel24">Packges</a></li>
 
 <!--<li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Packages</a><span class="arrow"></span>
@@ -126,8 +125,7 @@
 <li><a href="/mk/laravel-bn/" class="nav-link">laravel Bangla</a></li>
 
 <li><a href="/mk/tutorial/" class="nav-link">Tutorials</a></li>
-<li><a href="https://github.com/laravel24" class="nav-link">Packges</a></li>
-
+<li><a href="https://github.com/laravel24">Packges</a></li>
 
 <!--<li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Packages</a><span class="arrow"></span>
@@ -1018,7 +1016,7 @@
                     <!-- at least one recipe -->
                 
                 <li>
-                    <a href="/mk/laravel/packages.html" class="sidebar-link">Package Development</a>
+                    <a href="/mk/laravel/scheduling.html" class="sidebar-link">Task Scheduling</a>
                 </li>
             
                 
@@ -1041,7 +1039,7 @@
                     <!-- at least one recipe -->
                 
                 <li>
-                    <a href="/mk/laravel/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                    <a href="/mk/laravel/packages.html" class="sidebar-link">Package Development</a>
                 </li>
             
                 
@@ -1750,11 +1748,11 @@ Hello, @{{ name }}.
 <p><a name="control-structures"></a></p>
 <h2 id="Control-Structures"><a href="#Control-Structures" class="headerlink" title="Control Structures"></a>Control Structures</h2><p>In addition to template inheritance and displaying data, Blade also provides convenient shortcuts for common PHP control structures, such as conditional statements and loops. These shortcuts provide a very clean, terse way of working with PHP control structures, while also remaining familiar to their PHP counterparts.</p>
 <p><a name="if-statements"></a></p>
-<h3 id="If-Statements"><a href="#If-Statements" class="headerlink" title="If Statements"></a>If Statements</h3><p>You may construct <code>if</code> statements using the <code>@if</code>, <code>@elseif</code>, <code>@else</code>, and <code>@endif</code> directives. These directives function identically to their PHP counterparts:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">if</span> (count($records) === <span class="number">1</span>)</div><div class="line">    I have one record!</div><div class="line">@<span class="keyword">elseif</span> (count($records) &gt; <span class="number">1</span>)</div><div class="line">    I have multiple records!</div><div class="line">@<span class="keyword">else</span></div><div class="line">    I don<span class="string">'t have any records!</span></div><div class="line">@endif</div></pre></td></tr></table></figure></p>
+<h3 id="If-Statements"><a href="#If-Statements" class="headerlink" title="If Statements"></a>If Statements</h3><p>You may construct <code>if</code> statements using the <code>@if</code>, <code>@elseif</code>, <code>@else</code>, and <code>@endif</code> directives. These directives function identically to their PHP counterparts:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@if (count($records) === 1)</div><div class="line">    I have one record!</div><div class="line">@elseif (count($records) &gt; 1)</div><div class="line">    I have multiple records!</div><div class="line">@else</div><div class="line">    I don't have any records!</div><div class="line">@endif</div></pre></td></tr></table></figure></p>
 <p>For convenience, Blade also provides an <code>@unless</code> directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@unless (Auth::check())</div><div class="line">    You are not signed in.</div><div class="line">@endunless</div></pre></td></tr></table></figure></p>
 <p>In addition to the conditional directives already discussed, the <code>@isset</code> and <code>@empty</code> directives may be used as convenient shortcuts for their respective PHP functions:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">isset</span>($records)</div><div class="line">    <span class="comment">// $records is defined and is not null...</span></div><div class="line">@endisset</div><div class="line"></div><div class="line">@<span class="keyword">empty</span>($records)</div><div class="line">    <span class="comment">// $records is "empty"...</span></div><div class="line">@endempty</div></pre></td></tr></table></figure></p>
 <p><a name="loops"></a></p>
-<h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>In addition to conditional statements, Blade provides simple directives for working with PHP’s loop structures. Again, each of these directives functions identically to their PHP counterparts:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">10</span>; $i++)</div><div class="line">    The current value is &#123;&#123; $i &#125;&#125;</div><div class="line">@<span class="keyword">endfor</span></div><div class="line"></div><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    &lt;p&gt;This is user &#123;&#123; $user-&gt;id &#125;&#125;&lt;/p&gt;</div><div class="line">@<span class="keyword">endforeach</span></div><div class="line"></div><div class="line">@forelse ($users <span class="keyword">as</span> $user)</div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line">@<span class="keyword">empty</span></div><div class="line">    &lt;p&gt;No users&lt;/p&gt;</div><div class="line">@endforelse</div><div class="line"></div><div class="line">@<span class="keyword">while</span> (<span class="keyword">true</span>)</div><div class="line">    &lt;p&gt;I<span class="string">'m looping forever.&lt;/p&gt;</span></div><div class="line">@endwhile</div></pre></td></tr></table></figure></p>
+<h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>In addition to conditional statements, Blade provides simple directives for working with PHP’s loop structures. Again, each of these directives functions identically to their PHP counterparts:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@for ($i = 0; $i &lt; 10; $i++)</div><div class="line">    The current value is &#123;&#123; $i &#125;&#125;</div><div class="line">@endfor</div><div class="line"></div><div class="line">@foreach ($users as $user)</div><div class="line">    &lt;p&gt;This is user &#123;&#123; $user-&gt;id &#125;&#125;&lt;/p&gt;</div><div class="line">@endforeach</div><div class="line"></div><div class="line">@forelse ($users as $user)</div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line">@empty</div><div class="line">    &lt;p&gt;No users&lt;/p&gt;</div><div class="line">@endforelse</div><div class="line"></div><div class="line">@while (true)</div><div class="line">    &lt;p&gt;I'm looping forever.&lt;/p&gt;</div><div class="line">@endwhile</div></pre></td></tr></table></figure></p>
 <p class="tip"> When looping, you may use the <a href="#the-loop-variable">loop variable</a> to gain valuable information about the loop, such as whether you are in the first or last iteration through the loop.</p>
 
 <p>When using loops you may also end the loop or skip the current iteration:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    @<span class="keyword">if</span> ($user-&gt;type == <span class="number">1</span>)</div><div class="line">        @<span class="keyword">continue</span></div><div class="line">    @<span class="keyword">endif</span></div><div class="line"></div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line"></div><div class="line">    @<span class="keyword">if</span> ($user-&gt;number == <span class="number">5</span>)</div><div class="line">        @<span class="keyword">break</span></div><div class="line">    @<span class="keyword">endif</span></div><div class="line">@<span class="keyword">endforeach</span></div></pre></td></tr></table></figure></p>
@@ -1841,7 +1839,7 @@ Hello, @{{ name }}.
 
     <div class="footer">
 
-   <a href="https://github.com/hellolaravel/hellolaravel.org/blob/master/src/mk/laravel/blade.md" target="_blank">
+   <a href="https://github.com/hellolaravelbd/hellolaravel.org/blob/master/src/mk/laravel/blade.md" target="_blank">
         Edit this page on Github!
 </a>This site is maintained by:
 <a href="http://itnishi.com">Nishi IT Ltd.</a>
@@ -1872,9 +1870,9 @@ Hello, @{{ name }}.
           var match = window.location.pathname.match(/^\/(v\d+)/)
           var version = match ? match[1] : 'v2'
           docsearch({
-            appId: 'BH4D9OD16A',
-            apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
-            indexName: 'vuejs',
+            appId: '',
+            apiKey: '',
+            indexName: '',
             inputSelector: selector,
             algoliaOptions: { facetFilters: ["version:" + version]
 
