@@ -69,6 +69,4 @@ order: 2
 আপনার টার্মিনাল এ গিয়ে     `php artisan serve` ।  ব্রাউজার টাইপ করুন `http://localhost:8000`
 
 
-## Ready for More?
 
-We've just briefly introduced the most basic features of Vue.js core - the rest of this guide will cover them and other advanced features with much finer details, so make sure to read through it all!
