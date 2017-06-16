@@ -12,7 +12,8 @@ hellolaravel.org is a community . laravel documentation in bangla language.
 
 ### Network
 
-Medium - [https://www.medium.com/hello-laravel](@hellolaravel)
-Facebook - [https://www.facebook.com/hellolaravel](Hello Laravel)
+Medium - [@hellolaravel](https://www.medium.com/hello-laravel)
+Facebook -[Hello Laravel](https://www.facebook.com/hellolaravel)
+
 Gmail - hellolaravel@gmail.com
-website - https://www.hellolaravel.org
+Website - https://www.hellolaravel.org
