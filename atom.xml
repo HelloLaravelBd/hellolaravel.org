@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hellolaravel.org/"/>
-  <updated>2017-07-13T20:16:50.229Z</updated>
+  <updated>2017-07-13T20:16:50.230Z</updated>
   <id>https://hellolaravel.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://hellolaravel.org/2017/10/23/laracast/"/>
     <id>https://hellolaravel.org/2017/10/23/laracast/</id>
     <published>2017-10-23T13:37:28.000Z</published>
-    <updated>2017-07-13T20:16:50.229Z</updated>
+    <updated>2017-07-13T20:16:50.230Z</updated>
     
     <content type="html"><![CDATA[<h2 id="কন্ট্রোলার-Controller"><a href="#কন্ট্রোলার-Controller" class="headerlink" title="কন্ট্রোলার -  Controller"></a>কন্ট্রোলার -  Controller</h2><p>কন্ট্রোলার -  Controller হচ্ছে <a href="">MVC</a> এর অংশ ।  এখানে Controller নিয়ে কিছু কথাবার্তা চলবে -<br>Controller খুজে পাবেন <code>app/Http/Controllers</code> ডিরেক্টরি তে ।</p>
 <p>Controller কথা যেখানে  <code>CRUD</code> সেখানে থাকে । <code>CRUD</code> স্টাইল <code>Controller</code> পারলেই আপণী যেকোনো Controller পারবেন ।</p>
@@ -127,7 +127,7 @@
     <link href="https://hellolaravel.org/2017/09/23/news/"/>
     <id>https://hellolaravel.org/2017/09/23/news/</id>
     <published>2017-09-23T13:37:28.000Z</published>
-    <updated>2017-07-15T17:13:07.906Z</updated>
+    <updated>2017-07-15T17:13:07.907Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Blade is the simple, yet powerful templating engine provided with Laravel. Unlike other popular PHP templating engines, Blade does not restrict you from using plain PHP code in your views. In fact, all Blade views are compiled into plain PHP code and cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade view files use the <code>.blade.php</code> file extension and are typically stored in the <code>resources/views</code> directory.</p>
 <p><a name="template-inheritance"></a></p>
@@ -169,11 +169,11 @@ Hello, @{{ name }}.
 <p><a name="control-structures"></a></p>
 <h2 id="Control-Structures"><a href="#Control-Structures" class="headerlink" title="Control Structures"></a>Control Structures</h2><p>In addition to template inheritance and displaying data, Blade also provides convenient shortcuts for common PHP control structures, such as conditional statements and loops. These shortcuts provide a very clean, terse way of working with PHP control structures, while also remaining familiar to their PHP counterparts.</p>
 <p><a name="if-statements"></a></p>
-<h3 id="If-Statements"><a href="#If-Statements" class="headerlink" title="If Statements"></a>If Statements</h3><p>You may construct <code>if</code> statements using the <code>@if</code>, <code>@elseif</code>, <code>@else</code>, and <code>@endif</code> directives. These directives function identically to their PHP counterparts:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">if</span> (count($records) === <span class="number">1</span>)</div><div class="line">    I have one record!</div><div class="line">@<span class="keyword">elseif</span> (count($records) &gt; <span class="number">1</span>)</div><div class="line">    I have multiple records!</div><div class="line">@<span class="keyword">else</span></div><div class="line">    I don<span class="string">'t have any records!</span></div><div class="line">@endif</div></pre></td></tr></table></figure></p>
+<h3 id="If-Statements"><a href="#If-Statements" class="headerlink" title="If Statements"></a>If Statements</h3><p>You may construct <code>if</code> statements using the <code>@if</code>, <code>@elseif</code>, <code>@else</code>, and <code>@endif</code> directives. These directives function identically to their PHP counterparts:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@if (count($records) === 1)</div><div class="line">    I have one record!</div><div class="line">@elseif (count($records) &gt; 1)</div><div class="line">    I have multiple records!</div><div class="line">@else</div><div class="line">    I don't have any records!</div><div class="line">@endif</div></pre></td></tr></table></figure></p>
 <p>For convenience, Blade also provides an <code>@unless</code> directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@unless (Auth::check())</div><div class="line">    You are not signed in.</div><div class="line">@endunless</div></pre></td></tr></table></figure></p>
 <p>In addition to the conditional directives already discussed, the <code>@isset</code> and <code>@empty</code> directives may be used as convenient shortcuts for their respective PHP functions:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">isset</span>($records)</div><div class="line">    <span class="comment">// $records is defined and is not null...</span></div><div class="line">@endisset</div><div class="line"></div><div class="line">@<span class="keyword">empty</span>($records)</div><div class="line">    <span class="comment">// $records is "empty"...</span></div><div class="line">@endempty</div></pre></td></tr></table></figure></p>
 <p><a name="loops"></a></p>
-<h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>In addition to conditional statements, Blade provides simple directives for working with PHP’s loop structures. Again, each of these directives functions identically to their PHP counterparts:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">10</span>; $i++)</div><div class="line">    The current value is &#123;&#123; $i &#125;&#125;</div><div class="line">@<span class="keyword">endfor</span></div><div class="line"></div><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    &lt;p&gt;This is user &#123;&#123; $user-&gt;id &#125;&#125;&lt;/p&gt;</div><div class="line">@<span class="keyword">endforeach</span></div><div class="line"></div><div class="line">@forelse ($users <span class="keyword">as</span> $user)</div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line">@<span class="keyword">empty</span></div><div class="line">    &lt;p&gt;No users&lt;/p&gt;</div><div class="line">@endforelse</div><div class="line"></div><div class="line">@<span class="keyword">while</span> (<span class="keyword">true</span>)</div><div class="line">    &lt;p&gt;I<span class="string">'m looping forever.&lt;/p&gt;</span></div><div class="line">@endwhile</div></pre></td></tr></table></figure></p>
+<h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>In addition to conditional statements, Blade provides simple directives for working with PHP’s loop structures. Again, each of these directives functions identically to their PHP counterparts:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@for ($i = 0; $i &lt; 10; $i++)</div><div class="line">    The current value is &#123;&#123; $i &#125;&#125;</div><div class="line">@endfor</div><div class="line"></div><div class="line">@foreach ($users as $user)</div><div class="line">    &lt;p&gt;This is user &#123;&#123; $user-&gt;id &#125;&#125;&lt;/p&gt;</div><div class="line">@endforeach</div><div class="line"></div><div class="line">@forelse ($users as $user)</div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line">@empty</div><div class="line">    &lt;p&gt;No users&lt;/p&gt;</div><div class="line">@endforelse</div><div class="line"></div><div class="line">@while (true)</div><div class="line">    &lt;p&gt;I'm looping forever.&lt;/p&gt;</div><div class="line">@endwhile</div></pre></td></tr></table></figure></p>
 <p class="tip"> When looping, you may use the <a href="#the-loop-variable">loop variable</a> to gain valuable information about the loop, such as whether you are in the first or last iteration through the loop.</p>
 
 <p>When using loops you may also end the loop or skip the current iteration:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    @<span class="keyword">if</span> ($user-&gt;type == <span class="number">1</span>)</div><div class="line">        @<span class="keyword">continue</span></div><div class="line">    @<span class="keyword">endif</span></div><div class="line"></div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line"></div><div class="line">    @<span class="keyword">if</span> ($user-&gt;number == <span class="number">5</span>)</div><div class="line">        @<span class="keyword">break</span></div><div class="line">    @<span class="keyword">endif</span></div><div class="line">@<span class="keyword">endforeach</span></div></pre></td></tr></table></figure></p>
@@ -275,7 +275,7 @@ Hello, @{{ name }}.
     <link href="https://hellolaravel.org/2017/07/14/algolia/"/>
     <id>https://hellolaravel.org/2017/07/14/algolia/</id>
     <published>2017-07-14T06:44:38.000Z</published>
-    <updated>2017-07-14T06:45:18.726Z</updated>
+    <updated>2017-07-14T06:45:18.727Z</updated>
     
     <summary type="html">
     
@@ -291,7 +291,7 @@ Hello, @{{ name }}.
     <link href="https://hellolaravel.org/2017/05/23/yah/"/>
     <id>https://hellolaravel.org/2017/05/23/yah/</id>
     <published>2017-05-23T13:37:28.000Z</published>
-    <updated>2017-07-13T15:05:30.531Z</updated>
+    <updated>2017-07-13T15:05:30.532Z</updated>
     
     <summary type="html">
     
@@ -359,7 +359,7 @@ Hello, @{{ name }}.
     <link href="https://hellolaravel.org/2017/05/20/discussion/"/>
     <id>https://hellolaravel.org/2017/05/20/discussion/</id>
     <published>2017-05-20T12:45:00.000Z</published>
-    <updated>2017-05-12T22:37:11.482Z</updated>
+    <updated>2017-05-12T22:37:11.483Z</updated>
     
     <content type="html"><![CDATA[<p>Discus Here…throw your questions…</p>
 ]]></content>
@@ -415,7 +415,7 @@ Hello, @{{ name }}.
     <link href="https://hellolaravel.org/2016/11/23/midnight/"/>
     <id>https://hellolaravel.org/2016/11/23/midnight/</id>
     <published>2016-11-23T13:37:28.000Z</published>
-    <updated>2017-07-14T08:23:59.514Z</updated>
+    <updated>2017-07-14T08:23:59.515Z</updated>
     
     <content type="html"><![CDATA[<p>কন্ট্রোলার -  Controller হচ্ছে <a href="">MVC</a> এর অংশ ।  এখানে Controller নিয়ে কিছু কথাবার্তা চলবে -<br>Controller খুজে পাবেন <code>app/Http/Controllers</code> ডিরেক্টরি তে ।</p>
 <p>Controller কথা যেখানে  <code>CRUD</code> সেখানে থাকে । <code>CRUD</code> স্টাইল <code>Controller</code> পারলেই আপণী যেকোনো Controller পারবেন ।</p>
@@ -696,7 +696,7 @@ Hello, @{{ name }}.
     <link href="https://hellolaravel.org/2015/10/26/1.0.0-release/"/>
     <id>https://hellolaravel.org/2015/10/26/1.0.0-release/</id>
     <published>2015-10-26T04:00:00.000Z</published>
-    <updated>2017-04-19T21:26:50.000Z</updated>
+    <updated>2017-09-10T14:42:30.766Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Hi HN! If you are not familiar with Vue.js, you might want to read this <a href="http://blog.evanyou.me/2015/10/25/vuejs-re-introduction/" target="_blank" rel="external">blog post</a> for a higher level overview.</p>

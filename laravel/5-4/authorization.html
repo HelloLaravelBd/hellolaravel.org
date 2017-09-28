@@ -76,8 +76,8 @@
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Version</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
-      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
 
     </ul>
 
@@ -127,8 +127,8 @@
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Version</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
-      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
 
     </ul>
 
@@ -990,7 +990,7 @@
                     <!-- at least one recipe -->
                 
                 <li>
-                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
                 </li>
             
                 
@@ -1013,7 +1013,7 @@
                     <!-- at least one recipe -->
                 
                 <li>
-                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
                 </li>
             
                 
@@ -1734,9 +1734,9 @@
 <h4 id="Actions-That-Don’t-Require-Models-2"><a href="#Actions-That-Don’t-Require-Models-2" class="headerlink" title="Actions That Don’t Require Models"></a>Actions That Don’t Require Models</h4><p>As previously discussed, some actions like <code>create</code> may not require a model instance. In these situations, you may pass a class name to the <code>authorize</code> method. The class name will be used to determine which policy to use when authorizing the action:</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Create a new blog post.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  Request  $request</div><div class="line"> * <span class="doctag">@return</span> Response</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">(Request $request)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;authorize(<span class="string">'create'</span>, Post::class);</div><div class="line"></div><div class="line">    <span class="comment">// The current user can create blog posts...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a name="via-blade-templates"></a></p>
-<h3 id="Via-Blade-Templates"><a href="#Via-Blade-Templates" class="headerlink" title="Via Blade Templates"></a>Via Blade Templates</h3><p>When writing Blade templates, you may wish to display a portion of the page only if the user is authorized to perform a given action. For example, you may wish to show an update form for a blog post only if the user can actually update the post. In this situation, you may use the <code>@can</code> and <code>@cannot</code> family of directives:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@can(<span class="string">'update'</span>, $post)</div><div class="line">    &lt;!-- The Current User Can Update The Post --&gt;</div><div class="line">@elsecan(<span class="string">'create'</span>, $post)</div><div class="line">    &lt;!-- The Current User Can Create <span class="keyword">New</span> Post --&gt;</div><div class="line">@endcan</div><div class="line"></div><div class="line">@cannot(<span class="string">'update'</span>, $post)</div><div class="line">    &lt;!-- The Current User Can<span class="string">'t Update The Post --&gt;</span></div><div class="line">@elsecannot('create<span class="string">', $post)</span></div><div class="line">    &lt;!-- The Current User Can't Create <span class="keyword">New</span> Post --&gt;</div><div class="line">@endcannot</div></pre></td></tr></table></figure></p>
-<p>These directives are convenient shortcuts for writing <code>@if</code> and <code>@unless</code> statements. The <code>@can</code> and <code>@cannot</code> statements above respectively translate to the following statements:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">if</span> (Auth::user()-&gt;can(<span class="string">'update'</span>, $post))</div><div class="line">    &lt;!-- The Current User Can Update The Post --&gt;</div><div class="line">@<span class="keyword">endif</span></div><div class="line"></div><div class="line">@unless (Auth::user()-&gt;can(<span class="string">'update'</span>, $post))</div><div class="line">    &lt;!-- The Current User Can<span class="string">'t Update The Post --&gt;</span></div><div class="line">@endunless</div></pre></td></tr></table></figure></p>
-<h4 id="Actions-That-Don’t-Require-Models-3"><a href="#Actions-That-Don’t-Require-Models-3" class="headerlink" title="Actions That Don’t Require Models"></a>Actions That Don’t Require Models</h4><p>Like most of the other authorization methods, you may pass a class name to the <code>@can</code> and <code>@cannot</code> directives if the action does not require a model instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@can(<span class="string">'create'</span>, App\Post::class)</div><div class="line">    &lt;!-- The Current User Can Create Posts --&gt;</div><div class="line">@endcan</div><div class="line"></div><div class="line">@cannot(<span class="string">'create'</span>, App\Post::class)</div><div class="line">    &lt;!-- The Current User Can<span class="string">'t Create Posts --&gt;</span></div><div class="line">@endcannot</div></pre></td></tr></table></figure></p>
+<h3 id="Via-Blade-Templates"><a href="#Via-Blade-Templates" class="headerlink" title="Via Blade Templates"></a>Via Blade Templates</h3><p>When writing Blade templates, you may wish to display a portion of the page only if the user is authorized to perform a given action. For example, you may wish to show an update form for a blog post only if the user can actually update the post. In this situation, you may use the <code>@can</code> and <code>@cannot</code> family of directives:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@can('update', $post)</div><div class="line">    &lt;!-- The Current User Can Update The Post --&gt;</div><div class="line">@elsecan('create', $post)</div><div class="line">    &lt;!-- The Current User Can Create New Post --&gt;</div><div class="line">@endcan</div><div class="line"></div><div class="line">@cannot('update', $post)</div><div class="line">    &lt;!-- The Current User Can't Update The Post --&gt;</div><div class="line">@elsecannot('create', $post)</div><div class="line">    &lt;!-- The Current User Can't Create New Post --&gt;</div><div class="line">@endcannot</div></pre></td></tr></table></figure></p>
+<p>These directives are convenient shortcuts for writing <code>@if</code> and <code>@unless</code> statements. The <code>@can</code> and <code>@cannot</code> statements above respectively translate to the following statements:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@if (Auth::user()-&gt;can('update', $post))</div><div class="line">    &lt;!-- The Current User Can Update The Post --&gt;</div><div class="line">@endif</div><div class="line"></div><div class="line">@unless (Auth::user()-&gt;can('update', $post))</div><div class="line">    &lt;!-- The Current User Can't Update The Post --&gt;</div><div class="line">@endunless</div></pre></td></tr></table></figure></p>
+<h4 id="Actions-That-Don’t-Require-Models-3"><a href="#Actions-That-Don’t-Require-Models-3" class="headerlink" title="Actions That Don’t Require Models"></a>Actions That Don’t Require Models</h4><p>Like most of the other authorization methods, you may pass a class name to the <code>@can</code> and <code>@cannot</code> directives if the action does not require a model instance:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@can('create', App\Post::class)</div><div class="line">    &lt;!-- The Current User Can Create Posts --&gt;</div><div class="line">@endcan</div><div class="line"></div><div class="line">@cannot('create', App\Post::class)</div><div class="line">    &lt;!-- The Current User Can't Create Posts --&gt;</div><div class="line">@endcannot</div></pre></td></tr></table></figure></p>
 
     
 
