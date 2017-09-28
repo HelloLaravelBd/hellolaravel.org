@@ -1,0 +1,15 @@
+.a
+  color #fff
+  background-color #28a745
+  padding 0.25em 0.4em
+  font-size 75%
+  font-weight bold
+  line-height 1
+  color #fff
+  text-align center
+  white-space nowrap
+  vertical-align baseline
+  border-radius 0.25rem
+  &:hover
+    color #fff
+    background-color #1e7e34

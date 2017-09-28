@@ -1,0 +1,91 @@
+
+.intro{
+  margin-left: 15px;
+}
+.intro ul li a:hover{
+  color: #9800a0;
+}
+.fb-page-emb{
+  margin-top: 20px;
+}
+.per-cat{
+  margin-left: 45px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+.per-cat ul li a{
+  color: #00a098;
+}
+.per-cat ul li a:hover {
+  color: #f4645f;
+
+
+}
+.l-g-i-mk{
+  border: 1px solid #00a098 !important;
+}
+
+.awe-footer{
+  height: 50px;
+  background: #9800a0;
+  background-color: #f5a6a6;
+  margin-top: 20px;
+  border: 4px solid #f4645f;
+}
+
+/* site-house*/
+.site-house{
+  width: 100%;
+  height: 400px;
+  background-color: #f9d2d2;
+  border-bottom: 4px solid #00a098;
+}
+.site-house h1{
+  text-align: center;
+  color: #9800a0;
+}
+.site-house .sh-1{
+  width: 33.33%;
+  height: 400px;
+  float: left;
+}
+.site-house .sh-2{
+  width: 33.33%;
+  height: 400px;
+  float: left;
+
+}
+.site-house .sh-3{
+  width: 33.33%;
+  height: 400px;
+  float: left;
+
+}
+.site-house .sh-li ul{
+  list-style: none;
+}
+.site-house .sh-li ul li {
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 29%;
+}
+.site-house .sh-li ul li a{
+  color: #9800a0;
+}
+#sponsors .codemk-url  a{
+  color:#00a098;
+  margin-top: -10px;
+  margin-left: -1px;
+}
+#sponsors .codemk-url  a:hover{
+  color:#f4645f;
+}
+#sponsors .codemk-url i{
+  color:#f4645f;
+}
+#footer .my-social{
+  margin-left: -60px !important;
+}
+#footer .my-social ul li a{
+  color: #00a098 !important;
+}

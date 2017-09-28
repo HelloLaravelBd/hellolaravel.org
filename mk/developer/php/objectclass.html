@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Classes and Objects — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Classes and Objects — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Classes and Objects — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "PHP"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link current">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
+      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://blog.hellolaravel.org" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link current">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
+      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://blog.hellolaravel.org" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                PHP
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/php/index.html" class="sidebar-link">Control Structures</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/index.html" class="sidebar-link">Control Structures</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/php/objectclass.html" class="sidebar-link current">Classes and Objects</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/objectclass.html" class="sidebar-link current">Classes and Objects</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/php/phpdoc.html" class="sidebar-link">phpDocumentor</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/phpdoc.html" class="sidebar-link">phpDocumentor</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/php/function.html" class="sidebar-link">Classes/Object Functions</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/function.html" class="sidebar-link">Classes/Object Functions</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/php/string.html" class="sidebar-link">String Functions</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/string.html" class="sidebar-link">String Functions</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content PHP with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Classes and Objects</h1>
+    
+    <ul>
+<li><a href="http://phpenthusiast.com/" target="_blank" rel="external">phpenthusiast</a></li>
+</ul>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><h3 id="Propertis"><a href="#Propertis" class="headerlink" title="Propertis"></a>Propertis</h3><h3 id="Class-constants"><a href="#Class-constants" class="headerlink" title="Class constants"></a>Class constants</h3><h3 id="Autoloading-Classes"><a href="#Autoloading-Classes" class="headerlink" title="Autoloading Classes"></a>Autoloading Classes</h3><h3 id="Constructor-And-Destructor"><a href="#Constructor-And-Destructor" class="headerlink" title="Constructor And Destructor"></a>Constructor And Destructor</h3><p>A constructor and a destructor are special functions which are automatically called when an object is created and destroyed. The constructor is the most useful of the two, especially because it allows you to send parameters along when creating a new object, which can then be used to initialize variables on the object. Here’s an example of a class with a simple constructor:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> $name = <span class="string">"No-name animal"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;name = $name;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$animal = <span class="keyword">new</span> Animal(<span class="string">"Bob the Dog"</span>);</div><div class="line"><span class="keyword">echo</span> $animal-&gt;name;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><code>Destructors</code><br>A destructor is called when the object is destroyed. In some programming languages, you have to manually dispose of objects you created, but in PHP, it’s handled by the Garbage Collector, which keeps an eye on your objects and automatically destroys them when they are no longer needed. Have a look at the following example, which is an extended version of our previous example:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> $name = <span class="string">"No-name animal"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"I'm alive!"</span>;    </div><div class="line">        <span class="keyword">$this</span>-&gt;name = $name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"I'm dead now :("</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$animal = <span class="keyword">new</span> Animal(<span class="string">"Bob"</span>);</div><div class="line"><span class="keyword">echo</span> <span class="string">"Name of the animal: "</span> . $animal-&gt;name;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Visibilty"><a href="#Visibilty" class="headerlink" title="Visibilty"></a>Visibilty</h3><p>The visibility of a property, a method or (as of PHP 7.1.0) a constant can be defined by prefixing the declaration with the keywords <code>public</code>, <code>private</code>  or <code>protected</code>.<br>Class</p>
+<ul>
+<li>members declared <code>public</code> can be accessed <code>everywhere</code>.</li>
+<li>Members declared as <code>private</code> may only be accessed by the class that <code>defines the member</code>.</li>
+<li><p>Members declared <code>protected</code> can be accessed only within the class <code>itself</code> and by <code>inheriting</code> classes.</p>
+</li>
+<li><p><code>public</code></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span> $abc;</div><div class="line"><span class="keyword">public</span> $xyz;</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">xyz</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">$objA = <span class="keyword">new</span> test();</div><div class="line"><span class="keyword">echo</span> $objA-&gt;abc;<span class="comment">//accessible from outside</span></div><div class="line">$objA-&gt;xyz();<span class="comment">//public method of the class test</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>private</code></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">Class</span> <span class="title">test</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span> $abc;</div><div class="line"><span class="keyword">private</span> $xyz;</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">pubDo</span><span class="params">($a)</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">echo</span> $a;</div><div class="line">&#125;</div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">privDo</span><span class="params">($b)</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">echo</span> $b;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">pubPrivDo</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">$this</span>-&gt;xyz = <span class="number">1</span>;</div><div class="line"><span class="keyword">$this</span>-&gt;privDo(<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">$objT = <span class="keyword">new</span> test();</div><div class="line">$objT-&gt;abc = <span class="number">3</span>;<span class="comment">//Works fine</span></div><div class="line">$objT-&gt;xyz = <span class="number">1</span>;<span class="comment">//Throw fatal error of visibility</span></div><div class="line">$objT-&gt;pubDo(<span class="string">"test"</span>);<span class="comment">//Print "test"</span></div><div class="line">$objT-&gt;privDo(<span class="number">1</span>);<span class="comment">//Fatal error of visibility</span></div><div class="line"><span class="comment">//Within this method private function privDo and variable xyz is called using $this variable.</span></div><div class="line">$objT-&gt;pubPrivDo();</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>protected</code></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">parent</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">protected</span> $pr;</div><div class="line"><span class="keyword">public</span> $a</div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">testParent</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">echo</span> this is test;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">child</span> <span class="keyword">extends</span> <span class="title">parent</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testChild</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">$this</span>-&gt;testParent(); <span class="comment">//will work because it</span></div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">$objParent = <span class="keyword">new</span> <span class="keyword">parent</span>();</div><div class="line">$objParent-&gt;testParent();<span class="comment">//Throw error</span></div><div class="line">$objChild = <span class="keyword">new</span> Child();</div><div class="line"><span class="comment">//work because test child will call test parent.</span></div><div class="line">$objChild-&gt;setChild();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Object-Inheritance"><a href="#Object-Inheritance" class="headerlink" title="Object Inheritance"></a>Object Inheritance</h3><p>One of the main advantages of object-oriented programming is the ability to reduce code duplication with inheritance. Code duplication occurs when a programmer writes the same code more than once, a problem that inheritance strives to solve. In inheritance, we have a parent class with its own methods and properties, and a child class (or classes) that can use the code from the parent. By using inheritance, we can create a reusable piece of code that we write only once in the parent class, and use again as much as we need in the child classes.</p>
+<p>In order to declare that one class <code>inherits</code> the code from another class, we use the <code>extends</code> keyword. Let’s see the general case:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</div><div class="line">  <span class="comment">// The parent’s class code</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</div><div class="line">  <span class="comment">// The  child can use the parent's class code</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Scope-resolution-operator"><a href="#Scope-resolution-operator" class="headerlink" title="Scope resolution operator (::)"></a>Scope resolution operator (::)</h3><p>The Scope Resolution Operator (also called Paamayim Nekudotayim) or in simpler terms, the double colon, is a token that allows access to <code>static</code>, <code>constant</code>, and overridden properties or methods of a class.</p>
+<p>Three special keywords <code>self</code>, <code>parent</code> and <code>static</code> are used to access properties or methods from inside the class definition.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OtherClass</span> <span class="keyword">extends</span> <span class="title">MyClass</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $my_static = <span class="string">'static var'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">doubleColon</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">echo</span> <span class="keyword">parent</span>::CONST_VALUE . <span class="string">"\n"</span>;</div><div class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::$my_static . <span class="string">"\n"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$classname = <span class="string">'OtherClass'</span>;</div><div class="line">$classname::doubleColon(); <span class="comment">// As of PHP 5.3.0</span></div><div class="line"></div><div class="line">OtherClass::doubleColon();</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>Calling Parent methods<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunc</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"MyClass::myFunc()\n"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OtherClass</span> <span class="keyword">extends</span> <span class="title">MyClass</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// Override parent's definition</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunc</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// But still call the parent function</span></div><div class="line">        <span class="keyword">parent</span>::myFunc();</div><div class="line">        <span class="keyword">echo</span> <span class="string">"OtherClass::myFunc()\n"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$class = <span class="keyword">new</span> OtherClass();</div><div class="line">$class-&gt;myFunc();</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Static-Keyword"><a href="#Static-Keyword" class="headerlink" title="Static Keyword"></a>Static Keyword</h3><p>Static methods and properties in php is very useful feature. Static methods and properties in php can directly accessible <code>without</code> creating <code>object of class</code>. Your php class will be static class if your all methods and properties of the class is static. Static Methods and Properties in PHP will be treated as public if no visibility is defined.</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> $a;<span class="comment">//Static variable</span></div><div class="line">&#125;</div><div class="line">test::$a = <span class="number">5</span>;</div><div class="line"><span class="keyword">echo</span> test::$a;</div></pre></td></tr></table></figure>
+<ul>
+<li>ex.2<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> $count;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> $instance;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($count = <span class="number">0</span>)</span></span>&#123;</div><div class="line">		<span class="keyword">$this</span>-&gt;count = $count;</div><div class="line">		<span class="keyword">self</span>::$instance++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">$this</span>-&gt;count++;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">$this</span>;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> (string)<span class="keyword">$this</span>-&gt;count;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">countInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">self</span>::$instance;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$c1 = <span class="keyword">new</span> Counter();</div><div class="line">$c1-&gt;count()</div><div class="line">   -&gt;count();</div><div class="line"><span class="keyword">echo</span> <span class="string">'Counter 1 value: '</span>. $c1 . <span class="string">'&lt;br/&gt;'</span>;</div><div class="line"></div><div class="line">$c2 = <span class="keyword">new</span> Counter();</div><div class="line">$c2-&gt;count()</div><div class="line">   -&gt;count()</div><div class="line">   -&gt;count();</div><div class="line"></div><div class="line"><span class="keyword">echo</span> <span class="string">'Counter 2 value: '</span>. $c2 . <span class="string">'&lt;br/&gt;'</span>;</div><div class="line"></div><div class="line"><span class="keyword">echo</span> <span class="string">'The number of counter instances:'</span></div><div class="line">		. Counter::countInstance()</div><div class="line">	    . <span class="string">'&lt;br/&gt;'</span>;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Class-Abstraction"><a href="#Class-Abstraction" class="headerlink" title="Class Abstraction"></a>Class Abstraction</h3><p>An abstract class is a class that has <code>at least one abstract method</code>. Abstract methods can only have names and arguments, and <code>no other code</code>. Thus, we cannot create objects out of abstract classes. Instead, we need to create child classes that add the code into the bodies of the methods, and use these child classes to create<br> objects.</p>
+<ul>
+<li>Your any class has at least one method Abstract than your class is abstract .</li>
+<li>You can’t make object of abstract class only can extend abstract class.</li>
+<li>Usually abstract class are also known as base class .</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Abstract classes are declared with the abstract keyword, and contain abstract methods.</span></div><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</div><div class="line">  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">calcNumMilesOnFullTank</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>ex. 2<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractClass</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// Force Extending class to define this method</span></div><div class="line">    <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getValue</span><span class="params">()</span></span>;</div><div class="line">    <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">prefixValue</span><span class="params">($prefix)</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">// Common method</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">printOut</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">print</span> <span class="keyword">$this</span>-&gt;getValue() . <span class="string">"\n"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteClass1</span> <span class="keyword">extends</span> <span class="title">AbstractClass</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getValue</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"ConcreteClass1"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">prefixValue</span><span class="params">($prefix)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"&#123;$prefix&#125;ConcreteClass1"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteClass2</span> <span class="keyword">extends</span> <span class="title">AbstractClass</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getValue</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"ConcreteClass2"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">prefixValue</span><span class="params">($prefix)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"&#123;$prefix&#125;ConcreteClass2"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$class1 = <span class="keyword">new</span> ConcreteClass1;</div><div class="line">$class1-&gt;printOut();</div><div class="line"><span class="keyword">echo</span> $class1-&gt;prefixValue(<span class="string">'FOO_'</span>) .<span class="string">"\n"</span>;</div><div class="line"></div><div class="line">$class2 = <span class="keyword">new</span> ConcreteClass2;</div><div class="line">$class2-&gt;printOut();</div><div class="line"><span class="keyword">echo</span> $class2-&gt;prefixValue(<span class="string">'FOO_'</span>) .<span class="string">"\n"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Object-Interfaces"><a href="#Object-Interfaces" class="headerlink" title="Object Interfaces"></a>Object Interfaces</h3><p>An interface allows you to specify a list of methods that a class must implement. To define an interface, you use the interface keyword as follows:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMyInterface</span></span>&#123;</div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">method_1</span><span class="params">()</span></span>;</div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">method_2</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">implements</span> <span class="title">IMyInterface</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">method_1</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="comment">// method 1 implementation</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">method_2</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="comment">// method 2 implementation</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>ex. 2</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;?php</div><div class="line">interface IReadable&#123;</div><div class="line">	public function read();</div><div class="line">&#125;</div><div class="line">interface IWritable extends IReadable&#123;</div><div class="line">	public function write();</div><div class="line">&#125;</div><div class="line">class MyClass implements IWritable()&#123;</div><div class="line">  public function read()&#123;</div><div class="line">    // read implementation</div><div class="line">  &#125;</div><div class="line">  pubic function write()&#123;</div><div class="line">    // write implemention</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Trait"><a href="#Trait" class="headerlink" title="Trait"></a>Trait</h3><h3 id="Anonymous-classes"><a href="#Anonymous-classes" class="headerlink" title="Anonymous classes"></a>Anonymous classes</h3><h3 id="Overloading"><a href="#Overloading" class="headerlink" title="Overloading"></a>Overloading</h3><p>PHP’s interpretation of “overloading” is different than most object oriented languages. Overloading traditionally provides the ability to have multiple methods with the same name but different quantities and types of arguments.</p>
+<p><code>magic method is use for overloading in php.</code></p>
+<ul>
+<li><p>Property overloading</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> void __set ( string $name , mixed $value )</div><div class="line"><span class="keyword">public</span> mixed __get ( string $name )</div><div class="line"><span class="keyword">public</span> bool __isset ( string $name )</div><div class="line"><span class="keyword">public</span> void __unset ( string $name )</div></pre></td></tr></table></figure>
+</li>
+<li><p>Method overloading</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> mixed __call ( string $name , <span class="keyword">array</span> $arguments )</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> mixed __callStatic ( string $name , <span class="keyword">array</span> $arguments )</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Object-Iteration"><a href="#Object-Iteration" class="headerlink" title="Object Iteration"></a>Object Iteration</h3><h3 id="Magic-Methods"><a href="#Magic-Methods" class="headerlink" title="Magic Methods"></a>Magic Methods</h3><p>The <code>magic</code> methods are ones with special names, starting with two underscores, which denote methods which will be triggered in response to particular PHP events</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></div><div class="line"><span class="title">public</span> <span class="title">function</span> <span class="title">__destruct</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__get</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__set</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__call</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__sleep</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__wakeup</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__clone</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__toString</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__invoke</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__set_state</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__call</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span>  <span class="title">__callStatic</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span> <span class="title">__isset</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span> <span class="title">__unset</span><span class="params">()</span></div><div class="line"><span class="title">public</span> <span class="title">function</span> <span class="title">__debugInfo</span><span class="params">()</span></div></pre></td></tr></table></figure>
+<h3 id="Final-keywords"><a href="#Final-keywords" class="headerlink" title="Final keywords"></a>Final keywords</h3><p>In PHP, Final Keyword is applicable to only <code>class</code> and <code>class methods</code>. We can not declare variables as Final in PHP.So if you declare class method as a Final then that method can not be override by the child class. Same as method if we declare class as a Final then that class can not be extended any more.</p>
+<ul>
+<li><p>Declaring Class as Final -<br>Below code will end up with this error: Class child_class may not inherit from final class (parent_class)</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// This class can not be Extended</span></div><div class="line">  <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">parent_class</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">class_method</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">      <span class="comment">/*</span></div><div class="line">           Code Here</div><div class="line">      */</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">child_class</span> <span class="keyword">extends</span> <span class="title">parent_class</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">class_method</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">      <span class="comment">/*</span></div><div class="line">           Code Here</div><div class="line">      */</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Declaring Class Method as Final</p>
+</li>
+</ul>
+<p>Below code will end up with this error: Cannot override final method parent_class::class_method()</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">parent_class</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="comment">// We Can not override this method</span></div><div class="line">    <span class="comment">// As it declared as final</span></div><div class="line">    <span class="keyword">final</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">class_method</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">      <span class="comment">/*</span></div><div class="line">           Code Here</div><div class="line">      */</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">child_class</span> <span class="keyword">extends</span> <span class="title">parent_class</span></span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">class_method</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">      <span class="comment">/*</span></div><div class="line">           Code Here</div><div class="line">      */</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="Object-Cloning"><a href="#Object-Cloning" class="headerlink" title="Object Cloning"></a>Object Cloning</h3><p>reating a copy of an object with fully replicated properties is not always the wanted behavior. A good example of the need for copy constructors, is if you have an object which represents a GTK window and the object holds the resource of this GTK window, when you create a duplicate you might want to create a new window with the same properties and have the new object hold the resource of the new window. Another example is if your object holds a reference to another object which it uses and when you replicate the parent object you want to create a new instance of this other object so that the replica has its own separate copy.</p>
+<p>An object copy is created by using the clone keyword (which calls the object’s <code>__clone()</code> method if possible). An object’s <code>__clone()</code> method cannot be called directly.</p>
+<p>$copy_of_object = clone $object;</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span> $a;</div><div class="line"><span class="keyword">private</span> $b;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($a, $b)</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">$this</span>-&gt;a = $a;</div><div class="line"><span class="keyword">$this</span>-&gt;b = $b;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">$a = <span class="keyword">new</span> test(<span class="string">"ankur"</span> , <span class="string">"techflirt"</span>);</div><div class="line">$b = $a; <span class="comment">//Copy of the object</span></div><div class="line">$c = <span class="keyword">clone</span> $a; <span class="comment">//clone of the object</span></div><div class="line">$a-&gt;a = <span class="string">"no Ankur"</span>;</div><div class="line">print_r($a);</div><div class="line">print_r($b);</div><div class="line">print_r($c);</div></pre></td></tr></table></figure>
+<ul>
+<li>with magic method <code>__clone</code><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span> $a;</div><div class="line"><span class="keyword">private</span> $b;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($a, $b)</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">$this</span>-&gt;a = $a;</div><div class="line"><span class="keyword">$this</span>-&gt;b = $b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">__clone</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">$this</span>-&gt;a = <span class="string">"c"</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">$a = <span class="keyword">new</span> test(<span class="string">"ankur"</span> , <span class="string">"techflirt"</span>);</div><div class="line">$b = $a; <span class="comment">//Copy of the object</span></div><div class="line">$c = <span class="keyword">clone</span> $a; <span class="comment">//clone of the object</span></div><div class="line">$a-&gt;a = <span class="string">"no Ankur"</span>;</div><div class="line">print_r($a);</div><div class="line">print_r($b);</div><div class="line">print_r($c);</div><div class="line">print_r($a);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Comparing-Object"><a href="#Comparing-Object" class="headerlink" title="Comparing Object"></a>Comparing Object</h3><p>When using the comparison operator (==), object variables are compared in a simple manner, namely: Two object instances are equal if they have the same attributes and values (values are compared with ==), and are instances of the same class.</p>
+<p>When using the identity operator (===), object variables are identical if and only if they refer to the same instance of the same class.</p>
+<ul>
+<li><p>ex. 1</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bool2str</span><span class="params">($bool)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ($bool === <span class="keyword">false</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'FALSE'</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'TRUE'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareObjects</span><span class="params">(&amp;$o1, &amp;$o2)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'o1 == o2 : '</span> . bool2str($o1 == $o2) . <span class="string">"\n"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'o1 != o2 : '</span> . bool2str($o1 != $o2) . <span class="string">"\n"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'o1 === o2 : '</span> . bool2str($o1 === $o2) . <span class="string">"\n"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'o1 !== o2 : '</span> . bool2str($o1 !== $o2) . <span class="string">"\n"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flag</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> $flag;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Flag</span><span class="params">($flag = true)</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;flag = $flag;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OtherFlag</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> $flag;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">OtherFlag</span><span class="params">($flag = true)</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;flag = $flag;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$o = <span class="keyword">new</span> Flag();</div><div class="line">$p = <span class="keyword">new</span> Flag();</div><div class="line">$q = $o;</div><div class="line">$r = <span class="keyword">new</span> OtherFlag();</div><div class="line"></div><div class="line"><span class="keyword">echo</span> <span class="string">"Two instances of the same class\n"</span>;</div><div class="line">compareObjects($o, $p);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> <span class="string">"\nTwo references to the same instance\n"</span>;</div><div class="line">compareObjects($o, $q);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> <span class="string">"\nInstances of two different classes\n"</span>;</div><div class="line">compareObjects($o, $r);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>Result</code> -</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">Two instances of the same class</div><div class="line">o1 == o2 : TRUE</div><div class="line">o1 != o2 : FALSE</div><div class="line">o1 === o2 : FALSE</div><div class="line">o1 !== o2 : TRUE</div><div class="line"></div><div class="line">Two references to the same instance</div><div class="line">o1 == o2 : TRUE</div><div class="line">o1 != o2 : FALSE</div><div class="line">o1 === o2 : TRUE</div><div class="line">o1 !== o2 : FALSE</div><div class="line"></div><div class="line">Instances of two different classes</div><div class="line">o1 == o2 : FALSE</div><div class="line">o1 != o2 : TRUE</div><div class="line">o1 === o2 : FALSE</div><div class="line">o1 !== o2 : TRUE</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Type-Hinting"><a href="#Type-Hinting" class="headerlink" title="Type Hinting"></a>Type Hinting</h3><h3 id="Late-Static-Bindings"><a href="#Late-Static-Bindings" class="headerlink" title="Late Static Bindings"></a>Late Static Bindings</h3><h3 id="Objects-and-references"><a href="#Objects-and-references" class="headerlink" title="Objects and references"></a>Objects and references</h3><h3 id="Object-Serialization"><a href="#Object-Serialization" class="headerlink" title="Object Serialization"></a>Object Serialization</h3><h3 id="OOP-Changelog"><a href="#OOP-Changelog" class="headerlink" title="OOP Changelog"></a>OOP Changelog</h3>
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/mk/developer/php/objectclass.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

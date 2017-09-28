@@ -1,0 +1,1848 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Queues — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Queues — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Queues — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
+      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://blog.hellolaravel.org" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
+      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://blog.hellolaravel.org" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link current">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Queues</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Laravel queues provide a unified API across a variety of different queue backends, such as Beanstalk, Amazon SQS, Redis, or even a relational database. Queues allow you to defer the processing of a time consuming task, such as sending an email, until a later time. Deferring these time consuming tasks drastically speeds up web requests to your application.</p>
+<p>The queue configuration file is stored in <code>config/queue.php</code>. In this file you will find connection configurations for each of the queue drivers that are included with the framework, which includes a database, <a href="https://kr.github.io/beanstalkd/" target="_blank" rel="external">Beanstalkd</a>, <a href="https://aws.amazon.com/sqs/" target="_blank" rel="external">Amazon SQS</a>, <a href="http://redis.io" target="_blank" rel="external">Redis</a>,  and a synchronous driver that will execute jobs immediately (for local use). A <code>null</code> queue driver is also included which simply discards queued jobs.</p>
+<p><a name="connections-vs-queues"></a></p>
+<h3 id="Connections-Vs-Queues"><a href="#Connections-Vs-Queues" class="headerlink" title="Connections Vs. Queues"></a>Connections Vs. Queues</h3><p>Before getting started with Laravel queues, it is important to understand the distinction between “connections” and “queues”. In your <code>config/queue.php</code> configuration file, there is a <code>connections</code> configuration option. This option defines a particular connection to a backend service such as Amazon SQS, Beanstalk, or Redis. However, any given queue connection may have multiple “queues” which may be thought of as different stacks or piles of queued jobs.</p>
+<p>Note that each connection configuration example in the <code>queue</code> configuration file contains a <code>queue</code> attribute. This is the default queue that jobs will be dispatched to when they are sent to a given connection. In other words, if you dispatch a job without explicitly defining which queue it should be dispatched to, the job will be placed on the queue that is defined in the <code>queue</code> attribute of the connection configuration:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// This job is sent to the default queue...</span></div><div class="line">dispatch(<span class="keyword">new</span> Job);</div><div class="line"></div><div class="line"><span class="comment">// This job is sent to the "emails" queue...</span></div><div class="line">dispatch((<span class="keyword">new</span> Job)-&gt;onQueue(<span class="string">'emails'</span>));</div></pre></td></tr></table></figure></p>
+<p>Some applications may not need to ever push jobs onto multiple queues, instead preferring to have one simple queue. However, pushing jobs to multiple queues can be especially useful for applications that wish to prioritize or segment how jobs are processed, since the Laravel queue worker allows you to specify which queues it should process by priority. For example, if you push jobs to a <code>high</code> queue, you may run a worker that gives them higher processing priority:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work --queue=high,<span class="keyword">default</span></div></pre></td></tr></table></figure></p>
+<p><a name="driver-prerequisites"></a></p>
+<h3 id="Driver-Prerequisites"><a href="#Driver-Prerequisites" class="headerlink" title="Driver Prerequisites"></a>Driver Prerequisites</h3><h4 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h4><p>In order to use the <code>database</code> queue driver, you will need a database table to hold the jobs. To generate a migration that creates this table, run the <code>queue:table</code> Artisan command. Once the migration has been created, you may migrate your database using the <code>migrate</code> command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:table</div><div class="line"></div><div class="line">php artisan migrate</div></pre></td></tr></table></figure></p>
+<h4 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h4><p>In order to use the <code>redis</code> queue driver, you should configure a Redis database connection in your <code>config/database.php</code> configuration file.</p>
+<p>If your Redis queue connection uses a Redis Cluster, your queue names must contain a <a href="https://redis.io/topics/cluster-spec#keys-hash-tags" target="_blank" rel="external">key hash tag</a>. This is required in order to ensure all of the Redis keys for a given queue are placed into the same hash slot:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'redis'</span> =&gt; [</div><div class="line">    <span class="string">'driver'</span> =&gt; <span class="string">'redis'</span>,</div><div class="line">    <span class="string">'connection'</span> =&gt; <span class="string">'default'</span>,</div><div class="line">    <span class="string">'queue'</span> =&gt; <span class="string">'&#123;default&#125;'</span>,</div><div class="line">    <span class="string">'retry_after'</span> =&gt; <span class="number">90</span>,</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<h4 id="Other-Driver-Prerequisites"><a href="#Other-Driver-Prerequisites" class="headerlink" title="Other Driver Prerequisites"></a>Other Driver Prerequisites</h4><p>The following dependencies are needed for the listed queue drivers:</p>
+<div class="content-list" markdown="1"><br>- Amazon SQS: <code>aws/aws-sdk-php ~3.0</code><br>- Beanstalkd: <code>pda/pheanstalk ~3.0</code><br>- Redis: <code>predis/predis ~1.0</code><br></div>
+
+<p><a name="creating-jobs"></a></p>
+<h2 id="Creating-Jobs"><a href="#Creating-Jobs" class="headerlink" title="Creating Jobs"></a>Creating Jobs</h2><p><a name="generating-job-classes"></a></p>
+<h3 id="Generating-Job-Classes"><a href="#Generating-Job-Classes" class="headerlink" title="Generating Job Classes"></a>Generating Job Classes</h3><p>By default, all of the queueable jobs for your application are stored in the <code>app/Jobs</code> directory. If the <code>app/Jobs</code> directory doesn’t exist, it will be created when you run the <code>make:job</code> Artisan command. You may generate a new queued job using the Artisan CLI:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan make:job SendReminderEmail</div></pre></td></tr></table></figure></p>
+<p>The generated class will implement the <code>Illuminate\Contracts\Queue\ShouldQueue</code> interface, indicating to Laravel that the job should be pushed onto the queue to run asynchronously.</p>
+<p><a name="class-structure"></a></p>
+<h3 id="Class-Structure"><a href="#Class-Structure" class="headerlink" title="Class Structure"></a>Class Structure</h3><p>Job classes are very simple, normally containing only a <code>handle</code> method which is called when the job is processed by the queue. To get started, let’s take a look at an example job class. In this example, we’ll pretend we manage a podcast publishing service and need to process the uploaded podcast files before they are published:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Jobs</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Podcast</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">AudioProcessor</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Bus</span>\<span class="title">Queueable</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">SerializesModels</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">InteractsWithQueue</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Queue</span>\<span class="title">ShouldQueue</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProcessPodcast</span> <span class="keyword">implements</span> <span class="title">ShouldQueue</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">InteractsWithQueue</span>, <span class="title">Queueable</span>, <span class="title">SerializesModels</span>;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> $podcast;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Create a new job instance.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Podcast  $podcast</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(Podcast $podcast)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;podcast = $podcast;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Execute the job.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  AudioProcessor  $processor</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">(AudioProcessor $processor)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Process uploaded podcast...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>In this example, note that we were able to pass an <a href="/mk/laravel/eloquent.html">Eloquent model</a> directly into the queued job’s constructor. Because of the <code>SerializesModels</code> trait that the job is using, Eloquent models will be gracefully serialized and unserialized when the job is processing. If your queued job accepts an Eloquent model in its constructor, only the identifier for the model will be serialized onto the queue. When the job is actually handled, the queue system will automatically re-retrieve the full model instance from the database. It’s all totally transparent to your application and prevents issues that can arise from serializing full Eloquent model instances.</p>
+<p>The <code>handle</code> method is called when the job is processed by the queue. Note that we are able to type-hint dependencies on the <code>handle</code> method of the job. The Laravel <a href="/mk/laravel/container.html">service container</a> automatically injects these dependencies.</p>
+<blockquote>
+<p>{note} Binary data, such as raw image contents, should be passed through the <code>base64_encode</code> function before being passed to a queued job. Otherwise, the job may not properly serialize to JSON when being placed on the queue.</p>
+</blockquote>
+<p><a name="dispatching-jobs"></a></p>
+<h2 id="Dispatching-Jobs"><a href="#Dispatching-Jobs" class="headerlink" title="Dispatching Jobs"></a>Dispatching Jobs</h2><p>Once you have written your job class, you may dispatch it using the <code>dispatch</code> helper. The only argument you need to pass to the <code>dispatch</code> helper is an instance of the job:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Jobs</span>\<span class="title">ProcessPodcast</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PodcastController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Store a new podcast.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Create podcast...</span></div><div class="line"></div><div class="line">        dispatch(<span class="keyword">new</span> ProcessPodcast($podcast));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} The <code>dispatch</code> helper provides the convenience of a short, globally available function, while also being extremely easy to test. Check out the Laravel <a href="/mk/laravel/testing.html">testing documentation</a> to learn more.</p>
+</blockquote>
+<p><a name="delayed-dispatching"></a></p>
+<h3 id="Delayed-Dispatching"><a href="#Delayed-Dispatching" class="headerlink" title="Delayed Dispatching"></a>Delayed Dispatching</h3><p>If you would like to delay the execution of a queued job, you may use the <code>delay</code> method on your job instance. The <code>delay</code> method is provided by the <code>Illuminate\Bus\Queueable</code> trait, which is included by default on all generated job classes. For example, let’s specify that a job should not be available for processing until 10 minutes after it has been dispatched:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Carbon</span>\<span class="title">Carbon</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Jobs</span>\<span class="title">ProcessPodcast</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PodcastController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Store a new podcast.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Create podcast...</span></div><div class="line"></div><div class="line">        $job = (<span class="keyword">new</span> ProcessPodcast($podcast))</div><div class="line">                    -&gt;delay(Carbon::now()-&gt;addMinutes(<span class="number">10</span>));</div><div class="line"></div><div class="line">        dispatch($job);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} The Amazon SQS queue service has a maximum delay time of 15 minutes.</p>
+</blockquote>
+<p><a name="customizing-the-queue-and-connection"></a></p>
+<h3 id="Customizing-The-Queue-amp-Connection"><a href="#Customizing-The-Queue-amp-Connection" class="headerlink" title="Customizing The Queue &amp; Connection"></a>Customizing The Queue &amp; Connection</h3><h4 id="Dispatching-To-A-Particular-Queue"><a href="#Dispatching-To-A-Particular-Queue" class="headerlink" title="Dispatching To A Particular Queue"></a>Dispatching To A Particular Queue</h4><p>By pushing jobs to different queues, you may “categorize” your queued jobs and even prioritize how many workers you assign to various queues. Keep in mind, this does not push jobs to different queue “connections” as defined by your queue configuration file, but only to specific queues within a single connection. To specify the queue, use the <code>onQueue</code> method on the job instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Jobs</span>\<span class="title">ProcessPodcast</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PodcastController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Store a new podcast.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Create podcast...</span></div><div class="line"></div><div class="line">        $job = (<span class="keyword">new</span> ProcessPodcast($podcast))-&gt;onQueue(<span class="string">'processing'</span>);</div><div class="line"></div><div class="line">        dispatch($job);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Dispatching-To-A-Particular-Connection"><a href="#Dispatching-To-A-Particular-Connection" class="headerlink" title="Dispatching To A Particular Connection"></a>Dispatching To A Particular Connection</h4><p>If you are working with multiple queue connections, you may specify which connection to push a job to. To specify the connection, use the <code>onConnection</code> method on the job instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Jobs</span>\<span class="title">ProcessPodcast</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PodcastController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Store a new podcast.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Create podcast...</span></div><div class="line"></div><div class="line">        $job = (<span class="keyword">new</span> ProcessPodcast($podcast))-&gt;onConnection(<span class="string">'sqs'</span>);</div><div class="line"></div><div class="line">        dispatch($job);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Of course, you may chain the <code>onConnection</code> and <code>onQueue</code> methods to specify the connection and the queue for a job:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$job = (<span class="keyword">new</span> ProcessPodcast($podcast))</div><div class="line">                -&gt;onConnection(<span class="string">'sqs'</span>)</div><div class="line">                -&gt;onQueue(<span class="string">'processing'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="max-job-attempts-and-timeout"></a></p>
+<h3 id="Specifying-Max-Job-Attempts-Timeout-Values"><a href="#Specifying-Max-Job-Attempts-Timeout-Values" class="headerlink" title="Specifying Max Job Attempts / Timeout Values"></a>Specifying Max Job Attempts / Timeout Values</h3><h4 id="Max-Attempts"><a href="#Max-Attempts" class="headerlink" title="Max Attempts"></a>Max Attempts</h4><p>One approach to specifying the maximum number of times a job may be attempted is via the <code>--tries</code> switch on the Artisan command line:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work --tries=<span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>However, you may take a more granular approach by defining the maximum number of attempts on the job class itself. If the maximum number of attempts is specified on the job, it will take precedence over the value provided on the command line:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Jobs</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProcessPodcast</span> <span class="keyword">implements</span> <span class="title">ShouldQueue</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The number of times the job may be attempted.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> int</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> $tries = <span class="number">5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Timeout"><a href="#Timeout" class="headerlink" title="Timeout"></a>Timeout</h4><p>Likewise, the maximum number of seconds that jobs can run may be specified using the <code>--timeout</code> switch on the Artisan command line:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work --timeout=<span class="number">30</span></div></pre></td></tr></table></figure></p>
+<p>However, you may also define the maximum number of seconds a job should be allowed to run on the job class itself. If the timeout is specified on the job, it will take precedence over any timeout specified on the command line:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Jobs</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProcessPodcast</span> <span class="keyword">implements</span> <span class="title">ShouldQueue</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The number of seconds the job can run before timing out.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> int</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> $timeout = <span class="number">120</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="error-handling"></a></p>
+<h3 id="Error-Handling"><a href="#Error-Handling" class="headerlink" title="Error Handling"></a>Error Handling</h3><p>If an exception is thrown while the job is being processed, the job will automatically be released back onto the queue so it may be attempted again. The job will continue to be released until it has been attempted the maximum number of times allowed by your application. The maximum number of attempts is defined by the <code>--tries</code> switch used on the <code>queue:work</code> Artisan command. Alternatively, the maximum number of attempts may be defined on the job class itself. More information on running the queue worker <a href="#running-the-queue-worker">can be found below</a>.</p>
+<p><a name="running-the-queue-worker"></a></p>
+<h2 id="Running-The-Queue-Worker"><a href="#Running-The-Queue-Worker" class="headerlink" title="Running The Queue Worker"></a>Running The Queue Worker</h2><p>Laravel includes a queue worker that will process new jobs as they are pushed onto the queue. You may run the worker using the <code>queue:work</code> Artisan command. Note that once the <code>queue:work</code> command has started, it will continue to run until it is manually stopped or you close your terminal:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} To keep the <code>queue:work</code> process running permanently in the background, you should use a process monitor such as <a href="#supervisor-configuration">Supervisor</a> to ensure that the queue worker does not stop running.</p>
+</blockquote>
+<p>Remember, queue workers are long-lived processes and store the booted application state in memory. As a result, they will not notice changes in your code base after they have been started. So, during your deployment process, be sure to <a href="#queue-workers-and-deployment">restart your queue workers</a>.</p>
+<h4 id="Specifying-The-Connection-amp-Queue"><a href="#Specifying-The-Connection-amp-Queue" class="headerlink" title="Specifying The Connection &amp; Queue"></a>Specifying The Connection &amp; Queue</h4><p>You may also specify which queue connection the worker should utilize. The connection name passed to the <code>work</code> command should correspond to one of the connections defined in your <code>config/queue.php</code> configuration file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work redis</div></pre></td></tr></table></figure></p>
+<p>You may customize your queue worker even further by only processing particular queues for a given connection. For example, if all of your emails are processed in an <code>emails</code> queue on your <code>redis</code> queue connection, you may issue the following command to start a worker that only processes only that queue:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work redis --queue=emails</div></pre></td></tr></table></figure></p>
+<h4 id="Resource-Considerations"><a href="#Resource-Considerations" class="headerlink" title="Resource Considerations"></a>Resource Considerations</h4><p>Daemon queue workers do not “reboot” the framework before processing each job. Therefore, you should free any heavy resources after each job completes. For example, if you are doing image manipulation with the GD library, you should free the memory with <code>imagedestroy</code> when you are done.</p>
+<p><a name="queue-priorities"></a></p>
+<h3 id="Queue-Priorities"><a href="#Queue-Priorities" class="headerlink" title="Queue Priorities"></a>Queue Priorities</h3><p>Sometimes you may wish to prioritize how your queues are processed. For example, in your <code>config/queue.php</code> you may set the default <code>queue</code> for your <code>redis</code> connection to <code>low</code>. However, occasionally you may wish to push a job to a <code>high</code> priority queue like so:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">dispatch((<span class="keyword">new</span> Job)-&gt;onQueue(<span class="string">'high'</span>));</div></pre></td></tr></table></figure></p>
+<p>To start a worker that verifies that all of the <code>high</code> queue jobs are processed before continuing to any jobs on the <code>low</code> queue, pass a comma-delimited list of queue names to the <code>work</code> command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work --queue=high,low</div></pre></td></tr></table></figure></p>
+<p><a name="queue-workers-and-deployment"></a></p>
+<h3 id="Queue-Workers-amp-Deployment"><a href="#Queue-Workers-amp-Deployment" class="headerlink" title="Queue Workers &amp; Deployment"></a>Queue Workers &amp; Deployment</h3><p>Since queue workers are long-lived processes, they will not pick up changes to your code without being restarted. So, the simplest way to deploy an application using queue workers is to restart the workers during your deployment process. You may gracefully restart all of the workers by issuing the <code>queue:restart</code> command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:restart</div></pre></td></tr></table></figure></p>
+<p>This command will instruct all queue workers to gracefully “die” after they finish processing their current job so that no existing jobs are lost. Since the queue workers will die when the <code>queue:restart</code> command is executed, you should be running a process manager such as <a href="#supervisor-configuration">Supervisor</a> to automatically restart the queue workers.</p>
+<p><a name="job-expirations-and-timeouts"></a></p>
+<h3 id="Job-Expirations-amp-Timeouts"><a href="#Job-Expirations-amp-Timeouts" class="headerlink" title="Job Expirations &amp; Timeouts"></a>Job Expirations &amp; Timeouts</h3><h4 id="Job-Expiration"><a href="#Job-Expiration" class="headerlink" title="Job Expiration"></a>Job Expiration</h4><p>In your <code>config/queue.php</code> configuration file, each queue connection defines a <code>retry_after</code> option. This option specifies how many seconds the queue connection should wait before retrying a job that is being processed. For example, if the value of <code>retry_after</code> is set to <code>90</code>, the job will be released back onto the queue if it has been processing for 90 seconds without being deleted. Typically, you should set the <code>retry_after</code> value to the maximum number of seconds your jobs should reasonably take to complete processing.</p>
+<blockquote>
+<p>{note} The only queue connection which does not contain a <code>retry_after</code> value is Amazon SQS. SQS will retry the job based on the <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html" target="_blank" rel="external">Default Visibility Timeout</a> which is managed within the AWS console.</p>
+</blockquote>
+<h4 id="Worker-Timeouts"><a href="#Worker-Timeouts" class="headerlink" title="Worker Timeouts"></a>Worker Timeouts</h4><p>The <code>queue:work</code> Artisan command exposes a <code>--timeout</code> option. The <code>--timeout</code> option specifies how long the Laravel queue master process will wait before killing off a child queue worker that is processing a job. Sometimes a child queue process can become “frozen” for various reasons, such as an external HTTP call that is not responding. The <code>--timeout</code> option removes frozen processes that have exceeded that specified time limit:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work --timeout=<span class="number">60</span></div></pre></td></tr></table></figure></p>
+<p>The <code>retry_after</code> configuration option and the <code>--timeout</code> CLI option are different, but work together to ensure that jobs are not lost and that jobs are only successfully processed once.</p>
+<blockquote>
+<p>{note} The <code>--timeout</code> value should always be at least several seconds shorter than your <code>retry_after</code> configuration value. This will ensure that a worker processing a given job is always killed before the job is retried. If your <code>--timeout</code> option is longer than your <code>retry_after</code> configuration value, your jobs may be processed twice.</p>
+</blockquote>
+<h4 id="Worker-Sleep-Duration"><a href="#Worker-Sleep-Duration" class="headerlink" title="Worker Sleep Duration"></a>Worker Sleep Duration</h4><p>When jobs are available on the queue, the worker will keep processing jobs with no delay in between them. However, the <code>sleep</code> option determines how long the worker will “sleep” if there are no new jobs available. While sleeping, the worker will not process any new jobs - the jobs will be processed after the worker wakes up again.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work --sleep=<span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p><a name="supervisor-configuration"></a></p>
+<h2 id="Supervisor-Configuration"><a href="#Supervisor-Configuration" class="headerlink" title="Supervisor Configuration"></a>Supervisor Configuration</h2><h4 id="Installing-Supervisor"><a href="#Installing-Supervisor" class="headerlink" title="Installing Supervisor"></a>Installing Supervisor</h4><p>Supervisor is a process monitor for the Linux operating system, and will automatically restart your <code>queue:work</code> process if it fails. To install Supervisor on Ubuntu, you may use the following command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">sudo apt-get install supervisor</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} If configuring Supervisor yourself sounds overwhelming, consider using <a href="https://forge.laravel.com" target="_blank" rel="external">Laravel Forge</a>, which will automatically install and configure Supervisor for your Laravel projects.</p>
+</blockquote>
+<h4 id="Configuring-Supervisor"><a href="#Configuring-Supervisor" class="headerlink" title="Configuring Supervisor"></a>Configuring Supervisor</h4><p>Supervisor configuration files are typically stored in the <code>/etc/supervisor/conf.d</code> directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let’s create a <code>laravel-worker.conf</code> file that starts and monitors a <code>queue:work</code> process:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">[program:laravel-worker]</div><div class="line">process_name=%(program_name)s_%(process_num)<span class="number">02</span>d</div><div class="line">command=php /home/forge/app.com/artisan queue:work sqs --sleep=<span class="number">3</span> --tries=<span class="number">3</span></div><div class="line">autostart=<span class="keyword">true</span></div><div class="line">autorestart=<span class="keyword">true</span></div><div class="line">user=forge</div><div class="line">numprocs=<span class="number">8</span></div><div class="line">redirect_stderr=<span class="keyword">true</span></div><div class="line">stdout_logfile=/home/forge/app.com/worker.log</div></pre></td></tr></table></figure></p>
+<p>In this example, the <code>numprocs</code> directive will instruct Supervisor to run 8 <code>queue:work</code> processes and monitor all of them, automatically restarting them if they fail. Of course, you should change the <code>queue:work sqs</code> portion of the <code>command</code> directive to reflect your desired queue connection.</p>
+<h4 id="Starting-Supervisor"><a href="#Starting-Supervisor" class="headerlink" title="Starting Supervisor"></a>Starting Supervisor</h4><p>Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">sudo supervisorctl reread</div><div class="line"></div><div class="line">sudo supervisorctl update</div><div class="line"></div><div class="line">sudo supervisorctl start laravel-worker:*</div></pre></td></tr></table></figure></p>
+<p>For more information on Supervisor, consult the <a href="http://supervisord.org/index.html" target="_blank" rel="external">Supervisor documentation</a>.</p>
+<p><a name="dealing-with-failed-jobs"></a></p>
+<h2 id="Dealing-With-Failed-Jobs"><a href="#Dealing-With-Failed-Jobs" class="headerlink" title="Dealing With Failed Jobs"></a>Dealing With Failed Jobs</h2><p>Sometimes your queued jobs will fail. Don’t worry, things don’t always go as planned! Laravel includes a convenient way to specify the maximum number of times a job should be attempted. After a job has exceeded this amount of attempts, it will be inserted into the <code>failed_jobs</code> database table. To create a migration for the <code>failed_jobs</code> table, you may use the <code>queue:failed-table</code> command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:failed-table</div><div class="line"></div><div class="line">php artisan migrate</div></pre></td></tr></table></figure></p>
+<p>Then, when running your <a href="#running-the-queue-worker">queue worker</a>, you should specify the maximum number of times a job should be attempted using the <code>--tries</code> switch on the <code>queue:work</code> command. If you do not specify a value for the <code>--tries</code> option, jobs will be attempted indefinitely:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:work redis --tries=<span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p><a name="cleaning-up-after-failed-jobs"></a></p>
+<h3 id="Cleaning-Up-After-Failed-Jobs"><a href="#Cleaning-Up-After-Failed-Jobs" class="headerlink" title="Cleaning Up After Failed Jobs"></a>Cleaning Up After Failed Jobs</h3><p>You may define a <code>failed</code> method directly on your job class, allowing you to perform job specific clean-up when a failure occurs. This is the perfect location to send an alert to your users or revert any actions performed by the job. The <code>Exception</code> that caused the job to fail will be passed to the <code>failed</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Jobs</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Exception</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Podcast</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">AudioProcessor</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Bus</span>\<span class="title">Queueable</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">SerializesModels</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">InteractsWithQueue</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Queue</span>\<span class="title">ShouldQueue</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProcessPodcast</span> <span class="keyword">implements</span> <span class="title">ShouldQueue</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">InteractsWithQueue</span>, <span class="title">Queueable</span>, <span class="title">SerializesModels</span>;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> $podcast;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Create a new job instance.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Podcast  $podcast</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(Podcast $podcast)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;podcast = $podcast;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Execute the job.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  AudioProcessor  $processor</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">(AudioProcessor $processor)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Process uploaded podcast...</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The job failed to process.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Exception  $exception</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">failed</span><span class="params">(Exception $exception)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Send user notification of failure, etc...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="failed-job-events"></a></p>
+<h3 id="Failed-Job-Events"><a href="#Failed-Job-Events" class="headerlink" title="Failed Job Events"></a>Failed Job Events</h3><p>If you would like to register an event that will be called when a job fails, you may use the <code>Queue::failing</code> method. This event is a great opportunity to notify your team via email or <a href="https://www.hipchat.com" target="_blank" rel="external">HipChat</a>. For example, we may attach a callback to this event from the <code>AppServiceProvider</code> that is included with Laravel:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Queue</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">Events</span>\<span class="title">JobFailed</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Bootstrap any application services.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Queue::failing(<span class="function"><span class="keyword">function</span> <span class="params">(JobFailed $event)</span> </span>&#123;</div><div class="line">            <span class="comment">// $event-&gt;connectionName</span></div><div class="line">            <span class="comment">// $event-&gt;job</span></div><div class="line">            <span class="comment">// $event-&gt;exception</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Register the service provider.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="retrying-failed-jobs"></a></p>
+<h3 id="Retrying-Failed-Jobs"><a href="#Retrying-Failed-Jobs" class="headerlink" title="Retrying Failed Jobs"></a>Retrying Failed Jobs</h3><p>To view all of your failed jobs that have been inserted into your <code>failed_jobs</code> database table, you may use the <code>queue:failed</code> Artisan command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:failed</div></pre></td></tr></table></figure></p>
+<p>The <code>queue:failed</code> command will list the job ID, connection, queue, and failure time. The job ID may be used to retry the failed job. For instance, to retry a failed job that has an ID of <code>5</code>, issue the following command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:retry <span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p>To retry all of your failed jobs, execute the <code>queue:retry</code> command and pass <code>all</code> as the ID:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:retry all</div></pre></td></tr></table></figure></p>
+<p>If you would like to delete a failed job, you may use the <code>queue:forget</code> command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:forget <span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p>To delete all of your failed jobs, you may use the <code>queue:flush</code> command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan queue:flush</div></pre></td></tr></table></figure></p>
+<p><a name="job-events"></a></p>
+<h2 id="Job-Events"><a href="#Job-Events" class="headerlink" title="Job Events"></a>Job Events</h2><p>Using the <code>before</code> and <code>after</code> methods on the <code>Queue</code> <a href="/mk/laravel/facades.html">facade</a>, you may specify callbacks to be executed before or after a queued job is processed. These callbacks are a great opportunity to perform additional logging or increment statistics for a dashboard. Typically, you should call these methods from a <a href="/mk/laravel/providers.html">service provider</a>. For example, we may use the <code>AppServiceProvider</code> that is included with Laravel:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Queue</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">Events</span>\<span class="title">JobProcessed</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Queue</span>\<span class="title">Events</span>\<span class="title">JobProcessing</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Bootstrap any application services.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Queue::before(<span class="function"><span class="keyword">function</span> <span class="params">(JobProcessing $event)</span> </span>&#123;</div><div class="line">            <span class="comment">// $event-&gt;connectionName</span></div><div class="line">            <span class="comment">// $event-&gt;job</span></div><div class="line">            <span class="comment">// $event-&gt;job-&gt;payload()</span></div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        Queue::after(<span class="function"><span class="keyword">function</span> <span class="params">(JobProcessed $event)</span> </span>&#123;</div><div class="line">            <span class="comment">// $event-&gt;connectionName</span></div><div class="line">            <span class="comment">// $event-&gt;job</span></div><div class="line">            <span class="comment">// $event-&gt;job-&gt;payload()</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Register the service provider.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Using the <code>looping</code> method on the <code>Queue</code> <a href="/mk/laravel/facades.html">facade</a>, you may specify callbacks that execute before the worker attempts to fetch a job from a queue. For example, you might register a Closure to rollback any transactions that were left open by a previously failed job:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Queue::looping(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span> (DB::transactionLevel() &gt; <span class="number">0</span>) &#123;</div><div class="line">        DB::rollBack();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/queues.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

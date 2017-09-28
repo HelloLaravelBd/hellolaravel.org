@@ -779,6 +779,34 @@ ul.demo li {
     transform: translate(0, 0);
   }
 }
+.awesome-area {
+  height: auto;
+  background-color: #f5a6a6;
+  margin-top: 20px;
+  border: 4px solid #f4645f;
+}
+.pack-top {
+  height: 90px;
+  background: #00a098;
+  text-align: center;
+  border-bottom: 4px solid #f4645f;
+}
+.pack-top h1 {
+  color: #f3f6f9;
+}
+.yah-table ul {
+  list-style: none;
+}
+.yah-table ul li {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  height: 30px;
+}
+.dev-part {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
 @font-face {
   font-family: Fira;
   font-style: normal;
@@ -1048,7 +1076,7 @@ ul.demo li {
   }
   .highlight pre {
     padding: 1.2em 1em;
-    color: #c5c8c6;
+    color: #f00;
   }
   .content.with-sidebar {
     margin: auto;

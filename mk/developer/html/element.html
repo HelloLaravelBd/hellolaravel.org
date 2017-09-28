@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML elements — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="HTML elements — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/title.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="HTML elements — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "HTML Master"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link current">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
+      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://blog.hellolaravel.org" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link current">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="http://localhost:4000/mk/laravel-5.5/" class="nav-link" >5.5</a></li>
+      <li><a href="http://localhost:4000/mk/laravel-5.4/" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://blog.hellolaravel.org" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                HTML Master
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/html/index.html" class="sidebar-link">HTML Introduction</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/html/index.html" class="sidebar-link">HTML Introduction</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/html/intro.html" class="sidebar-link">HTML Story</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/html/intro.html" class="sidebar-link">HTML Story</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/developer/html/element.html" class="sidebar-link current">HTML elements</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/html/element.html" class="sidebar-link current">HTML elements</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content HTML Master with-sidebar ">
+    
+      
+
+    
+    
+      <h1>HTML elements</h1>
+    
+    <hr>
+<h2 id="Heading"><a href="#Heading" class="headerlink" title="Heading"></a>Heading</h2><ul>
+<li>Heading represent h1 to h6</li>
+</ul>
+<iframe width="100%" height="350" src="//jsfiddle.net/mostafa6765/eb7vqyao/5/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="Paragraph"><a href="#Paragraph" class="headerlink" title="Paragraph"></a>Paragraph</h2><p> <code>&lt;p&gt;</code> element defines Paragraph . here important line break (<code>&lt;br&gt;</code>) and pre formated text (<code>&lt;pre&gt;</code>)<br> <iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/gg0ksgjd/2/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></p>
+<ul>
+<li>with <code>&lt;pre&gt;</code> element . this element helps return same output . with it return out one line .</li>
+</ul>
+ <iframe width="100%" height="430" src="//jsfiddle.net/mostafa6765/43bzwoxv/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="span"><a href="#span" class="headerlink" title="span"></a>span</h2><p>The HTML <code>&lt;span&gt;</code> element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/hLt0wojp/embedded/html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+<h2 id="Hooks-attributes"><a href="#Hooks-attributes" class="headerlink" title="Hooks attributes"></a>Hooks attributes</h2><h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><p><code>ID&#39;s are unique</code></p>
+<ul>
+<li>Each element can have only one ID</li>
+<li>Each page can have only one element with that ID</li>
+</ul>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><p><code>Classes are NOT unique</code></p>
+<ul>
+<li>You can use the same class on multiple elements.</li>
+<li>You can use multiple classes on the same element.</li>
+</ul>
+<h2 id="Inline-text-semantics"><a href="#Inline-text-semantics" class="headerlink" title="Inline text semantics"></a>Inline text semantics</h2><h3 id="anchor-lt-a-gt"><a href="#anchor-lt-a-gt" class="headerlink" title="anchor &lt;a&gt;"></a>anchor <code>&lt;a&gt;</code></h3><p> The HTML <code>&lt;a&gt;</code>element (or anchor element) creates a hyperlink to other web pages, files, locations within the same page, email addresses, or any other URL. . attributes &gt;&gt;<br> <code>href</code>,<code>target</code>,<code>rel</code></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/saL5jxym/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-br-gt"><a href="#lt-br-gt" class="headerlink" title="&lt;br&gt;"></a><code>&lt;br&gt;</code></h3><p><code>&lt;br&gt;</code> element represnt line break.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/cfcsoewo/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-em-gt"><a href="#lt-em-gt" class="headerlink" title="&lt;em&gt;"></a><code>&lt;em&gt;</code></h3><p>Emphasis  <code>&lt;em&gt;</code> element is define italic text .</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/b89zhuzu/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-i-gt"><a href="#lt-i-gt" class="headerlink" title="&lt;i&gt;"></a><code>&lt;i&gt;</code></h3><p><code>&lt;i&gt;</code> element represent italic .</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/33gd3kc8/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-strong-gt"><a href="#lt-strong-gt" class="headerlink" title="&lt;strong&gt;"></a><code>&lt;strong&gt;</code></h3><iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/kyna5vor/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-small-gt"><a href="#lt-small-gt" class="headerlink" title="&lt;small&gt;"></a><code>&lt;small&gt;</code></h3><p>The HTML <code>&lt;small&gt;</code> element makes the text font size one size smaller (for example, from large to medium, or from small to x-small) down to the browser’s minimum font size.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/0kkzptuv/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-code-gt"><a href="#lt-code-gt" class="headerlink" title="&lt;code&gt;"></a><code>&lt;code&gt;</code></h3><p><code>&lt;code&gt;</code> represents programming language.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/2ov2q7p5/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-abbr-gt"><a href="#lt-abbr-gt" class="headerlink" title="&lt;abbr&gt;"></a><code>&lt;abbr&gt;</code></h3><p>Defines an abbreviation, and usually includes its full description.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/ugykcpqd/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p> HTML has two list type ordered list (<code>&lt;ol&gt;</code>) and unordered list (<code>ul</code>)</p>
+<h3 id="lt-ol-gt"><a href="#lt-ol-gt" class="headerlink" title="&lt;ol&gt;"></a><code>&lt;ol&gt;</code></h3><p>  ordered list :<br>  <iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/ppqr73xu/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></p>
+<ul>
+<li>optional attribute :  <code>&lt;ol type=&quot;1/a/A/i/I&quot; , start=&quot;3&quot;,reversed&gt;</code></li>
+</ul>
+<h3 id="lt-ul-gt"><a href="#lt-ul-gt" class="headerlink" title="&lt;ul&gt;"></a><code>&lt;ul&gt;</code></h3><iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/khrzt988/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-dl-gt"><a href="#lt-dl-gt" class="headerlink" title="&lt;dl&gt;"></a><code>&lt;dl&gt;</code></h3><p> definition list . elements: <code>&lt;dl&gt;</code>,<code>&lt;dt&gt;</code>,<code>&lt;dd&gt;</code></p>
+<ul>
+<li><code>&lt;dl&gt;</code>  = Definition list</li>
+<li><code>&lt;dt&gt;</code>  = Definition term</li>
+<li><code>&lt;dd&gt;</code>  = Describes</li>
+</ul>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/tetL8o6j/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>elements for table : <code>&lt;table&gt;</code>,<code>&lt;thead&gt;</code>,<code>&lt;tfoot&gt;</code>,<code>&lt;tr&gt;</code>,<code>&lt;th&gt;</code>,<code>&lt;tbody&gt;</code>,<code>&lt;td&gt;</code></p>
+<ul>
+<li><code>&lt;thead&gt;</code> = table head</li>
+<li><code>&lt;tfoot&gt;</code> = table foot</li>
+<li><code>&lt;tr&gt;</code>    = table row</li>
+<li><code>&lt;th&gt;</code>    = table header cell</li>
+<li><code>&lt;tbody&gt;</code> = table body</li>
+<li><code>&lt;td&gt;</code>    = table cell<br>~ <caption> element also part of table.<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/0669tesj/embedded/html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+</caption></li>
+</ul>
+<h2 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h2><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;button&gt;</code></td>
+<td>The HTML <code>&lt;button&gt;</code> element represents a clickable button.</td>
+</tr>
+<tr>
+<td><code>&lt;datalist&gt;</code></td>
+<td>The HTML <code>&lt;datalist&gt;</code> element contains a set of <option> elements that represent the values available for other controls.</option></td>
+</tr>
+<tr>
+<td><code>&lt;fieldset&gt;</code></td>
+<td>The HTML <code>&lt;fieldset&gt;</code> element is used to group several controls as well as labels (<label>) within a web form.</label></td>
+</tr>
+<tr>
+<td><code>&lt;form&gt;</code></td>
+<td>The HTML <code>&lt;form&gt;</code>element represents a document section that contains interactive controls to submit information to a web server.</td>
+</tr>
+<tr>
+<td><code>&lt;input&gt;</code></td>
+<td>The HTML <code>&lt;input&gt;</code> element is used to create interactive controls for web-based forms in order to accept data from the user.</td>
+</tr>
+<tr>
+<td><code>&lt;label&gt;</code></td>
+<td>The HTML <code>&lt;label&gt;</code> element represents a caption for an item in a user interface.</td>
+</tr>
+<tr>
+<td><code>&lt;legend&gt;</code></td>
+<td>The HTML <code>&lt;legend&gt;</code> element represents a caption for the content of its parent <code>&lt;fieldset&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;meter&gt;</code></td>
+<td>The HTML <code>&lt;meter&gt;</code> element represents either a scalar value within a known range or a fractional value.</td>
+</tr>
+<tr>
+<td><code>&lt;optgroup&gt;</code></td>
+<td>The HTML <code>&lt;optgroup&gt;</code> element creates a grouping of options within a <code>&lt;select&gt;</code> element.</td>
+</tr>
+<tr>
+<td><code>&lt;option&gt;</code></td>
+<td>The HTML <code>&lt;option&gt;</code> element is used to define an item contained in a <code>&lt;select&gt;</code>, an <code>&lt;optgroup&gt;</code>\, or a<code>&lt;datalist&gt;</code> element. As such, <code>&lt;option&gt;</code>can represent menu items in popups and other lists of items in an HTML document.</td>
+</tr>
+<tr>
+<td><code>&lt;output&gt;</code></td>
+<td>The HTML <code>&lt;output&gt;</code> element represents the result of a calculation or user action.</td>
+</tr>
+<tr>
+<td><code>&lt;progress&gt;</code></td>
+<td>The HTML <code>&lt;progress&gt;</code> element represents the completion progress of a task, typically displayed as a progress bar.</td>
+</tr>
+<tr>
+<td><code>&lt;select&gt;</code></td>
+<td>The HTML <code>&lt;select&gt;</code> element represents a control that provides a menu of options:</td>
+</tr>
+<tr>
+<td><code>&lt;textarea&gt;</code></td>
+<td>The HTML <code>&lt;textarea&gt;</code> element represents a multi-line plain-text editing control.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="button"><a href="#button" class="headerlink" title="button"></a>button</h3><p>The HTML <code>&lt;button&gt;</code> element represents a clickable button. Attributes &gt;&gt; <code>name</code>,<code>value</code>,<code>type</code>,<code>disabled</code>,<code>autofocus</code></p>
+<p><code>&lt;button type=&quot;submit&quot; name=&quot;button&quot; autofocus value=&quot;primary&quot;&gt;submit_button&lt;/button&gt;</code></p>
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p><code>input</code> Defines an interactive control within a web form. Attributes</p>
+<ul>
+<li><code>type</code> = text , email ,number , checkbox, radio , submit</li>
+<li><code>name</code> = <code>&quot;first_name&quot;</code> .The name value must be unique within the context of a <form> container.<br>It can only contain alphanumeric characters a-z A-Z 0-9 and some special characters like - <code>_… but no space.</code></form></li>
+<li><code>required</code> = must be full up input</li>
+<li><code>disabled</code> = input not active</li>
+<li><code>placeholder</code> = <code>&quot;e.g. alex@smith.com&quot;</code></li>
+</ul>
+<h3 id="fieldset"><a href="#fieldset" class="headerlink" title="fieldset"></a>fieldset</h3><p>Defines a group of controls within a form. <code>&lt;fieldset&gt;.....&lt;/fieldset&gt;</code></p>
+<h3 id="legend"><a href="#legend" class="headerlink" title="legend"></a>legend</h3><p>Defines a caption for a parent’s content.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/33Lsc1f2/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lavel"><a href="#lavel" class="headerlink" title="lavel"></a>lavel</h3><p> The HTML <code>&lt;label&gt;</code> element represents a caption for an item in a user interface.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/dns71cdd/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h3><p>The HTML <code>&lt;textarea&gt;</code> element represents a multi-line plain-text editing control.Attributes &gt;&gt;<br><code>name</code>,<code>autocomplete</code>,<code>minlenght</code>,<code>maxlength</code>,<code>placeholder</code>,<code>required</code>,<code>autofocus</code>,<code>disabled</code></p>
+<h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><p><code>&lt;form&gt;</code> element represents the form . Attributes &gt;&gt; <code>action</code> , <code>method</code></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/1zv7fxmg/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="image-amp-Multimedia"><a href="#image-amp-Multimedia" class="headerlink" title="image &amp; Multimedia"></a>image &amp; Multimedia</h2><h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><p>The HTML <code>&lt;img&gt;</code> element represents an image in the document. atrribute &gt;&gt; <code>src=&quot;images/logo.png&quot;</code>,<code>alt=&quot;logo&quot;</code>,<code>style=&quot;width:304px;height:228px;&quot;</code></p>
+<ul>
+<li>The alt attribute provides an alternate text for an image, if the user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).</li>
+</ul>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/3c3Le5rr/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<ul>
+<li>optional atrribute &gt;&gt; <code>srcset</code>,<code>sizes</code></li>
+</ul>
+<h3 id="video"><a href="#video" class="headerlink" title="video"></a>video</h3><p><code>&lt;video&gt;</code> element define video . video attributes &gt;&gt; <code>src</code>, <code>autoplay</code>,<code>buffered</code>, <code>controls</code>,<code>crossorigin</code>,<code>loop</code>,<code>muted</code>,<code>played</code>,<code>preload</code>,<code>poster</code>,<code>height</code>,<code>width</code></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/ebxdr2Lu/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="audio"><a href="#audio" class="headerlink" title="audio"></a>audio</h3><p><code>&lt;audio&gt;</code> element define audio . atrributes &gt;&gt; <code>src</code>, <code>volume</code>,<code>autoplay</code>,<code>controls</code>,<code>loop</code>,<code>muted</code>,<code>preload</code></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/tk6ef32z/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h2><p>Use the HTML <code>&lt;canvas&gt;</code> element with the canvas scripting API to draw graphics and animations . attributes &gt;&gt; <code>width</code>,<code>height</code>,<code>moz-opaque</code></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/5j5nkz4o/embedded/result,html,css/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="embed"><a href="#embed" class="headerlink" title="embed"></a>embed</h2><p>Defines a container for external application. Attributes &gt;&gt;<code>src</code>, <code>type</code>,<code>height</code>,<code>width</code></p>
+<iframe width="100%" height="600" src="//jsfiddle.net/mostafa6765/Lea1zxt0/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h2><p>Defines a container for a nested browsing context: you can include a web page within another web page. attributes &gt;&gt; <code>src</code>,<code>allowfullscreen</code>,<code>width</code>,<code>height</code></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/evqh1LLn/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="Semantic"><a href="#Semantic" class="headerlink" title="Semantic"></a>Semantic</h2><h3 id="div"><a href="#div" class="headerlink" title="div"></a><code>div</code></h3><p>The HTML <div> element is the generic container for flow content and does not inherently represent anything. Use it to group elements for purposes such as styling (using the class or id attributes), marking a section of a document in a different language (using the lang attribute), and so on. <code>efines a generic block of content, that does not carry any semantic value. Used for layout elements like containers.</code></div></p>
+<p><code>&lt;div&gt;.....&lt;/div&gt;</code></p>
+<h3 id="article"><a href="#article" class="headerlink" title="article"></a><code>article</code></h3><p>Defines a self-contained block of content that can exist in any context.<br>It can have its own header, footer, sections… Useful for a list of blog posts.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/dLp9fpdh/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="figure"><a href="#figure" class="headerlink" title="figure"></a>figure</h3><p>Defines a single self-contained element, usually an image.</p>
+<h3 id="figcaption"><a href="#figcaption" class="headerlink" title="figcaption"></a>figcaption</h3><iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/eq5vLoua/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><p>Defines the header of a web page or section.</p>
+<h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt;nav&gt;"></a><code>&lt;nav&gt;</code></h3><p>Defines a section with navigation links.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/m873wqrb/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt;main&gt;"></a><code>&lt;main&gt;</code></h3><p> Defines the main content of a web page. Can be displayed with a sidebar. see aside code</p>
+<h3 id="aside"><a href="#aside" class="headerlink" title="aside"></a><code>aside</code></h3><p> Defines a block of content that is related to the main content. Displayed as a sidebar usually.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mostafa6765/9agfm9nv/embedded/html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="footer"><a href="#footer" class="headerlink" title="footer"></a><code>footer</code></h3><p>Defines the footer of a web page or section.</p>
+<h3 id="section"><a href="#section" class="headerlink" title="section"></a><code>section</code></h3><p>Defines a section within a web page.</p>
+<h3 id="time"><a href="#time" class="headerlink" title="time"></a><code>time</code></h3><p>Defines a time on a 24h clock. atrribute &gt;&gt; <code>datetime</code></p>
+<h3 id="lt-mark-gt"><a href="#lt-mark-gt" class="headerlink" title="&lt;mark&gt;"></a><code>&lt;mark&gt;</code></h3><p>Higlight some text .</p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/mk/developer/html/element.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

@@ -141,12 +141,10 @@
     versionSelect && versionSelect.addEventListener('change', function (e) {
       var version = e.target.value
       var section = window.location.pathname.match(/\/v\d\/(\w+?)\//)[1]
-      if (version === 'SELF') return
+      if (version === 'laravel-5.5') return
       window.location.assign(
         'http://' +
-        version +
-        (version && '.') +
-        'vuejs.org/' + section + '/'
+        'hellolaravel.org/mk/' + 'version' + '/'
       )
     })
   }
