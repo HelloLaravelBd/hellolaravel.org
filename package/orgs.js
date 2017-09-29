@@ -1,7 +1,7 @@
 
     var orgs = [
-        // {"name": "csync/TogetherStream",
-        //  "type": "repo"},
+        {"name": "laravel/horizon",
+         "type": "repo"},
 //         {"name": "bradleyjeck/epanetReader",
 //          "type": "repo"},
 //         {"name": "wasdev",
