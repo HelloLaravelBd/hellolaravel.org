@@ -253,20 +253,6 @@
                 
                 
                 <li>
-                    <a href="/bangla/lara/transitions.html" class="sidebar-link">Transition Effects</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/transitioning-state.html" class="sidebar-link">Transitioning State</a>
-                </li>
-            
-                
-                
-                
-                <li>
                     <a href="/bangla/lara/filesystem.html" class="sidebar-link">ফাইল সিস্টেম / স্টোরেজ</a>
                 </li>
             
@@ -274,91 +260,7 @@
                 
                 
                 <li>
-                    <a href="/bangla/lara/events.html" class="sidebar-link">Event Handling</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/forms.html" class="sidebar-link">Form Input Bindings</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/plugins.html" class="sidebar-link">Plugins</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/single-file-components.html" class="sidebar-link">Single File Components</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/deployment.html" class="sidebar-link">Production Deployment Tips</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/list.html" class="sidebar-link">List Rendering</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/state-management.html" class="sidebar-link">State Management</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/unit-testing.html" class="sidebar-link">Unit Testing</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/ssr.html" class="sidebar-link">Server-Side Rendering</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/typescript.html" class="sidebar-link">TypeScript Support</a>
-                </li>
-            
-                
-                
-                
-                <li>
                     <a href="/bangla/lara/testing.html" class="sidebar-link">লারাভেল ডাস্ক -   Laravel Dusk</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/migration-vue-router.html" class="sidebar-link">Migration from Vue Router 0.7.x</a>
-                </li>
-            
-                
-                
-                
-                <li>
-                    <a href="/bangla/lara/migration-vuex.html" class="sidebar-link">Migration from Vuex 0.6.x to 1.0</a>
                 </li>
             
                 
@@ -397,22 +299,23 @@
       <h1>নেমস্পেস - Namespace</h1>
     
     <hr>
-<h2 id="নেমস্পেস-কি"><a href="#নেমস্পেস-কি" class="headerlink" title="নেমস্পেস কি?"></a>নেমস্পেস কি?</h2><p>নেমস্পেস মুলত ডিরেক্টরি / ফাইল নির্দেশক ।</p>
-<h3 id="নেমস্পেস-সম্পর্কে-বিস্তারিত"><a href="#নেমস্পেস-সম্পর্কে-বিস্তারিত" class="headerlink" title="নেমস্পেস সম্পর্কে বিস্তারিত"></a>নেমস্পেস সম্পর্কে বিস্তারিত</h3><p>নেমস্পেস সম্পর্কে একটা গল্প শোনেন - রবি আর সুজা দুই ভাই , তারা দুজনে একই ক্লাসে পরে । তাদের মাঝে খুব ঝগড়া হয় , বিশেষ করে কলম নিয়ে বেশি । কারন তারা তাদের পরার জিনিস পত্র একই ডেস্কের ড্রয়ারে রাখে । কলম একই কালার এর হওয়ার জন্য কে কার কলম ববহার করছে বুঝতে পারে না ।  এই সমস্যা সমাধানের জন্য রবির বাবা তাদের কলম এ লেবেল লাগিয়ে দেয় । এতে আর সমস্যা হয় না ।  </p>
-<p>আপানার লারাভেল প্যাকেজে বা অন্য যেকোনো পি এইচ পি ডেভেলপমেন্ট প্যাকেজে যদি একই নামে একাধিক <code>function</code> ,  <code>class</code> , <code>interface</code> , <code>constant</code> , <code>trait</code> থাকে তখন আপনি সমস্যায় পরবেন । কোন তা কল করতাছেন সেটা ফিক্স করা সম্ভব না । এই সমস্যা সমাধানের জন্য নেমস্পেস ব্যবহার করা হয় । নেমস্পেস তা লেবেল বা স্তিকার  এর মত কাজ করে ।</p>
-<p>নেমস্পেস কে প্রকাশ করা  হয় <code>namespace</code> দিয়ে  । লারাভেল এর সকল মডেল বা কন্ট্রোলার এর সকল ফাইল এর টপ এ<br>namespace App;   বা  এমন <code>namespace App\Http\Controllers;</code> সাব-নেমস্পেস ব্যাকস্লাশ (<code>\</code>)  দিয়ে পৃথক করা হয় ।</p>
+<h2 id="নেমস্পেস-কি"><a href="#নেমস্পেস-কি" class="headerlink" title="নেমস্পেস কি?"></a>নেমস্পেস কি?</h2><p>নেমস্পেস মুলত ডিরেক্টরি বা  ফাইল নির্দেশক ।</p>
+<h3 id="নেমস্পেস-সম্পর্কে-বিস্তারিত"><a href="#নেমস্পেস-সম্পর্কে-বিস্তারিত" class="headerlink" title="নেমস্পেস সম্পর্কে বিস্তারিত"></a>নেমস্পেস সম্পর্কে বিস্তারিত</h3><p>নেমস্পেস সম্পর্কে একটা গল্প  - রবি আর সুজা দুই ভাই , তারা দুজনে একই ক্লাসে পরে । তাদের মাঝে খুব ঝগড়া হয় , বিশেষ করে কলম নিয়ে  । কারন তারা তাদের পড়ার জিনিস পত্র একই ডেস্কের ড্রয়ারে রাখে । কলম একই কালার এর হওয়ার জন্য কে কার কলম ববহার করছে বুঝতে পারে না ।  এই সমস্যা সমাধানের জন্য রবির বাবা তাদের কলম এ লাবেল লাগিয়ে দেয় । এতে আর সমস্যা হয় না ।  বলা যায়<br> <code>নেমস্পেস এক ধরনের লাবেল বা স্টিকার</code> ।  </p>
+<p>আপানার লারাভেল প্যাকেজে বা অন্য যেকোনো পি এইচ পি ডেভেলপমেন্ট প্রোজেক্ট এ যদি একই নামে একাধিক <code>function</code> ,  <code>class</code> , <code>interface</code> , <code>constant</code> , <code>trait</code> , <code>abstract</code> থাকে তখন সমস্যা সৃষ্টি হবে । কোন টা ব্য্যবহার হচ্ছে সেটা ফিক্স করা সম্ভব না । এই সমস্যা সমাধানের জন্য নেমস্পেস ব্যবহার করা হয় ।</p>
+<p>নেমস্পেস কে প্রকাশ করা  হয় <code>namespace</code> দিয়ে  । পিএইচপি (PHP) / লারাভেল (Laravel) এর সকল ফাইল এর উপরে (top) এ<br> নেমস্পেস (namespace) ব্যবহার করতে হয়  ।   উদাহরণ  <code>namespace App\Http\Controllers;</code> সাব-নেমস্পেস ব্যাকস্লাশ (<code>\</code>)  দিয়ে পৃথক করা হয় ।</p>
 <p>laravel এর একটি ফাইল  একটা নেমস্পেস হবে । বাকি গুলা use ব্যবহার করে নেমস্পেশ দেখাতে হবে ।</p>
+<ul>
+<li>নেমস্পেস ব্যবহারের সুবিধা হচ্ছে পুনরায় অন্য ফাইল এ ব্যবহার করা যায় ।</li>
+</ul>
 <h3 id="নেমস্পেস-ইমপোর্ট-importing-aliasing"><a href="#নেমস্পেস-ইমপোর্ট-importing-aliasing" class="headerlink" title="নেমস্পেস  ইমপোর্ট (importing/aliasing)"></a>নেমস্পেস  ইমপোর্ট (importing/aliasing)</h3><p>নেমস্পেসের মাধ্যমে ইমপোর্ট করা হয় <code>use</code> operator দিয়ে । লারাভেল প্যাকেজ এর ডিফল্ট Controller এর কোড ।</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Bus</span>\<span class="title">DispatchesJobs</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Routing</span>\<span class="title">Controller</span> <span class="title">as</span> <span class="title">BaseController</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Validation</span>\<span class="title">ValidatesRequests</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Auth</span>\<span class="title">Access</span>\<span class="title">AuthorizesRequests</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Controller</span> <span class="keyword">extends</span> <span class="title">BaseController</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">AuthorizesRequests</span>, <span class="title">DispatchesJobs</span>, <span class="title">ValidatesRequests</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li><code>aliasing / উপনাম/ডাক-নাম</code> - সবার নাম অনেক বড় হয় , কিন্তু সহজে ডাকার জন্য ছোট একটা নাম দেওয়া হয় , জাকে ডাক নাম বলা হয় । এই <code>ছোট বা ডাক নাম</code> কে <code>alias</code> বলা হয় ।</li>
+<li><code>aliasing / উপনাম/ডাক-নাম</code> - সবার নাম অনেক বড় হয় , কিন্তু সহজে ডাকার জন্য ছোট একটা নাম থাকে ,   ডাক নাম  । এই <code>ছোট বা ডাক নাম</code> কে <code>alias</code> বলা হয় ।</li>
 </ul>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Routing</span>\<span class="title">Controller</span> <span class="title">as</span> <span class="title">BaseController</span>;</div></pre></td></tr></table></figure>
 <p><code>as</code> দিয়ে  <code>aliasing</code> নেমস্পেস ইমপোর্ট করা হয় । <code>Illuminate\Routing\Controller</code> এর ডাক-নাম <code>BaseController</code> ।<br>তাই Illuminate\Routing\Controller এর পরিবর্তে <code>BaseController</code> নামে extends(<code>class Controller extends BaseController</code>) করে <code>Illuminate\Routing\Controller</code> এর সব কিছু চাইল্ড পেয়েছে ।  </p>
 <ul>
-<li><a href="http://forum.vuejs.org/" target="_blank" rel="external">Forum</a>: The best place to ask questions and get answers about Vue and its ecosystem.</li>
-<li><a href="https://gitter.im/vuejs/vue" target="_blank" rel="external">Gitter Channel</a>: A place for devs to meet and chat. You can ask questions here too, but the forum is the better platform, since the discussions are threaded.</li>
-<li><a href="https://github.com/vuejs" target="_blank" rel="external">Github</a>: If you have a bug to report or feature to request, that’s what the GitHub issues are for. We also welcome pull requests!</li>
+<li><a href="http://php.net/manual/en/language.namespaces.rationale.php" target="_blank" rel="external">বিস্তারিত জানতে চাইলে ভিসিট করুন </a></li>
 </ul>
 <h3 id="extends-implements-traits"><a href="#extends-implements-traits" class="headerlink" title="extends , implements , traits"></a>extends , implements , traits</h3><p>অবজেক্ট ওরিয়েন্ট প্রোগ্রামিং ল্যাঙ্গুয়েজ এ extends , implements পড়েছেন । পি এইচ পি তে স্পেশাল traits । এই তিনটা টপিক জানা না থাকলে দেখে নিবেন ।</p>
 <p>অন্যান্য ল্যাঙ্গুয়েজে  মাল্টিপল ইনহেরিটান্স সম্ভব কিন্তু পি এইচ পি তে  মাল্টিপল ইনহেরিটান্স সাপোর্ট করে না  । মাল্টিলেভেল  ইনহেরিটান্স  সাপোর্ট করে । মাল্টিপল ইনহেরিটান্স এর কাজ traits দিয়ে করতে পারবেন ।</p>
