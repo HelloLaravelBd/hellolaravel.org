@@ -37,7 +37,8 @@
 .site-house{
   width: 100%;
   height: 400px;
-  background-color: #f9d2d2;
+  /*background-color: #f9d2d2;*/
+  background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%);
   border-bottom: 4px solid #00a098;
 }
 .site-house h1{
