@@ -1,0 +1,1876 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blade Templates — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Blade Templates — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Blade Templates — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link current">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Blade Templates</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Blade is the simple, yet powerful templating engine provided with Laravel. Unlike other popular PHP templating engines, Blade does not restrict you from using plain PHP code in your views. In fact, all Blade views are compiled into plain PHP code and cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade view files use the <code>.blade.php</code> file extension and are typically stored in the <code>resources/views</code> directory.</p>
+<p><a name="template-inheritance"></a></p>
+<h2 id="Template-Inheritance"><a href="#Template-Inheritance" class="headerlink" title="Template Inheritance"></a>Template Inheritance</h2><p><a name="defining-a-layout"></a></p>
+<h3 id="Defining-A-Layout"><a href="#Defining-A-Layout" class="headerlink" title="Defining A Layout"></a>Defining A Layout</h3><p>Two of the primary benefits of using Blade are <em>template inheritance</em> and <em>sections</em>. To get started, let’s take a look at a simple example. First, we will examine a “master” page layout. Since most web applications maintain the same general layout across various pages, it’s convenient to define this layout as a single Blade view:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;!-- Stored in resources/views/layouts/app.blade.php --&gt;</div><div class="line"></div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;App Name - @yield('title')&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        @section('sidebar')</div><div class="line">            This is the master sidebar.</div><div class="line">        @show</div><div class="line"></div><div class="line">        &lt;div class="container"&gt;</div><div class="line">            @yield('content')</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>As you can see, this file contains typical HTML mark-up. However, take note of the <code>@section</code> and <code>@yield</code> directives. The <code>@section</code> directive, as the name implies, defines a section of content, while the <code>@yield</code> directive is used to display the contents of a given section.</p>
+<p>Now that we have defined a layout for our application, let’s define a child page that inherits the layout.</p>
+<p><a name="extending-a-layout"></a></p>
+<h3 id="Extending-A-Layout"><a href="#Extending-A-Layout" class="headerlink" title="Extending A Layout"></a>Extending A Layout</h3><p>When defining a child view, use the Blade <code>@extends</code> directive to specify which layout the child view should “inherit”. Views which extend a Blade layout may inject content into the layout’s sections using <code>@section</code> directives. Remember, as seen in the example above, the contents of these sections will be displayed in the layout using <code>@yield</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;!-- Stored in resources/views/child.blade.php --&gt;</div><div class="line"></div><div class="line">@extends(<span class="string">'layouts.app'</span>)</div><div class="line"></div><div class="line">@section(<span class="string">'title'</span>, <span class="string">'Page Title'</span>)</div><div class="line"></div><div class="line">@section(<span class="string">'sidebar'</span>)</div><div class="line">    @@<span class="keyword">parent</span></div><div class="line"></div><div class="line">    &lt;p&gt;This is appended to the master sidebar.&lt;/p&gt;</div><div class="line">@endsection</div><div class="line"></div><div class="line">@section(<span class="string">'content'</span>)</div><div class="line">    &lt;p&gt;This is my body content.&lt;/p&gt;</div><div class="line">@endsection</div></pre></td></tr></table></figure></p>
+<p>In this example, the <code>sidebar</code> section is utilizing the <code>@@parent</code> directive to append (rather than overwriting) content to the layout’s sidebar. The <code>@@parent</code> directive will be replaced by the content of the layout when the view is rendered.</p>
+<p>Blade views may be returned from routes using the global <code>view</code> helper:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'blade'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> view(<span class="string">'child'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a name="components-and-slots"></a></p>
+<h2 id="Components-amp-Slots"><a href="#Components-amp-Slots" class="headerlink" title="Components &amp; Slots"></a>Components &amp; Slots</h2><p>Components and slots provide similar benefits to sections and layouts; however, some may find the mental model of components and slots easier to understand. First, let’s imagine a reusable “alert” component we would like to reuse throughout our application:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;!-- /resources/views/alert.blade.php --&gt;</div><div class="line"></div><div class="line">&lt;div class="alert alert-danger"&gt;</div><div class="line">    &#123;&#123; $slot &#125;&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>The <code></code> variable will contain the content we wish to inject into the component. Now, to construct this component, we can use the <code>@component</code> Blade directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@component(<span class="string">'alert'</span>)</div><div class="line">    &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!</div><div class="line">@endcomponent</div></pre></td></tr></table></figure></p>
+<p>Sometimes it is helpful to define multiple slots for a component. Let’s modify our alert component to allow for the injection of a “title”. Named slots may be displayed by simply “echoing” the variable that matches their name:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;!-- /resources/views/alert.blade.php --&gt;</div><div class="line"></div><div class="line">&lt;div class="alert alert-danger"&gt;</div><div class="line">    &lt;div class="alert-title"&gt;&#123;&#123; $title &#125;&#125;&lt;/div&gt;</div><div class="line"></div><div class="line">    &#123;&#123; $slot &#125;&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Now, we can inject content into the named slot using the <code>@slot</code> directive. Any content not within a <code>@slot</code> directive will be passed to the component in the <code>$slot</code> variable:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@component(<span class="string">'alert'</span>)</div><div class="line">    @slot(<span class="string">'title'</span>)</div><div class="line">        Forbidden</div><div class="line">    @endslot</div><div class="line"></div><div class="line">    You are not allowed to access this resource!</div><div class="line">@endcomponent</div></pre></td></tr></table></figure></p>
+<h4 id="Passing-Additional-Data-To-Components"><a href="#Passing-Additional-Data-To-Components" class="headerlink" title="Passing Additional Data To Components"></a>Passing Additional Data To Components</h4><p>Sometimes you may need to pass additional data to a component. For this reason, you can pass an array of data as the second argument to the <code>@component</code> directive. All of the data will be made available to the component template as variables:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@component(<span class="string">'alert'</span>, [<span class="string">'foo'</span> =&gt; <span class="string">'bar'</span>])</div><div class="line">    ...</div><div class="line">@endcomponent</div></pre></td></tr></table></figure></p>
+<p><a name="displaying-data"></a></p>
+<h2 id="Displaying-Data"><a href="#Displaying-Data" class="headerlink" title="Displaying Data"></a>Displaying Data</h2><p>You may display data passed to your Blade views by wrapping the variable in curly braces. For example, given the following route:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'greeting'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> view(<span class="string">'welcome'</span>, [<span class="string">'name'</span> =&gt; <span class="string">'Samantha'</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>You may display the contents of the <code>name</code> variable like so:</p>
+<pre><code>Hello, {{ $name }}.
+</code></pre><p>Of course, you are not limited to displaying the contents of the variables passed to the view. You may also echo the results of any PHP function. In fact, you can put any PHP code you wish inside of a Blade echo statement:</p>
+<pre><code>The current UNIX timestamp is {{ time() }}.
+</code></pre><blockquote>
+<p>{note} Blade two curly brace statements are automatically sent through PHP’s <code>htmlspecialchars</code> function to prevent XSS attacks.</p>
+</blockquote>
+<h4 id="Displaying-Unescaped-Data"><a href="#Displaying-Unescaped-Data" class="headerlink" title="Displaying Unescaped Data"></a>Displaying Unescaped Data</h4><p>By default, Blade two curly brace statements are automatically sent through PHP’s <code>htmlspecialchars</code> function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:</p>
+<pre><code>Hello, {!! $name !!}.
+</code></pre><blockquote>
+<p>{note} Be very careful when echoing content that is supplied by users of your application. Always use the escaped, double curly brace syntax to prevent XSS attacks when displaying user supplied data.</p>
+</blockquote>
+<p><a name="blade-and-javascript-frameworks"></a></p>
+<h3 id="Blade-amp-JavaScript-Frameworks"><a href="#Blade-amp-JavaScript-Frameworks" class="headerlink" title="Blade &amp; JavaScript Frameworks"></a>Blade &amp; JavaScript Frameworks</h3><p>Since many JavaScript frameworks also use “curly” braces to indicate a given expression should be displayed in the browser, you may use the <code>@</code> symbol to inform the Blade rendering engine an expression should remain untouched. For example:</p>
+<pre><code>&lt;h1&gt;Laravel&lt;/h1&gt;
+
+Hello, @{{ name }}.
+</code></pre><p>In this example, the <code>@</code> symbol will be removed by Blade; however, <code></code> expression will remain untouched by the Blade engine, allowing it to instead be rendered by your JavaScript framework.</p>
+<h4 id="The-verbatim-Directive"><a href="#The-verbatim-Directive" class="headerlink" title="The @verbatim Directive"></a>The <code>@verbatim</code> Directive</h4><p>If you are displaying JavaScript variables in a large portion of your template, you may wrap the HTML in the <code>@verbatim</code> directive so that you do not have to prefix each Blade echo statement with an <code>@</code> symbol:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@verbatim</div><div class="line">    &lt;div class="container"&gt;</div><div class="line">        Hello, &#123;&#123; name &#125;&#125;.</div><div class="line">    &lt;/div&gt;</div><div class="line">@endverbatim</div></pre></td></tr></table></figure></p>
+<p><a name="control-structures"></a></p>
+<h2 id="Control-Structures"><a href="#Control-Structures" class="headerlink" title="Control Structures"></a>Control Structures</h2><p>In addition to template inheritance and displaying data, Blade also provides convenient shortcuts for common PHP control structures, such as conditional statements and loops. These shortcuts provide a very clean, terse way of working with PHP control structures, while also remaining familiar to their PHP counterparts.</p>
+<p><a name="if-statements"></a></p>
+<h3 id="If-Statements"><a href="#If-Statements" class="headerlink" title="If Statements"></a>If Statements</h3><p>You may construct <code>if</code> statements using the <code>@if</code>, <code>@elseif</code>, <code>@else</code>, and <code>@endif</code> directives. These directives function identically to their PHP counterparts:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@if (count($records) === 1)</div><div class="line">    I have one record!</div><div class="line">@elseif (count($records) &gt; 1)</div><div class="line">    I have multiple records!</div><div class="line">@else</div><div class="line">    I don't have any records!</div><div class="line">@endif</div></pre></td></tr></table></figure></p>
+<p>For convenience, Blade also provides an <code>@unless</code> directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@unless (Auth::check())</div><div class="line">    You are not signed in.</div><div class="line">@endunless</div></pre></td></tr></table></figure></p>
+<p>In addition to the conditional directives already discussed, the <code>@isset</code> and <code>@empty</code> directives may be used as convenient shortcuts for their respective PHP functions:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">isset</span>($records)</div><div class="line">    <span class="comment">// $records is defined and is not null...</span></div><div class="line">@endisset</div><div class="line"></div><div class="line">@<span class="keyword">empty</span>($records)</div><div class="line">    <span class="comment">// $records is "empty"...</span></div><div class="line">@endempty</div></pre></td></tr></table></figure></p>
+<p><a name="loops"></a></p>
+<h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>In addition to conditional statements, Blade provides simple directives for working with PHP’s loop structures. Again, each of these directives functions identically to their PHP counterparts:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">@for ($i = 0; $i &lt; 10; $i++)</div><div class="line">    The current value is &#123;&#123; $i &#125;&#125;</div><div class="line">@endfor</div><div class="line"></div><div class="line">@foreach ($users as $user)</div><div class="line">    &lt;p&gt;This is user &#123;&#123; $user-&gt;id &#125;&#125;&lt;/p&gt;</div><div class="line">@endforeach</div><div class="line"></div><div class="line">@forelse ($users as $user)</div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line">@empty</div><div class="line">    &lt;p&gt;No users&lt;/p&gt;</div><div class="line">@endforelse</div><div class="line"></div><div class="line">@while (true)</div><div class="line">    &lt;p&gt;I'm looping forever.&lt;/p&gt;</div><div class="line">@endwhile</div></pre></td></tr></table></figure></p>
+<p class="tip"> When looping, you may use the <a href="#the-loop-variable">loop variable</a> to gain valuable information about the loop, such as whether you are in the first or last iteration through the loop.</p>
+
+<p>When using loops you may also end the loop or skip the current iteration:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    @<span class="keyword">if</span> ($user-&gt;type == <span class="number">1</span>)</div><div class="line">        @<span class="keyword">continue</span></div><div class="line">    @<span class="keyword">endif</span></div><div class="line"></div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line"></div><div class="line">    @<span class="keyword">if</span> ($user-&gt;number == <span class="number">5</span>)</div><div class="line">        @<span class="keyword">break</span></div><div class="line">    @<span class="keyword">endif</span></div><div class="line">@<span class="keyword">endforeach</span></div></pre></td></tr></table></figure></p>
+<p>You may also include the condition with the directive declaration in one line:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    @<span class="keyword">continue</span>($user-&gt;type == <span class="number">1</span>)</div><div class="line"></div><div class="line">    &lt;li&gt;&#123;&#123; $user-&gt;name &#125;&#125;&lt;/li&gt;</div><div class="line"></div><div class="line">    @<span class="keyword">break</span>($user-&gt;number == <span class="number">5</span>)</div><div class="line">@<span class="keyword">endforeach</span></div></pre></td></tr></table></figure></p>
+<p><a name="the-loop-variable"></a></p>
+<h3 id="The-Loop-Variable"><a href="#The-Loop-Variable" class="headerlink" title="The Loop Variable"></a>The Loop Variable</h3><p>When looping, a <code>$loop</code> variable will be available inside of your loop. This variable provides access to some useful bits of information such as the current loop index and whether this is the first or last iteration through the loop:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    @<span class="keyword">if</span> ($loop-&gt;first)</div><div class="line">        This is the first iteration.</div><div class="line">    @<span class="keyword">endif</span></div><div class="line"></div><div class="line">    @<span class="keyword">if</span> ($loop-&gt;last)</div><div class="line">        This is the last iteration.</div><div class="line">    @<span class="keyword">endif</span></div><div class="line"></div><div class="line">    &lt;p&gt;This is user &#123;&#123; $user-&gt;id &#125;&#125;&lt;/p&gt;</div><div class="line">@<span class="keyword">endforeach</span></div></pre></td></tr></table></figure></p>
+<p>If you are in a nested loop, you may access the parent loop’s <code>$loop</code> variable via the <code>parent</code> property:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user)</div><div class="line">    @<span class="keyword">foreach</span> ($user-&gt;posts <span class="keyword">as</span> $post)</div><div class="line">        @<span class="keyword">if</span> ($loop-&gt;parent-&gt;first)</div><div class="line">            This is first iteration of the <span class="keyword">parent</span> loop.</div><div class="line">        @<span class="keyword">endif</span></div><div class="line">    @<span class="keyword">endforeach</span></div><div class="line">@<span class="keyword">endforeach</span></div></pre></td></tr></table></figure></p>
+<p>The <code>$loop</code> variable also contains a variety of other useful properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$loop-&gt;index</code></td>
+<td>The index of the current loop iteration (starts at 0).</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;iteration</code></td>
+<td>The current loop iteration (starts at 1).</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;remaining</code></td>
+<td>The iteration remaining in the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;count</code></td>
+<td>The total number of items in the array being iterated.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;first</code></td>
+<td>Whether this is the first iteration through the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;last</code></td>
+<td>Whether this is the last iteration through the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;depth</code></td>
+<td>The nesting level of the current loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;parent</code></td>
+<td>When in a nested loop, the parent’s loop variable.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="comments"></a></p>
+<h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><p>Blade also allows you to define comments in your views. However, unlike HTML comments, Blade comments are not included in the HTML returned by your application:</p>
+<pre><code>{{-- This comment will not be present in the rendered HTML --}}
+</code></pre><p><a name="php"></a></p>
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>In some situations, it’s useful to embed PHP code into your views. You can use the Blade <code>@php</code> directive to execute a block of plain PHP within your template:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@php</div><div class="line">    <span class="comment">//</span></div><div class="line">@endphp</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} While Blade provides this feature, using it frequently may be a signal that you have too much logic embedded within your template.</p>
+</blockquote>
+<p><a name="including-sub-views"></a></p>
+<h2 id="Including-Sub-Views"><a href="#Including-Sub-Views" class="headerlink" title="Including Sub-Views"></a>Including Sub-Views</h2><p>Blade’s <code>@include</code> directive allows you to include a Blade view from within another view. All variables that are available to the parent view will be made available to the included view:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    @<span class="keyword">include</span>(<span class="string">'shared.errors'</span>)</div><div class="line"></div><div class="line">    &lt;form&gt;</div><div class="line">        &lt;!-- Form Contents --&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Even though the included view will inherit all data available in the parent view, you may also pass an array of extra data to the included view:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">include</span>(<span class="string">'view.name'</span>, [<span class="string">'some'</span> =&gt; <span class="string">'data'</span>])</div></pre></td></tr></table></figure></p>
+<p>Of course, if you attempt to <code>@include</code> a view which does not exist, Laravel will throw an error. If you would like to include a view that may or may not be present, you should use the <code>@includeIf</code> directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@includeIf(<span class="string">'view.name'</span>, [<span class="string">'some'</span> =&gt; <span class="string">'data'</span>])</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} You should avoid using the <code>__DIR__</code> and <code>__FILE__</code> constants in your Blade views, since they will refer to the location of the cached, compiled view.</p>
+</blockquote>
+<p><a name="rendering-views-for-collections"></a></p>
+<h3 id="Rendering-Views-For-Collections"><a href="#Rendering-Views-For-Collections" class="headerlink" title="Rendering Views For Collections"></a>Rendering Views For Collections</h3><p>You may combine loops and includes into one line with Blade’s <code>@each</code> directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@each(<span class="string">'view.name'</span>, $jobs, <span class="string">'job'</span>)</div></pre></td></tr></table></figure></p>
+<p>The first argument is the view partial to render for each element in the array or collection. The second argument is the array or collection you wish to iterate over, while the third argument is the variable name that will be assigned to the current iteration within the view. So, for example, if you are iterating over an array of <code>jobs</code>, typically you will want to access each job as a <code>job</code> variable within your view partial. The key for the current iteration will be available as the <code>key</code> variable within your view partial.</p>
+<p>You may also pass a fourth argument to the <code>@each</code> directive. This argument determines the view that will be rendered if the given array is empty.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@each(<span class="string">'view.name'</span>, $jobs, <span class="string">'job'</span>, <span class="string">'view.empty'</span>)</div></pre></td></tr></table></figure></p>
+<p><a name="stacks"></a></p>
+<h2 id="Stacks"><a href="#Stacks" class="headerlink" title="Stacks"></a>Stacks</h2><p>Blade allows you to push to named stacks which can be rendered somewhere else in another view or layout. This can be particularly useful for specifying any JavaScript libraries required by your child views:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@push(<span class="string">'scripts'</span>)</div><div class="line">    &lt;script src=<span class="string">"/example.js"</span>&gt;&lt;/script&gt;</div><div class="line">@endpush</div></pre></td></tr></table></figure></p>
+<p>You may push to a stack as many times as needed. To render the complete stack contents, pass the name of the stack to the <code>@stack</code> directive:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;!-- Head Contents --&gt;</div><div class="line"></div><div class="line">    @stack(<span class="string">'scripts'</span>)</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
+<p><a name="service-injection"></a></p>
+<h2 id="Service-Injection"><a href="#Service-Injection" class="headerlink" title="Service Injection"></a>Service Injection</h2><p>The <code>@inject</code> directive may be used to retrieve a service from the Laravel <a href="/mk/laravel/container.html">service container</a>. The first argument passed to <code>@inject</code> is the name of the variable the service will be placed into, while the second argument is the class or interface name of the service you wish to resolve:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@inject(<span class="string">'metrics'</span>, <span class="string">'App\Services\MetricsService'</span>)</div><div class="line"></div><div class="line">&lt;div&gt;</div><div class="line">    Monthly Revenue: &#123;&#123; $metrics-&gt;monthlyRevenue() &#125;&#125;.</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><a name="extending-blade"></a></p>
+<h2 id="Extending-Blade"><a href="#Extending-Blade" class="headerlink" title="Extending Blade"></a>Extending Blade</h2><p>Blade allows you to define your own custom directives using the <code>directive</code> method. When the Blade compiler encounters the custom directive, it will call the provided callback with the expression that the directive contains.</p>
+<p>The following example creates a <code>@datetime($var)</code> directive which formats a given <code>$var</code>, which should be an instance of <code>DateTime</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Blade</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Perform post-registration booting of services.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Blade::directive(<span class="string">'datetime'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($expression)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"&lt;?php echo ($expression)-&gt;format('m/d/Y H:i'); ?&gt;"</span>;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Register bindings in the container.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>As you can see, we will chain the <code>format</code> method onto whatever expression is passed into the directive. So, in this example, the final PHP generated by this directive will be:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> ($var)-&gt;format(<span class="string">'m/d/Y H:i'</span>); <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p class="tip"> After updating the logic of a Blade directive, you will need to delete all of the cached Blade views. The cached Blade views may be removed using the <code>view:clear</code> Artisan command.</p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/blade.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

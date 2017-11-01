@@ -1,0 +1,1833 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Artisan Console — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Artisan Console — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Artisan Console — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link current">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Artisan Console</h1>
+    
+    <p align="center"><a href="https://itnishi.com" target="_blank"><img width="720" src="https://cloud.githubusercontent.com/assets/17185462/26037582/53ab46a4-38b3-11e7-8861-e3b88284e7d8.gif"></a></p>
+
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Artisan is the command-line interface included with Laravel. It provides a number of helpful commands that can assist you while you build your application. To view a list of all available Artisan commands, you may use the <code>list</code> command:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan <span class="keyword">list</span></div></pre></td></tr></table></figure>
+<p>Every command also includes a “help” screen which displays and describes the command’s available arguments and options. To view a help screen, simply precede the name of the command with <code>help</code>:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan help migrate</div></pre></td></tr></table></figure>
+<h4 id="Laravel-REPL"><a href="#Laravel-REPL" class="headerlink" title="Laravel REPL"></a>Laravel REPL</h4><p>All Laravel applications include Tinker, a REPL powered by the <a href="https://github.com/bobthecow/psysh" target="_blank" rel="external">PsySH</a> package. Tinker allows you to interact with your entire Laravel application on the command line, including the Eloquent ORM, jobs, events, and more. To enter the Tinker environment, run the <code>tinker</code> Artisan command:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan tinker</div></pre></td></tr></table></figure>
+<p><a name="writing-commands"></a></p>
+<h2 id="Writing-Commands"><a href="#Writing-Commands" class="headerlink" title="Writing Commands"></a>Writing Commands</h2><p>In addition to the commands provided with Artisan, you may also build your own custom commands. Commands are typically stored in the <code>app/Console/Commands</code> directory; however, you are free to choose your own storage location as long as your commands can be loaded by Composer.</p>
+<p><a name="generating-commands"></a></p>
+<h3 id="Generating-Commands"><a href="#Generating-Commands" class="headerlink" title="Generating Commands"></a>Generating Commands</h3><p>To create a new command, use the <code>make:command</code> Artisan command. This command will create a new command class in the <code>app/Console/Commands</code> directory. Don’t worry if this directory does not exist in your application, since it will be created the first time you run the <code>make:command</code> Artisan command. The generated command will include the default set of properties and methods that are present on all commands:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan make:command SendEmails</div></pre></td></tr></table></figure>
+<p>Next, you will need to <a href="#registering-commands">register the command</a> before it can be executed via the Artisan CLI.</p>
+<p><a name="command-structure"></a></p>
+<h3 id="Command-Structure"><a href="#Command-Structure" class="headerlink" title="Command Structure"></a>Command Structure</h3><p>After generating your command, you should fill in the <code>signature</code> and <code>description</code> properties of the class, which will be used when displaying your command on the <code>list</code> screen. The <code>handle</code> method will be called when your command is executed. You may place your command logic in this method.</p>
+<blockquote>
+<p>{tip} For greater code reuse, it is good practice to keep your console commands light and let them defer to application services to accomplish their tasks. In the example below, note that we inject a service class to do the “heavy lifting” of sending the e-mails.</p>
+</blockquote>
+<p>Let’s take a look at an example command. Note that we are able to inject any dependencies we need into the command’s constructor. The Laravel <a href="/docs//container">service container</a> will automatically inject all dependencies type-hinted in the constructor:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Console</span>\<span class="title">Commands</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">User</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">DripEmailer</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Console</span>\<span class="title">Command</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SendEmails</span> <span class="keyword">extends</span> <span class="title">Command</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The name and signature of the console command.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> string</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $signature = <span class="string">'email:send &#123;user&#125;'</span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The console command description.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> string</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $description = <span class="string">'Send drip e-mails to a user'</span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The drip e-mail service.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> DripEmailer</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $drip;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Create a new command instance.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  DripEmailer  $drip</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(DripEmailer $drip)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">parent</span>::__construct();</div><div class="line"></div><div class="line">        <span class="keyword">$this</span>-&gt;drip = $drip;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Execute the console command.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> mixed</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;drip-&gt;send(User::find(<span class="keyword">$this</span>-&gt;argument(<span class="string">'user'</span>)));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a name="closure-commands"></a></p>
+<h3 id="Closure-Commands"><a href="#Closure-Commands" class="headerlink" title="Closure Commands"></a>Closure Commands</h3><p>Closure based commands provide an alternative to defining console commands as classes. In the same way that route Closures are an alternative to controllers, think of command Closures as an alternative to command classes. Within the <code>commands</code> method of your <code>app/Console/Kernel.php</code> file, Laravel loads the <code>routes/console.php</code> file:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Register the Closure based commands for the application.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">commands</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">require</span> base_path(<span class="string">'routes/console.php'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Even though this file does not define HTTP routes, it defines console based entry points (routes) into your application. Within this file, you may define all of your Closure based routes using the <code>Artisan::command</code> method. The <code>command</code> method accepts two arguments: the <a href="#defining-input-expectations">command signature</a> and a Closure which receives the commands arguments and options:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Artisan::command(<span class="string">'build &#123;project&#125;'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($project)</span> </span>&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;info(<span class="string">"Building &#123;$project&#125;!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>The Closure is bound to the underlying command instance, so you have full access to all of the helper methods you would typically be able to access on a full command class.</p>
+<h4 id="Type-Hinting-Dependencies"><a href="#Type-Hinting-Dependencies" class="headerlink" title="Type-Hinting Dependencies"></a>Type-Hinting Dependencies</h4><p>In addition to receiving your command’s arguments and options, command Closures may also type-hint additional dependencies that you would like resolved out of the <a href="/docs//container">service container</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">User</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">DripEmailer</span>;</div><div class="line"></div><div class="line">Artisan::command(<span class="string">'email:send &#123;user&#125;'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(DripEmailer $drip, $user)</span> </span>&#123;</div><div class="line">    $drip-&gt;send(User::find($user));</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="Closure-Command-Descriptions"><a href="#Closure-Command-Descriptions" class="headerlink" title="Closure Command Descriptions"></a>Closure Command Descriptions</h4><p>When defining a Closure based command, you may use the <code>describe</code> method to add a description to the command. This description will be displayed when you run the <code>php artisan list</code> or <code>php artisan help</code> commands:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Artisan::command(<span class="string">'build &#123;project&#125;'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($project)</span> </span>&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;info(<span class="string">"Building &#123;$project&#125;!"</span>);</div><div class="line">&#125;)-&gt;describe(<span class="string">'Build the project'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="defining-input-expectations"></a></p>
+<h2 id="Defining-Input-Expectations"><a href="#Defining-Input-Expectations" class="headerlink" title="Defining Input Expectations"></a>Defining Input Expectations</h2><p>When writing console commands, it is common to gather input from the user through arguments or options. Laravel makes it very convenient to define the input you expect from the user using the <code>signature</code> property on your commands. The <code>signature</code> property allows you to define the name, arguments, and options for the command in a single, expressive, route-like syntax.</p>
+<p><a name="arguments"></a></p>
+<h3 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h3><p>All user supplied arguments and options are wrapped in curly braces. In the following example, the command defines one <strong>required</strong> argument: <code>user</code>:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line">     * The name and signature of the console command.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> string</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $signature = <span class="string">'email:send &#123;user&#125;'</span>;</div><div class="line"></div><div class="line">You may also make arguments optional <span class="keyword">and</span> define <span class="keyword">default</span> values <span class="keyword">for</span> arguments:</div><div class="line"></div><div class="line">    <span class="comment">// Optional argument...</span></div><div class="line">    email:send &#123;user?&#125;</div><div class="line"></div><div class="line">    <span class="comment">// Optional argument with default value...</span></div><div class="line">    email:send &#123;user=foo&#125;</div></pre></td></tr></table></figure>
+<p><a name="options"></a></p>
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><p>Options, like arguments, are another form of user input. Options are prefixed by two hyphens (<code>--</code>) when they are specified on the command line. There are two types of options: those that receive a value and those that don’t. Options that don’t receive a value serve as a boolean “switch”. Let’s take a look at an example of this type of option:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * The name and signature of the console command.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@var</span> string</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> $signature = <span class="string">'email:send &#123;user&#125; &#123;--queue&#125;'</span>;</div></pre></td></tr></table></figure>
+<p>In this example, the <code>--queue</code> switch may be specified when calling the Artisan command. If the <code>--queue</code> switch is passed, the value of the option will be <code>true</code>. Otherwise, the value will be <code>false</code>:</p>
+<pre><code>php artisan email:send 1 --queue
+</code></pre><p><a name="options-with-values"></a></p>
+<h4 id="Options-With-Values"><a href="#Options-With-Values" class="headerlink" title="Options With Values"></a>Options With Values</h4><p>Next, let’s take a look at an option that expects a value. If the user must specify a value for an option, suffix the option name with a <code>=</code> sign:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * The name and signature of the console command.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@var</span> string</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> $signature = <span class="string">'email:send &#123;user&#125; &#123;--queue=&#125;'</span>;</div></pre></td></tr></table></figure>
+<p>In this example, the user may pass a value for the option like so:</p>
+<pre><code>php artisan email:send 1 --queue=default
+</code></pre><p>You may assign default values to options by specifying the default value after the option name. If no option value is passed by the user, the default value will be used:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">email:send &#123;user&#125; &#123;--queue=<span class="keyword">default</span>&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="option-shortcuts"></a></p>
+<h4 id="Option-Shortcuts"><a href="#Option-Shortcuts" class="headerlink" title="Option Shortcuts"></a>Option Shortcuts</h4><p>To assign a shortcut when defining an option, you may specify it before the option name and use a | delimiter to separate the shortcut from the full option name:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">email:send &#123;user&#125; &#123;--Q|queue&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="input-arrays"></a></p>
+<h3 id="Input-Arrays"><a href="#Input-Arrays" class="headerlink" title="Input Arrays"></a>Input Arrays</h3><p>If you would like to define arguments or options to expect array inputs, you may use the <code>*</code> character. First, let’s take a look at an example that specifies an array argument:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">email:send &#123;user*&#125;</div></pre></td></tr></table></figure></p>
+<p>When calling this method, the <code>user</code> arguments may be passed in order to the command line. For example, the following command will set the value of <code>user</code> to <code>[&#39;foo&#39;, &#39;bar&#39;]</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan email:send foo bar</div></pre></td></tr></table></figure></p>
+<p>When defining an option that expects an array input, each option value passed to the command should be prefixed with the option name:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">email:send &#123;user&#125; &#123;--id=*&#125;</div><div class="line"></div><div class="line">php artisan email:send --id=<span class="number">1</span> --id=<span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p><a name="input-descriptions"></a></p>
+<h3 id="Input-Descriptions"><a href="#Input-Descriptions" class="headerlink" title="Input Descriptions"></a>Input Descriptions</h3><p>You may assign descriptions to input arguments and options by separating the parameter from the description using a colon. If you need a little extra room to define your command, feel free to spread the definition across multiple lines:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line"> * The name and signature of the console command.</div><div class="line"> *</div><div class="line"> * @var string</div><div class="line"> */</div><div class="line">protected $signature = 'email:send</div><div class="line">                        &#123;user : The ID of the user&#125;</div><div class="line">                        &#123;--queue= : Whether the job should be queued&#125;';</div></pre></td></tr></table></figure></p>
+<p><a name="command-io"></a></p>
+<h2 id="Command-I-O"><a href="#Command-I-O" class="headerlink" title="Command I/O"></a>Command I/O</h2><p><a name="retrieving-input"></a></p>
+<h3 id="Retrieving-Input"><a href="#Retrieving-Input" class="headerlink" title="Retrieving Input"></a>Retrieving Input</h3><p>While your command is executing, you will obviously need to access the values for the arguments and options accepted by your command. To do so, you may use the <code>argument</code> and <code>option</code> methods:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Execute the console command.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> mixed</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    $userId = <span class="keyword">$this</span>-&gt;argument(<span class="string">'user'</span>);</div><div class="line"></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If you need to retrieve all of the arguments as an <code>array</code>, call the <code>arguments</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$arguments = <span class="keyword">$this</span>-&gt;arguments();</div></pre></td></tr></table></figure></p>
+<p>Options may be retrieved just as easily as arguments using the <code>option</code> method. To retrieve all of the options as an array, call the <code>options</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Retrieve a specific option...</span></div><div class="line">$queueName = <span class="keyword">$this</span>-&gt;option(<span class="string">'queue'</span>);</div><div class="line"></div><div class="line"><span class="comment">// Retrieve all options...</span></div><div class="line">$options = <span class="keyword">$this</span>-&gt;options();</div></pre></td></tr></table></figure></p>
+<p>If the argument or option does not exist, <code>null</code> will be returned.</p>
+<p><a name="prompting-for-input"></a></p>
+<h3 id="Prompting-For-Input"><a href="#Prompting-For-Input" class="headerlink" title="Prompting For Input"></a>Prompting For Input</h3><p>In addition to displaying output, you may also ask the user to provide input during the execution of your command. The <code>ask</code> method will prompt the user with the given question, accept their input, and then return the user’s input back to your command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Execute the console command.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> mixed</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    $name = <span class="keyword">$this</span>-&gt;ask(<span class="string">'What is your name?'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The <code>secret</code> method is similar to <code>ask</code>, but the user’s input will not be visible to them as they type in the console. This method is useful when asking for sensitive information such as a password:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$password = <span class="keyword">$this</span>-&gt;secret(<span class="string">'What is the password?'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Asking-For-Confirmation"><a href="#Asking-For-Confirmation" class="headerlink" title="Asking For Confirmation"></a>Asking For Confirmation</h4><p>If you need to ask the user for a simple confirmation, you may use the <code>confirm</code> method. By default, this method will return <code>false</code>. However, if the user enters <code>y</code> or <code>yes</code> in response to the prompt, the method will return <code>true</code>.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;confirm(<span class="string">'Do you wish to continue?'</span>)) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Auto-Completion"><a href="#Auto-Completion" class="headerlink" title="Auto-Completion"></a>Auto-Completion</h4><p>The <code>anticipate</code> method can be used to provide auto-completion for possible choices. The user can still choose any answer, regardless of the auto-completion hints:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$name = <span class="keyword">$this</span>-&gt;anticipate(<span class="string">'What is your name?'</span>, [<span class="string">'Taylor'</span>, <span class="string">'Dayle'</span>]);</div></pre></td></tr></table></figure></p>
+<h4 id="Multiple-Choice-Questions"><a href="#Multiple-Choice-Questions" class="headerlink" title="Multiple Choice Questions"></a>Multiple Choice Questions</h4><p>If you need to give the user a predefined set of choices, you may use the <code>choice</code> method. You may set the default value to be returned if no option is chosen:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$name = <span class="keyword">$this</span>-&gt;choice(<span class="string">'What is your name?'</span>, [<span class="string">'Taylor'</span>, <span class="string">'Dayle'</span>], $default);</div></pre></td></tr></table></figure></p>
+<p><a name="writing-output"></a></p>
+<h3 id="Writing-Output"><a href="#Writing-Output" class="headerlink" title="Writing Output"></a>Writing Output</h3><p>To send output to the console, use the <code>line</code>, <code>info</code>, <code>comment</code>, <code>question</code> and <code>error</code> methods. Each of these methods will use appropriate ANSI colors for their purpose. For example, let’s display some general information to the user. Typically, the <code>info</code> method will display in the console as green text:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Execute the console command.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> mixed</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;info(<span class="string">'Display this on the screen'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>To display an error message, use the <code>error</code> method. Error message text is typically displayed in red:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;error(<span class="string">'Something went wrong!'</span>);</div></pre></td></tr></table></figure></p>
+<p>If you would like to display plain, uncolored console output, use the <code>line</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;line(<span class="string">'Display this on the screen'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Table-Layouts"><a href="#Table-Layouts" class="headerlink" title="Table Layouts"></a>Table Layouts</h4><p>The <code>table</code> method makes it easy to correctly format multiple rows / columns of data. Just pass in the headers and rows to the method. The width and height will be dynamically calculated based on the given data:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$headers = [<span class="string">'Name'</span>, <span class="string">'Email'</span>];</div><div class="line"></div><div class="line">$users = App\User::all([<span class="string">'name'</span>, <span class="string">'email'</span>])-&gt;toArray();</div><div class="line"></div><div class="line"><span class="keyword">$this</span>-&gt;table($headers, $users);</div></pre></td></tr></table></figure></p>
+<h4 id="Progress-Bars"><a href="#Progress-Bars" class="headerlink" title="Progress Bars"></a>Progress Bars</h4><p>For long running tasks, it could be helpful to show a progress indicator. Using the output object, we can start, advance and stop the Progress Bar. First, define the total number of steps the process will iterate through. Then, advance the Progress Bar after processing each item:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$users = App\User::all();</div><div class="line"></div><div class="line">$bar = <span class="keyword">$this</span>-&gt;output-&gt;createProgressBar(count($users));</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($users <span class="keyword">as</span> $user) &#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;performTask($user);</div><div class="line"></div><div class="line">    $bar-&gt;advance();</div><div class="line">&#125;</div><div class="line"></div><div class="line">$bar-&gt;finish();</div></pre></td></tr></table></figure></p>
+<p>For more advanced options, check out the <a href="https://symfony.com/doc/2.7/components/console/helpers/progressbar.html" target="_blank" rel="external">Symfony Progress Bar component documentation</a>.</p>
+<p><a name="registering-commands"></a></p>
+<h2 id="Registering-Commands"><a href="#Registering-Commands" class="headerlink" title="Registering Commands"></a>Registering Commands</h2><p>Once your command is finished, you need to register it with Artisan. All commands are registered in the <code>app/Console/Kernel.php</code> file. Within this file, you will find a list of commands in the <code>commands</code> property. To register your command, simply add the command’s class name to the list. When Artisan boots, all the commands listed in this property will be resolved by the <a href="/docs//container">service container</a> and registered with Artisan:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">protected</span> $commands = [</div><div class="line">    Commands\SendEmails::class</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<p><a name="programmatically-executing-commands"></a></p>
+<h2 id="Programmatically-Executing-Commands"><a href="#Programmatically-Executing-Commands" class="headerlink" title="Programmatically Executing Commands"></a>Programmatically Executing Commands</h2><p>Sometimes you may wish to execute an Artisan command outside of the CLI. For example, you may wish to fire an Artisan command from a route or controller. You may use the <code>call</code> method on the <code>Artisan</code> facade to accomplish this. The <code>call</code> method accepts the name of the command as the first argument, and an array of command parameters as the second argument. The exit code will be returned:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/foo'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    $exitCode = Artisan::call(<span class="string">'email:send'</span>, [</div><div class="line">        <span class="string">'user'</span> =&gt; <span class="number">1</span>, <span class="string">'--queue'</span> =&gt; <span class="string">'default'</span></div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Using the <code>queue</code> method on the <code>Artisan</code> facade, you may even queue Artisan commands so they are processed in the background by your <a href="/docs//queues">queue workers</a>. Before using this method, make sure you have configured your queue and are running a queue listener:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/foo'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    Artisan::queue(<span class="string">'email:send'</span>, [</div><div class="line">        <span class="string">'user'</span> =&gt; <span class="number">1</span>, <span class="string">'--queue'</span> =&gt; <span class="string">'default'</span></div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>If you need to specify the value of an option that does not accept string values, such as the <code>--force</code> flag on the <code>migrate:refresh</code> command, you may pass <code>true</code> or <code>false</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$exitCode = Artisan::call(<span class="string">'migrate:refresh'</span>, [</div><div class="line">    <span class="string">'--force'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="calling-commands-from-other-commands"></a></p>
+<h3 id="Calling-Commands-From-Other-Commands"><a href="#Calling-Commands-From-Other-Commands" class="headerlink" title="Calling Commands From Other Commands"></a>Calling Commands From Other Commands</h3><p>Sometimes you may wish to call other commands from an existing Artisan command. You may do so using the <code>call</code> method. This <code>call</code> method accepts the command name and an array of command parameters:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Execute the console command.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> mixed</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;call(<span class="string">'email:send'</span>, [</div><div class="line">        <span class="string">'user'</span> =&gt; <span class="number">1</span>, <span class="string">'--queue'</span> =&gt; <span class="string">'default'</span></div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If you would like to call another console command and suppress all of its output, you may use the <code>callSilent</code> method. The <code>callSilent</code> method has the same signature as the <code>call</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;callSilent(<span class="string">'email:send'</span>, [</div><div class="line">    <span class="string">'user'</span> =&gt; <span class="number">1</span>, <span class="string">'--queue'</span> =&gt; <span class="string">'default'</span></div><div class="line">]);</div></pre></td></tr></table></figure></p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/artisan.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

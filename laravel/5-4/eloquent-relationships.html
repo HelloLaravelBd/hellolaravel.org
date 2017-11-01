@@ -1,0 +1,1878 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Eloquent Relationships — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Eloquent Relationships — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Eloquent Relationships — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link current">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Eloquent Relationships</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Database tables are often related to one another. For example, a blog post may have many comments, or an order could be related to the user who placed it. Eloquent makes managing and working with these relationships easy, and supports several different types of relationships:</p>
+<ul>
+<li><a href="#one-to-one">One To One</a></li>
+<li><a href="#one-to-many">One To Many</a></li>
+<li><a href="#many-to-many">Many To Many</a></li>
+<li><a href="#has-many-through">Has Many Through</a></li>
+<li><a href="#polymorphic-relations">Polymorphic Relations</a></li>
+<li><a href="#many-to-many-polymorphic-relations">Many To Many Polymorphic Relations</a></li>
+</ul>
+<p><a name="defining-relationships"></a></p>
+<h2 id="Defining-Relationships"><a href="#Defining-Relationships" class="headerlink" title="Defining Relationships"></a>Defining Relationships</h2><p>Eloquent relationships are defined as methods on your Eloquent model classes. Since, like Eloquent models themselves, relationships also serve as powerful <a href="/mk/laravel/queries.html">query builders</a>, defining relationships as methods provides powerful method chaining and querying capabilities. For example, we may chain additional constraints on this <code>posts</code> relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;posts()-&gt;where(<span class="string">'active'</span>, <span class="number">1</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>But, before diving too deep into using relationships, let’s learn how to define each type.</p>
+<p><a name="one-to-one"></a></p>
+<h3 id="One-To-One"><a href="#One-To-One" class="headerlink" title="One To One"></a>One To One</h3><p>A one-to-one relationship is a very basic relation. For example, a <code>User</code> model might be associated with one <code>Phone</code>. To define this relationship, we place a <code>phone</code> method on the <code>User</code> model. The <code>phone</code> method should call the <code>hasOne</code> method and return its result:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get the phone record associated with the user.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">phone</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasOne(<span class="string">'App\Phone'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The first argument passed to the <code>hasOne</code> method is the name of the related model. Once the relationship is defined, we may retrieve the related record using Eloquent’s dynamic properties. Dynamic properties allow you to access relationship methods as if they were properties defined on the model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$phone = User::find(<span class="number">1</span>)-&gt;phone;</div></pre></td></tr></table></figure></p>
+<p>Eloquent determines the foreign key of the relationship based on the model name. In this case, the <code>Phone</code> model is automatically assumed to have a <code>user_id</code> foreign key. If you wish to override this convention, you may pass a second argument to the <code>hasOne</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasOne(<span class="string">'App\Phone'</span>, <span class="string">'foreign_key'</span>);</div></pre></td></tr></table></figure></p>
+<p>Additionally, Eloquent assumes that the foreign key should have a value matching the <code>id</code> (or the custom <code>$primaryKey</code>) column of the parent. In other words, Eloquent will look for the value of the user’s <code>id</code> column in the <code>user_id</code> column of the <code>Phone</code> record. If you would like the relationship to use a value other than <code>id</code>, you may pass a third argument to the <code>hasOne</code> method specifying your custom key:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasOne(<span class="string">'App\Phone'</span>, <span class="string">'foreign_key'</span>, <span class="string">'local_key'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Defining-The-Inverse-Of-The-Relationship"><a href="#Defining-The-Inverse-Of-The-Relationship" class="headerlink" title="Defining The Inverse Of The Relationship"></a>Defining The Inverse Of The Relationship</h4><p>So, we can access the <code>Phone</code> model from our <code>User</code>. Now, let’s define a relationship on the <code>Phone</code> model that will let us access the <code>User</code> that owns the phone. We can define the inverse of a <code>hasOne</code> relationship using the <code>belongsTo</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phone</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get the user that owns the phone.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">user</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\User'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>In the example above, Eloquent will try to match the <code>user_id</code> from the <code>Phone</code> model to an <code>id</code> on the <code>User</code> model. Eloquent determines the default foreign key name by examining the name of the relationship method and suffixing the method name with <code>_id</code>. However, if the foreign key on the <code>Phone</code> model is not <code>user_id</code>, you may pass a custom key name as the second argument to the <code>belongsTo</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Get the user that owns the phone.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">user</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\User'</span>, <span class="string">'foreign_key'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If your parent model does not use <code>id</code> as its primary key, or you wish to join the child model to a different column, you may pass a third argument to the <code>belongsTo</code> method specifying your parent table’s custom key:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Get the user that owns the phone.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">user</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\User'</span>, <span class="string">'foreign_key'</span>, <span class="string">'other_key'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="one-to-many"></a></p>
+<h3 id="One-To-Many"><a href="#One-To-Many" class="headerlink" title="One To Many"></a>One To Many</h3><p>A “one-to-many” relationship is used to define relationships where a single model owns any amount of other models. For example, a blog post may have an infinite number of comments. Like all other Eloquent relationships, one-to-many relationships are defined by placing a function on your Eloquent model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get the comments for the blog post.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">comments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasMany(<span class="string">'App\Comment'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Remember, Eloquent will automatically determine the proper foreign key column on the <code>Comment</code> model. By convention, Eloquent will take the “snake case” name of the owning model and suffix it with <code>_id</code>. So, for this example, Eloquent will assume the foreign key on the <code>Comment</code> model is <code>post_id</code>.</p>
+<p>Once the relationship has been defined, we can access the collection of comments by accessing the <code>comments</code> property. Remember, since Eloquent provides “dynamic properties”, we can access relationship methods as if they were defined as properties on the model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$comments = App\Post::find(<span class="number">1</span>)-&gt;comments;</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($comments <span class="keyword">as</span> $comment) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Of course, since all relationships also serve as query builders, you can add further constraints to which comments are retrieved by calling the <code>comments</code> method and continuing to chain conditions onto the query:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$comments = App\Post::find(<span class="number">1</span>)-&gt;comments()-&gt;where(<span class="string">'title'</span>, <span class="string">'foo'</span>)-&gt;first();</div></pre></td></tr></table></figure></p>
+<p>Like the <code>hasOne</code> method, you may also override the foreign and local keys by passing additional arguments to the <code>hasMany</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasMany(<span class="string">'App\Comment'</span>, <span class="string">'foreign_key'</span>);</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasMany(<span class="string">'App\Comment'</span>, <span class="string">'foreign_key'</span>, <span class="string">'local_key'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="one-to-many-inverse"></a></p>
+<h3 id="One-To-Many-Inverse"><a href="#One-To-Many-Inverse" class="headerlink" title="One To Many (Inverse)"></a>One To Many (Inverse)</h3><p>Now that we can access all of a post’s comments, let’s define a relationship to allow a comment to access its parent post. To define the inverse of a <code>hasMany</code> relationship, define a relationship function on the child model which calls the <code>belongsTo</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comment</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get the post that owns the comment.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\Post'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Once the relationship has been defined, we can retrieve the <code>Post</code> model for a <code>Comment</code> by accessing the <code>post</code> “dynamic property”:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$comment = App\Comment::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $comment-&gt;post-&gt;title;</div></pre></td></tr></table></figure></p>
+<p>In the example above, Eloquent will try to match the <code>post_id</code> from the <code>Comment</code> model to an <code>id</code> on the <code>Post</code> model. Eloquent determines the default foreign key name by examining the name of the relationship method and suffixing the method name with <code>_id</code>. However, if the foreign key on the <code>Comment</code> model is not <code>post_id</code>, you may pass a custom key name as the second argument to the <code>belongsTo</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Get the post that owns the comment.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\Post'</span>, <span class="string">'foreign_key'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If your parent model does not use <code>id</code> as its primary key, or you wish to join the child model to a different column, you may pass a third argument to the <code>belongsTo</code> method specifying your parent table’s custom key:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Get the post that owns the comment.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\Post'</span>, <span class="string">'foreign_key'</span>, <span class="string">'other_key'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="many-to-many"></a></p>
+<h3 id="Many-To-Many"><a href="#Many-To-Many" class="headerlink" title="Many To Many"></a>Many To Many</h3><p>Many-to-many relations are slightly more complicated than <code>hasOne</code> and <code>hasMany</code> relationships. An example of such a relationship is a user with many roles, where the roles are also shared by other users. For example, many users may have the role of “Admin”. To define this relationship, three database tables are needed: <code>users</code>, <code>roles</code>, and <code>role_user</code>. The <code>role_user</code> table is derived from the alphabetical order of the related model names, and contains the <code>user_id</code> and <code>role_id</code> columns.</p>
+<p>Many-to-many relationships are defined by writing a method that returns the result of the <code>belongsToMany</code> method. For example, let’s define the <code>roles</code> method on our <code>User</code> model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The roles that belong to the user.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">roles</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Once the relationship is defined, you may access the user’s roles using the <code>roles</code> dynamic property:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($user-&gt;roles <span class="keyword">as</span> $role) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Of course, like all other relationship types, you may call the <code>roles</code> method to continue chaining query constraints onto the relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$roles = App\User::find(<span class="number">1</span>)-&gt;roles()-&gt;orderBy(<span class="string">'name'</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>As mentioned previously, to determine the table name of the relationship’s joining table, Eloquent will join the two related model names in alphabetical order. However, you are free to override this convention. You may do so by passing a second argument to the <code>belongsToMany</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>, <span class="string">'role_user'</span>);</div></pre></td></tr></table></figure></p>
+<p>In addition to customizing the name of the joining table, you may also customize the column names of the keys on the table by passing additional arguments to the <code>belongsToMany</code> method. The third argument is the foreign key name of the model on which you are defining the relationship, while the fourth argument is the foreign key name of the model that you are joining to:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>, <span class="string">'role_user'</span>, <span class="string">'user_id'</span>, <span class="string">'role_id'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Defining-The-Inverse-Of-The-Relationship-1"><a href="#Defining-The-Inverse-Of-The-Relationship-1" class="headerlink" title="Defining The Inverse Of The Relationship"></a>Defining The Inverse Of The Relationship</h4><p>To define the inverse of a many-to-many relationship, you simply place another call to <code>belongsToMany</code> on your related model. To continue our user roles example, let’s define the <code>users</code> method on the <code>Role</code> model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Role</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The users that belong to the role.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">users</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\User'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>As you can see, the relationship is defined exactly the same as its <code>User</code> counterpart, with the exception of simply referencing the <code>App\User</code> model. Since we’re reusing the <code>belongsToMany</code> method, all of the usual table and key customization options are available when defining the inverse of many-to-many relationships.</p>
+<h4 id="Retrieving-Intermediate-Table-Columns"><a href="#Retrieving-Intermediate-Table-Columns" class="headerlink" title="Retrieving Intermediate Table Columns"></a>Retrieving Intermediate Table Columns</h4><p>As you have already learned, working with many-to-many relations requires the presence of an intermediate table. Eloquent provides some very helpful ways of interacting with this table. For example, let’s assume our <code>User</code> object has many <code>Role</code> objects that it is related to. After accessing this relationship, we may access the intermediate table using the <code>pivot</code> attribute on the models:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($user-&gt;roles <span class="keyword">as</span> $role) &#123;</div><div class="line">    <span class="keyword">echo</span> $role-&gt;pivot-&gt;created_at;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Notice that each <code>Role</code> model we retrieve is automatically assigned a <code>pivot</code> attribute. This attribute contains a model representing the intermediate table, and may be used like any other Eloquent model.</p>
+<p>By default, only the model keys will be present on the <code>pivot</code> object. If your pivot table contains extra attributes, you must specify them when defining the relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>)-&gt;withPivot(<span class="string">'column1'</span>, <span class="string">'column2'</span>);</div></pre></td></tr></table></figure></p>
+<p>If you want your pivot table to have automatically maintained <code>created_at</code> and <code>updated_at</code> timestamps, use the <code>withTimestamps</code> method on the relationship definition:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>)-&gt;withTimestamps();</div></pre></td></tr></table></figure></p>
+<h4 id="Filtering-Relationships-Via-Intermediate-Table-Columns"><a href="#Filtering-Relationships-Via-Intermediate-Table-Columns" class="headerlink" title="Filtering Relationships Via Intermediate Table Columns"></a>Filtering Relationships Via Intermediate Table Columns</h4><p>You can also filter the results returned by <code>belongsToMany</code> using the <code>wherePivot</code> and <code>wherePivotIn</code> methods when defining the relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>)-&gt;wherePivot(<span class="string">'approved'</span>, <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\Role'</span>)-&gt;wherePivotIn(<span class="string">'priority'</span>, [<span class="number">1</span>, <span class="number">2</span>]);</div></pre></td></tr></table></figure></p>
+<h4 id="Defining-Custom-Intermediate-Table-Models"><a href="#Defining-Custom-Intermediate-Table-Models" class="headerlink" title="Defining Custom Intermediate Table Models"></a>Defining Custom Intermediate Table Models</h4><p>If you would like to define a custom model to represent the intermediate table of your relationship, you may call the <code>using</code> method when defining the relationship. All custom models used to represent intermediate tables of relationships must extend the <code>Illuminate\Database\Eloquent\Relations\Pivot</code> class:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Role</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The users that belong to the role.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">users</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsToMany(<span class="string">'App\User'</span>)-&gt;using(<span class="string">'App\UserRole'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="has-many-through"></a></p>
+<h3 id="Has-Many-Through"><a href="#Has-Many-Through" class="headerlink" title="Has Many Through"></a>Has Many Through</h3><p>The “has-many-through” relationship provides a convenient shortcut for accessing distant relations via an intermediate relation. For example, a <code>Country</code> model might have many <code>Post</code> models through an intermediate <code>User</code> model. In this example, you could easily gather all blog posts for a given country. Let’s look at the tables required to define this relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">countries</div><div class="line">    id - integer</div><div class="line">    name - string</div><div class="line"></div><div class="line">users</div><div class="line">    id - integer</div><div class="line">    country_id - integer</div><div class="line">    name - string</div><div class="line"></div><div class="line">posts</div><div class="line">    id - integer</div><div class="line">    user_id - integer</div><div class="line">    title - string</div></pre></td></tr></table></figure></p>
+<p>Though <code>posts</code> does not contain a <code>country_id</code> column, the <code>hasManyThrough</code> relation provides access to a country’s posts via <code>$country-&gt;posts</code>. To perform this query, Eloquent inspects the <code>country_id</code> on the intermediate <code>users</code> table. After finding the matching user IDs, they are used to query the <code>posts</code> table.</p>
+<p>Now that we have examined the table structure for the relationship, let’s define it on the <code>Country</code> model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Country</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the posts for the country.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">posts</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasManyThrough(<span class="string">'App\Post'</span>, <span class="string">'App\User'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The first argument passed to the <code>hasManyThrough</code> method is the name of the final model we wish to access, while the second argument is the name of the intermediate model.</p>
+<p>Typical Eloquent foreign key conventions will be used when performing the relationship’s queries. If you would like to customize the keys of the relationship, you may pass them as the third and fourth arguments to the <code>hasManyThrough</code> method. The third argument is the name of the foreign key on the intermediate model, the fourth argument is the name of the foreign key on the final model, and the fifth argument is the local key:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Country</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">posts</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasManyThrough(</div><div class="line">            <span class="string">'App\Post'</span>, <span class="string">'App\User'</span>,</div><div class="line">            <span class="string">'country_id'</span>, <span class="string">'user_id'</span>, <span class="string">'id'</span></div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="polymorphic-relations"></a></p>
+<h3 id="Polymorphic-Relations"><a href="#Polymorphic-Relations" class="headerlink" title="Polymorphic Relations"></a>Polymorphic Relations</h3><h4 id="Table-Structure"><a href="#Table-Structure" class="headerlink" title="Table Structure"></a>Table Structure</h4><p>Polymorphic relations allow a model to belong to more than one other model on a single association. For example, imagine users of your application can “comment” both posts and videos. Using polymorphic relationships, you can use a single <code>comments</code> table for both of these scenarios. First, let’s examine the table structure required to build this relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">posts</div><div class="line">    id - integer</div><div class="line">    title - string</div><div class="line">    body - text</div><div class="line"></div><div class="line">videos</div><div class="line">    id - integer</div><div class="line">    title - string</div><div class="line">    url - string</div><div class="line"></div><div class="line">comments</div><div class="line">    id - integer</div><div class="line">    body - text</div><div class="line">    commentable_id - integer</div><div class="line">    commentable_type - string</div></pre></td></tr></table></figure></p>
+<p>Two important columns to note are the <code>commentable_id</code> and <code>commentable_type</code> columns on the <code>comments</code> table. The <code>commentable_id</code> column will contain the ID value of the post or video, while the <code>commentable_type</code> column will contain the class name of the owning model. The <code>commentable_type</code> column is how the ORM determines which “type” of owning model to return when accessing the <code>commentable</code> relation.</p>
+<h4 id="Model-Structure"><a href="#Model-Structure" class="headerlink" title="Model Structure"></a>Model Structure</h4><p>Next, let’s examine the model definitions needed to build this relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comment</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the owning commentable models.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">commentable</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;morphTo();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the post's comments.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">comments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;morphMany(<span class="string">'App\Comment'</span>, <span class="string">'commentable'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the video's comments.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">comments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;morphMany(<span class="string">'App\Comment'</span>, <span class="string">'commentable'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Retrieving-Polymorphic-Relations"><a href="#Retrieving-Polymorphic-Relations" class="headerlink" title="Retrieving Polymorphic Relations"></a>Retrieving Polymorphic Relations</h4><p>Once your database table and models are defined, you may access the relationships via your models. For example, to access all of the comments for a post, we can simply use the <code>comments</code> dynamic property:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$post = App\Post::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($post-&gt;comments <span class="keyword">as</span> $comment) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>You may also retrieve the owner of a polymorphic relation from the polymorphic model by accessing the name of the method that performs the call to <code>morphTo</code>. In our case, that is the <code>commentable</code> method on the <code>Comment</code> model. So, we will access that method as a dynamic property:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$comment = App\Comment::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$commentable = $comment-&gt;commentable;</div></pre></td></tr></table></figure></p>
+<p>The <code>commentable</code> relation on the <code>Comment</code> model will return either a <code>Post</code> or <code>Video</code> instance, depending on which type of model owns the comment.</p>
+<h4 id="Custom-Polymorphic-Types"><a href="#Custom-Polymorphic-Types" class="headerlink" title="Custom Polymorphic Types"></a>Custom Polymorphic Types</h4><p>By default, Laravel will use the fully qualified class name to store the type of the related model. For instance, given the example above where a <code>Comment</code> may belong to a <code>Post</code> or a <code>Video</code>, the default <code>commentable_type</code> would be either <code>App\Post</code> or <code>App\Video</code>, respectively. However, you may wish to decouple your database from your application’s internal structure. In that case, you may define a relationship “morph map” to instruct Eloquent to use a custom name for each model instead of the class name:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Relations</span>\<span class="title">Relation</span>;</div><div class="line"></div><div class="line">Relation::morphMap([</div><div class="line">    <span class="string">'posts'</span> =&gt; <span class="string">'App\Post'</span>,</div><div class="line">    <span class="string">'videos'</span> =&gt; <span class="string">'App\Video'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>You may register the <code>morphMap</code> in the <code>boot</code> function of your <code>AppServiceProvider</code> or create a separate service provider if you wish.</p>
+<p><a name="many-to-many-polymorphic-relations"></a></p>
+<h3 id="Many-To-Many-Polymorphic-Relations"><a href="#Many-To-Many-Polymorphic-Relations" class="headerlink" title="Many To Many Polymorphic Relations"></a>Many To Many Polymorphic Relations</h3><h4 id="Table-Structure-1"><a href="#Table-Structure-1" class="headerlink" title="Table Structure"></a>Table Structure</h4><p>In addition to traditional polymorphic relations, you may also define “many-to-many” polymorphic relations. For example, a blog <code>Post</code> and <code>Video</code> model could share a polymorphic relation to a <code>Tag</code> model. Using a many-to-many polymorphic relation allows you to have a single list of unique tags that are shared across blog posts and videos. First, let’s examine the table structure:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">posts</div><div class="line">    id - integer</div><div class="line">    name - string</div><div class="line"></div><div class="line">videos</div><div class="line">    id - integer</div><div class="line">    name - string</div><div class="line"></div><div class="line">tags</div><div class="line">    id - integer</div><div class="line">    name - string</div><div class="line"></div><div class="line">taggables</div><div class="line">    tag_id - integer</div><div class="line">    taggable_id - integer</div><div class="line">    taggable_type - string</div></pre></td></tr></table></figure></p>
+<h4 id="Model-Structure-1"><a href="#Model-Structure-1" class="headerlink" title="Model Structure"></a>Model Structure</h4><p>Next, we’re ready to define the relationships on the model. The <code>Post</code> and <code>Video</code> models will both have a <code>tags</code> method that calls the <code>morphToMany</code> method on the base Eloquent class:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the tags for the post.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">tags</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;morphToMany(<span class="string">'App\Tag'</span>, <span class="string">'taggable'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Defining-The-Inverse-Of-The-Relationship-2"><a href="#Defining-The-Inverse-Of-The-Relationship-2" class="headerlink" title="Defining The Inverse Of The Relationship"></a>Defining The Inverse Of The Relationship</h4><p>Next, on the <code>Tag</code> model, you should define a method for each of its related models. So, for this example, we will define a <code>posts</code> method and a <code>videos</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tag</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the posts that are assigned this tag.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">posts</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;morphedByMany(<span class="string">'App\Post'</span>, <span class="string">'taggable'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the videos that are assigned this tag.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">videos</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;morphedByMany(<span class="string">'App\Video'</span>, <span class="string">'taggable'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Retrieving-The-Relationship"><a href="#Retrieving-The-Relationship" class="headerlink" title="Retrieving The Relationship"></a>Retrieving The Relationship</h4><p>Once your database table and models are defined, you may access the relationships via your models. For example, to access all of the tags for a post, you can simply use the <code>tags</code> dynamic property:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$post = App\Post::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($post-&gt;tags <span class="keyword">as</span> $tag) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>You may also retrieve the owner of a polymorphic relation from the polymorphic model by accessing the name of the method that performs the call to <code>morphedByMany</code>. In our case, that is the <code>posts</code> or <code>videos</code> methods on the <code>Tag</code> model. So, you will access those methods as dynamic properties:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$tag = App\Tag::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($tag-&gt;videos <span class="keyword">as</span> $video) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="querying-relations"></a></p>
+<h2 id="Querying-Relations"><a href="#Querying-Relations" class="headerlink" title="Querying Relations"></a>Querying Relations</h2><p>Since all types of Eloquent relationships are defined via methods, you may call those methods to obtain an instance of the relationship without actually executing the relationship queries. In addition, all types of Eloquent relationships also serve as <a href="/mk/laravel/queries.html">query builders</a>, allowing you to continue to chain constraints onto the relationship query before finally executing the SQL against your database.</p>
+<p>For example, imagine a blog system in which a <code>User</code> model has many associated <code>Post</code> models:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get all of the posts for the user.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">posts</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;hasMany(<span class="string">'App\Post'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>You may query the <code>posts</code> relationship and add additional constraints to the relationship like so:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$user-&gt;posts()-&gt;where(<span class="string">'active'</span>, <span class="number">1</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>You are able to use any of the <a href="/mk/laravel/queries.html">query builder</a> methods on the relationship, so be sure to explore the query builder documentation to learn about all of the methods that are available to you.</p>
+<p><a name="relationship-methods-vs-dynamic-properties"></a></p>
+<h3 id="Relationship-Methods-Vs-Dynamic-Properties"><a href="#Relationship-Methods-Vs-Dynamic-Properties" class="headerlink" title="Relationship Methods Vs. Dynamic Properties"></a>Relationship Methods Vs. Dynamic Properties</h3><p>If you do not need to add additional constraints to an Eloquent relationship query, you may simply access the relationship as if it were a property. For example, continuing to use our <code>User</code> and <code>Post</code> example models, we may access all of a user’s posts like so:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($user-&gt;posts <span class="keyword">as</span> $post) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Dynamic properties are “lazy loading”, meaning they will only load their relationship data when you actually access them. Because of this, developers often use <a href="#eager-loading">eager loading</a> to pre-load relationships they know will be accessed after loading the model. Eager loading provides a significant reduction in SQL queries that must be executed to load a model’s relations.</p>
+<p><a name="querying-relationship-existence"></a></p>
+<h3 id="Querying-Relationship-Existence"><a href="#Querying-Relationship-Existence" class="headerlink" title="Querying Relationship Existence"></a>Querying Relationship Existence</h3><p>When accessing the records for a model, you may wish to limit your results based on the existence of a relationship. For example, imagine you want to retrieve all blog posts that have at least one comment. To do so, you may pass the name of the relationship to the <code>has</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Retrieve all posts that have at least one comment...</span></div><div class="line">$posts = App\Post::has(<span class="string">'comments'</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>You may also specify an operator and count to further customize the query:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Retrieve all posts that have three or more comments...</span></div><div class="line">$posts = Post::has(<span class="string">'comments'</span>, <span class="string">'&gt;='</span>, <span class="number">3</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>Nested <code>has</code> statements may also be constructed using “dot” notation. For example, you may retrieve all posts that have at least one comment and vote:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Retrieve all posts that have at least one comment with votes...</span></div><div class="line">$posts = Post::has(<span class="string">'comments.votes'</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>If you need even more power, you may use the <code>whereHas</code> and <code>orWhereHas</code> methods to put “where” conditions on your <code>has</code> queries. These methods allow you to add customized constraints to a relationship constraint, such as checking the content of a comment:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Retrieve all posts with at least one comment containing words like foo%</span></div><div class="line">$posts = Post::whereHas(<span class="string">'comments'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;where(<span class="string">'content'</span>, <span class="string">'like'</span>, <span class="string">'foo%'</span>);</div><div class="line">&#125;)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p><a name="querying-relationship-absence"></a></p>
+<h3 id="Querying-Relationship-Absence"><a href="#Querying-Relationship-Absence" class="headerlink" title="Querying Relationship Absence"></a>Querying Relationship Absence</h3><p>When accessing the records for a model, you may wish to limit your results based on the absence of a relationship. For example, imagine you want to retrieve all blog posts that <strong>don’t</strong> have any comments. To do so, you may pass the name of the relationship to the <code>doesntHave</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$posts = App\Post::doesntHave(<span class="string">'comments'</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>If you need even more power, you may use the <code>whereDoesntHave</code> method to put “where” conditions on your <code>doesntHave</code> queries. This method allows you to add customized constraints to a relationship constraint, such as checking the content of a comment:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$posts = Post::whereDoesntHave(<span class="string">'comments'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;where(<span class="string">'content'</span>, <span class="string">'like'</span>, <span class="string">'foo%'</span>);</div><div class="line">&#125;)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p><a name="counting-related-models"></a></p>
+<h3 id="Counting-Related-Models"><a href="#Counting-Related-Models" class="headerlink" title="Counting Related Models"></a>Counting Related Models</h3><p>If you want to count the number of results from a relationship without actually loading them you may use the <code>withCount</code> method, which will place a <code>{relation}_count</code> column on your resulting models. For example:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$posts = App\Post::withCount(<span class="string">'comments'</span>)-&gt;get();</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($posts <span class="keyword">as</span> $post) &#123;</div><div class="line">    <span class="keyword">echo</span> $post-&gt;comments_count;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>You may add the “counts” for multiple relations as well as add constraints to the queries:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$posts = Post::withCount([<span class="string">'votes'</span>, <span class="string">'comments'</span> =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;where(<span class="string">'content'</span>, <span class="string">'like'</span>, <span class="string">'foo%'</span>);</div><div class="line">&#125;])-&gt;get();</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $posts[<span class="number">0</span>]-&gt;votes_count;</div><div class="line"><span class="keyword">echo</span> $posts[<span class="number">0</span>]-&gt;comments_count;</div></pre></td></tr></table></figure></p>
+<p>You may also alias the relationship count result, allowing multiple counts on the same relationship:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$posts = Post::withCount([</div><div class="line">    <span class="string">'comments'</span>,</div><div class="line">    <span class="string">'comments AS pending_comments'</span> =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">        $query-&gt;where(<span class="string">'approved'</span>, <span class="keyword">false</span>);</div><div class="line">    &#125;</div><div class="line">])-&gt;get();</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $posts[<span class="number">0</span>]-&gt;comments_count;</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $posts[<span class="number">0</span>]-&gt;pending_comments_count;</div></pre></td></tr></table></figure></p>
+<p><a name="eager-loading"></a></p>
+<h2 id="Eager-Loading"><a href="#Eager-Loading" class="headerlink" title="Eager Loading"></a>Eager Loading</h2><p>When accessing Eloquent relationships as properties, the relationship data is “lazy loaded”. This means the relationship data is not actually loaded until you first access the property. However, Eloquent can “eager load” relationships at the time you query the parent model. Eager loading alleviates the N + 1 query problem. To illustrate the N + 1 query problem, consider a <code>Book</code> model that is related to <code>Author</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get the author that wrote the book.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">author</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\Author'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Now, let’s retrieve all books and their authors:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$books = App\Book::all();</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($books <span class="keyword">as</span> $book) &#123;</div><div class="line">    <span class="keyword">echo</span> $book-&gt;author-&gt;name;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>This loop will execute 1 query to retrieve all of the books on the table, then another query for each book to retrieve the author. So, if we have 25 books, this loop would run 26 queries: 1 for the original book, and 25 additional queries to retrieve the author of each book.</p>
+<p>Thankfully, we can use eager loading to reduce this operation to just 2 queries. When querying, you may specify which relationships should be eager loaded using the <code>with</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$books = App\Book::with(<span class="string">'author'</span>)-&gt;get();</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($books <span class="keyword">as</span> $book) &#123;</div><div class="line">    <span class="keyword">echo</span> $book-&gt;author-&gt;name;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>For this operation, only two queries will be executed:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">select * from books</div><div class="line"></div><div class="line">select * from authors where id in (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, ...)</div></pre></td></tr></table></figure></p>
+<h4 id="Eager-Loading-Multiple-Relationships"><a href="#Eager-Loading-Multiple-Relationships" class="headerlink" title="Eager Loading Multiple Relationships"></a>Eager Loading Multiple Relationships</h4><p>Sometimes you may need to eager load several different relationships in a single operation. To do so, just pass additional arguments to the <code>with</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$books = App\Book::with(<span class="string">'author'</span>, <span class="string">'publisher'</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<h4 id="Nested-Eager-Loading"><a href="#Nested-Eager-Loading" class="headerlink" title="Nested Eager Loading"></a>Nested Eager Loading</h4><p>To eager load nested relationships, you may use “dot” syntax. For example, let’s eager load all of the book’s authors and all of the author’s personal contacts in one Eloquent statement:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$books = App\Book::with(<span class="string">'author.contacts'</span>)-&gt;get();</div></pre></td></tr></table></figure></p>
+<p><a name="constraining-eager-loads"></a></p>
+<h3 id="Constraining-Eager-Loads"><a href="#Constraining-Eager-Loads" class="headerlink" title="Constraining Eager Loads"></a>Constraining Eager Loads</h3><p>Sometimes you may wish to eager load a relationship, but also specify additional query constraints for the eager loading query. Here’s an example:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$users = App\User::with([<span class="string">'posts'</span> =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;where(<span class="string">'title'</span>, <span class="string">'like'</span>, <span class="string">'%first%'</span>);</div><div class="line">&#125;])-&gt;get();</div></pre></td></tr></table></figure></p>
+<p>In this example, Eloquent will only eager load posts where the post’s <code>title</code> column contains the word <code>first</code>. Of course, you may call other <a href="/mk/laravel/queries.html">query builder</a> methods to further customize the eager loading operation:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$users = App\User::with([<span class="string">'posts'</span> =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;orderBy(<span class="string">'created_at'</span>, <span class="string">'desc'</span>);</div><div class="line">&#125;])-&gt;get();</div></pre></td></tr></table></figure></p>
+<p><a name="lazy-eager-loading"></a></p>
+<h3 id="Lazy-Eager-Loading"><a href="#Lazy-Eager-Loading" class="headerlink" title="Lazy Eager Loading"></a>Lazy Eager Loading</h3><p>Sometimes you may need to eager load a relationship after the parent model has already been retrieved. For example, this may be useful if you need to dynamically decide whether to load related models:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$books = App\Book::all();</div><div class="line"></div><div class="line"><span class="keyword">if</span> ($someCondition) &#123;</div><div class="line">    $books-&gt;load(<span class="string">'author'</span>, <span class="string">'publisher'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If you need to set additional query constraints on the eager loading query, you may pass an array keyed by the relationships you wish to load. The array values should be <code>Closure</code> instances which receive the query instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$books-&gt;load([<span class="string">'author'</span> =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;orderBy(<span class="string">'published_date'</span>, <span class="string">'asc'</span>);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+<p><a name="inserting-and-updating-related-models"></a></p>
+<h2 id="Inserting-amp-Updating-Related-Models"><a href="#Inserting-amp-Updating-Related-Models" class="headerlink" title="Inserting &amp; Updating Related Models"></a>Inserting &amp; Updating Related Models</h2><p><a name="the-save-method"></a></p>
+<h3 id="The-Save-Method"><a href="#The-Save-Method" class="headerlink" title="The Save Method"></a>The Save Method</h3><p>Eloquent provides convenient methods for adding new models to relationships. For example, perhaps you need to insert a new <code>Comment</code> for a <code>Post</code> model. Instead of manually setting the <code>post_id</code> attribute on the <code>Comment</code>, you may insert the <code>Comment</code> directly from the relationship’s <code>save</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$comment = <span class="keyword">new</span> App\Comment([<span class="string">'message'</span> =&gt; <span class="string">'A new comment.'</span>]);</div><div class="line"></div><div class="line">$post = App\Post::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$post-&gt;comments()-&gt;save($comment);</div></pre></td></tr></table></figure></p>
+<p>Notice that we did not access the <code>comments</code> relationship as a dynamic property. Instead, we called the <code>comments</code> method to obtain an instance of the relationship. The <code>save</code> method will automatically add the appropriate <code>post_id</code> value to the new <code>Comment</code> model.</p>
+<p>If you need to save multiple related models, you may use the <code>saveMany</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$post = App\Post::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$post-&gt;comments()-&gt;saveMany([</div><div class="line">    <span class="keyword">new</span> App\Comment([<span class="string">'message'</span> =&gt; <span class="string">'A new comment.'</span>]),</div><div class="line">    <span class="keyword">new</span> App\Comment([<span class="string">'message'</span> =&gt; <span class="string">'Another comment.'</span>]),</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="the-create-method"></a></p>
+<h3 id="The-Create-Method"><a href="#The-Create-Method" class="headerlink" title="The Create Method"></a>The Create Method</h3><p>In addition to the <code>save</code> and <code>saveMany</code> methods, you may also use the <code>create</code> method, which accepts an array of attributes, creates a model, and inserts it into the database. Again, the difference between <code>save</code> and <code>create</code> is that <code>save</code> accepts a full Eloquent model instance while <code>create</code> accepts a plain PHP <code>array</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$post = App\Post::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$comment = $post-&gt;comments()-&gt;create([</div><div class="line">    <span class="string">'message'</span> =&gt; <span class="string">'A new comment.'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>Before using the <code>create</code> method, be sure to review the documentation on attribute <a href="/mk/laravel/eloquent.html#mass-assignment">mass assignment</a>.</p>
+<p><a name="updating-belongs-to-relationships"></a></p>
+<h3 id="Belongs-To-Relationships"><a href="#Belongs-To-Relationships" class="headerlink" title="Belongs To Relationships"></a>Belongs To Relationships</h3><p>When updating a <code>belongsTo</code> relationship, you may use the <code>associate</code> method. This method will set the foreign key on the child model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$account = App\Account::find(<span class="number">10</span>);</div><div class="line"></div><div class="line">$user-&gt;account()-&gt;associate($account);</div><div class="line"></div><div class="line">$user-&gt;save();</div></pre></td></tr></table></figure></p>
+<p>When removing a <code>belongsTo</code> relationship, you may use the <code>dissociate</code> method. This method will set the relationship’s foreign key to <code>null</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;account()-&gt;dissociate();</div><div class="line"></div><div class="line">$user-&gt;save();</div></pre></td></tr></table></figure></p>
+<p><a name="updating-many-to-many-relationships"></a></p>
+<h3 id="Many-To-Many-Relationships"><a href="#Many-To-Many-Relationships" class="headerlink" title="Many To Many Relationships"></a>Many To Many Relationships</h3><h4 id="Attaching-Detaching"><a href="#Attaching-Detaching" class="headerlink" title="Attaching / Detaching"></a>Attaching / Detaching</h4><p>Eloquent also provides a few additional helper methods to make working with related models more convenient. For example, let’s imagine a user can have many roles and a role can have many users. To attach a role to a user by inserting a record in the intermediate table that joins the models, use the <code>attach</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$user-&gt;roles()-&gt;attach($roleId);</div></pre></td></tr></table></figure></p>
+<p>When attaching a relationship to a model, you may also pass an array of additional data to be inserted into the intermediate table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;roles()-&gt;attach($roleId, [<span class="string">'expires'</span> =&gt; $expires]);</div></pre></td></tr></table></figure></p>
+<p>Of course, sometimes it may be necessary to remove a role from a user. To remove a many-to-many relationship record, use the <code>detach</code> method. The <code>detach</code> method will remove the appropriate record out of the intermediate table; however, both models will remain in the database:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Detach a single role from the user...</span></div><div class="line">$user-&gt;roles()-&gt;detach($roleId);</div><div class="line"></div><div class="line"><span class="comment">// Detach all roles from the user...</span></div><div class="line">$user-&gt;roles()-&gt;detach();</div></pre></td></tr></table></figure></p>
+<p>For convenience, <code>attach</code> and <code>detach</code> also accept arrays of IDs as input:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$user-&gt;roles()-&gt;detach([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div><div class="line"></div><div class="line">$user-&gt;roles()-&gt;attach([<span class="number">1</span> =&gt; [<span class="string">'expires'</span> =&gt; $expires], <span class="number">2</span>, <span class="number">3</span>]);</div></pre></td></tr></table></figure></p>
+<h4 id="Syncing-Associations"><a href="#Syncing-Associations" class="headerlink" title="Syncing Associations"></a>Syncing Associations</h4><p>You may also use the <code>sync</code> method to construct many-to-many associations. The <code>sync</code> method accepts an array of IDs to place on the intermediate table. Any IDs that are not in the given array will be removed from the intermediate table. So, after this operation is complete, only the IDs in the given array will exist in the intermediate table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;roles()-&gt;sync([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div></pre></td></tr></table></figure></p>
+<p>You may also pass additional intermediate table values with the IDs:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;roles()-&gt;sync([<span class="number">1</span> =&gt; [<span class="string">'expires'</span> =&gt; <span class="keyword">true</span>], <span class="number">2</span>, <span class="number">3</span>]);</div></pre></td></tr></table></figure></p>
+<p>If you do not want to detach existing IDs, you may use the <code>syncWithoutDetaching</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;roles()-&gt;syncWithoutDetaching([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div></pre></td></tr></table></figure></p>
+<h4 id="Toggling-Associations"><a href="#Toggling-Associations" class="headerlink" title="Toggling Associations"></a>Toggling Associations</h4><p>The many-to-many relationship also provides a <code>toggle</code> method which “toggles” the attachment status of the given IDs. If the given ID is currently attached, it will be detached. Likewise, if it is currently detached, it will be attached:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user-&gt;roles()-&gt;toggle([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div></pre></td></tr></table></figure></p>
+<h4 id="Saving-Additional-Data-On-A-Pivot-Table"><a href="#Saving-Additional-Data-On-A-Pivot-Table" class="headerlink" title="Saving Additional Data On A Pivot Table"></a>Saving Additional Data On A Pivot Table</h4><p>When working with a many-to-many relationship, the <code>save</code> method accepts an array of additional intermediate table attributes as its second argument:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">App\User::find(<span class="number">1</span>)-&gt;roles()-&gt;save($role, [<span class="string">'expires'</span> =&gt; $expires]);</div></pre></td></tr></table></figure></p>
+<h4 id="Updating-A-Record-On-A-Pivot-Table"><a href="#Updating-A-Record-On-A-Pivot-Table" class="headerlink" title="Updating A Record On A Pivot Table"></a>Updating A Record On A Pivot Table</h4><p>If you need to update an existing row in your pivot table, you may use <code>updateExistingPivot</code> method. This method accepts the pivot record foreign key and an array of attributes to update:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$user-&gt;roles()-&gt;updateExistingPivot($roleId, $attributes);</div></pre></td></tr></table></figure></p>
+<p><a name="touching-parent-timestamps"></a></p>
+<h2 id="Touching-Parent-Timestamps"><a href="#Touching-Parent-Timestamps" class="headerlink" title="Touching Parent Timestamps"></a>Touching Parent Timestamps</h2><p>When a model <code>belongsTo</code> or <code>belongsToMany</code> another model, such as a <code>Comment</code> which belongs to a <code>Post</code>, it is sometimes helpful to update the parent’s timestamp when the child model is updated. For example, when a <code>Comment</code> model is updated, you may want to automatically “touch” the <code>updated_at</code> timestamp of the owning <code>Post</code>. Eloquent makes it easy. Just add a <code>touches</code> property containing the names of the relationships to the child model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comment</span> <span class="keyword">extends</span> <span class="title">Model</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * All of the relationships to be touched.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> array</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $touches = [<span class="string">'post'</span>];</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Get the post that the comment belongs to.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;belongsTo(<span class="string">'App\Post'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Now, when you update a <code>Comment</code>, the owning <code>Post</code> will have its <code>updated_at</code> column updated as well, making it more convenient to know when to invalidate a cache of the <code>Post</code> model:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$comment = App\Comment::find(<span class="number">1</span>);</div><div class="line"></div><div class="line">$comment-&gt;text = <span class="string">'Edit to this comment!'</span>;</div><div class="line"></div><div class="line">$comment-&gt;save();</div></pre></td></tr></table></figure></p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/eloquent-relationships.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

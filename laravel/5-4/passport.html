@@ -1,0 +1,1874 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>API Authentication (Passport) — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="API Authentication (Passport) — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="API Authentication (Passport) — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link current">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>API Authentication (Passport)</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Laravel already makes it easy to perform authentication via traditional login forms, but what about APIs? APIs typically use tokens to authenticate users and do not maintain session state between requests. Laravel makes API authentication a breeze using Laravel Passport, which provides a full OAuth2 server implementation for your Laravel application in a matter of minutes. Passport is built on top of the <a href="https://github.com/thephpleague/oauth2-server" target="_blank" rel="external">League OAuth2 server</a> that is maintained by Alex Bilbie.</p>
+<blockquote>
+<p>{note} This documentation assumes you are already familiar with OAuth2. If you do not know anything about OAuth2, consider familiarizing yourself with the general terminology and features of OAuth2 before continuing.</p>
+</blockquote>
+<p><a name="installation"></a></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>To get started, install Passport via the Composer package manager:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">    composer <span class="keyword">require</span> laravel/passport</div><div class="line">```php</div><div class="line">Next, register the Passport service provider in the `providers` <span class="keyword">array</span> of your `config/app.php` configuration file:</div><div class="line">```php</div><div class="line">    Laravel\Passport\PassportServiceProvider::class,</div><div class="line"></div><div class="line">The Passport service provider registers its own database migration directory with the framework, so you should migrate your database after registering the provider. The Passport migrations will create the tables your application needs to store clients <span class="keyword">and</span> access tokens:</div><div class="line">```php</div><div class="line">    php artisan migrate</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} If you are not going to use Passport’s default migrations, you should call the <code>Passport::ignoreMigrations</code> method in the <code>register</code> method of your <code>AppServiceProvider</code>. You may export the default migrations using <code>php artisan vendor:publish --tag=passport-migrations</code>.</p>
+</blockquote>
+<p>Next, you should run the <code>passport:install</code> command. This command will create the encryption keys needed to generate secure access tokens. In addition, the command will create “personal access” and “password grant” clients which will be used to generate access tokens:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan passport:install</div></pre></td></tr></table></figure></p>
+<p>After running this command, add the <code>Laravel\Passport\HasApiTokens</code> trait to your <code>App\User</code> model. This trait will provide a few helper methods to your model which allow you to inspect the authenticated user’s token and scopes:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Passport</span>\<span class="title">HasApiTokens</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Notifications</span>\<span class="title">Notifiable</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Auth</span>\<span class="title">User</span> <span class="title">as</span> <span class="title">Authenticatable</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Authenticatable</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">HasApiTokens</span>, <span class="title">Notifiable</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Next, you should call the <code>Passport::routes</code> method within the <code>boot</code> method of your <code>AuthServiceProvider</code>. This method will register the routes necessary to issue access tokens and revoke access tokens, clients, and personal access tokens:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Passport</span>\<span class="title">Passport</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Gate</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Support</span>\<span class="title">Providers</span>\<span class="title">AuthServiceProvider</span> <span class="title">as</span> <span class="title">ServiceProvider</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * The policy mappings for the application.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> array</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $policies = [</div><div class="line">        <span class="string">'App\Model'</span> =&gt; <span class="string">'App\Policies\ModelPolicy'</span>,</div><div class="line">    ];</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Register any authentication / authorization services.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;registerPolicies();</div><div class="line"></div><div class="line">        Passport::routes();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Finally, in your <code>config/auth.php</code> configuration file, you should set the <code>driver</code> option of the <code>api</code> authentication guard to <code>passport</code>. This will instruct your application to use Passport’s <code>TokenGuard</code> when authenticating incoming API requests:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'guards'</span> =&gt; [</div><div class="line">    <span class="string">'web'</span> =&gt; [</div><div class="line">        <span class="string">'driver'</span> =&gt; <span class="string">'session'</span>,</div><div class="line">        <span class="string">'provider'</span> =&gt; <span class="string">'users'</span>,</div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="string">'api'</span> =&gt; [</div><div class="line">        <span class="string">'driver'</span> =&gt; <span class="string">'passport'</span>,</div><div class="line">        <span class="string">'provider'</span> =&gt; <span class="string">'users'</span>,</div><div class="line">    ],</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<p><a name="frontend-quickstart"></a></p>
+<h3 id="Frontend-Quickstart"><a href="#Frontend-Quickstart" class="headerlink" title="Frontend Quickstart"></a>Frontend Quickstart</h3><blockquote>
+<p>{note} In order to use the Passport Vue components, you must be using the <a href="https://vuejs.org" target="_blank" rel="external">Vue</a> JavaScript framework. These components also use the Bootstrap CSS framework. However, even if you are not using these tools, the components serve as a valuable reference for your own frontend implementation.</p>
+</blockquote>
+<p>Passport ships with a JSON API that you may use to allow your users to create clients and personal access tokens. However, it can be time consuming to code a frontend to interact with these APIs. So, Passport also includes pre-built <a href="https://vuejs.org" target="_blank" rel="external">Vue</a> components you may use as an example implementation or starting point for your own implementation.</p>
+<p>To publish the Passport Vue components, use the <code>vendor:publish</code> Artisan command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan vendor:publish --tag=passport-components</div></pre></td></tr></table></figure></p>
+<p>The published components will be placed in your <code>resources/assets/js/components</code> directory. Once the components have been published, you should register them in your <code>resources/assets/js/app.js</code> file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Vue.component(</div><div class="line">    <span class="string">'passport-clients'</span>,</div><div class="line">    <span class="keyword">require</span>(<span class="string">'./components/passport/Clients.vue'</span>)</div><div class="line">);</div><div class="line"></div><div class="line">Vue.component(</div><div class="line">    <span class="string">'passport-authorized-clients'</span>,</div><div class="line">    <span class="keyword">require</span>(<span class="string">'./components/passport/AuthorizedClients.vue'</span>)</div><div class="line">);</div><div class="line"></div><div class="line">Vue.component(</div><div class="line">    <span class="string">'passport-personal-access-tokens'</span>,</div><div class="line">    <span class="keyword">require</span>(<span class="string">'./components/passport/PersonalAccessTokens.vue'</span>)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>After registering the components, make sure to run <code>npm run dev</code> to recompile your assets. Once you have recompiled your assets, you may drop the components into one of your application’s templates to get started creating clients and personal access tokens:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;passport-clients&gt;&lt;/passport-clients&gt;</div><div class="line">&lt;passport-authorized-clients&gt;&lt;/passport-authorized-clients&gt;</div><div class="line">&lt;passport-personal-access-tokens&gt;&lt;/passport-personal-access-tokens&gt;</div></pre></td></tr></table></figure></p>
+<p><a name="deploying-passport"></a></p>
+<h3 id="Deploying-Passport"><a href="#Deploying-Passport" class="headerlink" title="Deploying Passport"></a>Deploying Passport</h3><p>When deploying Passport to your production servers for the first time, you will likely need to run the <code>passport:keys</code> command. This command generates the encryption keys Passport needs in order to generate access token. The generated keys are not typically kept in source control:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan passport:keys</div></pre></td></tr></table></figure></p>
+<p><a name="configuration"></a></p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p><a name="token-lifetimes"></a></p>
+<h3 id="Token-Lifetimes"><a href="#Token-Lifetimes" class="headerlink" title="Token Lifetimes"></a>Token Lifetimes</h3><p>By default, Passport issues long-lived access tokens that never need to be refreshed. If you would like to configure a shorter token lifetime, you may use the <code>tokensExpireIn</code> and <code>refreshTokensExpireIn</code> methods. These methods should be called from the <code>boot</code> method of your <code>AuthServiceProvider</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Carbon</span>\<span class="title">Carbon</span>;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Register any authentication / authorization services.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;registerPolicies();</div><div class="line"></div><div class="line">    Passport::routes();</div><div class="line"></div><div class="line">    Passport::tokensExpireIn(Carbon::now()-&gt;addDays(<span class="number">15</span>));</div><div class="line"></div><div class="line">    Passport::refreshTokensExpireIn(Carbon::now()-&gt;addDays(<span class="number">30</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="issuing-access-tokens"></a></p>
+<h2 id="Issuing-Access-Tokens"><a href="#Issuing-Access-Tokens" class="headerlink" title="Issuing Access Tokens"></a>Issuing Access Tokens</h2><p>Using OAuth2 with authorization codes is how most developers are familiar with OAuth2. When using authorization codes, a client application will redirect a user to your server where they will either approve or deny the request to issue an access token to the client.</p>
+<p><a name="managing-clients"></a></p>
+<h3 id="Managing-Clients"><a href="#Managing-Clients" class="headerlink" title="Managing Clients"></a>Managing Clients</h3><p>First, developers building applications that need to interact with your application’s API will need to register their application with yours by creating a “client”. Typically, this consists of providing the name of their application and a URL that your application can redirect to after users approve their request for authorization.</p>
+<h4 id="The-passport-client-Command"><a href="#The-passport-client-Command" class="headerlink" title="The passport:client Command"></a>The <code>passport:client</code> Command</h4><p>The simplest way to create a client is using the <code>passport:client</code> Artisan command. This command may be used to create your own clients for testing your OAuth2 functionality. When you run the <code>client</code> command, Passport will prompt you for more information about your client and will provide you with a client ID and secret:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan passport:client</div></pre></td></tr></table></figure></p>
+<h4 id="JSON-API"><a href="#JSON-API" class="headerlink" title="JSON API"></a>JSON API</h4><p>Since your users will not be able to utilize the <code>client</code> command, Passport provides a JSON API that you may use to create clients. This saves you the trouble of having to manually code controllers for creating, updating, and deleting clients.</p>
+<p>However, you will need to pair Passport’s JSON API with your own frontend to provide a dashboard for your users to manage their clients. Below, we’ll review all of the API endpoints for managing clients. For convenience, we’ll use <a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">Axios</a> to demonstrate making HTTP requests to the endpoints.</p>
+<blockquote>
+<p>{tip} If you don’t want to implement the entire client management frontend yourself, you can use the <a href="#frontend-quickstart">frontend quickstart</a> to have a fully functional frontend in a matter of minutes.</p>
+</blockquote>
+<h4 id="GET-oauth-clients"><a href="#GET-oauth-clients" class="headerlink" title="GET /oauth/clients"></a><code>GET /oauth/clients</code></h4><p>This route returns all of the clients for the authenticated user. This is primarily useful for listing all of the user’s clients so that they may edit or delete them:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">axios.get(<span class="string">'/oauth/clients'</span>)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="POST-oauth-clients"><a href="#POST-oauth-clients" class="headerlink" title="POST /oauth/clients"></a><code>POST /oauth/clients</code></h4><p>This route is used to create new clients. It requires two pieces of data: the client’s <code>name</code> and a <code>redirect</code> URL. The <code>redirect</code> URL is where the user will be redirected after approving or denying a request for authorization.</p>
+<p>When a client is created, it will be issued a client ID and client secret. These values will be used when requesting access tokens from your application. The client creation route will return the new client instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> data = &#123;</div><div class="line">    name: <span class="string">'Client Name'</span>,</div><div class="line">    redirect: <span class="string">'http://example.com/callback'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">axios.post(<span class="string">'/oauth/clients'</span>, data)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data);</div><div class="line">    &#125;)</div><div class="line">    .<span class="keyword">catch</span> (response =&gt; &#123;</div><div class="line">        <span class="comment">// List errors on response...</span></div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="PUT-oauth-clients-client-id"><a href="#PUT-oauth-clients-client-id" class="headerlink" title="PUT /oauth/clients/{client-id}"></a><code>PUT /oauth/clients/{client-id}</code></h4><p>This route is used to update clients. It requires two pieces of data: the client’s <code>name</code> and a <code>redirect</code> URL. The <code>redirect</code> URL is where the user will be redirected after approving or denying a request for authorization. The route will return the updated client instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> data = &#123;</div><div class="line">    name: <span class="string">'New Client Name'</span>,</div><div class="line">    redirect: <span class="string">'http://example.com/callback'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">axios.put(<span class="string">'/oauth/clients/'</span> + clientId, data)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data);</div><div class="line">    &#125;)</div><div class="line">    .<span class="keyword">catch</span> (response =&gt; &#123;</div><div class="line">        <span class="comment">// List errors on response...</span></div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="DELETE-oauth-clients-client-id"><a href="#DELETE-oauth-clients-client-id" class="headerlink" title="DELETE /oauth/clients/{client-id}"></a><code>DELETE /oauth/clients/{client-id}</code></h4><p>This route is used to delete clients:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">axios.delete(<span class="string">'/oauth/clients/'</span> + clientId)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<p><a name="requesting-tokens"></a></p>
+<h3 id="Requesting-Tokens"><a href="#Requesting-Tokens" class="headerlink" title="Requesting Tokens"></a>Requesting Tokens</h3><h4 id="Redirecting-For-Authorization"><a href="#Redirecting-For-Authorization" class="headerlink" title="Redirecting For Authorization"></a>Redirecting For Authorization</h4><p>Once a client has been created, developers may use their client ID and secret to request an authorization code and access token from your application. First, the consuming application should make a redirect request to your application’s <code>/oauth/authorize</code> route like so:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/redirect'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    $query = http_build_query([</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'redirect_uri'</span> =&gt; <span class="string">'http://example.com/callback'</span>,</div><div class="line">        <span class="string">'response_type'</span> =&gt; <span class="string">'code'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">''</span>,</div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> redirect(<span class="string">'http://your-app.com/oauth/authorize?'</span>.$query);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} Remember, the <code>/oauth/authorize</code> route is already defined by the <code>Passport::routes</code> method. You do not need to manually define this route.</p>
+</blockquote>
+<h4 id="Approving-The-Request"><a href="#Approving-The-Request" class="headerlink" title="Approving The Request"></a>Approving The Request</h4><p>When receiving authorization requests, Passport will automatically display a template to the user allowing them to approve or deny the authorization request. If they approve the request, they will be redirected back to the <code>redirect_uri</code> that was specified by the consuming application. The <code>redirect_uri</code> must match the <code>redirect</code> URL that was specified when the client was created.</p>
+<p>If you would like to customize the authorization approval screen, you may publish Passport’s views using the <code>vendor:publish</code> Artisan command. The published views will be placed in <code>resources/views/vendor/passport</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan vendor:publish --tag=passport-views</div></pre></td></tr></table></figure></p>
+<h4 id="Converting-Authorization-Codes-To-Access-Tokens"><a href="#Converting-Authorization-Codes-To-Access-Tokens" class="headerlink" title="Converting Authorization Codes To Access Tokens"></a>Converting Authorization Codes To Access Tokens</h4><p>If the user approves the authorization request, they will be redirected back to the consuming application. The consumer should then issue a <code>POST</code> request to your application to request an access token. The request should include the authorization code that was issued by your application when the user approved the authorization request. In this example, we’ll use the Guzzle HTTP library to make the <code>POST</code> request:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/callback'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Request $request)</span> </span>&#123;</div><div class="line">    $http = <span class="keyword">new</span> GuzzleHttp\Client;</div><div class="line"></div><div class="line">    $response = $http-&gt;post(<span class="string">'http://your-app.com/oauth/token'</span>, [</div><div class="line">        <span class="string">'form_params'</span> =&gt; [</div><div class="line">            <span class="string">'grant_type'</span> =&gt; <span class="string">'authorization_code'</span>,</div><div class="line">            <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">            <span class="string">'client_secret'</span> =&gt; <span class="string">'client-secret'</span>,</div><div class="line">            <span class="string">'redirect_uri'</span> =&gt; <span class="string">'http://example.com/callback'</span>,</div><div class="line">            <span class="string">'code'</span> =&gt; $request-&gt;code,</div><div class="line">        ],</div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> json_decode((string) $response-&gt;getBody(), <span class="keyword">true</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>This <code>/oauth/token</code> route will return a JSON response containing <code>access_token</code>, <code>refresh_token</code>, and <code>expires_in</code> attributes. The <code>expires_in</code> attribute contains the number of seconds until the access token expires.</p>
+<blockquote>
+<p>{tip} Like the <code>/oauth/authorize</code> route, the <code>/oauth/token</code> route is defined for you by the <code>Passport::routes</code> method. There is no need to manually define this route.</p>
+</blockquote>
+<p><a name="refreshing-tokens"></a></p>
+<h3 id="Refreshing-Tokens"><a href="#Refreshing-Tokens" class="headerlink" title="Refreshing Tokens"></a>Refreshing Tokens</h3><p>If your application issues short-lived access tokens, users will need to refresh their access tokens via the refresh token that was provided to them when the access token was issued. In this example, we’ll use the Guzzle HTTP library to refresh the token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$http = <span class="keyword">new</span> GuzzleHttp\Client;</div><div class="line"></div><div class="line">$response = $http-&gt;post(<span class="string">'http://your-app.com/oauth/token'</span>, [</div><div class="line">    <span class="string">'form_params'</span> =&gt; [</div><div class="line">        <span class="string">'grant_type'</span> =&gt; <span class="string">'refresh_token'</span>,</div><div class="line">        <span class="string">'refresh_token'</span> =&gt; <span class="string">'the-refresh-token'</span>,</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'client_secret'</span> =&gt; <span class="string">'client-secret'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">''</span>,</div><div class="line">    ],</div><div class="line">]);</div><div class="line"></div><div class="line"><span class="keyword">return</span> json_decode((string) $response-&gt;getBody(), <span class="keyword">true</span>);</div></pre></td></tr></table></figure></p>
+<p>This <code>/oauth/token</code> route will return a JSON response containing <code>access_token</code>, <code>refresh_token</code>, and <code>expires_in</code> attributes. The <code>expires_in</code> attribute contains the number of seconds until the access token expires.</p>
+<p><a name="password-grant-tokens"></a></p>
+<h2 id="Password-Grant-Tokens"><a href="#Password-Grant-Tokens" class="headerlink" title="Password Grant Tokens"></a>Password Grant Tokens</h2><p>The OAuth2 password grant allows your other first-party clients, such as a mobile application, to obtain an access token using an e-mail address / username and password. This allows you to issue access tokens securely to your first-party clients without requiring your users to go through the entire OAuth2 authorization code redirect flow.</p>
+<p><a name="creating-a-password-grant-client"></a></p>
+<h3 id="Creating-A-Password-Grant-Client"><a href="#Creating-A-Password-Grant-Client" class="headerlink" title="Creating A Password Grant Client"></a>Creating A Password Grant Client</h3><p>Before your application can issue tokens via the password grant, you will need to create a password grant client. You may do this using the <code>passport:client</code> command with the <code>--password</code> option. If you have already run the <code>passport:install</code> command, you do not need to run this command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan passport:client --password</div></pre></td></tr></table></figure></p>
+<p><a name="requesting-password-grant-tokens"></a></p>
+<h3 id="Requesting-Tokens-1"><a href="#Requesting-Tokens-1" class="headerlink" title="Requesting Tokens"></a>Requesting Tokens</h3><p>Once you have created a password grant client, you may request an access token by issuing a <code>POST</code> request to the <code>/oauth/token</code> route with the user’s email address and password. Remember, this route is already registered by the <code>Passport::routes</code> method so there is no need to define it manually. If the request is successful, you will receive an <code>access_token</code> and <code>refresh_token</code> in the JSON response from the server:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$http = <span class="keyword">new</span> GuzzleHttp\Client;</div><div class="line"></div><div class="line">$response = $http-&gt;post(<span class="string">'http://your-app.com/oauth/token'</span>, [</div><div class="line">    <span class="string">'form_params'</span> =&gt; [</div><div class="line">        <span class="string">'grant_type'</span> =&gt; <span class="string">'password'</span>,</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'client_secret'</span> =&gt; <span class="string">'client-secret'</span>,</div><div class="line">        <span class="string">'username'</span> =&gt; <span class="string">'taylor@laravel.com'</span>,</div><div class="line">        <span class="string">'password'</span> =&gt; <span class="string">'my-password'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">''</span>,</div><div class="line">    ],</div><div class="line">]);</div><div class="line"></div><div class="line"><span class="keyword">return</span> json_decode((string) $response-&gt;getBody(), <span class="keyword">true</span>);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} Remember, access tokens are long-lived by default. However, you are free to <a href="#configuration">configure your maximum access token lifetime</a> if needed.</p>
+</blockquote>
+<p><a name="requesting-all-scopes"></a></p>
+<h3 id="Requesting-All-Scopes"><a href="#Requesting-All-Scopes" class="headerlink" title="Requesting All Scopes"></a>Requesting All Scopes</h3><p>When using the password grant, you may wish to authorize the token for all of the scopes supported by your application. You can do this by requesting the <code>*</code> scope. If you request the <code>*</code> scope, the <code>can</code> method on the token instance will always return <code>true</code>. This scope may only be assigned to a token that is issued using the <code>password</code> grant:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$response = $http-&gt;post(<span class="string">'http://your-app.com/oauth/token'</span>, [</div><div class="line">    <span class="string">'form_params'</span> =&gt; [</div><div class="line">        <span class="string">'grant_type'</span> =&gt; <span class="string">'password'</span>,</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'client_secret'</span> =&gt; <span class="string">'client-secret'</span>,</div><div class="line">        <span class="string">'username'</span> =&gt; <span class="string">'taylor@laravel.com'</span>,</div><div class="line">        <span class="string">'password'</span> =&gt; <span class="string">'my-password'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">'*'</span>,</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="implicit-grant-tokens"></a></p>
+<h2 id="Implicit-Grant-Tokens"><a href="#Implicit-Grant-Tokens" class="headerlink" title="Implicit Grant Tokens"></a>Implicit Grant Tokens</h2><p>The implicit grant is similar to the authorization code grant; however, the token is returned to the client without exchanging an authorization code. This grant is most commonly used for JavaScript or mobile applications where the client credentials can’t be securely stored. To enable the grant, call the <code>enableImplicitGrant</code> method in your <code>AuthServiceProvider</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Register any authentication / authorization services.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;registerPolicies();</div><div class="line"></div><div class="line">    Passport::routes();</div><div class="line"></div><div class="line">    Passport::enableImplicitGrant();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Once a grant has been enabled, developers may use their client ID to request an access token from your application. The consuming application should make a redirect request to your application’s <code>/oauth/authorize</code> route like so:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/redirect'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    $query = http_build_query([</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'redirect_uri'</span> =&gt; <span class="string">'http://example.com/callback'</span>,</div><div class="line">        <span class="string">'response_type'</span> =&gt; <span class="string">'token'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">''</span>,</div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> redirect(<span class="string">'http://your-app.com/oauth/authorize?'</span>.$query);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} Remember, the <code>/oauth/authorize</code> route is already defined by the <code>Passport::routes</code> method. You do not need to manually define this route.</p>
+</blockquote>
+<p><a name="client-credentials-grant-tokens"></a></p>
+<h2 id="Client-Credentials-Grant-Tokens"><a href="#Client-Credentials-Grant-Tokens" class="headerlink" title="Client Credentials Grant Tokens"></a>Client Credentials Grant Tokens</h2><p>The client credentials grant is suitable for machine-to-machine authentication. For example, you might use this grant in a scheduled job which is performing maintenance tasks over an API. To retrieve a token, make a request to the <code>oauth/token</code> endpoint:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$guzzle = <span class="keyword">new</span> GuzzleHttp\Client;</div><div class="line"></div><div class="line">$response = $guzzle-&gt;post(<span class="string">'http://your-app.com/oauth/token'</span>, [</div><div class="line">    <span class="string">'form_params'</span> =&gt; [</div><div class="line">        <span class="string">'grant_type'</span> =&gt; <span class="string">'client_credentials'</span>,</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'client_secret'</span> =&gt; <span class="string">'client-secret'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">'your-scope'</span>,</div><div class="line">    ],</div><div class="line">]);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> json_decode((string) $response-&gt;getBody(), <span class="keyword">true</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="personal-access-tokens"></a></p>
+<h2 id="Personal-Access-Tokens"><a href="#Personal-Access-Tokens" class="headerlink" title="Personal Access Tokens"></a>Personal Access Tokens</h2><p>Sometimes, your users may want to issue access tokens to themselves without going through the typical authorization code redirect flow. Allowing users to issue tokens to themselves via your application’s UI can be useful for allowing users to experiment with your API or may serve as a simpler approach to issuing access tokens in general.</p>
+<blockquote>
+<p>{note} Personal access tokens are always long-lived. Their lifetime is not modified when using the <code>tokensExpireIn</code> or <code>refreshTokensExpireIn</code> methods.</p>
+</blockquote>
+<p><a name="creating-a-personal-access-client"></a></p>
+<h3 id="Creating-A-Personal-Access-Client"><a href="#Creating-A-Personal-Access-Client" class="headerlink" title="Creating A Personal Access Client"></a>Creating A Personal Access Client</h3><p>Before your application can issue personal access tokens, you will need to create a personal access client. You may do this using the <code>passport:client</code> command with the <code>--personal</code> option. If you have already run the <code>passport:install</code> command, you do not need to run this command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan passport:client --personal</div></pre></td></tr></table></figure></p>
+<p><a name="managing-personal-access-tokens"></a></p>
+<h3 id="Managing-Personal-Access-Tokens"><a href="#Managing-Personal-Access-Tokens" class="headerlink" title="Managing Personal Access Tokens"></a>Managing Personal Access Tokens</h3><p>Once you have created a personal access client, you may issue tokens for a given user using the <code>createToken</code> method on the <code>User</code> model instance. The <code>createToken</code> method accepts the name of the token as its first argument and an optional array of <a href="#token-scopes">scopes</a> as its second argument:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$user = App\User::find(<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">// Creating a token without scopes...</span></div><div class="line">$token = $user-&gt;createToken(<span class="string">'Token Name'</span>)-&gt;accessToken;</div><div class="line"></div><div class="line"><span class="comment">// Creating a token with scopes...</span></div><div class="line">$token = $user-&gt;createToken(<span class="string">'My Token'</span>, [<span class="string">'place-orders'</span>])-&gt;accessToken;</div></pre></td></tr></table></figure></p>
+<h4 id="JSON-API-1"><a href="#JSON-API-1" class="headerlink" title="JSON API"></a>JSON API</h4><p>Passport also includes a JSON API for managing personal access tokens. You may pair this with your own frontend to offer your users a dashboard for managing personal access tokens. Below, we’ll review all of the API endpoints for managing personal access tokens. For convenience, we’ll use <a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">Axios</a> to demonstrate making HTTP requests to the endpoints.</p>
+<blockquote>
+<p>{tip} If you don’t want to implement the personal access token frontend yourself, you can use the <a href="#frontend-quickstart">frontend quickstart</a> to have a fully functional frontend in a matter of minutes.</p>
+</blockquote>
+<h4 id="GET-oauth-scopes"><a href="#GET-oauth-scopes" class="headerlink" title="GET /oauth/scopes"></a><code>GET /oauth/scopes</code></h4><p>This route returns all of the <a href="#token-scopes">scopes</a> defined for your application. You may use this route to list the scopes a user may assign to a personal access token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">axios.get(<span class="string">'/oauth/scopes'</span>)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="GET-oauth-personal-access-tokens"><a href="#GET-oauth-personal-access-tokens" class="headerlink" title="GET /oauth/personal-access-tokens"></a><code>GET /oauth/personal-access-tokens</code></h4><p>This route returns all of the personal access tokens that the authenticated user has created. This is primarily useful for listing all of the user’s token so that they may edit or delete them:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">axios.get(<span class="string">'/oauth/personal-access-tokens'</span>)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="POST-oauth-personal-access-tokens"><a href="#POST-oauth-personal-access-tokens" class="headerlink" title="POST /oauth/personal-access-tokens"></a><code>POST /oauth/personal-access-tokens</code></h4><p>This route creates new personal access tokens. It requires two pieces of data: the token’s <code>name</code> and the <code>scopes</code> that should be assigned to the token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> data = &#123;</div><div class="line">    name: <span class="string">'Token Name'</span>,</div><div class="line">    scopes: []</div><div class="line">&#125;;</div><div class="line"></div><div class="line">axios.post(<span class="string">'/oauth/personal-access-tokens'</span>, data)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data.accessToken);</div><div class="line">    &#125;)</div><div class="line">    .<span class="keyword">catch</span> (response =&gt; &#123;</div><div class="line">        <span class="comment">// List errors on response...</span></div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="DELETE-oauth-personal-access-tokens-token-id"><a href="#DELETE-oauth-personal-access-tokens-token-id" class="headerlink" title="DELETE /oauth/personal-access-tokens/{token-id}"></a><code>DELETE /oauth/personal-access-tokens/{token-id}</code></h4><p>This route may be used to delete personal access tokens:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">axios.delete(<span class="string">'/oauth/personal-access-tokens/'</span> + tokenId);</div></pre></td></tr></table></figure></p>
+<p><a name="protecting-routes"></a></p>
+<h2 id="Protecting-Routes"><a href="#Protecting-Routes" class="headerlink" title="Protecting Routes"></a>Protecting Routes</h2><p><a name="via-middleware"></a></p>
+<h3 id="Via-Middleware"><a href="#Via-Middleware" class="headerlink" title="Via Middleware"></a>Via Middleware</h3><p>Passport includes an <a href="/mk/laravel/authentication.html#adding-custom-guards">authentication guard</a> that will validate access tokens on incoming requests. Once you have configured the <code>api</code> guard to use the <code>passport</code> driver, you only need to specify the <code>auth:api</code> middleware on any routes that require a valid access token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/user'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)-&gt;middleware(<span class="string">'auth:api'</span>);</div></pre></td></tr></table></figure></p>
+<p><a name="passing-the-access-token"></a></p>
+<h3 id="Passing-The-Access-Token"><a href="#Passing-The-Access-Token" class="headerlink" title="Passing The Access Token"></a>Passing The Access Token</h3><p>When calling routes that are protected by Passport, your application’s API consumers should specify their access token as a <code>Bearer</code> token in the <code>Authorization</code> header of their request. For example, when using the Guzzle HTTP library:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$response = $client-&gt;request(<span class="string">'GET'</span>, <span class="string">'/api/user'</span>, [</div><div class="line">    <span class="string">'headers'</span> =&gt; [</div><div class="line">        <span class="string">'Accept'</span> =&gt; <span class="string">'application/json'</span>,</div><div class="line">        <span class="string">'Authorization'</span> =&gt; <span class="string">'Bearer '</span>.$accessToken,</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="token-scopes"></a></p>
+<h2 id="Token-Scopes"><a href="#Token-Scopes" class="headerlink" title="Token Scopes"></a>Token Scopes</h2><p><a name="defining-scopes"></a></p>
+<h3 id="Defining-Scopes"><a href="#Defining-Scopes" class="headerlink" title="Defining Scopes"></a>Defining Scopes</h3><p>Scopes allow your API clients to request a specific set of permissions when requesting authorization to access an account. For example, if you are building an e-commerce application, not all API consumers will need the ability to place orders. Instead, you may allow the consumers to only request authorization to access order shipment statuses. In other words, scopes allow your application’s users to limit the actions a third-party application can perform on their behalf.</p>
+<p>You may define your API’s scopes using the <code>Passport::tokensCan</code> method in the <code>boot</code> method of your <code>AuthServiceProvider</code>. The <code>tokensCan</code> method accepts an array of scope names and scope descriptions. The scope description may be anything you wish and will be displayed to users on the authorization approval screen:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Passport</span>\<span class="title">Passport</span>;</div><div class="line"></div><div class="line">Passport::tokensCan([</div><div class="line">    <span class="string">'place-orders'</span> =&gt; <span class="string">'Place orders'</span>,</div><div class="line">    <span class="string">'check-status'</span> =&gt; <span class="string">'Check order status'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="assigning-scopes-to-tokens"></a></p>
+<h3 id="Assigning-Scopes-To-Tokens"><a href="#Assigning-Scopes-To-Tokens" class="headerlink" title="Assigning Scopes To Tokens"></a>Assigning Scopes To Tokens</h3><h4 id="When-Requesting-Authorization-Codes"><a href="#When-Requesting-Authorization-Codes" class="headerlink" title="When Requesting Authorization Codes"></a>When Requesting Authorization Codes</h4><p>When requesting an access token using the authorization code grant, consumers should specify their desired scopes as the <code>scope</code> query string parameter. The <code>scope</code> parameter should be a space-delimited list of scopes:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/redirect'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    $query = http_build_query([</div><div class="line">        <span class="string">'client_id'</span> =&gt; <span class="string">'client-id'</span>,</div><div class="line">        <span class="string">'redirect_uri'</span> =&gt; <span class="string">'http://example.com/callback'</span>,</div><div class="line">        <span class="string">'response_type'</span> =&gt; <span class="string">'code'</span>,</div><div class="line">        <span class="string">'scope'</span> =&gt; <span class="string">'place-orders check-status'</span>,</div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> redirect(<span class="string">'http://your-app.com/oauth/authorize?'</span>.$query);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="When-Issuing-Personal-Access-Tokens"><a href="#When-Issuing-Personal-Access-Tokens" class="headerlink" title="When Issuing Personal Access Tokens"></a>When Issuing Personal Access Tokens</h4><p>If you are issuing personal access tokens using the <code>User</code> model’s <code>createToken</code> method, you may pass the array of desired scopes as the second argument to the method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$token = $user-&gt;createToken(<span class="string">'My Token'</span>, [<span class="string">'place-orders'</span>])-&gt;accessToken;</div></pre></td></tr></table></figure></p>
+<p><a name="checking-scopes"></a></p>
+<h3 id="Checking-Scopes"><a href="#Checking-Scopes" class="headerlink" title="Checking Scopes"></a>Checking Scopes</h3><p>Passport includes two middleware that may be used to verify that an incoming request is authenticated with a token that has been granted a given scope. To get started, add the following middleware to the <code>$routeMiddleware</code> property of your <code>app/Http/Kernel.php</code> file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'scopes'</span> =&gt; \Laravel\Passport\Http\Middleware\CheckScopes::class,</div><div class="line"><span class="string">'scope'</span> =&gt; \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,</div></pre></td></tr></table></figure></p>
+<h4 id="Check-For-All-Scopes"><a href="#Check-For-All-Scopes" class="headerlink" title="Check For All Scopes"></a>Check For All Scopes</h4><p>The <code>scopes</code> middleware may be assigned to a route to verify that the incoming request’s access token has <em>all</em> of the listed scopes:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/orders'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Access token has both "check-status" and "place-orders" scopes...</span></div><div class="line">&#125;)-&gt;middleware(<span class="string">'scopes:check-status,place-orders'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Check-For-Any-Scopes"><a href="#Check-For-Any-Scopes" class="headerlink" title="Check For Any Scopes"></a>Check For Any Scopes</h4><p>The <code>scope</code> middleware may be assigned to a route to verify that the incoming request’s access token has <em>at least one</em> of the listed scopes:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'/orders'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Access token has either "check-status" or "place-orders" scope...</span></div><div class="line">&#125;)-&gt;middleware(<span class="string">'scope:check-status,place-orders'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Checking-Scopes-On-A-Token-Instance"><a href="#Checking-Scopes-On-A-Token-Instance" class="headerlink" title="Checking Scopes On A Token Instance"></a>Checking Scopes On A Token Instance</h4><p>Once an access token authenticated request has entered your application, you may still check if the token has a given scope using the <code>tokenCan</code> method on the authenticated <code>User</code> instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"></div><div class="line">Route::get(<span class="string">'/orders'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Request $request)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> ($request-&gt;user()-&gt;tokenCan(<span class="string">'place-orders'</span>)) &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a name="consuming-your-api-with-javascript"></a></p>
+<h2 id="Consuming-Your-API-With-JavaScript"><a href="#Consuming-Your-API-With-JavaScript" class="headerlink" title="Consuming Your API With JavaScript"></a>Consuming Your API With JavaScript</h2><p>When building an API, it can be extremely useful to be able to consume your own API from your JavaScript application. This approach to API development allows your own application to consume the same API that you are sharing with the world. The same API may be consumed by your web application, mobile applications, third-party applications, and any SDKs that you may publish on various package managers.</p>
+<p>Typically, if you want to consume your API from your JavaScript application, you would need to manually send an access token to the application and pass it with each request to your application. However, Passport includes a middleware that can handle this for you. All you need to do is add the <code>CreateFreshApiToken</code> middleware to your <code>web</code> middleware group:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'web'</span> =&gt; [</div><div class="line">    <span class="comment">// Other middleware...</span></div><div class="line">    \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<p>This Passport middleware will attach a <code>laravel_token</code> cookie to your outgoing responses. This cookie contains an encrypted JWT that Passport will use to authenticate API requests from your JavaScript application. Now, you may make requests to your application’s API without explicitly passing an access token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">axios.get(<span class="string">'/api/user'</span>)</div><div class="line">    .then(response =&gt; &#123;</div><div class="line">        console.log(response.data);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<p>When using this method of authentication, Axios will automatically send the <code>X-CSRF-TOKEN</code> header. In addition, the default Laravel JavaScript scaffolding instructs Axios to send the <code>X-Requested-With</code> header:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">window.axios.defaults.headers.common = &#123;</div><div class="line">    <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span>,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} If you are using a different JavaScript framework, you should make sure it is configured to send the <code>X-CSRF-TOKEN</code> and <code>X-Requested-With</code> headers with every outgoing request.</p>
+</blockquote>
+<p><a name="events"></a></p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>Passport raises events when issuing access tokens and refresh tokens. You may use these events to prune or revoke other access tokens in your database. You may attach listeners to these events in your application’s <code>EventServiceProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * The event listener mappings for the application.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@var</span> array</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> $listen = [</div><div class="line">    <span class="string">'Laravel\Passport\Events\AccessTokenCreated'</span> =&gt; [</div><div class="line">        <span class="string">'App\Listeners\RevokeOldTokens'</span>,</div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="string">'Laravel\Passport\Events\RefreshTokenCreated'</span> =&gt; [</div><div class="line">        <span class="string">'App\Listeners\PruneOldTokens'</span>,</div><div class="line">    ],</div><div class="line">];</div></pre></td></tr></table></figure>
+<p><a name="testing"></a></p>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>Passport’s <code>actingAs</code> method may be used to specify the currently authenticated user as well as its scopes. The first argument given to the <code>actingAs</code> method is the user instance and the second is an array of scopes that should be granted to the user’s token:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testServerCreation</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Passport::actingAs(</div><div class="line">        factory(User::class)-&gt;create(),</div><div class="line">        [<span class="string">'create-servers'</span>]</div><div class="line">    );</div><div class="line"></div><div class="line">    $response = <span class="keyword">$this</span>-&gt;post(<span class="string">'/api/create-server'</span>);</div><div class="line"></div><div class="line">    $response-&gt;assertStatus(<span class="number">200</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/passport.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

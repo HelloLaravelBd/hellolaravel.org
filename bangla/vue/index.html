@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ভিউ (Vue) পরিচিতি — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="ভিউ (Vue) পরিচিতি — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="ভিউ (Vue) পরিচিতি — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "ভিউ (Vue)"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link current">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link current">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                ভিউ (Vue)
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/vue/index.html" class="sidebar-link current">ভিউ (Vue) পরিচিতি</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/vue/directives.html" class="sidebar-link">ডিরেক্টিভ ভিউ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/vue/main-feature.html" class="sidebar-link">প্রধান ফিচার</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content ভিউ (Vue) with-sidebar ">
+    
+      
+
+    
+    
+      <h1>ভিউ (Vue) পরিচিতি</h1>
+    
+    <hr>
+<h2 id="ভিউ-Vue-কিঃ"><a href="#ভিউ-Vue-কিঃ" class="headerlink" title="ভিউ (Vue) কিঃ-"></a>ভিউ (Vue) কিঃ-</h2><p> ভিউ (Vue) হচ্ছে জাভাক্রিপ্ট ফ্রেমওয়ার্ক । ভিউ প্রগেসিভ ফ্রেমওয়ার্ক , ইউজার ইন্টারফেজ ভিত্তিক কাজের জন্য বানানো হয়েছে ।</p>
+<ul>
+<li><p><code>ক্রিয়েটরঃ</code>  <a href="https://twitter.com/youyuxi" target="_blank" rel="external">ইভান ইউ (<code>Evan You</code>)</a></p>
+<p>চলমান ভার্সনঃ <code>২.৫.*</code></p>
+</li>
+</ul>
+<h2 id="পূর্বশর্তঃ"><a href="#পূর্বশর্তঃ" class="headerlink" title="পূর্বশর্তঃ"></a>পূর্বশর্তঃ</h2><p>ভিউ শুরু করার আগে যা যা জানা থাকতে হবে</p>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JS</li>
+</ul>
+<h2 id="ইন্সটল-ভিউঃ"><a href="#ইন্সটল-ভিউঃ" class="headerlink" title="ইন্সটল ভিউঃ"></a>ইন্সটল ভিউঃ</h2><p>তিনভাবে ভিউ নিয়ে কাজ করা যায় - <code>CDN</code> , <code>NPM</code> , <code>CLI</code></p>
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><figure class="highlight shell"><table><tr><td class="code"><pre><div class="line"><span class="meta">#</span> latest stable</div><div class="line"><span class="meta">$</span> npm install vue</div></pre></td></tr></table></figure>
+<h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><figure class="highlight shell"><table><tr><td class="code"><pre><div class="line"><span class="meta">#</span> install vue-cli</div><div class="line"><span class="meta">$</span> npm install --global vue-cli</div><div class="line"><span class="meta">#</span> create a new project using the "webpack" template</div><div class="line"><span class="meta">$</span> vue init webpack my-project</div><div class="line"><span class="meta">#</span> install dependencies and go!</div><div class="line"><span class="meta">$</span> cd my-project</div><div class="line"><span class="meta">$</span> npm install</div><div class="line"><span class="meta">$</span> npm run dev</div></pre></td></tr></table></figure>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/bangla/vue/index.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1999 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Validation — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Validation — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Validation — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link current">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Validation</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Laravel provides several different approaches to validate your application’s incoming data. By default, Laravel’s base controller class uses a <code>ValidatesRequests</code> trait which provides a convenient method to validate incoming HTTP request with a variety of powerful validation rules.</p>
+<p><a name="validation-quickstart"></a></p>
+<h2 id="Validation-Quickstart"><a href="#Validation-Quickstart" class="headerlink" title="Validation Quickstart"></a>Validation Quickstart</h2><p>To learn about Laravel’s powerful validation features, let’s look at a complete example of validating a form and displaying the error messages back to the user.</p>
+<p><a name="quick-defining-the-routes"></a></p>
+<h3 id="Defining-The-Routes"><a href="#Defining-The-Routes" class="headerlink" title="Defining The Routes"></a>Defining The Routes</h3><p>First, let’s assume we have the following routes defined in our <code>routes/web.php</code> file:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::get(<span class="string">'post/create'</span>, <span class="string">'PostController@create'</span>);</div><div class="line"></div><div class="line">Route::post(<span class="string">'post'</span>, <span class="string">'PostController@store'</span>);</div></pre></td></tr></table></figure>
+<p>Of course, the <code>GET</code> route will display a form for the user to create a new blog post, while the <code>POST</code> route will store the new blog post in the database.</p>
+<p><a name="quick-creating-the-controller"></a></p>
+<h3 id="Creating-The-Controller"><a href="#Creating-The-Controller" class="headerlink" title="Creating The Controller"></a>Creating The Controller</h3><p>Next, let’s take a look at a simple controller that handles these routes. We’ll leave the <code>store</code> method empty for now:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Show the form to create a new blog post.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> view(<span class="string">'post.create'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Store a new blog post.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// Validate and store the blog post...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="quick-writing-the-validation-logic"></a></p>
+<h3 id="Writing-The-Validation-Logic"><a href="#Writing-The-Validation-Logic" class="headerlink" title="Writing The Validation Logic"></a>Writing The Validation Logic</h3><p>Now we are ready to fill in our <code>store</code> method with the logic to validate the new blog post. If you examine your application’s base controller (<code>App\Http\Controllers\Controller</code>) class, you will see that the class uses a <code>ValidatesRequests</code> trait. This trait provides a convenient <code>validate</code> method to all of your controllers.</p>
+<p>The <code>validate</code> method accepts an incoming HTTP request and a set of validation rules. If the validation rules pass, your code will keep executing normally; however, if validation fails, an exception will be thrown and the proper error response will automatically be sent back to the user. In the case of a traditional HTTP request, a redirect response will be generated, while a JSON response will be sent for AJAX requests.</p>
+<p>To get a better understanding of the <code>validate</code> method, let’s jump back into the <code>store</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Store a new blog post.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  Request  $request</div><div class="line"> * <span class="doctag">@return</span> Response</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;validate($request, [</div><div class="line">        <span class="string">'title'</span> =&gt; <span class="string">'required|unique:posts|max:255'</span>,</div><div class="line">        <span class="string">'body'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">    ]);</div><div class="line"></div><div class="line">    <span class="comment">// The blog post is valid, store in database...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>As you can see, we simply pass the incoming HTTP request and desired validation rules into the <code>validate</code> method. Again, if the validation fails, the proper response will automatically be generated. If the validation passes, our controller will continue executing normally.</p>
+<h4 id="Stopping-On-First-Validation-Failure"><a href="#Stopping-On-First-Validation-Failure" class="headerlink" title="Stopping On First Validation Failure"></a>Stopping On First Validation Failure</h4><p>Sometimes you may wish to stop running validation rules on an attribute after the first validation failure. To do so, assign the <code>bail</code> rule to the attribute:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;validate($request, [</div><div class="line">    <span class="string">'title'</span> =&gt; <span class="string">'bail|required|unique:posts|max:255'</span>,</div><div class="line">    <span class="string">'body'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>In this example, if the <code>required</code> rule on the <code>title</code> attribute fails, the <code>unique</code> rule will not be checked. Rules will be validated in the order they are assigned.</p>
+<h4 id="A-Note-On-Nested-Attributes"><a href="#A-Note-On-Nested-Attributes" class="headerlink" title="A Note On Nested Attributes"></a>A Note On Nested Attributes</h4><p>If your HTTP request contains “nested” parameters, you may specify them in your validation rules using “dot” syntax:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;validate($request, [</div><div class="line">    <span class="string">'title'</span> =&gt; <span class="string">'required|unique:posts|max:255'</span>,</div><div class="line">    <span class="string">'author.name'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">    <span class="string">'author.description'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="quick-displaying-the-validation-errors"></a></p>
+<h3 id="Displaying-The-Validation-Errors"><a href="#Displaying-The-Validation-Errors" class="headerlink" title="Displaying The Validation Errors"></a>Displaying The Validation Errors</h3><p>So, what if the incoming request parameters do not pass the given validation rules? As mentioned previously, Laravel will automatically redirect the user back to their previous location. In addition, all of the validation errors will automatically be <a href="/mk/laravel/session.html#flash-data">flashed to the session</a>.</p>
+<p>Again, notice that we did not have to explicitly bind the error messages to the view in our <code>GET</code> route. This is because Laravel will check for errors in the session data, and automatically bind them to the view if they are available. The <code>$errors</code> variable will be an instance of <code>Illuminate\Support\MessageBag</code>. For more information on working with this object, <a href="#working-with-error-messages">check out its documentation</a>.</p>
+<blockquote>
+<p>{tip} The <code>$errors</code> variable is bound to the view by the <code>Illuminate\View\Middleware\ShareErrorsFromSession</code> middleware, which is provided by the <code>web</code> middleware group. <strong>When this middleware is applied an <code>$errors</code> variable will always be available in your views</strong>, allowing you to conveniently assume the <code>$errors</code> variable is always defined and can be safely used.</p>
+</blockquote>
+<p>So, in our example, the user will be redirected to our controller’s <code>create</code> method when validation fails, allowing us to display the error messages in the view:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;!-- /resources/views/post/create.blade.php --&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;Create Post&lt;/h1&gt;</div><div class="line"></div><div class="line">@if (count($errors) &gt; 0)</div><div class="line">    &lt;div class="alert alert-danger"&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">            @foreach ($errors-&gt;all() as $error)</div><div class="line">                &lt;li&gt;&#123;&#123; $error &#125;&#125;&lt;/li&gt;</div><div class="line">            @endforeach</div><div class="line">        &lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">@endif</div><div class="line"></div><div class="line">&lt;!-- Create Post Form --&gt;</div></pre></td></tr></table></figure></p>
+<p><a name="a-note-on-optional-fields"></a></p>
+<h3 id="A-Note-On-Optional-Fields"><a href="#A-Note-On-Optional-Fields" class="headerlink" title="A Note On Optional Fields"></a>A Note On Optional Fields</h3><p>By default, Laravel includes the <code>TrimStrings</code> and <code>ConvertEmptyStringsToNull</code> middleware in your application’s global middleware stack. These middleware are listed in the stack by the <code>App\Http\Kernel</code> class. Because of this, you will often need to mark your “optional” request fields as <code>nullable</code> if you do not want the validator to consider <code>null</code> values as invalid. For example:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;validate($request, [</div><div class="line">    <span class="string">'title'</span> =&gt; <span class="string">'required|unique:posts|max:255'</span>,</div><div class="line">    <span class="string">'body'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">    <span class="string">'publish_at'</span> =&gt; <span class="string">'nullable|date'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>In this example, we are specifying that the <code>publish_at</code> field may be either <code>null</code> or a valid date representation. If the <code>nullable</code> modifier is not added to the rule definition, the validator would consider <code>null</code> an invalid date.</p>
+<p><a name="quick-customizing-the-flashed-error-format"></a></p>
+<h4 id="Customizing-The-Flashed-Error-Format"><a href="#Customizing-The-Flashed-Error-Format" class="headerlink" title="Customizing The Flashed Error Format"></a>Customizing The Flashed Error Format</h4><p>If you wish to customize the format of the validation errors that are flashed to the session when validation fails, override the <code>formatValidationErrors</code> on your base controller. Don’t forget to import the <code>Illuminate\Contracts\Validation\Validator</code> class at the top of the file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Bus</span>\<span class="title">DispatchesJobs</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Validation</span>\<span class="title">Validator</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Routing</span>\<span class="title">Controller</span> <span class="title">as</span> <span class="title">BaseController</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Validation</span>\<span class="title">ValidatesRequests</span>;</div><div class="line"></div><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Controller</span> <span class="keyword">extends</span> <span class="title">BaseController</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">DispatchesJobs</span>, <span class="title">ValidatesRequests</span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#123;<span class="doctag">@inheritdoc</span>&#125;</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">formatValidationErrors</span><span class="params">(Validator $validator)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> $validator-&gt;errors()-&gt;all();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="quick-ajax-requests-and-validation"></a></p>
+<h4 id="AJAX-Requests-amp-Validation"><a href="#AJAX-Requests-amp-Validation" class="headerlink" title="AJAX Requests &amp; Validation"></a>AJAX Requests &amp; Validation</h4><p>In this example, we used a traditional form to send data to the application. However, many applications use AJAX requests. When using the <code>validate</code> method during an AJAX request, Laravel will not generate a redirect response. Instead, Laravel generates a JSON response containing all of the validation errors. This JSON response will be sent with a 422 HTTP status code.</p>
+<p><a name="form-request-validation"></a></p>
+<h2 id="Form-Request-Validation"><a href="#Form-Request-Validation" class="headerlink" title="Form Request Validation"></a>Form Request Validation</h2><p><a name="creating-form-requests"></a></p>
+<h3 id="Creating-Form-Requests"><a href="#Creating-Form-Requests" class="headerlink" title="Creating Form Requests"></a>Creating Form Requests</h3><p>For more complex validation scenarios, you may wish to create a “form request”. Form requests are custom request classes that contain validation logic. To create a form request class, use the <code>make:request</code> Artisan CLI command:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan make:request StoreBlogPost</div></pre></td></tr></table></figure>
+<p>The generated class will be placed in the <code>app/Http/Requests</code> directory. If this directory does not exist, it will be created when you run the <code>make:request</code> command. Let’s add a few validation rules to the <code>rules</code> method:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Get the validation rules that apply to the request.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> array</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rules</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> [</div><div class="line">        <span class="string">'title'</span> =&gt; <span class="string">'required|unique:posts|max:255'</span>,</div><div class="line">        <span class="string">'body'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">    ];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>So, how are the validation rules evaluated? All you need to do is type-hint the request on your controller method. The incoming form request is validated before the controller method is called, meaning you do not need to clutter your controller with any validation logic:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Store the incoming blog post.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  StoreBlogPost  $request</div><div class="line"> * <span class="doctag">@return</span> Response</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(StoreBlogPost $request)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// The incoming request is valid...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>If validation fails, a redirect response will be generated to send the user back to their previous location. The errors will also be flashed to the session so they are available for display. If the request was an AJAX request, a HTTP response with a 422 status code will be returned to the user including a JSON representation of the validation errors.</p>
+<h4 id="Adding-After-Hooks-To-Form-Requests"><a href="#Adding-After-Hooks-To-Form-Requests" class="headerlink" title="Adding After Hooks To Form Requests"></a>Adding After Hooks To Form Requests</h4><p>If you would like to add an “after” hook to a form request, you may use the <code>withValidator</code> method. This method receives the fully constructed validator, allowing you to call any of its methods before the validation rules are actually evaluated:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Configure the validator instance.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  \Illuminate\Validation\Validator  $validator</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">withValidator</span><span class="params">($validator)</span></span></div><div class="line">&#123;</div><div class="line">    $validator-&gt;after(<span class="function"><span class="keyword">function</span> <span class="params">($validator)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;somethingElseIsInvalid()) &#123;</div><div class="line">            $validator-&gt;errors()-&gt;add(<span class="string">'field'</span>, <span class="string">'Something is wrong with this field!'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a name="authorizing-form-requests"></a></p>
+<h3 id="Authorizing-Form-Requests"><a href="#Authorizing-Form-Requests" class="headerlink" title="Authorizing Form Requests"></a>Authorizing Form Requests</h3><p>The form request class also contains an <code>authorize</code> method. Within this method, you may check if the authenticated user actually has the authority to update a given resource. For example, you may determine if a user actually owns a blog comment they are attempting to update:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Determine if the user is authorized to make this request.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> bool</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">authorize</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    $comment = Comment::find(<span class="keyword">$this</span>-&gt;route(<span class="string">'comment'</span>));</div><div class="line"></div><div class="line">    <span class="keyword">return</span> $comment &amp;&amp; <span class="keyword">$this</span>-&gt;user()-&gt;can(<span class="string">'update'</span>, $comment);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Since all form requests extend the base Laravel request class, we may use the <code>user</code> method to access the currently authenticated user. Also note the call to the <code>route</code> method in the example above. This method grants you access to the URI parameters defined on the route being called, such as the <code>{comment}</code> parameter in the example below:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Route::post(<span class="string">'comment/&#123;comment&#125;'</span>);</div></pre></td></tr></table></figure>
+<p>If the <code>authorize</code> method returns <code>false</code>, a HTTP response with a 403 status code will automatically be returned and your controller method will not execute.</p>
+<p>If you plan to have authorization logic in another part of your application, simply return <code>true</code> from the <code>authorize</code> method:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Determine if the user is authorized to make this request.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> bool</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">authorize</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a name="customizing-the-error-format"></a></p>
+<h3 id="Customizing-The-Error-Format"><a href="#Customizing-The-Error-Format" class="headerlink" title="Customizing The Error Format"></a>Customizing The Error Format</h3><p>If you wish to customize the format of the validation errors that are flashed to the session when validation fails, override the <code>formatErrors</code> on your base request (<code>App\Http\Requests\Request</code>). Don’t forget to import the <code>Illuminate\Contracts\Validation\Validator</code> class at the top of the file:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * &#123;<span class="doctag">@inheritdoc</span>&#125;</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">formatErrors</span><span class="params">(Validator $validator)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> $validator-&gt;errors()-&gt;all();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a name="customizing-the-error-messages"></a></p>
+<h3 id="Customizing-The-Error-Messages"><a href="#Customizing-The-Error-Messages" class="headerlink" title="Customizing The Error Messages"></a>Customizing The Error Messages</h3><p>You may customize the error messages used by the form request by overriding the <code>messages</code> method. This method should return an array of attribute / rule pairs and their corresponding error messages:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Get the error messages for the defined validation rules.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> array</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">messages</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> [</div><div class="line">        <span class="string">'title.required'</span> =&gt; <span class="string">'A title is required'</span>,</div><div class="line">        <span class="string">'body.required'</span>  =&gt; <span class="string">'A message is required'</span>,</div><div class="line">    ];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a name="manually-creating-validators"></a></p>
+<h2 id="Manually-Creating-Validators"><a href="#Manually-Creating-Validators" class="headerlink" title="Manually Creating Validators"></a>Manually Creating Validators</h2><p>If you do not want to use the <code>ValidatesRequests</code> trait’s <code>validate</code> method, you may create a validator instance manually using the <code>Validator</code> <a href="/mk/laravel/facades.html">facade</a>. The <code>make</code> method on the facade generates a new validator instance:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Validator</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>\<span class="title">Controller</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Store a new blog post.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  Request  $request</div><div class="line">     * <span class="doctag">@return</span> Response</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">store</span><span class="params">(Request $request)</span></span></div><div class="line">    &#123;</div><div class="line">        $validator = Validator::make($request-&gt;all(), [</div><div class="line">            <span class="string">'title'</span> =&gt; <span class="string">'required|unique:posts|max:255'</span>,</div><div class="line">            <span class="string">'body'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">        ]);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ($validator-&gt;fails()) &#123;</div><div class="line">            <span class="keyword">return</span> redirect(<span class="string">'post/create'</span>)</div><div class="line">                        -&gt;withErrors($validator)</div><div class="line">                        -&gt;withInput();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// Store the blog post...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The first argument passed to the <code>make</code> method is the data under validation. The second argument is the validation rules that should be applied to the data.</p>
+<p>After checking if the request validation failed, you may use the <code>withErrors</code> method to flash the error messages to the session. When using this method, the <code>$errors</code> variable will automatically be shared with your views after redirection, allowing you to easily display them back to the user. The <code>withErrors</code> method accepts a validator, a <code>MessageBag</code>, or a PHP <code>array</code>.</p>
+<p><a name="automatic-redirection"></a></p>
+<h3 id="Automatic-Redirection"><a href="#Automatic-Redirection" class="headerlink" title="Automatic Redirection"></a>Automatic Redirection</h3><p>If you would like to create a validator instance manually but still take advantage of the automatic redirection offered by the <code>ValidatesRequest</code> trait, you may call the <code>validate</code> method on an existing validator instance. If validation fails, the user will automatically be redirected or, in the case of an AJAX request, a JSON response will be returned:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Validator::make($request-&gt;all(), [</div><div class="line">    <span class="string">'title'</span> =&gt; <span class="string">'required|unique:posts|max:255'</span>,</div><div class="line">    <span class="string">'body'</span> =&gt; <span class="string">'required'</span>,</div><div class="line">])-&gt;validate();</div></pre></td></tr></table></figure>
+<p><a name="named-error-bags"></a></p>
+<h3 id="Named-Error-Bags"><a href="#Named-Error-Bags" class="headerlink" title="Named Error Bags"></a>Named Error Bags</h3><p>If you have multiple forms on a single page, you may wish to name the <code>MessageBag</code> of errors, allowing you to retrieve the error messages for a specific form. Simply pass a name as the second argument to <code>withErrors</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> redirect(<span class="string">'register'</span>)</div><div class="line">            -&gt;withErrors($validator, <span class="string">'login'</span>);</div></pre></td></tr></table></figure></p>
+<p>You may then access the named <code>MessageBag</code> instance from the <code>$errors</code> variable:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&#123;&#123; $errors-&gt;login-&gt;first(<span class="string">'email'</span>) &#125;&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="after-validation-hook"></a></p>
+<h3 id="After-Validation-Hook"><a href="#After-Validation-Hook" class="headerlink" title="After Validation Hook"></a>After Validation Hook</h3><p>The validator also allows you to attach callbacks to be run after validation is completed. This allows you to easily perform further validation and even add more error messages to the message collection. To get started, use the <code>after</code> method on a validator instance:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$validator = Validator::make(...);</div><div class="line"></div><div class="line">$validator-&gt;after(<span class="function"><span class="keyword">function</span> <span class="params">($validator)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;somethingElseIsInvalid()) &#123;</div><div class="line">        $validator-&gt;errors()-&gt;add(<span class="string">'field'</span>, <span class="string">'Something is wrong with this field!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">if</span> ($validator-&gt;fails()) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="working-with-error-messages"></a></p>
+<h2 id="Working-With-Error-Messages"><a href="#Working-With-Error-Messages" class="headerlink" title="Working With Error Messages"></a>Working With Error Messages</h2><p>After calling the <code>errors</code> method on a <code>Validator</code> instance, you will receive an <code>Illuminate\Support\MessageBag</code> instance, which has a variety of convenient methods for working with error messages. The <code>$errors</code> variable that is automatically made available to all views is also an instance of the <code>MessageBag</code> class.</p>
+<h4 id="Retrieving-The-First-Error-Message-For-A-Field"><a href="#Retrieving-The-First-Error-Message-For-A-Field" class="headerlink" title="Retrieving The First Error Message For A Field"></a>Retrieving The First Error Message For A Field</h4><p>To retrieve the first error message for a given field, use the <code>first</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$errors = $validator-&gt;errors();</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $errors-&gt;first(<span class="string">'email'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Retrieving-All-Error-Messages-For-A-Field"><a href="#Retrieving-All-Error-Messages-For-A-Field" class="headerlink" title="Retrieving All Error Messages For A Field"></a>Retrieving All Error Messages For A Field</h4><p>If you need to retrieve an array of all the messages for a given field, use the <code>get</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">foreach</span> ($errors-&gt;get(<span class="string">'email'</span>) <span class="keyword">as</span> $message) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If you are validating an array form field, you may retrieve all of the messages for each of the array elements using the <code>*</code> character:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">foreach</span> ($errors-&gt;get(<span class="string">'attachments.*'</span>) <span class="keyword">as</span> $message) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Retrieving-All-Error-Messages-For-All-Fields"><a href="#Retrieving-All-Error-Messages-For-All-Fields" class="headerlink" title="Retrieving All Error Messages For All Fields"></a>Retrieving All Error Messages For All Fields</h4><p>To retrieve an array of all messages for all fields, use the <code>all</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">foreach</span> ($errors-&gt;all() <span class="keyword">as</span> $message) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Determining-If-Messages-Exist-For-A-Field"><a href="#Determining-If-Messages-Exist-For-A-Field" class="headerlink" title="Determining If Messages Exist For A Field"></a>Determining If Messages Exist For A Field</h4><p>The <code>has</code> method may be used to determine if any error messages exist for a given field:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> ($errors-&gt;has(<span class="string">'email'</span>)) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="custom-error-messages"></a></p>
+<h3 id="Custom-Error-Messages"><a href="#Custom-Error-Messages" class="headerlink" title="Custom Error Messages"></a>Custom Error Messages</h3><p>If needed, you may use custom error messages for validation instead of the defaults. There are several ways to specify custom messages. First, you may pass the custom messages as the third argument to the <code>Validator::make</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$messages = [</div><div class="line">    <span class="string">'required'</span> =&gt; <span class="string">'The :attribute field is required.'</span>,</div><div class="line">];</div><div class="line"></div><div class="line">$validator = Validator::make($input, $rules, $messages);</div></pre></td></tr></table></figure></p>
+<p>In this example, the <code>:attribute</code> place-holder will be replaced by the actual name of the field under validation. You may also utilize other place-holders in validation messages. For example:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$messages = [</div><div class="line">    <span class="string">'same'</span>    =&gt; <span class="string">'The :attribute and :other must match.'</span>,</div><div class="line">    <span class="string">'size'</span>    =&gt; <span class="string">'The :attribute must be exactly :size.'</span>,</div><div class="line">    <span class="string">'between'</span> =&gt; <span class="string">'The :attribute must be between :min - :max.'</span>,</div><div class="line">    <span class="string">'in'</span>      =&gt; <span class="string">'The :attribute must be one of the following types: :values'</span>,</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<h4 id="Specifying-A-Custom-Message-For-A-Given-Attribute"><a href="#Specifying-A-Custom-Message-For-A-Given-Attribute" class="headerlink" title="Specifying A Custom Message For A Given Attribute"></a>Specifying A Custom Message For A Given Attribute</h4><p>Sometimes you may wish to specify a custom error messages only for a specific field. You may do so using “dot” notation. Specify the attribute’s name first, followed by the rule:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$messages = [</div><div class="line">    <span class="string">'email.required'</span> =&gt; <span class="string">'We need to know your e-mail address!'</span>,</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<p><a name="localization"></a></p>
+<h4 id="Specifying-Custom-Messages-In-Language-Files"><a href="#Specifying-Custom-Messages-In-Language-Files" class="headerlink" title="Specifying Custom Messages In Language Files"></a>Specifying Custom Messages In Language Files</h4><p>In most cases, you will probably specify your custom messages in a language file instead of passing them directly to the <code>Validator</code>. To do so, add your messages to <code>custom</code> array in the <code>resources/lang/xx/validation.php</code> language file.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'custom'</span> =&gt; [</div><div class="line">    <span class="string">'email'</span> =&gt; [</div><div class="line">        <span class="string">'required'</span> =&gt; <span class="string">'We need to know your e-mail address!'</span>,</div><div class="line">    ],</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<h4 id="Specifying-Custom-Attributes-In-Language-Files"><a href="#Specifying-Custom-Attributes-In-Language-Files" class="headerlink" title="Specifying Custom Attributes In Language Files"></a>Specifying Custom Attributes In Language Files</h4><p>If you would like the <code>:attribute</code> portion of your validation message to be replaced with a custom attribute name, you may specify the custom name in the <code>attributes</code> array of your <code>resources/lang/xx/validation.php</code> language file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'attributes'</span> =&gt; [</div><div class="line">    <span class="string">'email'</span> =&gt; <span class="string">'email address'</span>,</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<p><a name="available-validation-rules"></a></p>
+<h2 id="Available-Validation-Rules"><a href="#Available-Validation-Rules" class="headerlink" title="Available Validation Rules"></a>Available Validation Rules</h2><p>Below is a list of all available validation rules and their function:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .collection-method-<span class="keyword">list</span> &gt; p &#123;</div><div class="line">        column-count: <span class="number">3</span>; -moz-column-count: <span class="number">3</span>; -webkit-column-count: <span class="number">3</span>;</div><div class="line">        column-gap: <span class="number">2</span>em; -moz-column-gap: <span class="number">2</span>em; -webkit-column-gap: <span class="number">2</span>em;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    .collection-method-<span class="keyword">list</span> a &#123;</div><div class="line">        display: block;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<div class="collection-method-list" markdown="1"><br><br><a href="#rule-accepted">Accepted</a><br><a href="#rule-active-url">Active URL</a><br><a href="#rule-after">After (Date)</a><br><a href="#rule-after-or-equal">After Or Equal (Date)</a><br><a href="#rule-alpha">Alpha</a><br><a href="#rule-alpha-dash">Alpha Dash</a><br><a href="#rule-alpha-num">Alpha Numeric</a><br><a href="#rule-array">Array</a><br><a href="#rule-before">Before (Date)</a><br><a href="#rule-before-or-equal">Before Or Equal (Date)</a><br><a href="#rule-between">Between</a><br><a href="#rule-boolean">Boolean</a><br><a href="#rule-confirmed">Confirmed</a><br><a href="#rule-date">Date</a><br><a href="#rule-date-format">Date Format</a><br><a href="#rule-different">Different</a><br><a href="#rule-digits">Digits</a><br><a href="#rule-digits-between">Digits Between</a><br><a href="#rule-dimensions">Dimensions (Image Files)</a><br><a href="#rule-distinct">Distinct</a><br><a href="#rule-email">E-Mail</a><br><a href="#rule-exists">Exists (Database)</a><br><a href="#rule-file">File</a><br><a href="#rule-filled">Filled</a><br><a href="#rule-image">Image (File)</a><br><a href="#rule-in">In</a><br><a href="#rule-in-array">In Array</a><br><a href="#rule-integer">Integer</a><br><a href="#rule-ip">IP Address</a><br><a href="#rule-json">JSON</a><br><a href="#rule-max">Max</a><br><a href="#rule-mimetypes">MIME Types</a><br><a href="#rule-mimes">MIME Type By File Extension</a><br><a href="#rule-min">Min</a><br><a href="#rule-nullable">Nullable</a><br><a href="#rule-not-in">Not In</a><br><a href="#rule-numeric">Numeric</a><br><a href="#rule-present">Present</a><br><a href="#rule-regex">Regular Expression</a><br><a href="#rule-required">Required</a><br><a href="#rule-required-if">Required If</a><br><a href="#rule-required-unless">Required Unless</a><br><a href="#rule-required-with">Required With</a><br><a href="#rule-required-with-all">Required With All</a><br><a href="#rule-required-without">Required Without</a><br><a href="#rule-required-without-all">Required Without All</a><br><a href="#rule-same">Same</a><br><a href="#rule-size">Size</a><br><a href="#rule-string">String</a><br><a href="#rule-timezone">Timezone</a><br><a href="#rule-unique">Unique (Database)</a><br><a href="#rule-url">URL</a><br><br></div>
+
+<p><a name="rule-accepted"></a></p>
+<h4 id="accepted"><a href="#accepted" class="headerlink" title="accepted"></a>accepted</h4><p>The field under validation must be <em>yes</em>, <em>on</em>, <em>1</em>, or <em>true</em>. This is useful for validating “Terms of Service” acceptance.</p>
+<p><a name="rule-active-url"></a></p>
+<h4 id="active-url"><a href="#active-url" class="headerlink" title="active_url"></a>active_url</h4><p>The field under validation must have a valid A or AAAA record according to the <code>dns_get_record</code> PHP function.</p>
+<p><a name="rule-after"></a></p>
+<h4 id="after-date"><a href="#after-date" class="headerlink" title="after:date"></a>after:<em>date</em></h4><p>The field under validation must be a value after a given date. The dates will be passed into the <code>strtotime</code> PHP function:</p>
+<pre><code>`&apos;start_date&apos; =&gt; &apos;required|date|after:tomorrow&apos;`
+</code></pre><p>Instead of passing a date string to be evaluated by <code>strtotime</code>, you may specify another field to compare against the date:</p>
+<pre><code>`&apos;finish_date&apos; =&gt; &apos;required|date|after:start_date&apos;`
+</code></pre><p><a name="rule-after-or-equal"></a></p>
+<h4 id="after-or-equal-date"><a href="#after-or-equal-date" class="headerlink" title="after_or_equal:date"></a>after_or_equal:<em>date</em></h4><p>The field under validation must be a value after or equal to the given date. For more information, see the <a href="#rule-after">after</a> rule.</p>
+<p><a name="rule-alpha"></a></p>
+<h4 id="alpha"><a href="#alpha" class="headerlink" title="alpha"></a>alpha</h4><p>The field under validation must be entirely alphabetic characters.</p>
+<p><a name="rule-alpha-dash"></a></p>
+<h4 id="alpha-dash"><a href="#alpha-dash" class="headerlink" title="alpha_dash"></a>alpha_dash</h4><p>The field under validation may have alpha-numeric characters, as well as dashes and underscores.</p>
+<p><a name="rule-alpha-num"></a></p>
+<h4 id="alpha-num"><a href="#alpha-num" class="headerlink" title="alpha_num"></a>alpha_num</h4><p>The field under validation must be entirely alpha-numeric characters.</p>
+<p><a name="rule-array"></a></p>
+<h4 id="array"><a href="#array" class="headerlink" title="array"></a>array</h4><p>The field under validation must be a PHP <code>array</code>.</p>
+<p><a name="rule-before"></a></p>
+<h4 id="before-date"><a href="#before-date" class="headerlink" title="before:date"></a>before:<em>date</em></h4><p>The field under validation must be a value preceding the given date. The dates will be passed into the PHP <code>strtotime</code> function.</p>
+<p><a name="rule-before-or-equal"></a></p>
+<h4 id="before-or-equal-date"><a href="#before-or-equal-date" class="headerlink" title="before_or_equal:date"></a>before_or_equal:<em>date</em></h4><p>The field under validation must be a value preceding or equal to the given date. The dates will be passed into the PHP <code>strtotime</code> function.</p>
+<p><a name="rule-between"></a></p>
+<h4 id="between-min-max"><a href="#between-min-max" class="headerlink" title="between:min,max"></a>between:<em>min</em>,<em>max</em></h4><p>The field under validation must have a size between the given <em>min</em> and <em>max</em>. Strings, numerics, and files are evaluated in the same fashion as the <a href="#rule-size"><code>size</code></a> rule.</p>
+<p><a name="rule-boolean"></a></p>
+<h4 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h4><p>The field under validation must be able to be cast as a boolean. Accepted input are <code>true</code>, <code>false</code>, <code>1</code>, <code>0</code>, <code>&quot;1&quot;</code>, and <code>&quot;0&quot;</code>.</p>
+<p><a name="rule-confirmed"></a></p>
+<h4 id="confirmed"><a href="#confirmed" class="headerlink" title="confirmed"></a>confirmed</h4><p>The field under validation must have a matching field of <code>foo_confirmation</code>. For example, if the field under validation is <code>password</code>, a matching <code>password_confirmation</code> field must be present in the input.</p>
+<p><a name="rule-date"></a></p>
+<h4 id="date"><a href="#date" class="headerlink" title="date"></a>date</h4><p>The field under validation must be a valid date according to the <code>strtotime</code> PHP function.</p>
+<p><a name="rule-date-format"></a></p>
+<h4 id="date-format-format"><a href="#date-format-format" class="headerlink" title="date_format:format"></a>date_format:<em>format</em></h4><p>The field under validation must match the given <em>format</em>. You should use <strong>either</strong> <code>date</code> or <code>date_format</code> when validating a field, not both.</p>
+<p><a name="rule-different"></a></p>
+<h4 id="different-field"><a href="#different-field" class="headerlink" title="different:field"></a>different:<em>field</em></h4><p>The field under validation must have a different value than <em>field</em>.</p>
+<p><a name="rule-digits"></a></p>
+<h4 id="digits-value"><a href="#digits-value" class="headerlink" title="digits:value"></a>digits:<em>value</em></h4><p>The field under validation must be <em>numeric</em> and must have an exact length of <em>value</em>.</p>
+<p><a name="rule-digits-between"></a></p>
+<h4 id="digits-between-min-max"><a href="#digits-between-min-max" class="headerlink" title="digits_between:min,max"></a>digits_between:<em>min</em>,<em>max</em></h4><p>The field under validation must have a length between the given <em>min</em> and <em>max</em>.</p>
+<p><a name="rule-dimensions"></a></p>
+<h4 id="dimensions"><a href="#dimensions" class="headerlink" title="dimensions"></a>dimensions</h4><p>The file under validation must be an image meeting the dimension constraints as specified by the rule’s parameters:</p>
+<pre><code>&apos;avatar&apos; =&gt; &apos;dimensions:min_width=100,min_height=200&apos;
+</code></pre><p>Available constraints are: _min_width_, _max_width_, _min_height_, _max_height_, <em>width</em>, <em>height</em>, <em>ratio</em>.</p>
+<p>A <em>ratio</em> constraint should be represented as width divided by height. This can be specified either by a statement like <code>3/2</code> or a float like <code>1.5</code>:</p>
+<pre><code>`&apos;avatar&apos; =&gt; &apos;dimensions:ratio=3/2&apos;`
+</code></pre><p>Since this rule requires several arguments, you may use the <code>Rule::dimensions</code> method to fluently construct the rule:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Validation</span>\<span class="title">Rule</span>;</div><div class="line"></div><div class="line">Validator::make($data, [</div><div class="line">    <span class="string">'avatar'</span> =&gt; [</div><div class="line">        <span class="string">'required'</span>,</div><div class="line">        Rule::dimensions()-&gt;maxWidth(<span class="number">1000</span>)-&gt;maxHeight(<span class="number">500</span>)-&gt;ratio(<span class="number">3</span> / <span class="number">2</span>),</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="rule-distinct"></a></p>
+<h4 id="distinct"><a href="#distinct" class="headerlink" title="distinct"></a>distinct</h4><p>When working with arrays, the field under validation must not have any duplicate values.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'foo.*.id'</span> =&gt; <span class="string">'distinct'</span></div></pre></td></tr></table></figure></p>
+<p><a name="rule-email"></a></p>
+<h4 id="email"><a href="#email" class="headerlink" title="email"></a>email</h4><p>The field under validation must be formatted as an e-mail address.</p>
+<p><a name="rule-exists"></a></p>
+<h4 id="exists-table-column"><a href="#exists-table-column" class="headerlink" title="exists:table,column"></a>exists:<em>table</em>,<em>column</em></h4><p>The field under validation must exist on a given database table.</p>
+<h4 id="Basic-Usage-Of-Exists-Rule"><a href="#Basic-Usage-Of-Exists-Rule" class="headerlink" title="Basic Usage Of Exists Rule"></a>Basic Usage Of Exists Rule</h4><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'state'</span> =&gt; <span class="string">'exists:states'</span></div></pre></td></tr></table></figure>
+<h4 id="Specifying-A-Custom-Column-Name"><a href="#Specifying-A-Custom-Column-Name" class="headerlink" title="Specifying A Custom Column Name"></a>Specifying A Custom Column Name</h4><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'state'</span> =&gt; <span class="string">'exists:states,abbreviation'</span></div></pre></td></tr></table></figure>
+<p>Occasionally, you may need to specify a specific database connection to be used for the <code>exists</code> query. You can accomplish this by prepending the connection name to the table name using “dot” syntax:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'email'</span> =&gt; <span class="string">'exists:connection.staff,email'</span></div></pre></td></tr></table></figure></p>
+<p>If you would like to customize the query executed by the validation rule, you may use the <code>Rule</code> class to fluently define the rule. In this example, we’ll also specify the validation rules as an array instead of using the <code>|</code> character to delimit them:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Validation</span>\<span class="title">Rule</span>;</div><div class="line"></div><div class="line">Validator::make($data, [</div><div class="line">    <span class="string">'email'</span> =&gt; [</div><div class="line">        <span class="string">'required'</span>,</div><div class="line">        Rule::exists(<span class="string">'staff'</span>)-&gt;where(<span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">            $query-&gt;where(<span class="string">'account_id'</span>, <span class="number">1</span>);</div><div class="line">        &#125;),</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="rule-file"></a></p>
+<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><p>The field under validation must be a successfully uploaded file.</p>
+<p><a name="rule-filled"></a></p>
+<h4 id="filled"><a href="#filled" class="headerlink" title="filled"></a>filled</h4><p>The field under validation must not be empty when it is present.</p>
+<p><a name="rule-image"></a></p>
+<h4 id="image"><a href="#image" class="headerlink" title="image"></a>image</h4><p>The file under validation must be an image (jpeg, png, bmp, gif, or svg)</p>
+<p><a name="rule-in"></a></p>
+<h4 id="in-foo-bar-…"><a href="#in-foo-bar-…" class="headerlink" title="in:foo,bar,…"></a>in:<em>foo</em>,<em>bar</em>,…</h4><p>The field under validation must be included in the given list of values. Since this rule often requires you to <code>implode</code> an array, the <code>Rule::in</code> method may be used to fluently construct the rule:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Validation</span>\<span class="title">Rule</span>;</div><div class="line"></div><div class="line">Validator::make($data, [</div><div class="line">    <span class="string">'zones'</span> =&gt; [</div><div class="line">        <span class="string">'required'</span>,</div><div class="line">        Rule::in([<span class="string">'first-zone'</span>, <span class="string">'second-zone'</span>]),</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><a name="rule-in-array"></a></p>
+<h4 id="in-array-anotherfield"><a href="#in-array-anotherfield" class="headerlink" title="in_array:anotherfield"></a>in_array:<em>anotherfield</em></h4><p>The field under validation must exist in <em>anotherfield</em>‘s values.</p>
+<p><a name="rule-integer"></a></p>
+<h4 id="integer"><a href="#integer" class="headerlink" title="integer"></a>integer</h4><p>The field under validation must be an integer.</p>
+<p><a name="rule-ip"></a></p>
+<h4 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h4><p>The field under validation must be an IP address.</p>
+<h4 id="ipv4"><a href="#ipv4" class="headerlink" title="ipv4"></a>ipv4</h4><p>The field under validation must be an IPv4 address.</p>
+<h4 id="ipv6"><a href="#ipv6" class="headerlink" title="ipv6"></a>ipv6</h4><p>The field under validation must be an IPv6 address.</p>
+<p><a name="rule-json"></a></p>
+<h4 id="json"><a href="#json" class="headerlink" title="json"></a>json</h4><p>The field under validation must be a valid JSON string.</p>
+<p><a name="rule-max"></a></p>
+<h4 id="max-value"><a href="#max-value" class="headerlink" title="max:value"></a>max:<em>value</em></h4><p>The field under validation must be less than or equal to a maximum <em>value</em>. Strings, numerics, and files are evaluated in the same fashion as the <a href="#rule-size"><code>size</code></a> rule.</p>
+<p><a name="rule-mimetypes"></a></p>
+<h4 id="mimetypes-text-plain-…"><a href="#mimetypes-text-plain-…" class="headerlink" title="mimetypes:text/plain,…"></a>mimetypes:<em>text/plain</em>,…</h4><p>The file under validation must match one of the given MIME types:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'video'</span> =&gt; <span class="string">'mimetypes:video/avi,video/mpeg,video/quicktime'</span></div></pre></td></tr></table></figure></p>
+<p>To determine the MIME type of the uploaded file, the file’s contents will be read and the framework will attempt to guess the MIME type, which may be different from the client provided MIME type.</p>
+<p><a name="rule-mimes"></a></p>
+<h4 id="mimes-foo-bar-…"><a href="#mimes-foo-bar-…" class="headerlink" title="mimes:foo,bar,…"></a>mimes:<em>foo</em>,<em>bar</em>,…</h4><p>The file under validation must have a MIME type corresponding to one of the listed extensions.</p>
+<h4 id="Basic-Usage-Of-MIME-Rule"><a href="#Basic-Usage-Of-MIME-Rule" class="headerlink" title="Basic Usage Of MIME Rule"></a>Basic Usage Of MIME Rule</h4><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'photo'</span> =&gt; <span class="string">'mimes:jpeg,bmp,png'</span></div></pre></td></tr></table></figure>
+<p>Even though you only need to specify the extensions, this rule actually validates against the MIME type of the file by reading the file’s contents and guessing its MIME type.</p>
+<p>A full listing of MIME types and their corresponding extensions may be found at the following location: <a href="https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types" target="_blank" rel="external">https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types</a></p>
+<p><a name="rule-min"></a></p>
+<h4 id="min-value"><a href="#min-value" class="headerlink" title="min:value"></a>min:<em>value</em></h4><p>The field under validation must have a minimum <em>value</em>. Strings, numerics, and files are evaluated in the same fashion as the <a href="#rule-size"><code>size</code></a> rule.</p>
+<p><a name="rule-nullable"></a></p>
+<h4 id="nullable"><a href="#nullable" class="headerlink" title="nullable"></a>nullable</h4><p>The field under validation may be <code>null</code>. This is particularly useful when validating primitive such as strings and integers that can contain <code>null</code> values.</p>
+<p><a name="rule-not-in"></a></p>
+<h4 id="not-in-foo-bar-…"><a href="#not-in-foo-bar-…" class="headerlink" title="not_in:foo,bar,…"></a>not_in:<em>foo</em>,<em>bar</em>,…</h4><p>The field under validation must not be included in the given list of values.</p>
+<p><a name="rule-numeric"></a></p>
+<h4 id="numeric"><a href="#numeric" class="headerlink" title="numeric"></a>numeric</h4><p>The field under validation must be numeric.</p>
+<p><a name="rule-present"></a></p>
+<h4 id="present"><a href="#present" class="headerlink" title="present"></a>present</h4><p>The field under validation must be present in the input data but can be empty.</p>
+<p><a name="rule-regex"></a></p>
+<h4 id="regex-pattern"><a href="#regex-pattern" class="headerlink" title="regex:pattern"></a>regex:<em>pattern</em></h4><p>The field under validation must match the given regular expression.</p>
+<p><strong>Note:</strong> When using the <code>regex</code> pattern, it may be necessary to specify rules in an array instead of using pipe delimiters, especially if the regular expression contains a pipe character.</p>
+<p><a name="rule-required"></a></p>
+<h4 id="required"><a href="#required" class="headerlink" title="required"></a>required</h4><p>The field under validation must be present in the input data and not empty. A field is considered “empty” if one of the following conditions are true:</p>
+<div class="content-list" markdown="1"><br><br>- The value is <code>null</code>.<br>- The value is an empty string.<br>- The value is an empty array or empty <code>Countable</code> object.<br>- The value is an uploaded file with no path.<br><br></div>
+
+<p><a name="rule-required-if"></a></p>
+<h4 id="required-if-anotherfield-value-…"><a href="#required-if-anotherfield-value-…" class="headerlink" title="required_if:anotherfield,value,…"></a>required_if:<em>anotherfield</em>,<em>value</em>,…</h4><p>The field under validation must be present and not empty if the <em>anotherfield</em> field is equal to any <em>value</em>.</p>
+<p><a name="rule-required-unless"></a></p>
+<h4 id="required-unless-anotherfield-value-…"><a href="#required-unless-anotherfield-value-…" class="headerlink" title="required_unless:anotherfield,value,…"></a>required_unless:<em>anotherfield</em>,<em>value</em>,…</h4><p>The field under validation must be present and not empty unless the <em>anotherfield</em> field is equal to any <em>value</em>.</p>
+<p><a name="rule-required-with"></a></p>
+<h4 id="required-with-foo-bar-…"><a href="#required-with-foo-bar-…" class="headerlink" title="required_with:foo,bar,…"></a>required_with:<em>foo</em>,<em>bar</em>,…</h4><p>The field under validation must be present and not empty <em>only if</em> any of the other specified fields are present.</p>
+<p><a name="rule-required-with-all"></a></p>
+<h4 id="required-with-all-foo-bar-…"><a href="#required-with-all-foo-bar-…" class="headerlink" title="required_with_all:foo,bar,…"></a>required_with_all:<em>foo</em>,<em>bar</em>,…</h4><p>The field under validation must be present and not empty <em>only if</em> all of the other specified fields are present.</p>
+<p><a name="rule-required-without"></a></p>
+<h4 id="required-without-foo-bar-…"><a href="#required-without-foo-bar-…" class="headerlink" title="required_without:foo,bar,…"></a>required_without:<em>foo</em>,<em>bar</em>,…</h4><p>The field under validation must be present and not empty <em>only when</em> any of the other specified fields are not present.</p>
+<p><a name="rule-required-without-all"></a></p>
+<h4 id="required-without-all-foo-bar-…"><a href="#required-without-all-foo-bar-…" class="headerlink" title="required_without_all:foo,bar,…"></a>required_without_all:<em>foo</em>,<em>bar</em>,…</h4><p>The field under validation must be present and not empty <em>only when</em> all of the other specified fields are not present.</p>
+<p><a name="rule-same"></a></p>
+<h4 id="same-field"><a href="#same-field" class="headerlink" title="same:field"></a>same:<em>field</em></h4><p>The given <em>field</em> must match the field under validation.</p>
+<p><a name="rule-size"></a></p>
+<h4 id="size-value"><a href="#size-value" class="headerlink" title="size:value"></a>size:<em>value</em></h4><p>The field under validation must have a size matching the given <em>value</em>. For string data, <em>value</em> corresponds to the number of characters. For numeric data, <em>value</em> corresponds to a given integer value. For an array, <em>size</em> corresponds to the <code>count</code> of the array. For files, <em>size</em> corresponds to the file size in kilobytes.</p>
+<p><a name="rule-string"></a></p>
+<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><p>The field under validation must be a string. If you would like to allow the field to also be <code>null</code>, you should assign the <code>nullable</code> rule to the field.</p>
+<p><a name="rule-timezone"></a></p>
+<h4 id="timezone"><a href="#timezone" class="headerlink" title="timezone"></a>timezone</h4><p>The field under validation must be a valid timezone identifier according to the <code>timezone_identifiers_list</code> PHP function.</p>
+<p><a name="rule-unique"></a></p>
+<h4 id="unique-table-column-except-idColumn"><a href="#unique-table-column-except-idColumn" class="headerlink" title="unique:table,column,except,idColumn"></a>unique:<em>table</em>,<em>column</em>,<em>except</em>,<em>idColumn</em></h4><p>The field under validation must be unique in a given database table. If the <code>column</code> option is not specified, the field name will be used.</p>
+<p><strong>Specifying A Custom Column Name:</strong><br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'email'</span> =&gt; <span class="string">'unique:users,email_address'</span></div></pre></td></tr></table></figure></p>
+<p><strong>Custom Database Connection</strong></p>
+<p>Occasionally, you may need to set a custom connection for database queries made by the Validator. As seen above, setting <code>unique:users</code> as a validation rule will use the default database connection to query the database. To override this, specify the connection and the table name using “dot” syntax:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'email'</span> =&gt; <span class="string">'unique:connection.users,email_address'</span></div></pre></td></tr></table></figure></p>
+<p><strong>Forcing A Unique Rule To Ignore A Given ID:</strong></p>
+<p>Sometimes, you may wish to ignore a given ID during the unique check. For example, consider an “update profile” screen that includes the user’s name, e-mail address, and location. Of course, you will want to verify that the e-mail address is unique. However, if the user only changes the name field and not the e-mail field, you do not want a validation error to be thrown because the user is already the owner of the e-mail address.</p>
+<p>To instruct the validator to ignore the user’s ID, we’ll use the <code>Rule</code> class to fluently define the rule. In this example, we’ll also specify the validation rules as an array instead of using the <code>|</code> character to delimit the rules:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Validation</span>\<span class="title">Rule</span>;</div><div class="line"></div><div class="line">Validator::make($data, [</div><div class="line">    <span class="string">'email'</span> =&gt; [</div><div class="line">        <span class="string">'required'</span>,</div><div class="line">        Rule::unique(<span class="string">'users'</span>)-&gt;ignore($user-&gt;id),</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>If your table uses a primary key column name other than <code>id</code>, you may specify the name of the column when calling the <code>ignore</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'email'</span> =&gt; Rule::unique(<span class="string">'users'</span>)-&gt;ignore($user-&gt;id, <span class="string">'user_id'</span>)</div></pre></td></tr></table></figure></p>
+<p><strong>Adding Additional Where Clauses:</strong></p>
+<p>You may also specify additional query constraints by customizing the query using the <code>where</code> method. For example, let’s add a constraint that verifies the <code>account_id</code> is <code>1</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'email'</span> =&gt; Rule::unique(<span class="string">'users'</span>)-&gt;where(<span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">    $query-&gt;where(<span class="string">'account_id'</span>, <span class="number">1</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p><a name="rule-url"></a></p>
+<h4 id="url"><a href="#url" class="headerlink" title="url"></a>url</h4><p>The field under validation must be a valid URL.</p>
+<p><a name="conditionally-adding-rules"></a></p>
+<h2 id="Conditionally-Adding-Rules"><a href="#Conditionally-Adding-Rules" class="headerlink" title="Conditionally Adding Rules"></a>Conditionally Adding Rules</h2><h4 id="Validating-When-Present"><a href="#Validating-When-Present" class="headerlink" title="Validating When Present"></a>Validating When Present</h4><p>In some situations, you may wish to run validation checks against a field <strong>only</strong> if that field is present in the input array. To quickly accomplish this, add the <code>sometimes</code> rule to your rule list:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$v = Validator::make($data, [</div><div class="line">    <span class="string">'email'</span> =&gt; <span class="string">'sometimes|required|email'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>In the example above, the <code>email</code> field will only be validated if it is present in the <code>$data</code> array.</p>
+<blockquote>
+<p>{tip} If you are attempting to validate a field that should always be present but may be empty, check out <a href="#a-note-on-optional-fields">this note on optional fields</a></p>
+</blockquote>
+<h4 id="Complex-Conditional-Validation"><a href="#Complex-Conditional-Validation" class="headerlink" title="Complex Conditional Validation"></a>Complex Conditional Validation</h4><p>Sometimes you may wish to add validation rules based on more complex conditional logic. For example, you may wish to require a given field only if another field has a greater value than 100. Or, you may need two fields to have a given value only when another field is present. Adding these validation rules doesn’t have to be a pain. First, create a <code>Validator</code> instance with your <em>static rules</em> that never change:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$v = Validator::make($data, [</div><div class="line">    <span class="string">'email'</span> =&gt; <span class="string">'required|email'</span>,</div><div class="line">    <span class="string">'games'</span> =&gt; <span class="string">'required|numeric'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>Let’s assume our web application is for game collectors. If a game collector registers with our application and they own more than 100 games, we want them to explain why they own so many games. For example, perhaps they run a game resale shop, or maybe they just enjoy collecting. To conditionally add this requirement, we can use the <code>sometimes</code> method on the <code>Validator</code> instance.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$v-&gt;sometimes(<span class="string">'reason'</span>, <span class="string">'required|max:500'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($input)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> $input-&gt;games &gt;= <span class="number">100</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>The first argument passed to the <code>sometimes</code> method is the name of the field we are conditionally validating. The second argument is the rules we want to add. If the <code>Closure</code> passed as the third argument returns <code>true</code>, the rules will be added. This method makes it a breeze to build complex conditional validations. You may even add conditional validations for several fields at once:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$v-&gt;sometimes([<span class="string">'reason'</span>, <span class="string">'cost'</span>], <span class="string">'required'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($input)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> $input-&gt;games &gt;= <span class="number">100</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{tip} The <code>$input</code> parameter passed to your <code>Closure</code> will be an instance of <code>Illuminate\Support\Fluent</code> and may be used to access your input and files.</p>
+</blockquote>
+<p><a name="validating-arrays"></a></p>
+<h2 id="Validating-Arrays"><a href="#Validating-Arrays" class="headerlink" title="Validating Arrays"></a>Validating Arrays</h2><p>Validating array based form input fields doesn’t have to be a pain. For example, to validate that each e-mail in a given array input field is unique, you may do the following:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$validator = Validator::make($request-&gt;all(), [</div><div class="line">    <span class="string">'person.*.email'</span> =&gt; <span class="string">'email|unique:users'</span>,</div><div class="line">    <span class="string">'person.*.first_name'</span> =&gt; <span class="string">'required_with:person.*.last_name'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>Likewise, you may use the <code>*</code> character when specifying your validation messages in your language files, making it a breeze to use a single validation message for array based fields:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">'custom'</span> =&gt; [</div><div class="line">    <span class="string">'person.*.email'</span> =&gt; [</div><div class="line">        <span class="string">'unique'</span> =&gt; <span class="string">'Each person must have a unique e-mail address'</span>,</div><div class="line">    ]</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<p><a name="custom-validation-rules"></a></p>
+<h2 id="Custom-Validation-Rules"><a href="#Custom-Validation-Rules" class="headerlink" title="Custom Validation Rules"></a>Custom Validation Rules</h2><p>Laravel provides a variety of helpful validation rules; however, you may wish to specify some of your own. One method of registering custom validation rules is using the <code>extend</code> method on the <code>Validator</code> <a href="/mk/laravel/facades">facade</a>. Let’s use this method within a <a href="/mk/laravel/providers.html">service provider</a> to register a custom validation rule:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Validator</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Bootstrap any application services.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Validator::extend(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($attribute, $value, $parameters, $validator)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> $value == <span class="string">'foo'</span>;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Register the service provider.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The custom validator Closure receives four arguments: the name of the <code>$attribute</code> being validated, the <code>$value</code> of the attribute, an array of <code>$parameters</code> passed to the rule, and the <code>Validator</code> instance.</p>
+<p>You may also pass a class and method to the <code>extend</code> method instead of a Closure:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Validator::extend(<span class="string">'foo'</span>, <span class="string">'FooValidator@validate'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Defining-The-Error-Message"><a href="#Defining-The-Error-Message" class="headerlink" title="Defining The Error Message"></a>Defining The Error Message</h4><p>You will also need to define an error message for your custom rule. You can do so either using an inline custom message array or by adding an entry in the validation language file. This message should be placed in the first level of the array, not within the <code>custom</code> array, which is only for attribute-specific error messages:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="string">"foo"</span> =&gt; <span class="string">"Your input was invalid!"</span>,</div><div class="line"></div><div class="line"><span class="string">"accepted"</span> =&gt; <span class="string">"The :attribute must be accepted."</span>,</div><div class="line"></div><div class="line"><span class="comment">// The rest of the validation error messages...</span></div></pre></td></tr></table></figure></p>
+<p>When creating a custom validation rule, you may sometimes need to define custom place-holder replacements for error messages. You may do so by creating a custom Validator as described above then making a call to the <code>replacer</code> method on the <code>Validator</code> facade. You may do this within the <code>boot</code> method of a <a href="/mk/laravel/providers.html">service provider</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Bootstrap any application services.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Validator::extend(...);</div><div class="line"></div><div class="line">    Validator::replacer(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($message, $attribute, $rule, $parameters)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> str_replace(...);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Implicit-Extensions"><a href="#Implicit-Extensions" class="headerlink" title="Implicit Extensions"></a>Implicit Extensions</h4><p>By default, when an attribute being validated is not present or contains an empty value as defined by the <a href="#rule-required"><code>required</code></a> rule, normal validation rules, including custom extensions, are not run. For example, the <a href="#rule-unique"><code>unique</code></a> rule will not be run against a <code>null</code> value:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$rules = [<span class="string">'name'</span> =&gt; <span class="string">'unique'</span>];</div><div class="line"></div><div class="line">$input = [<span class="string">'name'</span> =&gt; <span class="keyword">null</span>];</div><div class="line"></div><div class="line">Validator::make($input, $rules)-&gt;passes(); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>For a rule to run even when an attribute is empty, the rule must imply that the attribute is required. To create such an “implicit” extension, use the <code>Validator::extendImplicit()</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Validator::extendImplicit(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($attribute, $value, $parameters, $validator)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> $value == <span class="string">'foo'</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} An “implicit” extension only <em>implies</em> that the attribute is required. Whether it actually invalidates a missing or empty attribute is up to you.</p>
+</blockquote>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/validation.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>
