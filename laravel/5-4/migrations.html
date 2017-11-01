@@ -1,0 +1,2115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Database Migrations — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Database Migrations — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Database Migrations — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "laravel 5.4"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link current">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Laravel 5.4
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                    
+                      <li><h3>Awesome Laravel</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/index.html" class="sidebar-link">Awesome Laravel (Chirag Gude)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                      <li><h3>Prologue</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/releases.html" class="sidebar-link">Release Notes</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/upgrade.html" class="sidebar-link">Upgrade Guide</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                      <li><h3>Getting Started</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/configuration.html" class="sidebar-link">Configuration</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/structure.html" class="sidebar-link">Directory Structure</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/homestead.html" class="sidebar-link">Laravel Homestead</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/valet.html" class="sidebar-link">valet</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                      <li><h3>Architecture Concepts</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/lifecycle.html" class="sidebar-link">Request Lifecycle</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/container.html" class="sidebar-link">Service Container</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/providers.html" class="sidebar-link">Service Providers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/facades.html" class="sidebar-link">Facades</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>The Basics</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/errors.html" class="sidebar-link">Errors & Logging</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/middleware.html" class="sidebar-link">Middleware</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/csrf.html" class="sidebar-link">CSRF Protection</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/controllers.html" class="sidebar-link">Controllers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/requests.html" class="sidebar-link">HTTP Requests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/responses.html" class="sidebar-link">HTTP Responses</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/views.html" class="sidebar-link">Views</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/session.html" class="sidebar-link">HTTP Session</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/validation.html" class="sidebar-link">Validation</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Frontend</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/blade.html" class="sidebar-link">Blade Templates</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/localization.html" class="sidebar-link">Localization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/frontend.html" class="sidebar-link">JavaScript & CSS Scaffolding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mix.html" class="sidebar-link">Compiling Assets (Laravel Mix)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Security</h3></li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authentication.html" class="sidebar-link">Authentication</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passport.html" class="sidebar-link">API Authentication (Passport)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/authorization.html" class="sidebar-link">Authorization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/encryption.html" class="sidebar-link">Encryption</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/hashing.html" class="sidebar-link">Hashing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/passwords.html" class="sidebar-link">Resetting Passwords</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Digging Deeper</h3></li>
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/artisan.html" class="sidebar-link">Artisan Console</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queues.html" class="sidebar-link">Queues</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/packages.html" class="sidebar-link">Package Development</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scheduling.html" class="sidebar-link">Task Scheduling</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/broadcasting.html" class="sidebar-link">Broadcasting</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/cache.html" class="sidebar-link">Cache</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/collections.html" class="sidebar-link">Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/events.html" class="sidebar-link">Events</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/filesystem.html" class="sidebar-link">File Storage</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/helpers.html" class="sidebar-link">helpers</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mail.html" class="sidebar-link">Mail</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/notifications.html" class="sidebar-link">Notifications</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Database</h3></li>
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database.html" class="sidebar-link">Database Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/queries.html" class="sidebar-link">Database Query Builder</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/pagination.html" class="sidebar-link">Database Pagination</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/migrations.html" class="sidebar-link current">Database Migrations</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/seeding.html" class="sidebar-link">Database Seeding</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redis.html" class="sidebar-link">Redis</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Eloquent ORM</h3></li>
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent.html" class="sidebar-link">Eloquent Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-relationships.html" class="sidebar-link">Eloquent Relationships</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-collections.html" class="sidebar-link">Eloquent Collections</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-mutators.html" class="sidebar-link">Eloquent Mutators</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/eloquent-serialization.html" class="sidebar-link">Eloquent Serialization</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Testing</h3></li>
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/testing.html" class="sidebar-link">Testing Getting Started</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/http-tests.html" class="sidebar-link">HTTP Tests</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/dusk.html" class="sidebar-link">Browser Tests (Laravel Dusk)</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/database-testing.html" class="sidebar-link">Database Testing</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/mocking.html" class="sidebar-link">Mocking</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/redirects.html" class="sidebar-link">redirect</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <li><h3>Official Packages</h3></li>
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/billing.html" class="sidebar-link">Laravel Cashier</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/envoy.html" class="sidebar-link">Envoy Task Runner</a>
+                </li>
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Move cookbook sections here once they have -->
+                    <!-- at least one recipe -->
+                
+                <li>
+                    <a href="/laravel/5-4/scout.html" class="sidebar-link">Laravel Scout</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content laravel 5.4 with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Database Migrations</h1>
+    
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Migrations are like version control for your database, allowing your team to easily modify and share the application’s database schema. Migrations are typically paired with Laravel’s schema builder to easily build your application’s database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you’ve faced the problem that database migrations solve.</p>
+<p>The Laravel <code>Schema</code> <a href="/mk/laravel/facades.html">facade</a> provides database agnostic support for creating and manipulating tables across all of Laravel’s supported database systems.</p>
+<p><a name="generating-migrations"></a></p>
+<h2 id="Generating-Migrations"><a href="#Generating-Migrations" class="headerlink" title="Generating Migrations"></a>Generating Migrations</h2><p>To create a migration, use the <code>make:migration</code> <a href="/mk/laravel/artisan.html">Artisan command</a>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan make:migration create_users_table</div></pre></td></tr></table></figure></p>
+<p>The new migration will be placed in your <code>database/migrations</code> directory. Each migration file name contains a timestamp which allows Laravel to determine the order of the migrations.</p>
+<p>The <code>--table</code> and <code>--create</code> options may also be used to indicate the name of the table and whether the migration will be creating a new table. These options simply pre-fill the generated migration stub file with the specified table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan make:migration create_users_table --create=users</div><div class="line"></div><div class="line">php artisan make:migration add_votes_to_users_table --table=users</div></pre></td></tr></table></figure></p>
+<p>If you would like to specify a custom output path for the generated migration, you may use the <code>--path</code> option when executing the <code>make:migration</code> command. The given path should be relative to your application’s base path.</p>
+<p><a name="migration-structure"></a></p>
+<h2 id="Migration-Structure"><a href="#Migration-Structure" class="headerlink" title="Migration Structure"></a>Migration Structure</h2><p>A migration class contains two methods: <code>up</code> and <code>down</code>. The <code>up</code> method is used to add new tables, columns, or indexes to your database, while the <code>down</code> method should simply reverse the operations performed by the <code>up</code> method.</p>
+<p>Within both of these methods you may use the Laravel schema builder to expressively create and modify tables. To learn about all of the methods available on the <code>Schema</code> builder, <a href="#creating-tables">check out its documentation</a>. For example, this migration example creates a <code>flights</code> table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Schema</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Schema</span>\<span class="title">Blueprint</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Migrations</span>\<span class="title">Migration</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CreateFlightsTable</span> <span class="keyword">extends</span> <span class="title">Migration</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Run the migrations.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">up</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Schema::create(<span class="string">'flights'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">            $table-&gt;increments(<span class="string">'id'</span>);</div><div class="line">            $table-&gt;string(<span class="string">'name'</span>);</div><div class="line">            $table-&gt;string(<span class="string">'airline'</span>);</div><div class="line">            $table-&gt;timestamps();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Reverse the migrations.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">down</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Schema::drop(<span class="string">'flights'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a name="running-migrations"></a></p>
+<h2 id="Running-Migrations"><a href="#Running-Migrations" class="headerlink" title="Running Migrations"></a>Running Migrations</h2><p>To run all of your outstanding migrations, execute the <code>migrate</code> Artisan command:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} If you are using the <a href="/mk/laravel/homestead.html">Homestead virtual machine</a>, you should run this command from within your virtual machine.</p>
+</blockquote>
+<h4 id="Forcing-Migrations-To-Run-In-Production"><a href="#Forcing-Migrations-To-Run-In-Production" class="headerlink" title="Forcing Migrations To Run In Production"></a>Forcing Migrations To Run In Production</h4><p>Some migration operations are destructive, which means they may cause you to lose data. In order to protect you from running these commands against your production database, you will be prompted for confirmation before the commands are executed. To force the commands to run without a prompt, use the <code>--force</code> flag:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate --force</div></pre></td></tr></table></figure></p>
+<p><a name="rolling-back-migrations"></a></p>
+<h3 id="Rolling-Back-Migrations"><a href="#Rolling-Back-Migrations" class="headerlink" title="Rolling Back Migrations"></a>Rolling Back Migrations</h3><p>To rollback the latest migration operation, you may use the <code>rollback</code> command. This command rolls back the last “batch” of migrations, which may include multiple migration files:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate:rollback</div></pre></td></tr></table></figure></p>
+<p>You may rollback a limited number of migrations by providing the <code>step</code> option to the <code>rollback</code> command. For example, the following command will rollback the last five migrations:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate:rollback --step=<span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p>The <code>migrate:reset</code> command will roll back all of your application’s migrations:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate:reset</div></pre></td></tr></table></figure></p>
+<h4 id="Rollback-amp-Migrate-In-Single-Command"><a href="#Rollback-amp-Migrate-In-Single-Command" class="headerlink" title="Rollback &amp; Migrate In Single Command"></a>Rollback &amp; Migrate In Single Command</h4><p>The <code>migrate:refresh</code> command will roll back all of your migrations and then execute the <code>migrate</code> command. This command effectively re-creates your entire database:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate:refresh</div><div class="line"></div><div class="line"><span class="comment">// Refresh the database and run all database seeds...</span></div><div class="line">php artisan migrate:refresh --seed</div></pre></td></tr></table></figure></p>
+<p>You may rollback &amp; re-migrate a limited number of migrations by providing the <code>step</code> option to the <code>refresh</code> command. For example, the following command will rollback &amp; re-migrate the last five migrations:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">php artisan migrate:refresh --step=<span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p><a name="tables"></a></p>
+<h2 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h2><p><a name="creating-tables"></a></p>
+<h3 id="Creating-Tables"><a href="#Creating-Tables" class="headerlink" title="Creating Tables"></a>Creating Tables</h3><p>To create a new database table, use the <code>create</code> method on the <code>Schema</code> facade. The <code>create</code> method accepts two arguments. The first is the name of the table, while the second is a <code>Closure</code> which receives a <code>Blueprint</code> object that may be used to define the new table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::create(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;increments(<span class="string">'id'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Of course, when creating the table, you may use any of the schema builder’s <a href="#creating-columns">column methods</a> to define the table’s columns.</p>
+<h4 id="Checking-For-Table-Column-Existence"><a href="#Checking-For-Table-Column-Existence" class="headerlink" title="Checking For Table / Column Existence"></a>Checking For Table / Column Existence</h4><p>You may easily check for the existence of a table or column using the <code>hasTable</code> and <code>hasColumn</code> methods:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (Schema::hasTable(<span class="string">'users'</span>)) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (Schema::hasColumn(<span class="string">'users'</span>, <span class="string">'email'</span>)) &#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Connection-amp-Storage-Engine"><a href="#Connection-amp-Storage-Engine" class="headerlink" title="Connection &amp; Storage Engine"></a>Connection &amp; Storage Engine</h4><p>If you want to perform a schema operation on a database connection that is not your default connection, use the <code>connection</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::connection(<span class="string">'foo'</span>)-&gt;create(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;increments(<span class="string">'id'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>You may use the <code>engine</code> property on the schema builder to define the table’s storage engine:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::create(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;engine = <span class="string">'InnoDB'</span>;</div><div class="line"></div><div class="line">    $table-&gt;increments(<span class="string">'id'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a name="renaming-and-dropping-tables"></a></p>
+<h3 id="Renaming-Dropping-Tables"><a href="#Renaming-Dropping-Tables" class="headerlink" title="Renaming / Dropping Tables"></a>Renaming / Dropping Tables</h3><p>To rename an existing database table, use the <code>rename</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::rename($from, $to);</div></pre></td></tr></table></figure></p>
+<p>To drop an existing table, you may use the <code>drop</code> or <code>dropIfExists</code> methods:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::drop(<span class="string">'users'</span>);</div><div class="line"></div><div class="line">Schema::dropIfExists(<span class="string">'users'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Renaming-Tables-With-Foreign-Keys"><a href="#Renaming-Tables-With-Foreign-Keys" class="headerlink" title="Renaming Tables With Foreign Keys"></a>Renaming Tables With Foreign Keys</h4><p>Before renaming a table, you should verify that any foreign key constraints on the table have an explicit name in your migration files instead of letting Laravel assign a convention based name. Otherwise, the foreign key constraint name will refer to the old table name.</p>
+<p><a name="columns"></a></p>
+<h2 id="Columns"><a href="#Columns" class="headerlink" title="Columns"></a>Columns</h2><p><a name="creating-columns"></a></p>
+<h3 id="Creating-Columns"><a href="#Creating-Columns" class="headerlink" title="Creating Columns"></a>Creating Columns</h3><p>The <code>table</code> method on the <code>Schema</code> facade may be used to update existing tables. Like the <code>create</code> method, the <code>table</code> method accepts two arguments: the name of the table and a <code>Closure</code> that receives a <code>Blueprint</code> instance you may use to add columns to the table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;string(<span class="string">'email'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="Available-Column-Types"><a href="#Available-Column-Types" class="headerlink" title="Available Column Types"></a>Available Column Types</h4><p>Of course, the schema builder contains a variety of column types that you may specify when building your tables:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$table-&gt;bigIncrements(&#39;id&#39;);</code></td>
+<td>Incrementing ID (primary key) using a “UNSIGNED BIG INTEGER” equivalent.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;bigInteger(&#39;votes&#39;);</code></td>
+<td>BIGINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;binary(&#39;data&#39;);</code></td>
+<td>BLOB equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;boolean(&#39;confirmed&#39;);</code></td>
+<td>BOOLEAN equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;char(&#39;name&#39;, 4);</code></td>
+<td>CHAR equivalent with a length.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;date(&#39;created_at&#39;);</code></td>
+<td>DATE equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dateTime(&#39;created_at&#39;);</code></td>
+<td>DATETIME equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dateTimeTz(&#39;created_at&#39;);</code></td>
+<td>DATETIME (with timezone) equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;decimal(&#39;amount&#39;, 5, 2);</code></td>
+<td>DECIMAL equivalent with a precision and scale.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;double(&#39;column&#39;, 15, 8);</code></td>
+<td>DOUBLE equivalent with precision, 15 digits in total and 8 after the decimal point.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;enum(&#39;choices&#39;, [&#39;foo&#39;, &#39;bar&#39;]);</code></td>
+<td>ENUM equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;float(&#39;amount&#39;, 8, 2);</code></td>
+<td>FLOAT equivalent for the database, 8 digits in total and 2 after the decimal point.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;increments(&#39;id&#39;);</code></td>
+<td>Incrementing ID (primary key) using a “UNSIGNED INTEGER” equivalent.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;integer(&#39;votes&#39;);</code></td>
+<td>INTEGER equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;ipAddress(&#39;visitor&#39;);</code></td>
+<td>IP address equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;json(&#39;options&#39;);</code></td>
+<td>JSON equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;jsonb(&#39;options&#39;);</code></td>
+<td>JSONB equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;longText(&#39;description&#39;);</code></td>
+<td>LONGTEXT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;macAddress(&#39;device&#39;);</code></td>
+<td>MAC address equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;mediumIncrements(&#39;id&#39;);</code></td>
+<td>Incrementing ID (primary key) using a “UNSIGNED MEDIUM INTEGER” equivalent.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;mediumInteger(&#39;numbers&#39;);</code></td>
+<td>MEDIUMINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;mediumText(&#39;description&#39;);</code></td>
+<td>MEDIUMTEXT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;morphs(&#39;taggable&#39;);</code></td>
+<td>Adds unsigned INTEGER <code>taggable_id</code> and STRING <code>taggable_type</code>.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;nullableMorphs(&#39;taggable&#39;);</code></td>
+<td>Nullable versions of the <code>morphs()</code> columns.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;nullableTimestamps();</code></td>
+<td>Nullable versions of the <code>timestamps()</code> columns.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;rememberToken();</code></td>
+<td>Adds <code>remember_token</code> as VARCHAR(100) NULL.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;smallIncrements(&#39;id&#39;);</code></td>
+<td>Incrementing ID (primary key) using a “UNSIGNED SMALL INTEGER” equivalent.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;smallInteger(&#39;votes&#39;);</code></td>
+<td>SMALLINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;softDeletes();</code></td>
+<td>Adds nullable <code>deleted_at</code> column for soft deletes.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;string(&#39;email&#39;);</code></td>
+<td>VARCHAR equivalent column.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;string(&#39;name&#39;, 100);</code></td>
+<td>VARCHAR equivalent with a length.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;text(&#39;description&#39;);</code></td>
+<td>TEXT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;time(&#39;sunrise&#39;);</code></td>
+<td>TIME equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;timeTz(&#39;sunrise&#39;);</code></td>
+<td>TIME (with timezone) equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;tinyInteger(&#39;numbers&#39;);</code></td>
+<td>TINYINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;timestamp(&#39;added_on&#39;);</code></td>
+<td>TIMESTAMP equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;timestampTz(&#39;added_on&#39;);</code></td>
+<td>TIMESTAMP (with timezone) equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;timestamps();</code></td>
+<td>Adds nullable <code>created_at</code> and <code>updated_at</code> columns.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;timestampsTz();</code></td>
+<td>Adds nullable <code>created_at</code> and <code>updated_at</code> (with timezone) columns.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unsignedBigInteger(&#39;votes&#39;);</code></td>
+<td>Unsigned BIGINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unsignedInteger(&#39;votes&#39;);</code></td>
+<td>Unsigned INT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unsignedMediumInteger(&#39;votes&#39;);</code></td>
+<td>Unsigned MEDIUMINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unsignedSmallInteger(&#39;votes&#39;);</code></td>
+<td>Unsigned SMALLINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unsignedTinyInteger(&#39;votes&#39;);</code></td>
+<td>Unsigned TINYINT equivalent for the database.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;uuid(&#39;id&#39;);</code></td>
+<td>UUID equivalent for the database.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="column-modifiers"></a></p>
+<h3 id="Column-Modifiers"><a href="#Column-Modifiers" class="headerlink" title="Column Modifiers"></a>Column Modifiers</h3><p>In addition to the column types listed above, there are several column “modifiers” you may use while adding a column to a database table. For example, to make the column “nullable”, you may use the <code>nullable</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;string(<span class="string">'email'</span>)-&gt;nullable();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Below is a list of all the available column modifiers. This list does not include the <a href="#creating-indexes">index modifiers</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-&gt;after(&#39;column&#39;)</code></td>
+<td>Place the column “after” another column (MySQL Only)</td>
+</tr>
+<tr>
+<td><code>-&gt;comment(&#39;my comment&#39;)</code></td>
+<td>Add a comment to a column</td>
+</tr>
+<tr>
+<td><code>-&gt;default($value)</code></td>
+<td>Specify a “default” value for the column</td>
+</tr>
+<tr>
+<td><code>-&gt;first()</code></td>
+<td>Place the column “first” in the table (MySQL Only)</td>
+</tr>
+<tr>
+<td><code>-&gt;nullable()</code></td>
+<td>Allow NULL values to be inserted into the column</td>
+</tr>
+<tr>
+<td><code>-&gt;storedAs($expression)</code></td>
+<td>Create a stored generated column (MySQL Only)</td>
+</tr>
+<tr>
+<td><code>-&gt;unsigned()</code></td>
+<td>Set <code>integer</code> columns to <code>UNSIGNED</code></td>
+</tr>
+<tr>
+<td><code>-&gt;virtualAs($expression)</code></td>
+<td>Create a virtual generated column (MySQL Only)</td>
+</tr>
+</tbody>
+</table>
+<p><a name="changing-columns"></a><br><a name="modifying-columns"></a></p>
+<h3 id="Modifying-Columns"><a href="#Modifying-Columns" class="headerlink" title="Modifying Columns"></a>Modifying Columns</h3><h4 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h4><p>Before modifying a column, be sure to add the <code>doctrine/dbal</code> dependency to your <code>composer.json</code> file. The Doctrine DBAL library is used to determine the current state of the column and create the SQL queries needed to make the specified adjustments to the column:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">composer <span class="keyword">require</span> doctrine/dbal</div></pre></td></tr></table></figure></p>
+<h4 id="Updating-Column-Attributes"><a href="#Updating-Column-Attributes" class="headerlink" title="Updating Column Attributes"></a>Updating Column Attributes</h4><p>The <code>change</code> method allows you to modify some existing column types to a new type or modify the column’s attributes. For example, you may wish to increase the size of a string column. To see the <code>change</code> method in action, let’s increase the size of the <code>name</code> column from 25 to 50:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;string(<span class="string">'name'</span>, <span class="number">50</span>)-&gt;change();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>We could also modify a column to be nullable:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;string(<span class="string">'name'</span>, <span class="number">50</span>)-&gt;nullable()-&gt;change();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} The following column types can not be “changed”: char, double, enum, mediumInteger, timestamp, tinyInteger, ipAddress, json, jsonb, macAddress, mediumIncrements, morphs, nullableMorphs, nullableTimestamps, softDeletes, timeTz, timestampTz, timestamps, timestampsTz, unsignedMediumInteger, unsignedTinyInteger, uuid.</p>
+</blockquote>
+<p><a name="renaming-columns"></a></p>
+<h4 id="Renaming-Columns"><a href="#Renaming-Columns" class="headerlink" title="Renaming Columns"></a>Renaming Columns</h4><p>To rename a column, you may use the <code>renameColumn</code> method on the Schema builder. Before renaming a column, be sure to add the <code>doctrine/dbal</code> dependency to your <code>composer.json</code> file:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;renameColumn(<span class="string">'from'</span>, <span class="string">'to'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} Renaming any column in a table that also has a column of type <code>enum</code> is not currently supported.</p>
+</blockquote>
+<p><a name="dropping-columns"></a></p>
+<h3 id="Dropping-Columns"><a href="#Dropping-Columns" class="headerlink" title="Dropping Columns"></a>Dropping Columns</h3><p>To drop a column, use the <code>dropColumn</code> method on the Schema builder. Before dropping columns from a SQLite database, you will need to add the <code>doctrine/dbal</code> dependency to your <code>composer.json</code> file and run the <code>composer update</code> command in your terminal to install the library:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;dropColumn(<span class="string">'votes'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>You may drop multiple columns from a table by passing an array of column names to the <code>dropColumn</code> method:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'users'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;dropColumn([<span class="string">'votes'</span>, <span class="string">'avatar'</span>, <span class="string">'location'</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>{note} Dropping or modifying multiple columns within a single migration while using a SQLite database is not supported.</p>
+</blockquote>
+<p><a name="indexes"></a></p>
+<h2 id="Indexes"><a href="#Indexes" class="headerlink" title="Indexes"></a>Indexes</h2><p><a name="creating-indexes"></a></p>
+<h3 id="Creating-Indexes"><a href="#Creating-Indexes" class="headerlink" title="Creating Indexes"></a>Creating Indexes</h3><p>The schema builder supports several types of indexes. First, let’s look at an example that specifies a column’s values should be unique. To create the index, we can simply chain the <code>unique</code> method onto the column definition:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;string(<span class="string">'email'</span>)-&gt;unique();</div></pre></td></tr></table></figure></p>
+<p>Alternatively, you may create the index after defining the column. For example:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;unique(<span class="string">'email'</span>);</div></pre></td></tr></table></figure></p>
+<p>You may even pass an array of columns to an index method to create a compound index:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;index([<span class="string">'account_id'</span>, <span class="string">'created_at'</span>]);</div></pre></td></tr></table></figure></p>
+<p>Laravel will automatically generate a reasonable index name, but you may pass a second argument to the method to specify the name yourself:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;index(<span class="string">'email'</span>, <span class="string">'my_index_name'</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="Available-Index-Types"><a href="#Available-Index-Types" class="headerlink" title="Available Index Types"></a>Available Index Types</h4><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$table-&gt;primary(&#39;id&#39;);</code></td>
+<td>Add a primary key.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;primary([&#39;first&#39;, &#39;last&#39;]);</code></td>
+<td>Add composite keys.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unique(&#39;email&#39;);</code></td>
+<td>Add a unique index.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unique(&#39;state&#39;, &#39;my_index_name&#39;);</code></td>
+<td>Add a custom index name.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unique([&#39;first&#39;, &#39;last&#39;]);</code></td>
+<td>Add a composite unique index.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;index(&#39;state&#39;);</code></td>
+<td>Add a basic index.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Index-Lengths-amp-MySQL-MariaDB"><a href="#Index-Lengths-amp-MySQL-MariaDB" class="headerlink" title="Index Lengths &amp; MySQL / MariaDB"></a>Index Lengths &amp; MySQL / MariaDB</h4><p>Laravel uses the <code>utf8mb4</code> character set by default, which includes support for storing “emojis” in the database. If you are running a version of MySQL older than the 5.7.7 release or MariaDB older than the 10.2.2 release, you may need to manually configure the default string length generated by migrations in order for MySQL to create indexes for them. You may configure this by calling the <code>Schema::defaultStringLength</code> method within your <code>AppServiceProvider</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Schema</span>;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Bootstrap any application services.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Schema::defaultStringLength(<span class="number">191</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Alternatively, you may enable the <code>innodb_large_prefix</code> option for your database. Refer to your database’s documentation for instructions on how to properly enable this option.</p>
+<p><a name="dropping-indexes"></a></p>
+<h3 id="Dropping-Indexes"><a href="#Dropping-Indexes" class="headerlink" title="Dropping Indexes"></a>Dropping Indexes</h3><p>To drop an index, you must specify the index’s name. By default, Laravel automatically assigns a reasonable name to the indexes. Simply concatenate the table name, the name of the indexed column, and the index type. Here are some examples:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$table-&gt;dropPrimary(&#39;users_id_primary&#39;);</code></td>
+<td>Drop a primary key from the “users” table.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropUnique(&#39;users_email_unique&#39;);</code></td>
+<td>Drop a unique index from the “users” table.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropIndex(&#39;geo_state_index&#39;);</code></td>
+<td>Drop a basic index from the “geo” table.</td>
+</tr>
+</tbody>
+</table>
+<p>If you pass an array of columns into a method that drops indexes, the conventional index name will be generated based on the table name, columns and key type:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'geo'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;dropIndex([<span class="string">'state'</span>]); <span class="comment">// Drops index 'geo_state_index'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a name="foreign-key-constraints"></a></p>
+<h3 id="Foreign-Key-Constraints"><a href="#Foreign-Key-Constraints" class="headerlink" title="Foreign Key Constraints"></a>Foreign Key Constraints</h3><p>Laravel also provides support for creating foreign key constraints, which are used to force referential integrity at the database level. For example, let’s define a <code>user_id</code> column on the <code>posts</code> table that references the <code>id</code> column on a <code>users</code> table:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::table(<span class="string">'posts'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</div><div class="line">    $table-&gt;integer(<span class="string">'user_id'</span>)-&gt;unsigned();</div><div class="line"></div><div class="line">    $table-&gt;foreign(<span class="string">'user_id'</span>)-&gt;references(<span class="string">'id'</span>)-&gt;on(<span class="string">'users'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>You may also specify the desired action for the “on delete” and “on update” properties of the constraint:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;foreign(<span class="string">'user_id'</span>)</div><div class="line">      -&gt;references(<span class="string">'id'</span>)-&gt;on(<span class="string">'users'</span>)</div><div class="line">      -&gt;onDelete(<span class="string">'cascade'</span>);</div></pre></td></tr></table></figure></p>
+<p>To drop a foreign key, you may use the <code>dropForeign</code> method. Foreign key constraints use the same naming convention as indexes. So, we will concatenate the table name and the columns in the constraint then suffix the name with <code>_foreign</code>:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;dropForeign(<span class="string">'posts_user_id_foreign'</span>);</div></pre></td></tr></table></figure></p>
+<p>Or, you may pass an array value which will automatically use the conventional constraint name when dropping:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$table-&gt;dropForeign([<span class="string">'user_id'</span>]);</div></pre></td></tr></table></figure></p>
+<p>You may enable or disable foreign key constraints within your migrations by using the following methods:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">Schema::enableForeignKeyConstraints();</div><div class="line"></div><div class="line">Schema::disableForeignKeyConstraints();</div></pre></td></tr></table></figure></p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/laravel/5-4/migrations.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

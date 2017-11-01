@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Expectation Declarations — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Expectation Declarations — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Expectation Declarations — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "Mockery/Mockery"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                Mockery/Mockery
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/alternative_should_receive_syntax.html" class="sidebar-link">Alternative shouldReceive Syntax</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/index.html" class="sidebar-link">Mockery</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/argument_validation.html" class="sidebar-link">Argument Validation</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/creating_test_doubles.html" class="sidebar-link">Creating Test Doubles</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/demeter_chains.html" class="sidebar-link">Mocking Demeter Chains And Fluent Interfaces</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/mk/mockery/expectations.html" class="sidebar-link current">Expectation Declarations</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content Mockery/Mockery with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Expectation Declarations</h1>
+    
+    <p>.. note::</p>
+<pre><code>In order for our expectations to work we MUST call ``Mockery::close()``,
+preferably in a callback method such as ``tearDown`` or ``_before``
+(depending on whether or not we&apos;re integrating Mockery with another
+framework). This static call cleans up the Mockery container used by the
+current test, and run any verification tasks needed for our expectations.
+</code></pre><p>Once we have created a mock object, we’ll often want to start defining how<br>exactly it should behave (and how it should be called). This is where the<br>Mockery expectation declarations take over.</p>
+<h2 id="Declaring-Method-Call-Expectations"><a href="#Declaring-Method-Call-Expectations" class="headerlink" title="Declaring Method Call Expectations"></a>Declaring Method Call Expectations</h2><p>To tell our test double to expect a call for a method with a given name, we use<br>the <code>shouldReceive</code> method:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;);
+</code></pre><p>This is the starting expectation upon which all other expectations and<br>constraints are appended.</p>
+<p>We can declare more than one method call to be expected:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method_1&apos;, &apos;name_of_method_2&apos;);
+</code></pre><p>All of these will adopt any chained expectations or constraints.</p>
+<p>It is possible to declare the expectations for the method calls, along with<br>their return values:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive([
+    &apos;name_of_method_1&apos; =&gt; &apos;return value 1&apos;,
+    &apos;name_of_method_2&apos; =&gt; &apos;return value 2&apos;,
+]);
+</code></pre><p>There’s also a shorthand way of setting up method call expectations and their<br>return values:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;, [&apos;name_of_method_1&apos; =&gt; &apos;return value 1&apos;, &apos;name_of_method_2&apos; =&gt; &apos;return value 2&apos;]);
+</code></pre><p>All of these will adopt any additional chained expectations or constraints.</p>
+<p>We can declare that a test double should not expect a call to the given method<br>name:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldNotReceive(&apos;name_of_method&apos;);
+</code></pre><p>This method is a convenience method for calling <code>shouldReceive()-&gt;never()</code>.</p>
+<h2 id="Declaring-Method-Argument-Expectations"><a href="#Declaring-Method-Argument-Expectations" class="headerlink" title="Declaring Method Argument Expectations"></a>Declaring Method Argument Expectations</h2><p>For every method we declare expectation for, we can add constraints that the<br>defined expectations apply only to the method calls that match the expected<br>argument list:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;with($arg1, $arg2, ...);
+// or
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;withArgs([$arg1, $arg2, ...]);
+</code></pre><p>We can add a lot more flexibility to argument matching using the built in<br>matcher classes (see later). For example, <code>\Mockery::any()</code> matches any<br>argument passed to that position in the <code>with()</code> parameter list. Mockery also<br>allows Hamcrest library matchers - for example, the Hamcrest function<br><code>anything()</code> is equivalent to <code>\Mockery::any()</code>.</p>
+<p>It’s important to note that this means all expectations attached only apply to<br>the given method when it is called with these exact arguments:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+
+$mock-&gt;shouldReceive(&apos;foo&apos;)-&gt;with(&apos;Hello&apos;);
+
+$mock-&gt;foo(&apos;Goodbye&apos;); // throws a NoMatchingExpectationException
+</code></pre><p>This allows for setting up differing expectations based on the arguments<br>provided to expected calls.</p>
+<p>Argument matching with closures<br>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+<p>Instead of providing a built-in matcher for each argument, we can provide a<br>closure that matches all passed arguments at once:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;withArgs(closure);
+</code></pre><p>The given closure receives all the arguments passed in the call to the expected<br>method. In this way, this expectation only applies to method calls where passed<br>arguments make the closure evaluate to true:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+
+$mock-&gt;shouldReceive(&apos;foo&apos;)-&gt;withArgs(function ($arg) {
+    if ($arg % 2 == 0) {
+        return true;
+    }
+    return false;
+});
+
+$mock-&gt;foo(4); // matches the expectation
+$mock-&gt;foo(3); // throws a NoMatchingExpectationException
+</code></pre><p>Any, or no arguments<br>^^^^^^^^^^^^^^^^^^^^</p>
+<p>We can declare that the expectation matches a method call regardless of what<br>arguments are passed:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;withAnyArgs();
+</code></pre><p>This is set by default unless otherwise specified.</p>
+<p>We can declare that the expectation matches method calls with zero arguments:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;withNoArgs();
+</code></pre><h2 id="Declaring-Return-Value-Expectations"><a href="#Declaring-Return-Value-Expectations" class="headerlink" title="Declaring Return Value Expectations"></a>Declaring Return Value Expectations</h2><p>For mock objects, we can tell Mockery what return values to return from the<br>expected method calls.</p>
+<p>For that we can use the <code>andReturn()</code> method:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andReturn($value);
+</code></pre><p>This sets a value to be returned from the expected method call.</p>
+<p>It is possible to set up expectation for multiple return values. By providing<br>a sequence of return values, we tell Mockery what value to return on every<br>subsequent call to the method:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andReturn($value1, $value2, ...)
+</code></pre><p>The first call will return <code>$value1</code> and the second call will return <code>$value2</code>.</p>
+<p>If we call the method more times than the number of return values we declared,<br>Mockery will return the final value for any subsequent method call:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+
+$mock-&gt;shouldReceive(&apos;foo&apos;)-&gt;andReturn(1, 2, 3);
+
+$mock-&gt;foo(); // int(1)
+$mock-&gt;foo(); // int(2)
+$mock-&gt;foo(); // int(3)
+$mock-&gt;foo(); // int(3)
+</code></pre><p>The same can be achieved using the alternative syntax:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andReturnValues([$value1, $value2, ...])
+</code></pre><p>It accepts a simple array instead of a list of parameters. The order of return is determined by the numerical index of the given array with the last array member being returned on all calls once previous return values are exhausted.</p>
+<p>The following two options are primarily for communication with test readers:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andReturnNull();
+// or
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andReturn([null]);
+</code></pre><p>They mark the mock object method call as returning <code>null</code> or nothing.</p>
+<p>Sometimes we want to calculate the return results of the method calls, based on the arguments passed to the method. We can do that with the <code>andReturnUsing()</code> . method which accepts one or more closure:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive(<span class="string">'name_of_method'</span>)</div><div class="line">    -&gt;andReturnUsing(closure, ...);</div></pre></td></tr></table></figure>
+<p>Closures can queued by passing them as extra parameters as for <code>andReturn()</code>.</p>
+<p>.. note::</p>
+<pre><code>We cannot currently mix ``andReturnUsing()`` with ``andReturn()``.
+</code></pre><p>If we are mocking fluid interfaces, the following method will be helpful:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andReturnSelf();
+</code></pre><p>It sets the return value to the mocked class name.</p>
+<h2 id="Throwing-Exceptions"><a href="#Throwing-Exceptions" class="headerlink" title="Throwing Exceptions"></a>Throwing Exceptions</h2><p>We can tell the method of mock objects to throw exceptions:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andThrow(Exception);
+</code></pre><p>It will throw the given <code>Exception</code> object when called.</p>
+<p>Rather than an object, we can pass in the <code>Exception</code> class and message to use when throwing an <code>Exception</code> from the mocked method:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive(<span class="string">'name_of_method'</span>)</div><div class="line">    -&gt;andThrow(exception_name, message);</div></pre></td></tr></table></figure>
+<p>expectations-setting-public-properties:</p>
+<h2 id="Setting-Public-Properties"><a href="#Setting-Public-Properties" class="headerlink" title="Setting Public Properties"></a>Setting Public Properties</h2><p>Used with an expectation so that when a matching method is called, we can cause<br>a mock object’s public property to be set to a specified value, by using<br><code>andSet()</code> or <code>set()</code>:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;andSet($property, $value);
+// or
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;set($property, $value);
+</code></pre><p>In cases where we want to call the real method of the class that was mocked and<br>return its result, the <code>passhthru()</code> method tells the expectation to bypass<br>a return queue:</p>
+<p>.. code-block:: php</p>
+<pre><code>passthru()
+</code></pre><p>It allows expectation matching and call count validation to be applied against<br>real methods while still calling the real class method with the expected<br>arguments.</p>
+<h2 id="Declaring-Call-Count-Expectations"><a href="#Declaring-Call-Count-Expectations" class="headerlink" title="Declaring Call Count Expectations"></a>Declaring Call Count Expectations</h2><p>Besides setting expectations on the arguments of the method calls, and the<br>return values of those same calls, we can set expectations on how many times<br>should any method be called.</p>
+<p>When a call count expectation is not met, a<br><code>\Mockery\Expectation\InvalidCountException</code> will be thrown.</p>
+<p>.. note::</p>
+<pre><code>It is absolutely required to call ``\Mockery::close()`` at the end of our
+tests, for example in the ``tearDown()`` method of PHPUnit. Otherwise
+Mockery will not verify the calls made against our mock objects.
+</code></pre><p>We can declare that the expected method may be called zero or more times:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;zeroOrMoreTimes();
+</code></pre><p>This is the default for all methods unless otherwise set.</p>
+<p>To tell Mockery to expect an exact number of calls to a method, we can use the<br>following:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;times($n);
+</code></pre><p>where <code>$n</code> is the number of times the method should be called.</p>
+<p>A couple of most common cases got their shorthand methods.</p>
+<p>To declare that the expected method must be called one time only:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;once();
+</code></pre><p>To declare that the expected method must be called two times:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;twice();
+</code></pre><p>To declare that the expected method must never be called:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;never();
+</code></pre><p>Call count modifiers<br>^^^^^^^^^^^^^^^^^^^^</p>
+<p>The call count expectations can have modifiers set.</p>
+<p>If we want to tell Mockery the minimum number of times a method should be called,<br>we use <code>atLeast()</code>:</p>
+<p>.. code-block:: php</p>
+<pre><code>$mock = \Mockery::mock(&apos;MyClass&apos;);
+$mock-&gt;shouldReceive(&apos;name_of_method&apos;)
+    -&gt;atLeast()
+    -&gt;times(3);
+</code></pre><p><code>atLeast()-&gt;times(3)</code> means the call must be called at least three times<br>(given matching method args) but never less than three times.</p>
+<p>Similarly, we can tell Mockery the maximum number of times a method should be<br>called, using <code>atMost()</code>:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive(<span class="string">'name_of_method'</span>)</div><div class="line">    -&gt;atMost()</div><div class="line">    -&gt;times(<span class="number">3</span>);</div></pre></td></tr></table></figure>
+<p><code>atMost()-&gt;times(3)</code> means the call must be called no more than three times. If the method gets no calls at all, the expectation will still be met.</p>
+<p>We can also set a range of call counts, using <code>between()</code>:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">$mock = \Mockery::mock(<span class="string">'MyClass'</span>);</div><div class="line">$mock-&gt;shouldReceive(<span class="string">'name_of_method'</span>)</div><div class="line">    -&gt;between($min, $max);</div></pre></td></tr></table></figure>
+<p>This is actually identical to using <code>atLeast()-&gt;times($min)-&gt;atMost()-&gt;times($max)</code><br>but is provided as a shorthand. It may be followed by a <code>times()</code> call with no<br>parameter to preserve the APIs natural language readability.</p>
+<h3 id="Expectation-Declaration-Utilities"><a href="#Expectation-Declaration-Utilities" class="headerlink" title="Expectation Declaration Utilities"></a>Expectation Declaration Utilities</h3><p>Declares that this method is expected to be called in a specific order in<br>relation to similarly marked methods.</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">ordered()</div></pre></td></tr></table></figure>
+<p>The order is dictated by the order in which this modifier is actually used when<br>setting up mocks.</p>
+<p>Declares the method as belonging to an order group (which can be named or<br>numbered). Methods within a group can be called in any order, but the ordered<br>calls from outside the group are ordered in relation to the group:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">ordered(group)</div></pre></td></tr></table></figure>
+<p>We can set up so that method1 is called before group1 which is in turn called<br>before method2.</p>
+<p>When called prior to <code>ordered()</code> or <code>ordered(group)</code>, it declares this<br>ordering to apply across all mock objects (not just the current mock):</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">globally()</div></pre></td></tr></table></figure>
+<p>This allows for dictating order expectations across multiple mocks.</p>
+<p>The <code>byDefault()</code> marks an expectation as a default. Default expectations are<br>applied unless a non-default expectation is created:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">byDefault()</div></pre></td></tr></table></figure>
+<p>These later expectations immediately replace the previously defined default.<br>This is useful so we can setup default mocks in our unit test <code>setup()</code> and<br>later tweak them in specific tests as needed.</p>
+<p>Returns the current mock object from an expectation chain:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line">getMock()</div></pre></td></tr></table></figure>
+<p>Useful where we prefer to keep mock setups as a single statement, e.g.:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$mock = \Mockery::mock(<span class="string">'foo'</span>)-&gt;shouldReceive(<span class="string">'foo'</span>)-&gt;andReturn(<span class="number">1</span>)-&gt;getMock();</div></pre></td></tr></table></figure>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/mk/mockery/expectations.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

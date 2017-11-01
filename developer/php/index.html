@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Control Structures — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Control Structures — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Control Structures — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "PHP"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link current">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link current">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                PHP
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/index.html" class="sidebar-link current">Control Structures</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/objectclass.html" class="sidebar-link">Classes and Objects</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/phpdoc.html" class="sidebar-link">phpDocumentor</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/function.html" class="sidebar-link">Classes/Object Functions</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/developer/php/string.html" class="sidebar-link">String Functions</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content PHP with-sidebar ">
+    
+      
+
+    
+    
+      <h1>Control Structures</h1>
+    
+    <p><a href="https://phpdoc.org/docs/latest/index.html" target="_blank" rel="external">phpdocument</a></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Any PHP script is built out of a series of statements. A statement can be an assignment, a function call, a loop, a conditional statement or even a statement that does nothing (an empty statement). Statements usually end with a semicolon. In addition, statements can be grouped into a statement-group by encapsulating a group of statements with curly braces. A statement-group is a statement by itself as well. The various statement types are described in this chapter.</p>
+<h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><p>The if construct is one of the most important features of many languages, PHP included. It allows for conditional execution of code fragments. PHP features an if structure that is similar to that of C:</p>
+<ul>
+<li>ex.<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ($a &gt; $b)</div><div class="line">  <span class="keyword">echo</span> <span class="string">"a is bigger than b"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="else"><a href="#else" class="headerlink" title="else"></a>else</h3><p>Often you’d want to execute a statement if a certain condition is met, and a different statement if the condition is not met. This is what else is for. else extends an if statement to execute a statement in case the expression in the if statement evaluates to FALSE. For example, the following code would display a is greater than b if <code>$a</code> is greater than <code>$b</code>, and a is NOT greater than b otherwise:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ($a &gt; $b) &#123;</div><div class="line">  <span class="keyword">echo</span> <span class="string">"a is greater than b"</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="keyword">echo</span> <span class="string">"a is NOT greater than b"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="elseif"><a href="#elseif" class="headerlink" title="elseif"></a>elseif</h3><p>elseif, as its name suggests, is a combination of if and else. Like else, it extends an if statement to execute a different statement in case the original if expression evaluates to FALSE. However, unlike else, it will execute that alternative expression only if the elseif conditional expression evaluates to TRUE. For example, the following code would display a is bigger than b, a equal to b or a is smaller than b:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ($a &gt; $b) &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"a is bigger than b"</span>;</div><div class="line">&#125; <span class="keyword">elseif</span> ($a == $b) &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"a is equal to b"</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"a is smaller than b"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Alternative-syntax-for-control-structures"><a href="#Alternative-syntax-for-control-structures" class="headerlink" title="Alternative syntax for control structures"></a>Alternative syntax for control structures</h3><p>PHP offers an alternative syntax for some of its control structures; namely, if, while, for, foreach, and switch. In each case, the basic form of the alternate syntax is to change the opening brace to a colon (:) and the closing brace to endif;, endwhile;, endfor;, endforeach;, or endswitch;, respectively.</p>
+<ul>
+<li>ex-1<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> ($a == <span class="number">5</span>): <span class="meta">?&gt;</span></div><div class="line">A is equal to <span class="number">5</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">endif</span>; <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>In the above example, the HTML block “A is equal to 5” is nested within an if statement written in the alternative syntax. The HTML block would be displayed only if $a is equal to 5.</p>
+<ul>
+<li>ex.2<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ($a == <span class="number">5</span>):</div><div class="line">    <span class="keyword">echo</span> <span class="string">"a equals 5"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"..."</span>;</div><div class="line"><span class="keyword">elseif</span> ($a == <span class="number">6</span>):</div><div class="line">    <span class="keyword">echo</span> <span class="string">"a equals 6"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"!!!"</span>;</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">echo</span> <span class="string">"a is neither 5 nor 6"</span>;</div><div class="line"><span class="keyword">endif</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><p>while loops are the simplest type of loop in PHP. They behave just like their C counterparts. The basic form of a while statement is:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">while</span> (expr)</div><div class="line">    statement</div></pre></td></tr></table></figure></p>
+<p>The meaning of a while statement is simple. It tells PHP to execute the nested statement(s) repeatedly, as long as the while expression evaluates to TRUE. The value of the expression is checked each time at the beginning of the loop, so even if this value changes during the execution of the nested statement(s), execution will not stop until the end of the iteration (each time PHP runs the statements in the loop is one iteration). Sometimes, if the while expression evaluates to FALSE from the very beginning, the nested statement(s) won’t even be run once.</p>
+<p>Like with the if statement, you can group multiple statements within the same while loop by surrounding a group of statements with curly braces, or by using the alternate syntax:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">while</span> (expr):</div><div class="line">    statement</div><div class="line">    ...</div><div class="line"><span class="keyword">endwhile</span>;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>ex.<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">/* example 1 */</span></div><div class="line"></div><div class="line">$i = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> ($i &lt;= <span class="number">10</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> $i++;  <span class="comment">/* the printed value would be</span></div><div class="line">                   $i before the increment</div><div class="line">                   (post-increment) */</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* example 2 */</span></div><div class="line"></div><div class="line">$i = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> ($i &lt;= <span class="number">10</span>):</div><div class="line">    <span class="keyword">echo</span> $i;</div><div class="line">    $i++;</div><div class="line"><span class="keyword">endwhile</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="do-while"><a href="#do-while" class="headerlink" title="do-while"></a>do-while</h3><p><code>PHP 4</code>, <code>PHP 5</code>, <code>PHP 7</code><br>do-while loops are very similar to while loops, except the truth expression is checked at the end of each iteration instead of in the beginning. The main difference from regular while loops is that the first iteration of a do-while loop is guaranteed to run (the truth expression is only checked at the end of the iteration), whereas it may not necessarily run with a regular while loop (the truth expression is checked at the beginning of each iteration, if it evaluates to FALSE right from the beginning, the loop execution would end immediately).</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$i = <span class="number">0</span>;</div><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">    <span class="keyword">echo</span> $i;</div><div class="line">&#125; <span class="keyword">while</span> ($i &gt; <span class="number">0</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><p>for loops are the most complex loops in PHP. They behave like their C counterparts. The syntax of a for loop is:</p>
+<p>for (expr1; expr2; expr3)<br>    statement<br>The first expression (expr1) is evaluated (executed) once unconditionally at the beginning of the loop.</p>
+<p>In the beginning of each iteration, expr2 is evaluated. If it evaluates to TRUE, the loop continues and the nested statement(s) are executed. If it evaluates to FALSE, the execution of the loop ends.</p>
+<p>At the end of each iteration, expr3 is evaluated (executed).</p>
+<p>Each of the expressions can be empty or contain multiple expressions separated by commas. In expr2, all expressions separated by a comma are evaluated but the result is taken from the last part. expr2 being empty means the loop should be run indefinitely (PHP implicitly considers it as TRUE, like C). This may not be as useless as you might think, since often you’d want to end the loop using a conditional break statement instead of using the for truth expression.</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">/* example 1 */</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">10</span>; $i++) &#123;</div><div class="line">    <span class="keyword">echo</span> $i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* example 2 */</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; ; $i++) &#123;</div><div class="line">    <span class="keyword">if</span> ($i &gt; <span class="number">10</span>) &#123;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">echo</span> $i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* example 3 */</span></div><div class="line"></div><div class="line">$i = <span class="number">1</span>;</div><div class="line"><span class="keyword">for</span> (; ; ) &#123;</div><div class="line">    <span class="keyword">if</span> ($i &gt; <span class="number">10</span>) &#123;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">echo</span> $i;</div><div class="line">    $i++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* example 4 */</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>, $j = <span class="number">0</span>; $i &lt;= <span class="number">10</span>; $j += $i, <span class="keyword">print</span> $i, $i++);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h3><p>The foreach construct provides an easy way to iterate over arrays. foreach works only on arrays and objects, and will issue an error when you try to use it on a variable with a different data type or an uninitialized variable. There are two syntaxes:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">foreach</span> (array_expression <span class="keyword">as</span> $value)</div><div class="line">    statement;</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> (array_expression <span class="keyword">as</span> $key =&gt; $value)</div><div class="line">    statement;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>ex.<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">foreach</span> (<span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>) <span class="keyword">as</span> &amp;$value) &#123;</div><div class="line">    $value = $value * <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><p>break ends execution of the current for, foreach, while, do-while or switch structure.<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">5</span>; ++$i) &#123;</div><div class="line">    <span class="keyword">if</span> ($i == <span class="number">2</span>)</div><div class="line">      <span class="keyword">break</span>;  </div><div class="line">    <span class="keyword">print</span> <span class="string">"$i\n"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>Result<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="number">0</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p>continue is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation and then the beginning of the next iteration.</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">5</span>; ++$i) &#123;</div><div class="line">    <span class="keyword">if</span> ($i == <span class="number">2</span>)</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"$i\n"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Result<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="number">0</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><p>The switch statement is similar to a series of IF statements on the same expression. In many occasions, you may want to compare the same variable (or expression) with many different values, and execute a different piece of code depending on which value it equals to.</p>
+<p class="tip"><code>7.0.0</code>    Multiple default cases will raise a E_COMPILE_ERROR error.</p>
+
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">switch</span> ($i) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">        <span class="keyword">echo</span> <span class="string">"i equals 0"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">        <span class="keyword">echo</span> <span class="string">"i equals 1"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">        <span class="keyword">echo</span> <span class="string">"i equals 2"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">       <span class="keyword">echo</span> <span class="string">"i is not equal to 0, 1 or 2"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h3><h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><h3 id="require"><a href="#require" class="headerlink" title="require"></a>require</h3><h3 id="include"><a href="#include" class="headerlink" title="include"></a>include</h3><h3 id="require-once"><a href="#require-once" class="headerlink" title="require_once"></a>require_once</h3><h3 id="include-once"><a href="#include-once" class="headerlink" title="include_once"></a>include_once</h3><h3 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h3>
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/developer/php/index.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>

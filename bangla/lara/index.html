@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>লারাভেল আড্ডা — Hello Laravel</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="লারাভেল আড্ডা — hello-laravel">
+        <meta property="og:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta property="og:image" content="https://hellolaravel.org//images/me.PNG">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="লারাভেল আড্ডা — hello-laravel">
+        <meta name="twitter:description" content="Hello laravel - Now time for laravel , Bangla full documentation and laravel related tutorial and tips resource avaiable on hello laravel">
+        <meta name="twitter:image" content="https://hellolaravel.org/images/logo.png">
+
+        <link rel="icon" href="/images/title.png" type="image/x-icon">
+
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="../css/my-css/my-canvas.css">
+        <link rel="stylesheet" href="../../css/my-css/my-awesome.css">
+        <link rel="stylesheet" href="../css/my-css/single-post.css">
+        <link rel="stylesheet" href="../../css/grid.css">
+        <link rel="stylesheet" href="../../css/custom-bootstrap/list-group.css">
+        <link rel="stylesheet" href="../css/custom-bootstrap/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="../../css/my-css/cheatsheet.css" rel="stylesheet"></head>
+
+        <!-- this needs to be loaded before guide's inline scripts -->
+        <script src="/js/vue.js"></script>
+
+        <script>window.PAGE_TYPE = "হ্যালো লারাভেল ৫ । ৪"</script>
+
+
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'hellolaravel.org');
+          ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logog.gif">
+    <span>@HelloLaravel</span>
+  </a>
+  <ul id="nav">
+    <li>
+ <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link current">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+ <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+
+</li>
+<li><a href="/laravel/5-5/" class="nav-link">laravel </a></li>
+<li><a href="/bangla/lara" class="nav-link current">laravel Bangla</a></li>
+
+<li><a href="/developer/" class="nav-link">Developer</a></li>
+
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Version</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+      <li><a href="/laravel/5-5" class="nav-link" >5.5</a></li>
+      <li><a href="/laravel/5-4" class="nav-link" >5.4</a></li>
+
+    </ul>
+
+
+
+</li>
+
+<!-- <li class="nav-dropdown-container language">
+  <a class="nav-link">Official</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://laravel.com/" class="nav-link" target="">Laravel</a></li>
+    <li><a href="https://laracasts.com/" class="nav-link" target="_blank">Laracast</a></li>
+    <li><a href="https://laravel-news.com/blog" class="nav-link" target="_blank">Laravel News</a></li>
+    <li><a href="https://larajobs.com/#/" class="nav-link" target="_blank">Larajob</a></li>
+      <li><a href="http://cheats.jesse-obrien.ca/" class="nav-link" target="_blank">Cheat Sheet</a></li>
+  </ul>
+</li> -->
+
+
+
+<li>
+  <a href="https://medium.com/hello-laravel" target="_blank" class="nav-link shop">Blog</a>
+  <span class="new-label">NEW!</span>
+</li>
+
+    </ul>
+    <div class="list">
+        <div class="main-sponsor">
+            <span>Platinum Sponsor</span><br>
+            <a href="http://themezero.net" target="_blank" class="logo">
+                <img src="/images/stdlib.png">
+            </a>
+        </div>
+        <a class="become-backer" href="http://themezero.net" target="_blank">
+            Template & Theme
+        </a>
+        <h2>
+                হ্যালো লারাভেল ৫ । ৪
+
+            </h2>
+        <hr>
+        <ul class="menu-root">
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/index.html" class="sidebar-link current">লারাভেল আড্ডা</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/structure.html" class="sidebar-link">প্রধান কাঠামো বিন্যাস</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/frontend .html" class="sidebar-link">থিম / ফ্রন্ট এণ্ড সেটআপ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/database.html" class="sidebar-link">ডাটাবেস আলাপ - (Database)</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/relationships.html" class="sidebar-link">রিলেশনশিপ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/controller.html" class="sidebar-link">কন্ট্রোলার -  Controller</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/routing.html" class="sidebar-link">রাউটিং - Routing</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/collections.html" class="sidebar-link">কালেকশনস - Collections</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/eloquent.html" class="sidebar-link">ইলোকোয়েন্ট  ও আর এম  (Eloquent ORM)</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/models.html" class="sidebar-link">Eloquent Model</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/filesystem.html" class="sidebar-link">ফাইল সিস্টেম / স্টোরেজ</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/testing.html" class="sidebar-link">লারাভেল ডাস্ক -   Laravel Dusk</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/validations.html" class="sidebar-link">ভ্যালিডেশনস (Validations)</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/namespace.html" class="sidebar-link">নেমস্পেস - Namespace</a>
+                </li>
+            
+                
+                
+                
+                <li>
+                    <a href="/bangla/lara/mvc.html" class="sidebar-link">MVC</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content হ্যালো লারাভেল ৫ । ৪ with-sidebar ">
+    
+      
+
+    
+    
+      <h1>লারাভেল আড্ডা</h1>
+    
+    <p>হ্যালো লারাভেল !<br><img src="https://cloud.githubusercontent.com/assets/17185462/25895266/6eca526a-353c-11e7-9992-c5830f18486b.gif" alt="hello laravel logo"></p>
+<h3 id="লারাভেল-কি"><a href="#লারাভেল-কি" class="headerlink" title="লারাভেল কি  ?"></a>লারাভেল কি  ?</h3><p> সবাইকে হ্যালো  <a href="https://laravel.com/" target="_blank" rel="external">লারাভেল</a> এর পক্ষ হতে জানাই শুভেচ্ছা ।</p>
+<p>এখানে আমরা গল্পে গল্পে শিখব লারাভেল কি এবং এর জন্য প্রথমে কি কি শিখতে হবে।</p>
+<p>আপনি যদি পিএইচপি অথবা ওয়েব ডিজাইন এ পরিচিত থাকেন , তাহলে আপনি ফ্রেমওয়ার্ক নাম এর সাথে পরিচিত বা জড়িত । পিএইচপি এর   যতগুলো <a href="https://en.wikipedia.org/wiki/Category:PHP_frameworks" target="_blank" rel="external">ফ্রেমওয়ার্ক</a> আছে বর্তমান জনপ্রিয়তার তালিকাই রয়েছে <code>লারাভেল</code> ।।</p>
+<h2 id="লারাভেল-পরিচিতিঃ"><a href="#লারাভেল-পরিচিতিঃ" class="headerlink" title="লারাভেল পরিচিতিঃ"></a>লারাভেল পরিচিতিঃ</h2><p><svg xmlns="http://www.w3.org/2000/svg" width="84.1" height="57.6" viewbox="0 0 84.1 57.6"><path fill="#FB503B" d="M83.8 26.9c-.6-.6-8.3-10.3-9.6-11.9-1.4-1.6-2-1.3-2.9-1.2s-10.6 1.8-11.7 1.9c-1.1.2-1.8.6-1.1 1.6.6.9 7 9.9 8.4 12l-25.5 6.1L21.2 1.5c-.8-1.2-1-1.6-2.8-1.5C16.6.1 2.5 1.3 1.5 1.3c-1 .1-2.1.5-1.1 2.9S17.4 41 17.8 42c.4 1 1.6 2.6 4.3 2 2.8-.7 12.4-3.2 17.7-4.6 2.8 5 8.4 15.2 9.5 16.7 1.4 2 2.4 1.6 4.5 1 1.7-.5 26.2-9.3 27.3-9.8 1.1-.5 1.8-.8 1-1.9-.6-.8-7-9.5-10.4-14 2.3-.6 10.6-2.8 11.5-3.1 1-.3 1.2-.8.6-1.4zm-46.3 9.5c-.3.1-14.6 3.5-15.3 3.7-.8.2-.8.1-.8-.2-.2-.3-17-35.1-17.3-35.5-.2-.4-.2-.8 0-.8S17.6 2.4 18 2.4c.5 0 .4.1.6.4 0 0 18.7 32.3 19 32.8.4.5.2.7-.1.8zm40.2 7.5c.2.4.5.6-.3.8-.7.3-24.1 8.2-24.6 8.4-.5.2-.8.3-1.4-.6s-8.2-14-8.2-14L68.1 32c.6-.2.8-.3 1.2.3.4.7 8.2 11.3 8.4 11.6zm1.6-17.6c-.6.1-9.7 2.4-9.7 2.4l-7.5-10.2c-.2-.3-.4-.6.1-.7.5-.1 9-1.6 9.4-1.7.4-.1.7-.2 1.2.5.5.6 6.9 8.8 7.2 9.1.3.3-.1.5-.7.6z"/></svg><br> লারাভেল ওপেন সোর্স <code>পিএচপি</code> ফ্রেমওয়ার্ক  । এর যাত্রা শুরু <code>জুন ২০১১</code> হতে , মাত্র পাঁচ বছরেই এখন জনপ্রিয়তার শীর্ষে । লারাভেল <code>এম ভি সি</code>  <a href="">(MVC)</a>  প্যাটার্ন  এ  গঠিত । আমরা যে  লারাভেল এর  জন্য  এতো সহজে ডাইনামিক ওয়েব বানাতে পারি , সেটা উপহার দিয়েছেন   টেইলর ওটেল (<a href="https://medium.com/@taylorotwell" target="_blank" rel="external">@Taylor Otwel</a>)</p>
+<h2 id="লারাভেল-ভার্সনঃ"><a href="#লারাভেল-ভার্সনঃ" class="headerlink" title="লারাভেল ভার্সনঃ"></a>লারাভেল ভার্সনঃ</h2><p> লারাভেল এর চলতি ভার্সন ৫.৪*</p>
+<table>
+<thead>
+<tr>
+<th>ভার্সন</th>
+<th>রিলিজ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>১.০</td>
+<td>জুন ২০১১</td>
+</tr>
+<tr>
+<td>২.০</td>
+<td>সেপ্টেম্বর ২০১১</td>
+</tr>
+<tr>
+<td>৩.০</td>
+<td>ফেব্রুয়ারি ২২ , ২০১২</td>
+</tr>
+<tr>
+<td>৩.১</td>
+<td>মার্চ ২৭ , ২০১২</td>
+</tr>
+<tr>
+<td>৩.২</td>
+<td>মে ২২ , ২০১২</td>
+</tr>
+<tr>
+<td>৪.০</td>
+<td>মে ২৮ , ২০১৩</td>
+</tr>
+<tr>
+<td>৪.১</td>
+<td>ডিসেম্বর ১১ , ২০১৩</td>
+</tr>
+<tr>
+<td>৪.২</td>
+<td>জুন ১ , ২০১৪</td>
+</tr>
+<tr>
+<td>৫.০</td>
+<td>ফেব্রুয়ারি ৪ , ২০১৫</td>
+</tr>
+<tr>
+<td>৫.১</td>
+<td>জুন ৯, ২০১৫</td>
+</tr>
+<tr>
+<td>৫.২</td>
+<td>ডিসেম্বর ২১ , ২০১৫</td>
+</tr>
+<tr>
+<td>৫.৩</td>
+<td>আগস্ট ২৩ , ২০১৫</td>
+</tr>
+<tr>
+<td>৫.৪</td>
+<td>জানুয়ারী ২৪ , ২০১৬</td>
+</tr>
+<tr>
+<td>৫.৫</td>
+<td>জুলাই ২০১৭</td>
+</tr>
+</tbody>
+</table>
+<h2 id="কম্পোজার"><a href="#কম্পোজার" class="headerlink" title="কম্পোজার"></a>কম্পোজার</h2><p><img src="https://getcomposer.org/img/logo-composer-transparent2.png" alt="alt text" title="Composer"></p>
+<div id="downloads"><br><a class="button" href="https://getcomposer.org/download/" target="_blank" rel="external">Download</a><br><br></div>
+
+<p class="tip">কম্পোজার হচ্ছে পিএইচপি  <code>প্যাকেজ ম্যানেজার</code> |  লারাভেল প্রোগ্রাম শুরু করার  আগে আপনার মেশিন এ কম্পোজার ইন্সটল করে নিতে হবে । আপনার মেশিনে কম্পোজার আছে কি না টেস্ট করে নিবেন , উইন্ডোজ   <code>cmd</code> <code>composer</code> </p>
+
+
+
+<h2 id="শুরুর-আগে-যা-প্রয়োজনঃ"><a href="#শুরুর-আগে-যা-প্রয়োজনঃ" class="headerlink" title="শুরুর আগে যা প্রয়োজনঃ"></a>শুরুর আগে যা প্রয়োজনঃ</h2><ul>
+<li>PHP &gt;= 5.6.4</li>
+<li>OpenSSL PHP Extension</li>
+<li>PDO PHP Extension</li>
+<li>Mbstring PHP Extension</li>
+<li>Tokenizer PHP Extension</li>
+<li><p>XML PHP Extension</p>
+ <p class="tip"> আপনার <code>পিএইচপি</code> আপডেট করতে ভুলবেন না । আপনার পছন্দের <code>XAMPP</code> <code>WAMP</code> <code>AMPPS</code>  যে কোনটা লোকাল  সার্ভার  ব্যবহার করতে পারেন ।। </p>
+
+</li>
+</ul>
+<p>আপনার মেশিন এখন সহজেই  লারাভেল প্যাকেজ ইন্সটল করতে পারবে । আপনার কমান্ডে গিয়ে কমান্ড করেন <code>composer create-project --prefer-dist laravel/laravel hellolaravel</code></p>
+ <p class="tip"><code>hellolaravel</code> নামে একটা ফোল্ডার খুজে পাবেন , তাতে লারাভেল প্যাকেজ ।। </p>
+
+ <p class="tip">   পছন্দের <code>Atom</code> <code>Sublime</code> <code>visual studio</code>   যে কোন  <code>text editor</code>  ব্যবহার করেন , টার্মিনাল প্যাকেজ টা সক্রিয় করে নিয়েন ।। </p>
+
+<p>আপনার টার্মিনাল এ গিয়ে     <code>php artisan serve</code> ।  ব্রাউজার টাইপ করুন <code>http://localhost:8000</code></p>
+<h2 id="Ready-for-More"><a href="#Ready-for-More" class="headerlink" title="Ready for More?"></a>Ready for More?</h2><p>We’ve just briefly introduced the most basic features of Vue.js core - the rest of this guide will cover them and other advanced features with much finer details, so make sure to read through it all!</p>
+
+    
+
+    
+
+    <div class="footer">
+      Powered by:
+    <!--  <a href="https://github.com/vuejs/vuejs.org/blob/master/src/bangla/lara/index.md" target="_blank">
+        Edit this page on Github!
+</a>-->
+<a href="https://twitter.com/code4mk">@code4mk</a>
+    </div>
+</div>
+
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+        
+
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/css.escape.js"></script>
+        <script src="/js/common.js"></script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
+      <!-- <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'mk'
+          docsearch({
+
+            apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+            indexName: 'hellolaravel',
+            inputSelector: search-form,
+            algoliaOptions: { facetFilters: ["version:" + version]
+
+
+       <script type="text/javascript"> docsearch({
+apiKey: '9d7525f5e23afd159b7fc3a65ae4c1f1',
+indexName: 'hellolaravel',
+inputSelector: selector,
+debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script> -->
+
+        <!-- fastclick -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
+        </script>
+        <script id="dsq-count-scr" src="//hellolaravel.disqus.com/count.js" async></script>
+
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+        <script type="text/javascript">try{ clicky.init(101038415); }catch(e){}</script>
+          <script type="text/javascript" src="https://vuejs-tips.github.io/vuex-cheatsheet/client.001800a6.js"></script>
+    </body>
+</html>
